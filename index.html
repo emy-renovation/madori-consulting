@@ -1,780 +1,1029 @@
-  <!DOCTYPE html>
-  <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>1対1オンライン間取り相談｜3Dパースで動線・収納・内装を見える化</title>
+  <title>1対1オンライン間取り相談｜3Dパースで動線・収納・内装を見える化</title>
 
-    <meta name="description" content="二級建築士による1対1オンライン間取り相談。図面だけでは分かりにくい動線・収納・クロス・床材・照明計画を3Dパースで見える化し、後悔しない家づくりをサポートします。" />
+  <meta name="description" content="二級建築士による1対1オンライン間取り相談。図面だけでは分かりにくい動線・収納・クロス・床材・照明計画を3Dパースで見える化し、後悔しない家づくりをサポートします。" />
 
-    <meta name="keywords" content="間取り相談,オンライン間取り相談,間取り診断,3Dパース,注文住宅,家事動線,収納計画,クロス選び,床材選び,照明計画" />
+  <meta name="keywords" content="間取り相談,オンライン間取り相談,間取り診断,3Dパース,注文住宅,家事動線,収納計画,クロス選び,床材選び,照明計画" />
 
-    <meta property="og:title" content="1対1オンライン間取り相談｜3Dパースで暮らしを見える化" />
-    <meta property="og:description" content="平面図だけでは分からない不安を、3Dパースで見える化。動線・収納・内装・照明まで二級建築士が丁寧にアドバイスします。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://example.com/og-image.jpg" />
-    <!-- ここを差し替える：SNSでシェアされた時に表示される画像URL -->
+  <meta property="og:title" content="1対1オンライン間取り相談｜3Dパースで暮らしを見える化" />
+  <meta property="og:description" content="平面図だけでは分からない不安を、3Dパースで見える化。動線・収納・内装・照明まで二級建築士が丁寧にアドバイスします。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <!-- ここを差し替える：SNSでシェアされた時に表示される画像URL -->
 
-    <style>
-      :root {
-        --main: #8b6f47;
-        --main-dark: #5f4a2f;
-        --accent: #d9a441;
-        --bg: #fffaf2;
-        --soft: #f5efe4;
-        --text: #2f2a24;
-        --muted: #6f665c;
-        --white: #ffffff;
-        --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-        --radius: 24px;
-      }
+  <style>
+    :root {
+      --main: #8b6f47;
+      --main-dark: #5f4a2f;
+      --accent: #d9a441;
+      --bg: #fffaf2;
+      --soft: #f5efe4;
+      --text: #2f2a24;
+      --muted: #6f665c;
+      --white: #ffffff;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+      --radius: 24px;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      body {
-        margin: 0;
-        font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.8;
-      }
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      overflow-x: hidden;
+    }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
+    body {
+      margin: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 250, 242, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 111, 71, 0.12);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      color: var(--main-dark);
+      letter-spacing: 0.04em;
+      font-size: 16px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--main-dark);
+    }
+
+    .hero {
+      padding: 72px 0 64px;
+      background:
+        radial-gradient(circle at top left, rgba(217, 164, 65, 0.25), transparent 35%),
+        linear-gradient(180deg, #fffaf2 0%, #f5efe4 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--main-dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.22;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 span {
+      color: var(--main);
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s;
+      text-align: center;
+      line-height: 1.5;
+      min-height: 54px;
+    }
+
+    .btn-primary {
+      background: var(--main);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(95, 74, 47, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--main-dark);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--main-dark);
+      border: 1px solid rgba(139, 111, 71, 0.25);
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .hero-card img {
+      border-radius: 18px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -26px;
+      bottom: 26px;
+      background: var(--white);
+      border-radius: 18px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+      max-width: 250px;
+    }
+
+    .floating-card strong {
+      color: var(--main-dark);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title small {
+      color: var(--main);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.35;
+      margin: 10px 0 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .problem-grid,
+    .feature-grid,
+    .case-grid,
+    .flow-grid,
+    .faq-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--main-dark);
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .visual-section {
+      background: var(--white);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .image-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .image-stack img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .check-list li {
+      padding: 10px 0 10px 34px;
+      position: relative;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .case-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .case-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .case-card .case-body {
+      padding: 22px;
+    }
+
+    .price-box {
+      background: linear-gradient(135deg, var(--main-dark), var(--main));
+      color: var(--white);
+      border-radius: 32px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      overflow: visible;
+    }
+
+    .price-box h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.35;
+      margin: 10px 0 12px;
+    }
+
+    .price-box p {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .price {
+      font-size: clamp(44px, 8vw, 72px);
+      font-weight: 900;
+      margin: 12px 0 20px;
+      line-height: 1.1;
+      word-break: keep-all;
+    }
+
+    .price span {
+      font-size: 18px;
+    }
+
+    .flow-grid {
+      grid-template-columns: repeat(5, 1fr);
+      counter-reset: step;
+    }
+
+    .flow-card {
+      position: relative;
+    }
+
+    .flow-card::before {
+      counter-increment: step;
+      content: "STEP " counter(step);
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .profile {
+      background: var(--soft);
+    }
+
+    .profile-box {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 36px;
+      align-items: center;
+      background: var(--white);
+      padding: 32px;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-box img {
+      border-radius: 24px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #ddd;
+      width: 100%;
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    details {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--main-dark);
+    }
+
+    details p {
+      color: var(--muted);
+    }
+
+    .final-cta {
+      background:
+        linear-gradient(rgba(47, 42, 36, 0.66), rgba(47, 42, 36, 0.66)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
+      /* ここを差し替える：最後のCTA背景画像。理想は3Dパースや落ち着いた住宅内観画像 */
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.35;
+    }
+
+    .final-cta p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .footer {
+      background: var(--main-dark);
+      color: rgba(255, 255, 255, 0.82);
+      padding: 34px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /*
+      重要：
+      以前のバージョンではスマホ下部に固定ボタンを出していましたが、
+      Instagram内ブラウザや一部スマホで本文に重なるため、完全に非表示にしています。
+    */
+    .fixed-cta {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
       .container {
-        width: min(1120px, 92%);
-        margin: 0 auto;
-      }
-
-      .header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(255, 250, 242, 0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(139, 111, 71, 0.12);
-      }
-
-      .header-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 0;
-      }
-
-      .logo {
-        font-weight: 800;
-        color: var(--main-dark);
-        letter-spacing: 0.04em;
+        width: min(100% - 32px, 1120px);
       }
 
       .nav {
-        display: flex;
-        gap: 20px;
-        font-size: 14px;
-        color: var(--muted);
+        display: none;
       }
 
-      .nav a:hover {
-        color: var(--main-dark);
+      .header-inner {
+        padding: 12px 0;
+      }
+
+      .logo {
+        font-size: 15px;
       }
 
       .hero {
-        padding: 72px 0 64px;
-        background:
-          radial-gradient(circle at top left, rgba(217, 164, 65, 0.25), transparent 35%),
-          linear-gradient(180deg, #fffaf2 0%, #f5efe4 100%);
+        padding: 48px 0 54px;
+      }
+
+      .hero-grid,
+      .split,
+      .profile-box {
+        grid-template-columns: 1fr;
       }
 
       .hero-grid {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 48px;
-        align-items: center;
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--white);
-        color: var(--main-dark);
-        padding: 8px 16px;
-        border-radius: 999px;
-        box-shadow: var(--shadow);
-        font-size: 14px;
-        font-weight: 700;
-      }
-
-      .hero h1 {
-        margin: 22px 0 18px;
-        font-size: clamp(34px, 5vw, 58px);
-        line-height: 1.22;
-        letter-spacing: 0.02em;
-      }
-
-      .hero h1 span {
-        color: var(--main);
-      }
-
-      .lead {
-        font-size: 18px;
-        color: var(--muted);
-        margin-bottom: 28px;
-      }
-
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        align-items: center;
-      }
-
-      .btn {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 28px;
-        border-radius: 999px;
-        font-weight: 800;
-        transition: 0.25s;
-      }
-
-      .btn-primary {
-        background: var(--main);
-        color: var(--white);
-        box-shadow: 0 12px 24px rgba(95, 74, 47, 0.25);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        background: var(--main-dark);
-      }
-
-      .btn-secondary {
-        background: var(--white);
-        color: var(--main-dark);
-        border: 1px solid rgba(139, 111, 71, 0.25);
-      }
-
-      .note {
-        font-size: 13px;
-        color: var(--muted);
-      }
-
-      .hero-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 18px;
-        box-shadow: var(--shadow);
-        position: relative;
-      }
-
-      .hero-card img {
-        border-radius: 18px;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        background: #ddd;
-      }
-
-      .floating-card {
-        position: absolute;
-        left: -26px;
-        bottom: 26px;
-        background: var(--white);
-        border-radius: 18px;
-        padding: 16px 18px;
-        box-shadow: var(--shadow);
-        max-width: 250px;
-      }
-
-      .floating-card strong {
-        color: var(--main-dark);
-      }
-
-      section {
-        padding: 72px 0;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 42px;
-      }
-
-      .section-title small {
-        color: var(--main);
-        font-weight: 800;
-        letter-spacing: 0.12em;
-      }
-
-      .section-title h2 {
-        font-size: clamp(28px, 4vw, 42px);
-        line-height: 1.35;
-        margin: 10px 0 12px;
-      }
-
-      .section-title p {
-        color: var(--muted);
-        margin: 0;
+        gap: 28px;
       }
 
       .problem-grid,
       .feature-grid,
       .case-grid,
-      .flow-grid,
       .faq-grid {
-        display: grid;
-        gap: 22px;
-      }
-
-      .problem-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .card {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 26px;
-        box-shadow: var(--shadow);
-      }
-
-      .card h3 {
-        margin-top: 0;
-        color: var(--main-dark);
-        font-size: 20px;
-      }
-
-      .card p {
-        color: var(--muted);
-        margin-bottom: 0;
-      }
-
-      .visual-section {
-        background: var(--white);
-      }
-
-      .split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 42px;
-        align-items: center;
-      }
-
-      .image-stack {
-        display: grid;
-        gap: 18px;
-      }
-
-      .image-stack img {
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-        background: #ddd;
-      }
-
-      .check-list {
-        list-style: none;
-        padding: 0;
-        margin: 24px 0;
-      }
-
-      .check-list li {
-        padding: 10px 0 10px 34px;
-        position: relative;
-      }
-
-      .check-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 10px;
-        width: 24px;
-        height: 24px;
-        background: var(--accent);
-        color: var(--white);
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .feature-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .case-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .case-card {
-        overflow: hidden;
-        padding: 0;
-      }
-
-      .case-card img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        background: #ddd;
-      }
-
-      .case-card .case-body {
-        padding: 22px;
-      }
-
-      .price-box {
-        background: linear-gradient(135deg, var(--main-dark), var(--main));
-        color: var(--white);
-        border-radius: 32px;
-        padding: 42px;
-        box-shadow: var(--shadow);
-        text-align: center;
-      }
-
-      .price {
-        font-size: 46px;
-        font-weight: 900;
-        margin: 10px 0;
-      }
-
-      .price span {
-        font-size: 18px;
+        grid-template-columns: 1fr;
       }
 
       .flow-grid {
-        grid-template-columns: repeat(5, 1fr);
-        counter-reset: step;
+        grid-template-columns: 1fr;
       }
 
-      .flow-card {
-        position: relative;
+      .hero h1 {
+        font-size: 38px;
       }
 
-      .flow-card::before {
-        counter-increment: step;
-        content: "STEP " counter(step);
-        display: inline-block;
-        color: var(--accent);
-        font-weight: 900;
-        margin-bottom: 8px;
+      .lead {
+        font-size: 16px;
       }
 
-      .profile {
-        background: var(--soft);
+      .cta-row {
+        align-items: stretch;
       }
 
-      .profile-box {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: 36px;
-        align-items: center;
-        background: var(--white);
-        padding: 32px;
-        border-radius: 32px;
-        box-shadow: var(--shadow);
-      }
-
-      .profile-box img {
-        border-radius: 24px;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        background: #ddd;
-      }
-
-      .faq-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      details {
-        background: var(--white);
-        border-radius: 18px;
-        padding: 20px 22px;
-        box-shadow: var(--shadow);
-      }
-
-      summary {
-        cursor: pointer;
-        font-weight: 800;
-        color: var(--main-dark);
-      }
-
-      details p {
-        color: var(--muted);
-      }
-
-      .final-cta {
-        background:
-          linear-gradient(rgba(47, 42, 36, 0.66), rgba(47, 42, 36, 0.66)),
-          url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
-        /* ここを差し替える：最後のCTA背景画像。理想は3Dパースや落ち着いた住宅内観画像 */
-        background-size: cover;
-        background-position: center;
-        color: var(--white);
-        text-align: center;
-      }
-
-      .final-cta h2 {
-        font-size: clamp(30px, 4vw, 46px);
-        line-height: 1.35;
-      }
-
-      .final-cta p {
-        max-width: 720px;
-        margin: 0 auto 28px;
-      }
-
-      .footer {
-        background: var(--main-dark);
-        color: rgba(255, 255, 255, 0.82);
-        padding: 34px 0;
-        font-size: 14px;
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .fixed-cta {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 30;
-        display: none;
-        background: rgba(255, 250, 242, 0.96);
-        padding: 10px 14px;
-        box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.12);
-      }
-
-      .fixed-cta .btn {
+      .cta-row .btn {
         width: 100%;
       }
 
-      @media (max-width: 900px) {
-        .nav {
-          display: none;
-        }
-
-        .hero-grid,
-        .split,
-        .profile-box {
-          grid-template-columns: 1fr;
-        }
-
-        .problem-grid,
-        .feature-grid,
-        .case-grid,
-        .faq-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .flow-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .floating-card {
-          position: static;
-          margin-top: 14px;
-          max-width: none;
-        }
-
-        .fixed-cta {
-          display: block;
-        }
-
-        body {
-          padding-bottom: 82px;
-        }
+      .floating-card {
+        position: static;
+        margin-top: 14px;
+        max-width: none;
       }
-    </style>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "1対1オンライン間取り相談",
-        "description": "二級建築士によるオンライン間取り相談。3Dパースで動線・収納・内装を見える化し、家づくりの不安を解消します。",
-        "areaServed": "日本全国",
-        "serviceType": "オンライン間取り相談",
-        "priceRange": "9800円",
-        "url": "https://example.com"
+      section {
+        padding: 56px 0;
       }
-    </script>
-    <!-- ここを差し替える：urlは公開後のホームページURLに変更 -->
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container header-inner">
-        <div class="logo">1対1オンライン間取り相談</div>
-        <nav class="nav">
-          <a href="#problem">お悩み</a>
-          <a href="#service">できること</a>
-          <a href="#case">実績</a>
-          <a href="#flow">流れ</a>
-          <a href="#price">料金</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-      </div>
-    </header>
+      .section-title {
+        margin-bottom: 30px;
+      }
 
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="badge">二級建築士が3Dで見える化</div>
-            <h1>
-              その間取り、<br />
-              本当に<br />
-              <span>暮らしやすい？</span>
-            </h1>
-            <p class="lead">
-              平面図だけでは分かりにくい動線・収納・内装イメージを、
-              3Dパースで立体化しながら、1対1でわかりやすくアドバイスします。
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-primary js-apply-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
-                1対1相談に申し込む
-              </a>
-              <a class="btn btn-secondary" href="#service">相談内容を見る</a>
-            </div>
-            <p class="note">
-              オンライン対応｜全国どこからでも相談可能｜図面・画像の事前共有OK
-            </p>
-          </div>
+      .section-title h2 {
+        font-size: 30px;
+      }
 
-          <div class="hero-card">
-            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="3Dパースで確認する間取り相談のイメージ" />
-            <!-- ここを差し替える：メイン画像。実際の3Dパース画像や相談風景に変更 -->
-            <div class="floating-card">
-              <strong>図面を“暮らし”に変える相談</strong>
-              <br />
-              家具配置・収納・照明・色合わせまで、多角的にチェックします。
-            </div>
-          </div>
-        </div>
-      </section>
+      .card {
+        padding: 24px;
+        border-radius: 22px;
+      }
 
-      <section id="problem">
-        <div class="container">
-          <div class="section-title">
-            <small>PROBLEM</small>
-            <h2>こんな不安はありませんか？</h2>
-            <p>家づくりの不安は、契約前・着工前に確認することで大きく減らせます。</p>
-          </div>
+      .price-box {
+        padding: 34px 22px 38px;
+        border-radius: 28px;
+      }
 
-          <div class="problem-grid">
-            <div class="card">
-              <h3>動線が不安</h3>
-              <p>洗濯、買い物帰り、朝の支度など、毎日の動きにムダがないか確認したい。</p>
-            </div>
-            <div class="card">
-              <h3>収納が足りるか心配</h3>
-              <p>図面上では分かりにくい収納量や、使う場所との距離を確認したい。</p>
-            </div>
-            <div class="card">
-              <h3>内装の完成イメージが見えない</h3>
-              <p>クロス、床材、照明、家具の色が合っているか不安。</p>
-            </div>
-            <div class="card">
-              <h3>建築会社に聞きづらい</h3>
-              <p>今さら変更できるのか、何を聞けばいいのか分からず悩んでいる。</p>
-            </div>
-            <div class="card">
-              <h3>家具を置いた時が想像できない</h3>
-              <p>ソファやダイニングを置いた時の広さや通路幅を確認したい。</p>
-            </div>
-            <div class="card">
-              <h3>後悔したくない</h3>
-              <p>一生に一度の家づくりだから、第三者のプロ目線で確認したい。</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      .price-box h2 {
+        font-size: 30px;
+      }
 
-      <section id="service" class="visual-section">
-        <div class="container split">
-          <div class="image-stack">
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="3Dパースで立体化した住宅内観" />
-            <!-- ここを差し替える：3Dパース画像1 -->
-            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80" alt="収納と動線を確認する住宅インテリア" />
-            <!-- ここを差し替える：3Dパース画像2 -->
-          </div>
+      .price {
+        font-size: 56px;
+        margin: 10px 0 18px;
+      }
 
-          <div>
-            <div class="section-title" style="text-align:left; margin-bottom:20px;">
-              <small>SERVICE</small>
-              <h2>図面を3Dで立体化し、暮らしやすさを確認します</h2>
-              <p>
-                平面図では見落としやすいポイントを、3Dパースで視覚化。
-                「なんとなく不安」を「ここを確認すれば大丈夫」に変えていきます。
-              </p>
-            </div>
+      .price span {
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 4px;
+      }
 
-            <ul class="check-list">
-              <li>家事動線・生活動線の確認</li>
-              <li>収納の位置・量・使いやすさの確認</li>
-              <li>家具配置後の広さや通路幅の確認</li>
-              <li>クロス・床材・建具カラーのバランス提案</li>
-              <li>照明位置や明るさの考え方をアドバイス</li>
-              <li>建築会社に確認すべき質問を整理</li>
-            </ul>
+      .price-box .btn {
+        width: 100%;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      .profile-box {
+        padding: 22px;
+        gap: 22px;
+      }
+
+      .profile-box img {
+        aspect-ratio: 4 / 3;
+        max-height: 420px;
+      }
+
+      .final-cta {
+        padding: 64px 0;
+      }
+
+      .footer {
+        padding: 30px 0 36px;
+      }
+
+      body {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .badge {
+        font-size: 13px;
+      }
+
+      .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 50px;
+      }
+
+      .price-box {
+        padding: 30px 18px 34px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "1対1オンライン間取り相談",
+      "description": "二級建築士によるオンライン間取り相談。3Dパースで動線・収納・内装を見える化し、家づくりの不安を解消します。",
+      "areaServed": "日本全国",
+      "serviceType": "オンライン間取り相談",
+      "priceRange": "9800円",
+      "url": "https://emy-renovation.github.io/"
+    }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">1対1オンライン間取り相談</div>
+      <nav class="nav">
+        <a href="#problem">お悩み</a>
+        <a href="#service">できること</a>
+        <a href="#case">実績</a>
+        <a href="#flow">流れ</a>
+        <a href="#price">料金</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">二級建築士が3Dで見える化</div>
+          <h1>
+            その間取り、<br />
+            本当に<br />
+            <span>暮らしやすい？</span>
+          </h1>
+          <p class="lead">
+            平面図だけでは分かりにくい動線・収納・内装イメージを、
+            3Dパースで立体化しながら、1対1でわかりやすくアドバイスします。
+          </p>
+          <div class="cta-row">
             <a class="btn btn-primary js-apply-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
-              相談フォームへ進む
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-title">
-            <small>WHAT YOU GET</small>
-            <h2>相談でわかること</h2>
-            <p>家づくりの判断に必要なポイントを、プロ目線で整理します。</p>
-          </div>
-
-          <div class="feature-grid">
-            <div class="card">
-              <h3>動線のムダ</h3>
-              <p>家事・帰宅・洗濯・朝の支度など、生活シーンごとに動きやすさを確認します。</p>
-            </div>
-            <div class="card">
-              <h3>収納の不足</h3>
-              <p>しまう場所と使う場所が合っているか、暮らしに合わせて確認します。</p>
-            </div>
-            <div class="card">
-              <h3>空間の圧迫感</h3>
-              <p>家具を置いた時の広さや視線の抜けを、3Dでイメージしながら確認します。</p>
-            </div>
-            <div class="card">
-              <h3>色合わせ</h3>
-              <p>クロス、床材、建具、家具の色がまとまるか、全体の印象を確認します。</p>
-            </div>
-            <div class="card">
-              <h3>照明計画</h3>
-              <p>照明の位置や光の考え方を、暮らし方に合わせてアドバイスします。</p>
-            </div>
-            <div class="card">
-              <h3>確認すべき質問</h3>
-              <p>建築会社に確認した方がよい項目を整理し、打ち合わせに活かせる形にします。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="case" class="visual-section">
-        <div class="container">
-          <div class="section-title">
-            <small>WORKS</small>
-            <h2>相談・提案例</h2>
-            <p>実績画像は後から差し替え可能です。3Dパースや提案資料を掲載すると説得力が高まります。</p>
-          </div>
-
-          <div class="case-grid">
-            <div class="card case-card">
-              <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80" alt="LDKの3Dパース提案例" />
-              <!-- ここを差し替える：実績画像1。LDKの3Dパースがおすすめ -->
-              <div class="case-body">
-                <h3>LDKの家具配置確認</h3>
-                <p>ソファ・ダイニング配置後の通路幅や、家族の過ごしやすさを確認。</p>
-              </div>
-            </div>
-
-            <div class="card case-card">
-              <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80" alt="収納計画の提案例" />
-              <!-- ここを差し替える：実績画像2。収納やパントリーの3D画像がおすすめ -->
-              <div class="case-body">
-                <h3>収納・パントリー計画</h3>
-                <p>使う場所に必要な収納があるか、生活動線と合わせて確認。</p>
-              </div>
-            </div>
-
-            <div class="card case-card">
-              <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=80" alt="クロスと床材の色合わせ提案" />
-              <!-- ここを差し替える：実績画像3。クロス・床材・照明提案の画像がおすすめ -->
-              <div class="case-body">
-                <h3>内装カラー提案</h3>
-                <p>クロス・床材・照明のバランスを確認し、統一感ある空間へ。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="flow">
-        <div class="container">
-          <div class="section-title">
-            <small>FLOW</small>
-            <h2>相談の流れ</h2>
-            <p>オンラインで完結。図面や相談内容を事前に共有いただくことで、当日は具体的にお話できます。</p>
-          </div>
-
-          <div class="flow-grid">
-            <div class="card flow-card">
-              <h3>申込</h3>
-              <p>フォームから相談内容を送信します。</p>
-            </div>
-            <div class="card flow-card">
-              <h3>資料共有</h3>
-              <p>間取り図や気になる画像を共有します。</p>
-            </div>
-            <div class="card flow-card">
-              <h3>事前確認</h3>
-              <p>内容を確認し、相談ポイントを整理します。</p>
-            </div>
-            <div class="card flow-card">
-              <h3>オンライン相談</h3>
-              <p>Google Meetで1対1相談を行います。</p>
-            </div>
-            <div class="card flow-card">
-              <h3>改善提案</h3>
-              <p>確認点や改善ポイントをお伝えします。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="price" class="visual-section">
-        <div class="container">
-          <div class="price-box">
-            <small>PRICE</small>
-            <h2>1対1オンライン間取り相談</h2>
-            <div class="price">9,800円 <span>税込</span></div>
-            <p>
-              60分のオンライン相談で、間取り・動線・収納・内装・照明まで多角的に確認します。
-              一生に一度の家づくりで後悔を減らすための、プロとの確認時間です。
-            </p>
-            <a class="btn btn-primary js-apply-link" style="background:#fff;color:#5f4a2f;margin-top:18px;" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
               1対1相談に申し込む
             </a>
+            <a class="btn btn-secondary" href="#service">相談内容を見る</a>
+          </div>
+          <p class="note">
+            オンライン対応｜全国どこからでも相談可能｜図面・画像の事前共有OK
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="3Dパースで確認する間取り相談のイメージ" />
+          <!-- ここを差し替える：メイン画像。実際の3Dパース画像や相談風景に変更 -->
+          <div class="floating-card">
+            <strong>図面を“暮らし”に変える相談</strong>
+            <br />
+            家具配置・収納・照明・色合わせまで、多角的にチェックします。
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="profile">
-        <div class="container profile-box">
-.fixed-cta {
-  display: none !important;
-}
+    <section id="problem">
+      <div class="container">
+        <div class="section-title">
+          <small>PROBLEM</small>
+          <h2>こんな不安はありませんか？</h2>
+          <p>家づくりの不安は、契約前・着工前に確認することで大きく減らせます。</p>
+        </div>
 
-          
-          <di
+        <div class="problem-grid">
+          <div class="card">
+            <h3>動線が不安</h3>
+            <p>洗濯、買い物帰り、朝の支度など、毎日の動きにムダがないか確認したい。</p>
+          </div>
+          <div class="card">
+            <h3>収納が足りるか心配</h3>
+            <p>図面上では分かりにくい収納量や、使う場所との距離を確認したい。</p>
+          </div>
+          <div class="card">
+            <h3>内装の完成イメージが見えない</h3>
+            <p>クロス、床材、照明、家具の色が合っているか不安。</p>
+          </div>
+          <div class="card">
+            <h3>建築会社に聞きづらい</h3>
+            <p>今さら変更できるのか、何を聞けばいいのか分からず悩んでいる。</p>
+          </div>
+          <div class="card">
+            <h3>家具を置いた時が想像できない</h3>
+            <p>ソファやダイニングを置いた時の広さや通路幅を確認したい。</p>
+          </div>
+          <div class="card">
+            <h3>後悔したくない</h3>
+            <p>一生に一度の家づくりだから、第三者のプロ目線で確認したい。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="visual-section">
+      <div class="container split">
+        <div class="image-stack">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="3Dパースで立体化した住宅内観" />
+          <!-- ここを差し替える：3Dパース画像1 -->
+          <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80" alt="収納と動線を確認する住宅インテリア" />
+          <!-- ここを差し替える：3Dパース画像2 -->
+        </div>
+
+        <div>
+          <div class="section-title" style="text-align:left; margin-bottom:20px;">
+            <small>SERVICE</small>
+            <h2>図面を3Dで立体化し、暮らしやすさを確認します</h2>
+            <p>
+              平面図では見落としやすいポイントを、3Dパースで視覚化。
+              「なんとなく不安」を「ここを確認すれば大丈夫」に変えていきます。
+            </p>
+          </div>
+
+          <ul class="check-list">
+            <li>家事動線・生活動線の確認</li>
+            <li>収納の位置・量・使いやすさの確認</li>
+            <li>家具配置後の広さや通路幅の確認</li>
+            <li>クロス・床材・建具カラーのバランス提案</li>
+            <li>照明位置や明るさの考え方をアドバイス</li>
+            <li>建築会社に確認すべき質問を整理</li>
+          </ul>
+
+          <a class="btn btn-primary js-apply-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
+            相談フォームへ進む
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <small>WHAT YOU GET</small>
+          <h2>相談でわかること</h2>
+          <p>家づくりの判断に必要なポイントを、プロ目線で整理します。</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="card">
+            <h3>動線のムダ</h3>
+            <p>家事・帰宅・洗濯・朝の支度など、生活シーンごとに動きやすさを確認します。</p>
+          </div>
+          <div class="card">
+            <h3>収納の不足</h3>
+            <p>しまう場所と使う場所が合っているか、暮らしに合わせて確認します。</p>
+          </div>
+          <div class="card">
+            <h3>空間の圧迫感</h3>
+            <p>家具を置いた時の広さや視線の抜けを、3Dでイメージしながら確認します。</p>
+          </div>
+          <div class="card">
+            <h3>色合わせ</h3>
+            <p>クロス、床材、建具、家具の色がまとまるか、全体の印象を確認します。</p>
+          </div>
+          <div class="card">
+            <h3>照明計画</h3>
+            <p>照明の位置や光の考え方を、暮らし方に合わせてアドバイスします。</p>
+          </div>
+          <div class="card">
+            <h3>確認すべき質問</h3>
+            <p>建築会社に確認した方がよい項目を整理し、打ち合わせに活かせる形にします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case" class="visual-section">
+      <div class="container">
+        <div class="section-title">
+          <small>WORKS</small>
+          <h2>相談・提案例</h2>
+          <p>実績画像は後から差し替え可能です。3Dパースや提案資料を掲載すると説得力が高まります。</p>
+        </div>
+
+        <div class="case-grid">
+          <div class="card case-card">
+            <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80" alt="LDKの3Dパース提案例" />
+            <!-- ここを差し替える：実績画像1。LDKの3Dパースがおすすめ -->
+            <div class="case-body">
+              <h3>LDKの家具配置確認</h3>
+              <p>ソファ・ダイニング配置後の通路幅や、家族の過ごしやすさを確認。</p>
+            </div>
+          </div>
+
+          <div class="card case-card">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80" alt="収納計画の提案例" />
+            <!-- ここを差し替える：実績画像2。収納やパントリーの3D画像がおすすめ -->
+            <div class="case-body">
+              <h3>収納・パントリー計画</h3>
+              <p>使う場所に必要な収納があるか、生活動線と合わせて確認。</p>
+            </div>
+          </div>
+
+          <div class="card case-card">
+            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=80" alt="クロスと床材の色合わせ提案" />
+            <!-- ここを差し替える：実績画像3。クロス・床材・照明提案の画像がおすすめ -->
+            <div class="case-body">
+              <h3>内装カラー提案</h3>
+              <p>クロス・床材・照明のバランスを確認し、統一感ある空間へ。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="container">
+        <div class="section-title">
+          <small>FLOW</small>
+          <h2>相談の流れ</h2>
+          <p>オンラインで完結。図面や相談内容を事前に共有いただくことで、当日は具体的にお話できます。</p>
+        </div>
+
+        <div class="flow-grid">
+          <div class="card flow-card">
+            <h3>申込</h3>
+            <p>フォームから相談内容を送信します。</p>
+          </div>
+          <div class="card flow-card">
+            <h3>資料共有</h3>
+            <p>間取り図や気になる画像を共有します。</p>
+          </div>
+          <div class="card flow-card">
+            <h3>事前確認</h3>
+            <p>内容を確認し、相談ポイントを整理します。</p>
+          </div>
+          <div class="card flow-card">
+            <h3>オンライン相談</h3>
+            <p>Google Meetで1対1相談を行います。</p>
+          </div>
+          <div class="card flow-card">
+            <h3>改善提案</h3>
+            <p>確認点や改善ポイントをお伝えします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price" class="visual-section">
+      <div class="container">
+        <div class="price-box">
+          <small>PRICE</small>
+          <h2>1対1オンライン間取り相談</h2>
+          <div class="price">9,800円 <span>税込</span></div>
+          <p>
+            60分のオンライン相談で、間取り・動線・収納・内装・照明まで多角的に確認します。
+            一生に一度の家づくりで後悔を減らすための、プロとの確認時間です。
+          </p>
+          <a class="btn btn-primary js-apply-link" style="background:#fff;color:#5f4a2f;margin-top:24px;" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
+            1対1相談に申し込む
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile">
+      <div class="container profile-box">
+        <div>
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="二級建築士 漆間絵美のプロフィール写真" />
+          <!-- ここを差し替える：プロフィール写真。本人写真または仕事風景がおすすめ -->
+        </div>
+        <div>
+          <div class="section-title" style="text-align:left; margin-bottom:18px;">
+            <small>PROFILE</small>
+            <h2>二級建築士が、暮らし目線でアドバイスします</h2>
+          </div>
+          <p>
+            はじめまして。二級建築士の漆間絵美です。
+            間取りは、図面のきれいさだけでなく、実際に暮らした時の動きやすさ・片づけやすさ・心地よさが大切です。
+          </p>
+          <p>
+            3Dパースを使って、平面図だけでは見えにくい不安を一緒に確認しながら、
+            家づくりの後悔を減らすお手伝いをしています。
+          </p>
+          <a class="btn btn-primary js-apply-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
+            相談フォームへ進む
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title">
+          <small>FAQ</small>
+          <h2>よくある質問</h2>
+        </div>
+
+        <div class="faq-grid">
+          <details>
+            <summary>まだ契約前でも相談できますか？</summary>
+            <p>はい、契約前・打ち合わせ中・着工前など、どの段階でもご相談いただけます。早い段階ほど選択肢が広がります。</p>
+          </details>
+
+          <details>
+            <summary>図面だけでも相談できますか？</summary>
+            <p>はい。間取り図、立面図、仕様書、内装イメージ画像など、今ある資料で可能な範囲から確認します。</p>
+          </details>
+
+          <details>
+            <summary>3Dパースは必ず作成してもらえますか？</summary>
+            <p>相談内容や資料状況により可能な範囲で3D化します。詳細な作り込みが必要な場合は、別途ご相談となる場合があります。</p>
+          </details>
+
+          <details>
+            <summary>スマホからでも参加できますか？</summary>
+            <p>可能です。ただし、図面や3Dパースを見るため、できればパソコンやタブレットでの参加をおすすめします。</p>
+          </details>
+
+          <details>
+            <summary>相談後に建築会社へどう伝えればいいですか？</summary>
+            <p>建築会社に確認すべきポイントも整理してお伝えします。打ち合わせで質問しやすい形にまとめます。</p>
+          </details>
+
+          <details>
+            <summary>全国から相談できますか？</summary>
+            <p>はい。Google Meetを使ったオンライン相談のため、全国どこからでもご相談いただけます。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>図面だけでは見えない不安を、<br />3Dで一緒に確認しませんか？</h2>
+        <p>
+          動線、収納、内装、照明。
+          暮らし始めてから後悔しやすいポイントを、今のうちに確認しましょう。
+        </p>
+        <a class="btn btn-primary js-apply-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform" target="_blank" rel="noopener">
+          1対1相談に申し込む
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>1対1オンライン間取り相談</strong><br />
+        二級建築士　漆間絵美
+      </div>
+      <div>
+        © 2026 1対1オンライン間取り相談
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ==============================
+    // ここを差し替える：Googleフォームの申込URL
+    // フォームが完成したら、このURLだけ変更すれば全ボタンに反映されます。
+    // ==============================
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform";
+
+    document.querySelectorAll(".js-apply-link").forEach((link) => {
+      link.href = GOOGLE_FORM_URL;
+    });
+
+    // ==============================
+    // CTAクリック計測用
+    // 将来的にGoogle Analyticsを入れた場合、ここに計測コードを追加できます。
+    // ==============================
+    document.querySelectorAll(".js-apply-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        console.log("申込ボタンがクリックされました");
+      });
+    });
+  </script>
+</body>
+</html>
