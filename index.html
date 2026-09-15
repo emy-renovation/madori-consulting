@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
   <title>
     建築士の間取りセカンドオピニオン｜契約前・間取り確定前のオンライン相談
@@ -14,109 +14,127 @@
 
   <meta
     name="description"
-    content="二級建築士が、注文住宅やリノベーションの間取りを第三者の視点で確認。変更する場所、そのままでよい場所、建築会社への質問、ご家族で決めることを整理するオンライン間取り相談です。"
-  />
+    content="無料間取り診断で見つかった確認点を、変更する・そのまま進める・建築会社へ確認してから決める、の3つに整理。二級建築士によるオンライン間取りセカンドオピニオンです。"
+  >
 
   <meta
     name="robots"
     content="index,follow,max-image-preview:large"
-  />
+  >
 
   <meta
     name="author"
     content="BETTER HOME DESIGN"
-  />
+  >
+
+  <meta
+    name="theme-color"
+    content="#173f38"
+  >
 
   <link
     rel="canonical"
     href="https://emy-renovation.github.io/madori-consulting/"
-  />
+  >
 
   <!-- OGP -->
   <meta
     property="og:title"
     content="建築士の間取りセカンドオピニオン"
-  />
+  >
 
   <meta
     property="og:description"
-    content="契約前・間取り確定前に、変更する場所とそのままでよい場所を整理。二級建築士がオンラインで意思決定をサポートします。"
-  />
+    content="無料診断で見つかった確認点を、変更・現状維持・建築会社へ確認、の3つに整理します。"
+  >
 
   <meta
     property="og:type"
     content="website"
-  />
+  >
 
   <meta
     property="og:url"
     content="https://emy-renovation.github.io/madori-consulting/"
-  />
+  >
 
   <meta
     property="og:site_name"
     content="BETTER HOME DESIGN"
-  />
+  >
 
-  <!--
-    必須：
-    assets/og-madori-consulting.jpg を作成してください。
-    推奨サイズは1200×630pxです。
-  -->
   <meta
     property="og:image"
     content="https://emy-renovation.github.io/madori-consulting/assets/og-madori-consulting.jpg"
-  />
+  >
 
   <meta
     property="og:image:alt"
     content="建築士の間取りセカンドオピニオン"
-  />
+  >
 
   <meta
     name="twitter:card"
     content="summary_large_image"
-  />
+  >
 
   <meta
     name="twitter:title"
     content="建築士の間取りセカンドオピニオン"
-  />
+  >
 
   <meta
     name="twitter:description"
     content="契約前・間取り確定前の判断を、二級建築士が第三者の視点で整理します。"
-  />
+  >
 
   <meta
     name="twitter:image"
     content="https://emy-renovation.github.io/madori-consulting/assets/og-madori-consulting.jpg"
-  />
-
-  <meta
-    name="theme-color"
-    content="#183f38"
-  />
+  >
 
   <style>
     :root {
       --brand: #315f55;
-      --brand-dark: #183f38;
+      --brand-dark: #173f38;
+      --brand-deep: #102f2a;
       --brand-light: #e8f1ee;
-      --gold: #b88942;
-      --gold-dark: #8b642c;
-      --ink: #202421;
-      --muted: #5f6863;
-      --line: #dce3df;
-      --surface: #ffffff;
+
+      --gold: #b78943;
+      --gold-dark: #835f2b;
+      --gold-light: #f7f0e4;
+
+      --ink: #202522;
+      --muted: #5d6862;
+      --muted-light: #78817c;
+
+      --line: #dce4df;
+      --line-strong: #c7d5ce;
+
+      --white: #ffffff;
       --background: #f7f8f6;
-      --warm: #f7f1e7;
-      --warning: #fff8ec;
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --shadow:
-        0 18px 50px rgba(23, 52, 46, 0.09);
+      --surface: #ffffff;
+      --warm: #f8f2e8;
+      --soft-blue: #eef5f8;
+      --soft-red: #fff2ef;
+
+      --success: #267456;
+      --warning: #a65f24;
+
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 17px;
+      --radius-sm: 11px;
+
+      --shadow-lg:
+        0 24px 70px rgba(19, 56, 48, 0.12);
+
+      --shadow-md:
+        0 16px 42px rgba(19, 56, 48, 0.08);
+
+      --shadow-sm:
+        0 8px 24px rgba(19, 56, 48, 0.06);
+
       --font:
         "Hiragino Kaku Gothic ProN",
         "Hiragino Sans",
@@ -139,8 +157,13 @@
       color: var(--ink);
       background: var(--background);
       font-family: var(--font);
+      font-size: 16px;
       line-height: 1.85;
       overflow-wrap: anywhere;
+    }
+
+    body.mobile-cta-visible {
+      padding-bottom: 0;
     }
 
     img {
@@ -161,8 +184,8 @@
     }
 
     :focus-visible {
-      outline: 3px solid rgba(184, 137, 66, 0.55);
-      outline-offset: 3px;
+      outline: 3px solid rgba(183, 137, 67, 0.6);
+      outline-offset: 4px;
     }
 
     .container {
@@ -175,43 +198,50 @@
       margin-inline: auto;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .skip-link {
       position: fixed;
       top: 8px;
       left: 8px;
-      z-index: 999;
+      z-index: 1000;
       padding: 10px 16px;
-      color: #ffffff;
+      color: var(--white);
       background: var(--brand-dark);
       border-radius: 8px;
-      transform: translateY(-150%);
+      transform: translateY(-160%);
     }
 
     .skip-link:focus {
       transform: translateY(0);
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin: 0 0 10px;
-      color: var(--gold-dark);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+    section {
+      padding: 88px 0;
     }
 
     .section-heading {
-      max-width: 760px;
-      margin: 0 auto 42px;
+      max-width: 790px;
+      margin: 0 auto 44px;
       text-align: center;
     }
 
     .section-heading h2 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       color: var(--brand-dark);
-      font-size: clamp(29px, 4vw, 44px);
+      font-size: clamp(29px, 4vw, 45px);
       line-height: 1.4;
-      letter-spacing: 0.015em;
+      letter-spacing: 0.01em;
     }
 
     .section-heading p {
@@ -219,11 +249,26 @@
       color: var(--muted);
     }
 
-    section {
-      padding: 84px 0;
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 11px;
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
     }
 
-    /* ヘッダー */
+    .section-note {
+      margin: 22px 0 0;
+      color: var(--muted-light);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------
+       Header
+    ------------------------------------------------------- */
+
     .site-header {
       position: sticky;
       top: 0;
@@ -238,7 +283,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 26px;
     }
 
     .brand {
@@ -258,50 +303,59 @@
       display: block;
       color: var(--muted);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .global-nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
 
     .global-nav a {
       color: var(--muted);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
     }
 
     .global-nav a:hover {
-      color: var(--brand);
+      color: var(--brand-dark);
     }
 
-    .header-cta {
+    .global-nav .header-cta {
       padding: 10px 18px;
-      color: #ffffff !important;
+      color: var(--white);
       background: var(--brand);
       border-radius: 999px;
     }
 
-    /* ボタン */
+    .global-nav .header-cta:hover {
+      color: var(--white);
+      background: var(--brand-dark);
+    }
+
+    /* -------------------------------------------------------
+       Buttons
+    ------------------------------------------------------- */
+
     .button {
       display: inline-flex;
+      min-height: 58px;
       align-items: center;
       justify-content: center;
-      min-height: 56px;
+      gap: 8px;
       padding: 14px 28px;
       border: 1px solid transparent;
       border-radius: 999px;
       font-weight: 900;
-      line-height: 1.5;
+      line-height: 1.45;
       text-align: center;
       text-decoration: none;
       transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        background 0.2s;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .button:hover {
@@ -309,27 +363,27 @@
     }
 
     .button-primary {
-      color: #ffffff;
+      color: var(--white);
       background: var(--brand);
       box-shadow:
-        0 14px 28px rgba(24, 63, 56, 0.2);
+        0 14px 30px rgba(23, 63, 56, 0.22);
     }
 
     .button-primary:hover {
       background: var(--brand-dark);
     }
 
+    .button-light {
+      color: var(--brand-dark);
+      background: var(--white);
+      box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.16);
+    }
+
     .button-outline {
       color: var(--brand-dark);
       background: transparent;
-      border-color: rgba(49, 95, 85, 0.3);
-    }
-
-    .button-light {
-      color: var(--brand-dark);
-      background: #ffffff;
-      box-shadow:
-        0 14px 30px rgba(0, 0, 0, 0.14);
+      border-color: rgba(49, 95, 85, 0.32);
     }
 
     .button-row {
@@ -339,18 +393,70 @@
       gap: 14px;
     }
 
-    /* ヒーロー */
+    .button-arrow::after {
+      content: "→";
+      font-size: 1.1em;
+    }
+
+    .cta-microcopy {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* -------------------------------------------------------
+       Diagnosis visitor banner
+    ------------------------------------------------------- */
+
+    .diagnosis-banner {
+      display: none;
+      padding: 12px 0;
+      color: var(--brand-dark);
+      background: var(--gold-light);
+      border-bottom: 1px solid rgba(183, 137, 67, 0.25);
+    }
+
+    .diagnosis-banner.is-visible {
+      display: block;
+    }
+
+    .diagnosis-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .diagnosis-banner-icon {
+      display: inline-grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      color: var(--white);
+      background: var(--gold-dark);
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    /* -------------------------------------------------------
+       Hero
+    ------------------------------------------------------- */
+
     .hero {
-      padding: 94px 0 82px;
+      padding: 92px 0 78px;
       background:
         radial-gradient(
-          circle at 15% 0%,
-          rgba(184, 137, 66, 0.2),
-          transparent 32%
+          circle at 12% 0%,
+          rgba(183, 137, 67, 0.2),
+          transparent 31%
         ),
         linear-gradient(
           145deg,
-          #f9faf8 0%,
+          #fafbf9 0%,
           #edf3f0 100%
         );
     }
@@ -365,16 +471,15 @@
     .qualification {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       padding: 8px 15px;
       color: var(--brand-dark);
-      background: #ffffff;
-      border: 1px solid rgba(49, 95, 85, 0.12);
+      background: var(--white);
+      border: 1px solid rgba(49, 95, 85, 0.13);
       border-radius: 999px;
-      box-shadow:
-        0 10px 30px rgba(23, 52, 46, 0.08);
+      box-shadow: var(--shadow-sm);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .qualification::before {
@@ -388,9 +493,9 @@
     .hero h1 {
       margin: 22px 0 20px;
       color: var(--brand-dark);
-      font-size: clamp(38px, 5.4vw, 65px);
-      line-height: 1.22;
-      letter-spacing: 0.015em;
+      font-size: clamp(38px, 5.2vw, 63px);
+      line-height: 1.25;
+      letter-spacing: 0.01em;
     }
 
     .hero h1 em {
@@ -407,13 +512,13 @@
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 18px;
+      gap: 8px 18px;
       margin: 22px 0 0;
       padding: 0;
-      list-style: none;
       color: var(--muted);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
+      list-style: none;
     }
 
     .hero-meta li::before {
@@ -426,63 +531,72 @@
     .decision-panel {
       position: relative;
       padding: 34px;
-      color: #ffffff;
+      color: var(--white);
       background:
         linear-gradient(
           145deg,
           var(--brand-dark),
           var(--brand)
         );
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
       overflow: hidden;
     }
 
     .decision-panel::after {
       content: "";
       position: absolute;
-      right: -80px;
-      bottom: -100px;
-      width: 250px;
-      height: 250px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      right: -85px;
+      bottom: -110px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 50%;
     }
 
     .decision-panel-label {
       position: relative;
       z-index: 1;
-      margin: 0 0 18px;
-      color: rgba(255, 255, 255, 0.75);
+      margin: 0 0 16px;
+      color: rgba(255, 255, 255, 0.72);
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+    }
+
+    .decision-panel h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 18px;
+      font-size: 22px;
+      line-height: 1.55;
     }
 
     .decision-list {
       position: relative;
       z-index: 1;
       display: grid;
-      gap: 12px;
+      gap: 11px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .decision-list li {
-      padding: 15px 16px;
+      padding: 14px 15px;
       color: var(--brand-dark);
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: var(--radius-sm);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .decision-list li::before {
-      content: "01";
       display: inline-block;
-      width: 32px;
+      width: 29px;
+      margin-right: 6px;
       color: var(--gold-dark);
-      font-size: 12px;
+      font-size: 11px;
+      content: "01";
     }
 
     .decision-list li:nth-child(2)::before {
@@ -493,138 +607,223 @@
       content: "03";
     }
 
-    .decision-list li:nth-child(4)::before {
-      content: "04";
-    }
-
     .panel-note {
       position: relative;
       z-index: 1;
-      margin: 18px 0 0;
-      color: rgba(255, 255, 255, 0.82);
+      margin: 17px 0 0;
+      color: rgba(255, 255, 255, 0.81);
       font-size: 13px;
     }
 
-    /* 共通カード */
-    .grid {
-      display: grid;
-      gap: 22px;
+    /* -------------------------------------------------------
+       Free vs Paid
+    ------------------------------------------------------- */
+
+    .bridge {
+      background: var(--white);
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
+    .bridge-intro {
+      max-width: 820px;
+      margin: 0 auto 38px;
+      text-align: center;
     }
 
-    .card {
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid rgba(49, 95, 85, 0.08);
-      border-radius: var(--radius-md);
-      box-shadow:
-        0 14px 38px rgba(23, 52, 46, 0.06);
-    }
-
-    .card-number {
-      display: block;
-      margin-bottom: 14px;
-      color: var(--gold-dark);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
+    .bridge-intro h2 {
+      margin: 0 0 16px;
       color: var(--brand-dark);
-      font-size: 20px;
-      line-height: 1.5;
+      font-size: clamp(29px, 4vw, 44px);
+      line-height: 1.4;
     }
 
-    .card p {
+    .bridge-intro p {
       margin: 0;
       color: var(--muted);
     }
 
-    /* ポジショニング */
-    .positioning {
-      background: #ffffff;
-    }
-
-    .positioning-box {
+    .comparison-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 46px;
-      align-items: center;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: stretch;
+      gap: 18px;
     }
 
-    .positioning-copy h2 {
-      margin: 0 0 18px;
-      color: var(--brand-dark);
-      font-size: clamp(29px, 4vw, 43px);
-      line-height: 1.4;
+    .comparison-card {
+      padding: 31px;
+      border-radius: var(--radius-lg);
     }
 
-    .positioning-copy p {
-      color: var(--muted);
+    .comparison-card.free {
+      background: #f3f5f4;
+      border: 1px solid var(--line);
     }
 
-    .compare-box {
-      display: grid;
-      gap: 14px;
-    }
-
-    .compare-item {
-      padding: 22px;
-      border-radius: var(--radius-md);
-    }
-
-    .compare-item.before {
-      color: var(--muted);
-      background: #f3f4f3;
-    }
-
-    .compare-item.after {
-      color: var(--brand-dark);
+    .comparison-card.paid {
       background: var(--brand-light);
-      border: 1px solid rgba(49, 95, 85, 0.15);
+      border: 1px solid rgba(49, 95, 85, 0.2);
+      box-shadow: var(--shadow-md);
     }
 
-    .compare-item small {
-      display: block;
-      margin-bottom: 6px;
+    .comparison-label {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
       font-weight: 900;
-      letter-spacing: 0.1em;
     }
 
-    .compare-item strong {
-      display: block;
-      font-size: 20px;
-      line-height: 1.6;
+    .free .comparison-label {
+      color: var(--muted);
+      background: var(--white);
     }
 
-    /* 成果物 */
-    .deliverables {
+    .paid .comparison-label {
+      color: var(--white);
+      background: var(--brand);
+    }
+
+    .comparison-card h3 {
+      margin: 0 0 13px;
+      color: var(--brand-dark);
+      font-size: 22px;
+      line-height: 1.55;
+    }
+
+    .comparison-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .comparison-card ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .comparison-card li {
+      position: relative;
+      padding: 7px 0 7px 27px;
+    }
+
+    .comparison-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .comparison-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .decision-definition {
+      max-width: 880px;
+      margin: 34px auto 0;
+      padding: 24px 28px;
+      color: var(--brand-dark);
+      background: var(--gold-light);
+      border: 1px solid rgba(183, 137, 67, 0.25);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    /* -------------------------------------------------------
+       Decision categories
+    ------------------------------------------------------- */
+
+    .decision-categories {
       background: var(--warm);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      padding: 29px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .category-icon {
+      display: grid;
+      width: 49px;
+      height: 49px;
+      margin-bottom: 17px;
+      place-items: center;
+      color: var(--white);
+      background: var(--brand);
+      border-radius: 50%;
+      font-weight: 900;
+    }
+
+    .category-card:nth-child(2) .category-icon {
+      background: var(--gold-dark);
+    }
+
+    .category-card:nth-child(3) .category-icon {
+      background: #53708a;
+    }
+
+    .category-card h3 {
+      margin: 0 0 10px;
+      color: var(--brand-dark);
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .category-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* -------------------------------------------------------
+       Deliverables
+    ------------------------------------------------------- */
+
+    .deliverables {
+      background: var(--white);
     }
 
     .deliverable-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-      margin-top: 30px;
     }
 
     .deliverable {
-      padding: 23px;
-      background: #ffffff;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 17px;
+      padding: 25px;
+      background: var(--background);
+      border: 1px solid var(--line);
       border-radius: var(--radius-md);
-      box-shadow:
-        0 12px 34px rgba(92, 67, 35, 0.06);
     }
 
-    .deliverable strong {
-      display: block;
-      margin-bottom: 7px;
+    .deliverable-number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: var(--white);
+      background: var(--brand);
+      border-radius: 50%;
+      font-weight: 900;
+    }
+
+    .deliverable h3 {
+      margin: 0 0 7px;
       color: var(--brand-dark);
       font-size: 18px;
     }
@@ -635,82 +834,299 @@
       font-size: 14px;
     }
 
-    .deliverable-icon {
-      display: inline-grid;
-      width: 40px;
-      height: 40px;
-      margin-bottom: 13px;
-      place-items: center;
-      color: #ffffff;
-      background: var(--brand);
-      border-radius: 50%;
-      font-weight: 900;
-    }
+    /* -------------------------------------------------------
+       Sample document
+    ------------------------------------------------------- */
 
-    /* 相談資料イメージ */
-    .sample-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sample-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .sample-visual {
-      min-height: 200px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .sample {
       background:
         linear-gradient(
           145deg,
           #edf3f0,
-          #ffffff
+          #f8f4ec
+        );
+    }
+
+    .sample-shell {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .sample-document {
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sample-document-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--brand);
+    }
+
+    .sample-document-header span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .sample-document-header strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--brand-dark);
+      font-size: 21px;
+    }
+
+    .sample-badge {
+      flex-shrink: 0;
+      padding: 7px 11px;
+      color: var(--brand-dark);
+      background: var(--gold-light);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .sample-table-wrap {
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+
+    .sample-table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .sample-table th,
+    .sample-table td {
+      padding: 13px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .sample-table th {
+      color: var(--brand-dark);
+      background: var(--brand-light);
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .status-change {
+      color: #934120;
+      background: #ffebe2;
+    }
+
+    .status-keep {
+      color: #1d6248;
+      background: #e3f3ec;
+    }
+
+    .status-check {
+      color: #315f7d;
+      background: #e9f2f7;
+    }
+
+    .sample-description {
+      padding: 30px;
+      color: var(--white);
+      background:
+        linear-gradient(
+          145deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+      border-radius: var(--radius-lg);
+    }
+
+    .sample-description h3 {
+      margin: 0 0 17px;
+      font-size: 26px;
+      line-height: 1.5;
+    }
+
+    .sample-description p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .sample-description ul {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sample-description li {
+      position: relative;
+      padding: 8px 0 8px 28px;
+    }
+
+    .sample-description li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #f1d39a;
+      font-weight: 900;
+    }
+
+    /* -------------------------------------------------------
+       Case studies
+    ------------------------------------------------------- */
+
+    .cases {
+      background: var(--white);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 21px;
+    }
+
+    .case-card {
+      overflow: hidden;
+      background: var(--background);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+    }
+
+    .case-image {
+      aspect-ratio: 16 / 10;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      color: var(--brand-dark);
+      background:
+        linear-gradient(
+          145deg,
+          var(--brand-light),
+          var(--gold-light)
         );
       border-bottom: 1px solid var(--line);
+      text-align: center;
     }
 
-    .sample-visual span {
+    .case-image strong {
       display: block;
-      color: var(--gold-dark);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
+      font-size: 18px;
     }
 
-    .sample-visual strong {
+    .case-image small {
       display: block;
-      margin-top: 10px;
-      color: var(--brand-dark);
-      font-size: 23px;
-      line-height: 1.45;
+      margin-top: 7px;
+      color: var(--muted);
     }
 
-    .sample-body {
+    .case-body {
       padding: 24px;
     }
 
-    .sample-body h3 {
-      margin: 0 0 8px;
+    .case-meta {
+      display: inline-block;
+      margin-bottom: 11px;
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
     }
 
-    .sample-body p {
+    .case-body h3 {
+      margin: 0 0 11px;
+      color: var(--brand-dark);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .case-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .placeholder-notice {
+      margin: 26px 0 0;
+      padding: 17px 20px;
+      color: var(--muted);
+      background: #f4f5f4;
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+    }
+
+    /* -------------------------------------------------------
+       Testimonials
+    ------------------------------------------------------- */
+
+    .testimonials {
+      background: var(--warm);
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .voice-card {
+      position: relative;
+      padding: 31px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .voice-card::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      color: var(--brand-light);
+      font-family: Georgia, serif;
+      font-size: 80px;
+      line-height: 1;
+    }
+
+    .voice-label {
+      display: inline-block;
+      margin-bottom: 13px;
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .voice-card h3 {
+      position: relative;
+      margin: 0 0 11px;
+      color: var(--brand-dark);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .voice-card p {
+      position: relative;
       margin: 0;
       color: var(--muted);
     }
 
-    .sample-note {
-      margin: 26px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
+    /* -------------------------------------------------------
+       Scope
+    ------------------------------------------------------- */
 
-    /* 対象範囲 */
     .scope {
-      background: #ffffff;
+      background: var(--white);
     }
 
     .scope-grid {
@@ -720,18 +1136,18 @@
     }
 
     .scope-box {
-      padding: 30px;
-      border-radius: var(--radius-md);
+      padding: 31px;
+      border-radius: var(--radius-lg);
     }
 
     .scope-box.included {
       background: var(--brand-light);
-      border: 1px solid rgba(49, 95, 85, 0.16);
+      border: 1px solid rgba(49, 95, 85, 0.17);
     }
 
     .scope-box.excluded {
-      background: #f5f5f4;
-      border: 1px solid #e5e7eb;
+      background: #f4f5f4;
+      border: 1px solid var(--line);
     }
 
     .scope-box h3 {
@@ -755,7 +1171,7 @@
       content: "✓";
       position: absolute;
       left: 0;
-      color: var(--brand);
+      color: var(--success);
       font-weight: 900;
     }
 
@@ -767,51 +1183,100 @@
       font-weight: 900;
     }
 
-    /* フロー */
+    /* -------------------------------------------------------
+       Flow
+    ------------------------------------------------------- */
+
+    .flow {
+      background: var(--background);
+    }
+
     .flow-grid {
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
-      counter-reset: flow;
+      gap: 18px;
+      counter-reset: step;
     }
 
     .flow-card {
       position: relative;
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
     }
 
     .flow-card::before {
-      counter-increment: flow;
-      content: "STEP " counter(flow);
+      counter-increment: step;
+      content: "STEP " counter(step);
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: var(--gold-dark);
       font-size: 12px;
       font-weight: 900;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
     }
 
-    /* 料金 */
+    .flow-card h3 {
+      margin: 0 0 9px;
+      color: var(--brand-dark);
+      font-size: 19px;
+    }
+
+    .flow-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .schedule-box {
+      max-width: 900px;
+      margin: 26px auto 0;
+      padding: 22px 25px;
+      color: var(--brand-dark);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .schedule-box strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .schedule-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* -------------------------------------------------------
+       Pricing
+    ------------------------------------------------------- */
+
     .pricing {
       background:
         linear-gradient(
           145deg,
-          #eef3f1,
-          #f8f4ec
+          #edf3f0,
+          #f8f2e8
         );
     }
 
     .price-card {
       position: relative;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 50px;
-      color: #ffffff;
+      padding: 52px;
+      color: var(--white);
       background:
         linear-gradient(
-          140deg,
-          var(--brand-dark),
+          145deg,
+          var(--brand-deep),
           var(--brand)
         );
       border-radius: 34px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-lg);
       text-align: center;
       overflow: hidden;
     }
@@ -819,11 +1284,11 @@
     .price-card::before {
       content: "";
       position: absolute;
-      top: -140px;
-      right: -140px;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      top: -150px;
+      right: -150px;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 50%;
     }
 
@@ -833,7 +1298,7 @@
     }
 
     .price-card .eyebrow {
-      color: #f1d49d;
+      color: #f1d49e;
     }
 
     .price-card h2 {
@@ -843,11 +1308,11 @@
     }
 
     .price {
-      margin: 18px 0 8px;
-      font-size: clamp(48px, 8vw, 76px);
+      margin: 18px 0 7px;
+      font-size: clamp(50px, 8vw, 76px);
       font-weight: 900;
+      letter-spacing: -0.035em;
       line-height: 1.1;
-      letter-spacing: -0.03em;
     }
 
     .price small {
@@ -856,75 +1321,113 @@
     }
 
     .price-sub {
-      margin: 0 0 30px;
-      color: rgba(255, 255, 255, 0.8);
+      margin: 0 0 29px;
+      color: rgba(255, 255, 255, 0.79);
     }
 
     .price-content {
-      max-width: 640px;
-      margin: 0 auto 30px;
-      padding: 24px;
+      max-width: 680px;
+      margin: 0 auto 29px;
+      padding: 25px;
       color: var(--brand-dark);
-      background: #ffffff;
+      background: var(--white);
       border-radius: var(--radius-md);
       text-align: left;
     }
 
     .price-content ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 22px;
       margin: 0;
-      padding-left: 1.4em;
+      padding: 0;
+      list-style: none;
     }
 
-    .price-content li + li {
-      margin-top: 6px;
+    .price-content li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .price-content li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .price-clarification {
+      max-width: 680px;
+      margin: 0 auto 25px;
+      padding: 15px 18px;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
     }
 
     .application-note {
       max-width: 680px;
-      margin: 18px auto 0;
-      color: rgba(255, 255, 255, 0.78);
+      margin: 17px auto 0;
+      color: rgba(255, 255, 255, 0.75);
       font-size: 12px;
     }
 
-    /* プロフィール */
+    /* -------------------------------------------------------
+       Profile
+    ------------------------------------------------------- */
+
     .profile {
-      background: #ffffff;
+      background: var(--white);
     }
 
     .profile-box {
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 42px;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 44px;
       align-items: center;
       padding: 38px;
       background: var(--background);
       border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
     }
 
-    .portrait-placeholder {
-      min-height: 360px;
+    .profile-photo {
+      min-height: 390px;
       display: grid;
       place-items: center;
-      padding: 30px;
+      overflow: hidden;
       color: var(--brand-dark);
       background:
         linear-gradient(
           145deg,
           var(--brand-light),
-          var(--warm)
+          var(--gold-light)
         );
-      border: 1px dashed rgba(49, 95, 85, 0.3);
-      border-radius: 22px;
+      border: 1px dashed rgba(49, 95, 85, 0.32);
+      border-radius: var(--radius-lg);
       text-align: center;
     }
 
-    .portrait-placeholder strong {
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+    }
+
+    .profile-placeholder {
+      padding: 30px;
+    }
+
+    .profile-placeholder strong {
       display: block;
       font-size: 20px;
     }
 
-    .portrait-placeholder span {
+    .profile-placeholder span {
       display: block;
       margin-top: 8px;
       color: var(--muted);
@@ -932,7 +1435,7 @@
     }
 
     .profile-copy h2 {
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--brand-dark);
       font-size: clamp(28px, 4vw, 41px);
       line-height: 1.4;
@@ -942,18 +1445,52 @@
       color: var(--muted);
     }
 
-    .credential {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 14px;
+    .profile-name {
+      margin: 18px 0 6px;
       color: var(--brand-dark);
-      background: var(--brand-light);
-      border-radius: 999px;
-      font-size: 13px;
+      font-size: 20px;
       font-weight: 900;
     }
 
-    /* FAQ */
+    .credential-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .credential-list li {
+      padding: 7px 13px;
+      color: var(--brand-dark);
+      background: var(--brand-light);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 19px;
+    }
+
+    .profile-links a {
+      color: var(--brand);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    /* -------------------------------------------------------
+       FAQ
+    ------------------------------------------------------- */
+
+    .faq {
+      background: var(--background);
+    }
+
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -961,8 +1498,8 @@
     }
 
     details {
-      padding: 20px 22px;
-      background: #ffffff;
+      padding: 21px 23px;
+      background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
     }
@@ -980,13 +1517,16 @@
       font-size: 14px;
     }
 
-    /* 最終CTA */
+    /* -------------------------------------------------------
+       Final CTA
+    ------------------------------------------------------- */
+
     .final-cta {
-      color: #ffffff;
+      color: var(--white);
       background:
         linear-gradient(
           145deg,
-          #153933,
+          #12362f,
           #315f55
         );
       text-align: center;
@@ -1000,15 +1540,22 @@
 
     .final-cta p {
       max-width: 720px;
-      margin: 0 auto 30px;
+      margin: 0 auto 29px;
       color: rgba(255, 255, 255, 0.82);
     }
 
-    /* フッター */
+    .final-cta .cta-microcopy {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* -------------------------------------------------------
+       Footer
+    ------------------------------------------------------- */
+
     .site-footer {
-      padding: 38px 0;
-      color: rgba(255, 255, 255, 0.8);
-      background: #102e29;
+      padding: 40px 0 100px;
+      color: rgba(255, 255, 255, 0.78);
+      background: #0f2d28;
       font-size: 13px;
     }
 
@@ -1020,7 +1567,7 @@
     }
 
     .footer-brand {
-      color: #ffffff;
+      color: var(--white);
       font-weight: 900;
       letter-spacing: 0.04em;
     }
@@ -1033,46 +1580,63 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.76);
     }
 
     .footer-links a:hover {
-      color: #ffffff;
+      color: var(--white);
     }
 
     .copyright {
       margin: 12px 0 0;
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.5);
     }
 
-    @media (max-width: 940px) {
+    /* -------------------------------------------------------
+       Mobile fixed CTA
+    ------------------------------------------------------- */
+
+    .mobile-fixed-cta {
+      display: none;
+    }
+
+    /* -------------------------------------------------------
+       Responsive
+    ------------------------------------------------------- */
+
+    @media (max-width: 980px) {
       .global-nav {
         display: none;
       }
 
       .hero-grid,
-      .positioning-box,
+      .sample-shell,
       .profile-box {
         grid-template-columns: 1fr;
       }
 
-      .grid-3,
-      .sample-grid {
+      .decision-panel {
+        max-width: 720px;
+      }
+
+      .category-grid,
+      .case-grid {
         grid-template-columns: 1fr;
       }
 
       .flow-grid {
         grid-template-columns: 1fr 1fr;
       }
-
-      .decision-panel {
-        max-width: 680px;
-      }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
+      body {
+        padding-bottom:
+          calc(82px + env(safe-area-inset-bottom));
+      }
+
       section {
-        padding: 64px 0;
+        padding: 66px 0;
       }
 
       .container,
@@ -1088,12 +1652,16 @@
         font-size: 14px;
       }
 
+      .brand-sub {
+        font-size: 10px;
+      }
+
       .hero {
-        padding: 62px 0 58px;
+        padding: 60px 0 56px;
       }
 
       .hero h1 {
-        font-size: clamp(36px, 10vw, 48px);
+        font-size: clamp(35px, 10vw, 47px);
       }
 
       .hero-lead {
@@ -1108,32 +1676,39 @@
         width: 100%;
       }
 
-      .decision-panel {
-        padding: 26px 20px;
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-arrow {
+        transform: rotate(90deg);
+        font-size: 29px;
       }
 
       .deliverable-list,
       .scope-grid,
       .flow-grid,
+      .voice-grid,
       .faq-grid {
         grid-template-columns: 1fr;
       }
 
       .price-card {
-        padding: 40px 20px;
+        padding: 42px 20px;
         border-radius: 26px;
       }
 
-      .price {
-        font-size: 51px;
+      .price-content ul {
+        grid-template-columns: 1fr;
       }
 
       .profile-box {
         padding: 22px;
       }
 
-      .portrait-placeholder {
-        min-height: 260px;
+      .profile-photo,
+      .profile-photo img {
+        min-height: 280px;
       }
 
       .footer-inner {
@@ -1142,6 +1717,51 @@
 
       .footer-links {
         justify-content: flex-start;
+      }
+
+      .mobile-fixed-cta {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 200;
+        display: block;
+        padding:
+          10px 14px
+          calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.97);
+        border-top: 1px solid var(--line);
+        box-shadow:
+          0 -8px 28px rgba(17, 47, 41, 0.12);
+      }
+
+      .mobile-fixed-cta-inner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .mobile-fixed-price {
+        flex: 0 0 auto;
+        color: var(--brand-dark);
+        line-height: 1.25;
+      }
+
+      .mobile-fixed-price strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      .mobile-fixed-price small {
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .mobile-fixed-cta .button {
+        min-height: 50px;
+        flex: 1;
+        padding: 11px 17px;
+        font-size: 13px;
       }
     }
 
@@ -1159,7 +1779,7 @@
     }
   </style>
 
-  <!-- 構造化データ：事業・サービス・料金 -->
+  <!-- 構造化データ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1180,7 +1800,7 @@
         "@id": "https://emy-renovation.github.io/madori-consulting/#service",
         "name": "建築士の間取りセカンドオピニオン",
         "serviceType": "オンライン間取り相談",
-        "description": "契約前・間取り確定前の図面を確認し、変更する場所、そのままでよい場所、建築会社への質問、ご家族で決める事項を整理するオンライン相談。",
+        "description": "契約前・間取り確定前の図面について、変更候補、現状維持、建築会社への確認事項、ご家族で決める事項を整理するオンライン相談。",
         "provider": {
           "@id": "https://emy-renovation.github.io/madori-consulting/#business"
         },
@@ -1192,7 +1812,6 @@
           "@type": "Offer",
           "price": "33000",
           "priceCurrency": "JPY",
-          "availability": "https://schema.org/InStock",
           "url": "https://emy-renovation.github.io/madori-consulting/"
         }
       }
@@ -1200,7 +1819,7 @@
   }
   </script>
 
-  <!-- 構造化データ：FAQ -->
+  <!-- FAQ構造化データ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1208,10 +1827,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "契約前でも相談できますか？",
+        "name": "無料診断との違いは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。契約前、設計打ち合わせ中、間取り確定前、着工前にご相談いただけます。変更期限が近い場合は、申込フォームに期限をご記入ください。"
+          "text": "無料診断では図面上で確認したい論点をお伝えします。個別相談では、ご家族の生活習慣、家具寸法、収納方法などを確認し、変更候補、現状維持、建築会社へ確認してから決める事項に分けて整理します。"
         }
       },
       {
@@ -1219,23 +1838,7 @@
         "name": "相談には何が含まれますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "間取り図と事前回答の確認、75分のオンライン相談、変更する場所、そのままでよい場所、建築会社への質問、ご家族で決める事項をまとめた判断整理シートが含まれます。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "3Dパースは料金に含まれますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "重点空間1か所の簡易3D確認が含まれます。作成に必要な寸法や資料が不足する場合は、家具配置や寸法を記載した2D資料など、判断に適した方法へ置き換えることがあります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "全国から相談できますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。Google Meetを使用するため、日本全国からオンラインでご相談いただけます。"
+          "text": "間取り図1案と事前回答の確認、75分のオンライン相談、変更候補、現状維持、建築会社への質問、ご家族で決める事項をまとめた判断整理シートが含まれます。"
         }
       },
       {
@@ -1243,7 +1846,15 @@
         "name": "フォーム送信後すぐに料金が発生しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "フォームの送信だけでは予約確定や決済にはなりません。相談内容と資料を確認後、対応可否、日程、決済方法をご案内します。"
+          "text": "フォームの送信だけでは料金は発生しません。資料と相談内容を確認後、対応可否、日程、お支払い方法をご案内します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "構造や耐震性も判断してもらえますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本サービスでは、構造、耐震、法規、施工可否を確定判断しません。必要な場合は、契約中の設計者、施工会社または該当分野の専門家へご確認ください。"
         }
       }
     ]
@@ -1255,6 +1866,27 @@
   <a class="skip-link" href="#main-content">
     本文へ移動
   </a>
+
+  <!-- 無料診断メール経由の場合のみJavaScriptで表示 -->
+  <div
+    id="diagnosis-banner"
+    class="diagnosis-banner"
+    role="status"
+  >
+    <div class="container diagnosis-banner-inner">
+      <span
+        class="diagnosis-banner-icon"
+        aria-hidden="true"
+      >
+        ✓
+      </span>
+
+      <span>
+        無料間取り診断をご利用いただいた方へ：
+        診断で見つかった確認点を、実際の判断につなげる個別相談です。
+      </span>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -1276,12 +1908,12 @@
         class="global-nav"
         aria-label="メインナビゲーション"
       >
-        <a href="#service">相談内容</a>
+        <a href="#difference">無料診断との違い</a>
         <a href="#deliverables">成果物</a>
+        <a href="#cases">相談事例</a>
         <a href="#scope">対象範囲</a>
-        <a href="#flow">相談の流れ</a>
         <a href="#price">料金</a>
-        <a href="#faq">よくある質問</a>
+        <a href="#faq">FAQ</a>
 
         <a
           class="header-cta js-apply-link"
@@ -1290,14 +1922,14 @@
           rel="noopener noreferrer"
           data-cta-location="header"
         >
-          申込内容を確認
+          対応可否を確認する
         </a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- ファーストビュー -->
+    <!-- Hero -->
     <section
       id="top"
       class="hero"
@@ -1308,40 +1940,48 @@
             二級建築士による第三者レビュー
           </div>
 
-          <h1>
-            契約前・間取り確定前に、<br />
-            <em>変更する場所</em>と<br />
-            そのままでよい場所を整理する。
+          <h1 id="hero-title">
+            無料診断で見つかった確認点を、<br>
+            <em>変更する・そのまま進める・</em><br>
+            確認してから決める、に整理します。
           </h1>
 
-          <p class="hero-lead">
-            建築会社の提案を否定するためではなく、
-            ご家族の暮らし方と図面を照らし合わせ、
-            次の打ち合わせで迷わず判断できる状態をつくります。
+          <p
+            id="hero-lead"
+            class="hero-lead"
+          >
+            図面だけでは判断できない生活習慣や家具寸法を確認し、
+            次回の打ち合わせで何を決め、何を建築会社へ聞くかを
+            具体的な形にまとめます。
           </p>
 
           <div class="button-row">
             <a
-              class="button button-primary js-apply-link"
+              class="button button-primary button-arrow js-apply-link"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
               target="_blank"
               rel="noopener noreferrer"
               data-cta-location="hero"
             >
-              相談内容を確認して申し込む
+              相談可能な日程と対応可否を確認する
             </a>
 
             <a
               class="button button-outline"
-              href="#service"
+              href="#difference"
             >
-              サービス内容を見る
+              無料診断との違いを見る
             </a>
           </div>
 
+          <p class="cta-microcopy">
+            フォーム送信だけでは料金は発生しません。
+            資料確認後、対応可否・日程・お支払い方法をご案内します。
+          </p>
+
           <ul class="hero-meta">
             <li>オンライン・全国対応</li>
-            <li>75分の個別相談</li>
+            <li>個別相談75分</li>
             <li>判断整理シート付き</li>
             <li>33,000円（税込）</li>
           </ul>
@@ -1349,154 +1989,174 @@
 
         <aside
           class="decision-panel"
-          aria-label="相談後に整理できること"
+          aria-label="個別相談で整理する判断"
         >
           <p class="decision-panel-label">
             AFTER CONSULTATION
           </p>
 
+          <h2>
+            相談後、確認点を3つの判断に分けます
+          </h2>
+
           <ul class="decision-list">
-            <li>優先して変更を検討する場所</li>
-            <li>現状のままでよい場所</li>
-            <li>建築会社へ確認する質問</li>
-            <li>ご家族で決めること</li>
+            <li>変更を検討する</li>
+            <li>現在の計画を活かす</li>
+            <li>建築会社へ確認してから決める</li>
           </ul>
 
           <p class="panel-note">
-            図面を直すことだけではなく、
-            「何を基準に決めるか」を整理する相談です。
+            すべてを変更するのではなく、
+            ご家族にとって必要性の高い判断から整理します。
           </p>
         </aside>
       </div>
     </section>
 
-    <!-- 悩み -->
-    <section id="problem">
+    <!-- Free/Paid difference -->
+    <section
+      id="difference"
+      class="bridge"
+    >
+      <div class="container">
+        <div class="bridge-intro">
+          <span class="eyebrow">
+            FROM CHECK TO DECISION
+          </span>
+
+          <h2>
+            無料診断は「確認点の発見」。<br>
+            個別相談は「判断の整理」です。
+          </h2>
+
+          <p>
+            無料診断で確認点が見つかっても、
+            その場所を変更すべきかどうかは、
+            図面だけでは決められないことがあります。
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <article class="comparison-card free">
+            <span class="comparison-label">
+              無料簡易診断
+            </span>
+
+            <h3>
+              図面上で確認したい論点を見つける
+            </h3>
+
+            <p>
+              ご提出いただいた図面とフォーム回答をもとに、
+              間取り確定前に優先して確認したい点を整理します。
+            </p>
+
+            <ul>
+              <li>図面上の良い点</li>
+              <li>優先して確認したい論点</li>
+              <li>建築会社への一次質問</li>
+            </ul>
+          </article>
+
+          <div
+            class="comparison-arrow"
+            aria-hidden="true"
+          >
+            →
+          </div>
+
+          <article class="comparison-card paid">
+            <span class="comparison-label">
+              有料個別相談
+            </span>
+
+            <h3>
+              暮らし方を確認し、次の判断へ進める
+            </h3>
+
+            <p>
+              ご家族の生活習慣、家具、収納方法、将来の変化を伺い、
+              見つかった論点を実際の判断へつなげます。
+            </p>
+
+            <ul>
+              <li>変更を検討する場所</li>
+              <li>現状のままでよい場所</li>
+              <li>建築会社へ確認してから決めること</li>
+              <li>ご家族で話し合うこと</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="decision-definition">
+          有料相談は、無料診断の「項目数を増やすサービス」ではありません。
+          図面上の確認点を、ご家族が判断できる状態へ進めるサービスです。
+        </div>
+      </div>
+    </section>
+
+    <!-- Three decisions -->
+    <section class="decision-categories">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">
-            FOR YOUR DECISION
+            THREE DECISIONS
           </span>
 
           <h2>
-            家づくりの期限が近いのに、<br />
-            判断材料が足りていない方へ
+            不安な場所を、すべて直す必要はありません
           </h2>
 
           <p>
-            忙しい中で大量の図面や仕様を確認し、
-            ご家族の意見までまとめるのは簡単ではありません。
-            この相談では、優先順位を絞って整理します。
+            今の計画を活かせる部分も含めて、
+            次の3つに分けることで判断しやすくします。
           </p>
         </div>
 
-        <div class="grid grid-3">
-          <article class="card">
-            <span class="card-number">01</span>
-            <h3>変更期限が近い</h3>
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="category-icon">1</span>
+
+            <h3>
+              変更を検討する
+            </h3>
+
             <p>
-              次の打ち合わせや間取り確定日までに、
-              どこを優先して確認すべきか分からない。
+              後から変更しにくい場所や、
+              毎日の暮らしへの影響が大きい場所を優先します。
             </p>
           </article>
 
-          <article class="card">
-            <span class="card-number">02</span>
-            <h3>建築会社へ何を聞けばよいか分からない</h3>
+          <article class="category-card">
+            <span class="category-icon">2</span>
+
+            <h3>
+              現在の計画を活かす
+            </h3>
+
             <p>
-              気になる点はあるものの、
-              質問の仕方や判断基準を整理できていない。
+              不安だから変えるのではなく、
+              ご家族の暮らし方に合っている部分はそのまま活かします。
             </p>
           </article>
 
-          <article class="card">
-            <span class="card-number">03</span>
-            <h3>ご家族の意見がまとまらない</h3>
-            <p>
-              動線、収納、広さ、内装など、
-              それぞれの希望に優先順位を付けられない。
-            </p>
-          </article>
+          <article class="category-card">
+            <span class="category-icon">3</span>
 
-          <article class="card">
-            <span class="card-number">04</span>
-            <h3>家具を置いた状態が想像できない</h3>
-            <p>
-              平面図だけでは、
-              通路幅や圧迫感、家具同士の関係を判断しにくい。
-            </p>
-          </article>
+            <h3>
+              確認してから決める
+            </h3>
 
-          <article class="card">
-            <span class="card-number">05</span>
-            <h3>変更しすぎて予算を増やしたくない</h3>
             <p>
-              不安だからすべて変えるのではなく、
-              必要性の高い変更だけを検討したい。
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-number">06</span>
-            <h3>第三者の意見を確認したい</h3>
-            <p>
-              建築会社との関係を損なわず、
-              別の建築士の視点で論点を整理したい。
+              寸法・仕様・構造上の条件など、
+              建築会社の回答が必要なことを具体的な質問にします。
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- サービスの役割 -->
-    <section
-      id="service"
-      class="positioning"
-    >
-      <div class="container positioning-box">
-        <div class="positioning-copy">
-          <span class="eyebrow">
-            SECOND OPINION
-          </span>
-
-          <h2>
-            図面の採点ではなく、<br />
-            家づくりの意思決定を支援します
-          </h2>
-
-          <p>
-            良い間取りか悪い間取りかを一方的に判定するサービスではありません。
-            ご家族の生活習慣、家具、収納量、将来の変化を確認し、
-            今の計画で優先して判断すべきことを整理します。
-          </p>
-
-          <p>
-            必要に応じて重点空間を簡易3Dで確認し、
-            平面図だけでは分かりにくい家具配置や空間の見え方を補助します。
-          </p>
-        </div>
-
-        <div class="compare-box">
-          <div class="compare-item before">
-            <small>BEFORE</small>
-            <strong>
-              気になる場所が多く、
-              何から建築会社へ確認すればよいか分からない
-            </strong>
-          </div>
-
-          <div class="compare-item after">
-            <small>AFTER</small>
-            <strong>
-              変更候補と確認事項に優先順位が付き、
-              次の打ち合わせで話す内容が明確になる
-            </strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 成果物 -->
+    <!-- Deliverables -->
     <section
       id="deliverables"
       class="deliverables"
@@ -1508,155 +2168,398 @@
           </span>
 
           <h2>
-            相談後に持ち帰れるもの
+            相談後に持ち帰れる判断材料
           </h2>
 
           <p>
-            その場で話して終わるのではなく、
-            建築会社との打ち合わせに使える形で判断材料を整理します。
+            75分話して終わるのではなく、
+            次回の建築打ち合わせに使える形で整理します。
           </p>
         </div>
 
         <div class="deliverable-list">
           <article class="deliverable">
-            <span class="deliverable-icon">1</span>
-            <strong>優先して見直す場所</strong>
-            <p>
-              後から変更しにくい場所や、
-              暮らしへの影響が大きい場所を優先して整理します。
-            </p>
+            <span class="deliverable-number">1</span>
+
+            <div>
+              <h3>優先順位付きレビュー</h3>
+
+              <p>
+                暮らしへの影響と変更のしにくさを踏まえ、
+                優先して考える場所を整理します。
+              </p>
+            </div>
           </article>
 
           <article class="deliverable">
-            <span class="deliverable-icon">2</span>
-            <strong>現状のままでよい場所</strong>
-            <p>
-              不安だからすべて変更するのではなく、
-              今の計画を活かせる部分も明確にします。
-            </p>
+            <span class="deliverable-number">2</span>
+
+            <div>
+              <h3>現状のままでよい場所</h3>
+
+              <p>
+                変更する必要性が低い場所や、
+                今の計画を活かせる理由を整理します。
+              </p>
+            </div>
           </article>
 
           <article class="deliverable">
-            <span class="deliverable-icon">3</span>
-            <strong>建築会社への質問</strong>
-            <p>
-              寸法、仕様、使い方など、
-              次の打ち合わせで確認する質問を整理します。
-            </p>
+            <span class="deliverable-number">3</span>
+
+            <div>
+              <h3>建築会社への質問リスト</h3>
+
+              <p>
+                寸法・仕様・家具配置など、
+                次回の打ち合わせで確認する質問にまとめます。
+              </p>
+            </div>
           </article>
 
           <article class="deliverable">
-            <span class="deliverable-icon">4</span>
-            <strong>ご家族で決めること</strong>
-            <p>
-              専門家では決められない、
-              暮らし方や優先順位に関する論点を分けて整理します。
-            </p>
+            <span class="deliverable-number">4</span>
+
+            <div>
+              <h3>ご家族で決めること</h3>
+
+              <p>
+                専門家だけでは決められない生活習慣や
+                優先順位を話し合う項目に分けます。
+              </p>
+            </div>
           </article>
 
           <article class="deliverable">
-            <span class="deliverable-icon">5</span>
-            <strong>判断整理シート</strong>
-            <p>
-              相談内容を、
-              変更候補・確認事項・家族で決めることに分けてお渡しします。
-            </p>
+            <span class="deliverable-number">5</span>
+
+            <div>
+              <h3>判断整理シート</h3>
+
+              <p>
+                相談内容を、変更候補・現状維持・要確認・
+                家族で決めることに分類してお渡しします。
+              </p>
+            </div>
           </article>
 
           <article class="deliverable">
-            <span class="deliverable-icon">6</span>
-            <strong>重点空間の簡易3D確認</strong>
-            <p>
-              重点空間1か所について、
-              家具配置や空間の見え方を簡易的に確認します。
-            </p>
+            <span class="deliverable-number">6</span>
+
+            <div>
+              <h3>重点空間の視覚確認資料</h3>
+
+              <p>
+                必要に応じて、重点空間1か所を簡易3Dまたは
+                2D家具配置資料で確認します。
+              </p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 提案イメージ -->
-    <section id="sample">
+    <!-- Sample -->
+    <section
+      id="sample"
+      class="sample"
+    >
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">
-            CONSULTATION POINTS
+            SAMPLE DOCUMENT
           </span>
 
           <h2>
-            相談で整理するポイント
+            判断整理シートのイメージ
           </h2>
 
           <p>
-            見た目の美しさだけでなく、
-            毎日の使いやすさと判断の優先順位を確認します。
+            漠然とした不安を、
+            「何を判断し、次に何をするか」が分かる形へ変換します。
           </p>
         </div>
 
-        <div class="grid sample-grid">
-          <article class="card sample-card">
-            <div class="sample-visual">
-              <span>LAYOUT & FLOW</span>
-              <strong>
-                家具配置と<br />
-                生活動線
-              </strong>
+        <div class="sample-shell">
+          <div class="sample-document">
+            <div class="sample-document-header">
+              <div>
+                <span>BETTER HOME DESIGN</span>
+                <strong>間取り判断整理シート</strong>
+              </div>
+
+              <span class="sample-badge">
+                説明用サンプル
+              </span>
             </div>
 
-            <div class="sample-body">
-              <h3>家具を置いた後の通路</h3>
-              <p>
-                ソファやダイニングを置いた状態で、
-                家族の移動や椅子の出し引きが重ならないか確認します。
-              </p>
-            </div>
-          </article>
+            <div class="sample-table-wrap">
+              <table class="sample-table">
+                <thead>
+                  <tr>
+                    <th>判断</th>
+                    <th>確認内容</th>
+                    <th>判断理由</th>
+                    <th>次の行動</th>
+                  </tr>
+                </thead>
 
-          <article class="card sample-card">
-            <div class="sample-visual">
-              <span>STORAGE</span>
-              <strong>
-                収納場所と<br />
-                使う場所の関係
-              </strong>
-            </div>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="status status-change">
+                        変更を検討
+                      </span>
+                    </td>
 
-            <div class="sample-body">
-              <h3>収納量だけでなく位置を確認</h3>
-              <p>
-                何をどこで使い、どこへ戻すのかを確認し、
-                日常的に片づけやすい配置か整理します。
-              </p>
-            </div>
-          </article>
+                    <td>
+                      洗濯場所と衣類収納の関係
+                    </td>
 
-          <article class="card sample-card">
-            <div class="sample-visual">
-              <span>QUESTIONS</span>
-              <strong>
-                建築会社への<br />
-                確認事項
-              </strong>
-            </div>
+                    <td>
+                      洗濯頻度と収納方法によって、
+                      毎日の移動が増える可能性がある
+                    </td>
 
-            <div class="sample-body">
-              <h3>打ち合わせで質問できる形へ</h3>
-              <p>
-                漠然とした不安を、
-                寸法や仕様を確認する具体的な質問へ置き換えます。
-              </p>
+                    <td>
+                      家族の洗濯方法を確認し、
+                      収納位置の変更可否を相談
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="status status-keep">
+                        現状維持
+                      </span>
+                    </td>
+
+                    <td>
+                      キッチンとダイニングの配置
+                    </td>
+
+                    <td>
+                      配膳方法と予定家具を踏まえると、
+                      現在の配置を活かせる
+                    </td>
+
+                    <td>
+                      予定家具の寸法だけ図面へ反映
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="status status-check">
+                        要確認
+                      </span>
+                    </td>
+
+                    <td>
+                      ダイニング周辺の通路
+                    </td>
+
+                    <td>
+                      図面だけでは家具設置後の
+                      有効寸法を確定できない
+                    </td>
+
+                    <td>
+                      建築会社へ家具寸法入り図面を依頼
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </article>
+          </div>
+
+          <aside class="sample-description">
+            <h3>
+              「気になる」で終わらず、<br>
+              次の行動まで整理します
+            </h3>
+
+            <p>
+              判断整理シートは、建築会社の設計を否定する資料ではありません。
+              ご家族が次の打ち合わせで確認し、納得して決めるための資料です。
+            </p>
+
+            <ul>
+              <li>相談内容を後から見直せる</li>
+              <li>夫婦・家族で共有できる</li>
+              <li>建築会社へ質問しやすくなる</li>
+              <li>変更しない判断にも理由を持てる</li>
+            </ul>
+          </aside>
         </div>
 
-        <p class="sample-note">
-          ※上記は相談内容の説明イメージです。
-          実際の確認項目は、ご提出資料とご家族の状況により異なります。
+        <p class="section-note">
+          ※上記はサービス説明用の架空サンプルです。
+          実際の内容は、ご提出資料とご家族の状況により異なります。
         </p>
       </div>
     </section>
 
-    <!-- 対象範囲 -->
+    <!-- Case studies -->
+    <section
+      id="cases"
+      class="cases"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            CASE STUDIES
+          </span>
+
+          <h2>
+            間取り相談の事例
+          </h2>
+
+          <p>
+            実際の事例を掲載する際は、
+            個人情報を除き、相談者の許可を得た内容へ差し替えてください。
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-image">
+              <div>
+                <strong>事例画像を掲載</strong>
+                <small>コメント入り図面など</small>
+              </div>
+            </div>
+
+            <div class="case-body">
+              <span class="case-meta">
+                CASE 01｜ここに家族構成・相談時期
+              </span>
+
+              <h3>
+                ここに相談前の悩みを記載
+              </h3>
+
+              <p>
+                無料診断で見つかった論点、個別相談で確認した暮らし方、
+                変更した場所・変更しなかった場所を記載します。
+              </p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-image">
+              <div>
+                <strong>事例画像を掲載</strong>
+                <small>家具配置資料など</small>
+              </div>
+            </div>
+
+            <div class="case-body">
+              <span class="case-meta">
+                CASE 02｜ここに住宅タイプ・決定期限
+              </span>
+
+              <h3>
+                ここに相談後に整理できたことを記載
+              </h3>
+
+              <p>
+                すべて変更した事例ではなく、
+                現状を活かした判断も含めるとサービスの特徴が伝わります。
+              </p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-image">
+              <div>
+                <strong>事例画像を掲載</strong>
+                <small>簡易3D・2D資料など</small>
+              </div>
+            </div>
+
+            <div class="case-body">
+              <span class="case-meta">
+                CASE 03｜ここに相談テーマ
+              </span>
+
+              <h3>
+                ここに次回打ち合わせでできたことを記載
+              </h3>
+
+              <p>
+                「建築会社へ何を質問できたか」
+                「家族で何を決められたか」まで記載すると効果的です。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="placeholder-notice">
+          <strong>編集時の注意：</strong>
+          架空の案件を実績として掲載しないでください。
+          公開許可を得た実案件、または「説明用の架空事例」と明示したサンプルへ差し替えます。
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            CLIENT VOICE
+          </span>
+
+          <h2>
+            ご相談者の声
+          </h2>
+
+          <p>
+            公開許可を得た感想へ差し替えるためのスペースです。
+          </p>
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card">
+            <span class="voice-label">
+              お客様の声 01
+            </span>
+
+            <h3>
+              相談前に何で迷っていたかを記載
+            </h3>
+
+            <p>
+              ここに実際の感想を掲載します。
+              「相談前の悩み」「整理できたこと」
+              「次の打ち合わせでできたこと」を含めると伝わりやすくなります。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <span class="voice-label">
+              お客様の声 02
+            </span>
+
+            <h3>
+              相談後にどの判断ができたかを記載
+            </h3>
+
+            <p>
+              短い「安心しました」だけでなく、
+              何を変更し、何を変更しなかったかが分かる感想を掲載します。
+            </p>
+          </article>
+        </div>
+
+        <p class="section-note">
+          ※実際のお客様の声へ差し替えるまで、このセクションは非公開にしても問題ありません。
+        </p>
+      </div>
+    </section>
+
+       <!-- Scope -->
     <section
       id="scope"
       class="scope"
@@ -1679,42 +2582,118 @@
 
         <div class="scope-grid">
           <article class="scope-box included">
-            <h3>相談に含まれること</h3>
+            <h3>
+              相談に含まれること
+            </h3>
 
             <ul class="scope-list">
-              <li>戸建住宅またはマンション1住戸</li>
-              <li>間取り図1案の事前確認</li>
-              <li>オンライン個別相談75分</li>
-              <li>優先確認項目3項目程度の整理</li>
-              <li>重点空間1か所の簡易3D確認</li>
-              <li>建築会社への質問整理</li>
-              <li>相談後の判断整理シート</li>
+              <li>
+                戸建住宅またはマンション1住戸
+              </li>
+
+              <li>
+                現在検討中の間取り図1案の事前確認
+              </li>
+
+              <li>
+                事前ヒアリング内容の確認
+              </li>
+
+              <li>
+                Google Meetによる75分の個別相談
+              </li>
+
+              <li>
+                主要動線・収納・家具配置の横断確認
+              </li>
+
+              <li>
+                変更候補・現状維持・要確認事項の分類
+              </li>
+
+              <li>
+                建築会社へ確認する質問の整理
+              </li>
+
+              <li>
+                ご家族で決める事項の整理
+              </li>
+
+              <li>
+                相談後の判断整理シート
+              </li>
+
+              <li>
+                重点空間の視覚確認資料
+              </li>
             </ul>
           </article>
 
           <article class="scope-box excluded">
-            <h3>相談に含まれないこと</h3>
+            <h3>
+              相談に含まれないこと
+            </h3>
 
             <ul class="scope-list">
-              <li>構造・耐震・法規の確定判断</li>
-              <li>確認申請や設計図書の作成</li>
-              <li>施工可否・性能・工事品質の保証</li>
-              <li>建物全体の詳細CG制作</li>
-              <li>詳細な実施設計や施工図作成</li>
-              <li>建築会社との代理交渉</li>
-              <li>複数案の全面的な設計比較</li>
+              <li>
+                構造・耐震・法規の確定判断
+              </li>
+
+              <li>
+                確認申請や設計図書の作成
+              </li>
+
+              <li>
+                施工可否・性能・工事品質の保証
+              </li>
+
+              <li>
+                詳細な実施設計や施工図の作成
+              </li>
+
+              <li>
+                複数案の全面的な設計比較
+              </li>
+
+              <li>
+                建物全体の詳細CG・完成予想図制作
+              </li>
+
+              <li>
+                建築会社との代理交渉
+              </li>
+
+              <li>
+                設計変更後の最終承認・適法性の保証
+              </li>
+
+              <li>
+                工事費用・追加費用の確定
+              </li>
+
+              <li>
+                現地調査を必要とする確定判断
+              </li>
             </ul>
           </article>
         </div>
+
+        <p class="section-note">
+          ※設計内容・変更可否・法規・構造・施工方法については、
+          契約中の設計者または施工会社へ最終確認をお願いいたします。
+        </p>
       </div>
     </section>
 
-    <!-- 相談の流れ -->
-    <section id="flow">
+    <!-- Flow -->
+    <section
+      id="flow"
+      class="flow"
+    >
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">
-            FLOW
+            CONSULTATION FLOW
           </span>
 
           <h2>
@@ -1722,48 +2701,72 @@
           </h2>
 
           <p>
-            申込フォームの送信だけでは、
-            予約確定や決済完了にはなりません。
+            フォーム送信だけでは予約確定や決済にはなりません。
+            ご提出内容を確認してから、対応可否をご案内します。
           </p>
         </div>
 
-        <div class="grid flow-grid">
-          <article class="card flow-card">
-            <h3>申込フォーム</h3>
+        <div class="flow-grid">
+          <article class="flow-card">
+            <h3>
+              申込フォーム
+            </h3>
+
             <p>
-              現在の状況、決定期限、
-              気になる点をご入力ください。
+              現在の状況、決定期限、気になっている点、
+              ご希望の相談時期をご入力ください。
             </p>
           </article>
 
-          <article class="card flow-card">
-            <h3>内容・資料確認</h3>
+          <article class="flow-card">
+            <h3>
+              資料・内容確認
+            </h3>
+
             <p>
-              図面と相談内容を確認し、
-              対応可否をご連絡します。
+              間取り図と相談内容を確認し、
+              サービスの対象範囲で対応可能か判断します。
             </p>
           </article>
 
-          <article class="card flow-card">
-            <h3>日程・決済</h3>
+          <article class="flow-card">
+            <h3>
+              日程・お支払い
+            </h3>
+
             <p>
-              相談日程と決済方法をご案内します。
-              決済完了後に予約確定となります。
+              対応可能な場合は、相談日程、利用条件、
+              お支払い方法をご案内します。
             </p>
           </article>
 
-          <article class="card flow-card">
-            <h3>オンライン相談</h3>
+          <article class="flow-card">
+            <h3>
+              オンライン相談
+            </h3>
+
             <p>
               Google Meetで75分間、
-              判断事項と優先順位を整理します。
+              暮らし方と図面を照らし合わせて判断を整理します。
             </p>
           </article>
+        </div>
+
+        <div class="schedule-box">
+          <strong>
+            相談後について
+          </strong>
+
+          <p>
+            相談内容を「変更候補・現状維持・建築会社への確認・
+            ご家族で決めること」に分類した判断整理シートをお送りします。
+            納品時期は、実際に対応可能な日数へ書き換えてください。
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- 料金 -->
+    <!-- Pricing -->
     <section
       id="price"
       class="pricing"
@@ -1775,7 +2778,7 @@
           </span>
 
           <h2>
-            建築士の間取り<br />
+            建築士の間取り<br>
             セカンドオピニオン
           </h2>
 
@@ -1790,102 +2793,192 @@
 
           <div class="price-content">
             <ul>
-              <li>間取り図1案・事前回答の確認</li>
-              <li>Google Meetによる個別相談75分</li>
-              <li>変更候補と優先順位の整理</li>
-              <li>現状のままでよい場所の整理</li>
-              <li>建築会社への質問整理</li>
-              <li>ご家族で決める事項の整理</li>
-              <li>相談後の判断整理シート</li>
-              <li>重点空間1か所の簡易3D確認</li>
+              <li>
+                間取り図1案の事前確認
+              </li>
+
+              <li>
+                事前ヒアリング内容の確認
+              </li>
+
+              <li>
+                オンライン個別相談75分
+              </li>
+
+              <li>
+                変更候補の優先順位整理
+              </li>
+
+              <li>
+                現状維持できる場所の整理
+              </li>
+
+              <li>
+                建築会社への質問整理
+              </li>
+
+              <li>
+                ご家族で決める事項の整理
+              </li>
+
+              <li>
+                判断整理シートの作成
+              </li>
+
+              <li>
+                重点空間の視覚確認資料
+              </li>
+
+              <li>
+                次回打ち合わせへの行動整理
+              </li>
             </ul>
           </div>
 
+          <div class="price-clarification">
+            重点空間の視覚確認資料は、相談内容とご提出資料に応じて、
+            簡易3Dまたは2D家具配置資料のうち、
+            判断に適した方法で作成します。
+          </div>
+
           <a
-            class="button button-light js-apply-link"
+            class="button button-light button-arrow js-apply-link"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
             target="_blank"
             rel="noopener noreferrer"
             data-cta-location="price"
           >
-            相談内容を確認して申し込む
+            図面を提出して対応可否を確認する
           </a>
 
           <p class="application-note">
-            フォーム送信時点では料金は発生しません。
-            ご提出内容を確認後、対応可否・日程・決済方法をご案内します。
+            フォーム入力の目安は約5〜10分です。<br>
+            フォーム送信だけでは料金は発生しません。
+            資料確認後、対応可否・日程・利用条件・お支払い方法をご案内します。
           </p>
         </div>
       </div>
     </section>
 
-    <!-- プロフィール -->
-    <section class="profile">
+    <!-- Profile -->
+    <section
+      id="profile"
+      class="profile"
+    >
       <div class="container">
         <div class="profile-box">
-          <!--
-            公開前推奨：
-            このブロックを本人写真へ差し替えてください。
+          <div class="profile-photo">
+            <!--
+              公開前に以下のプレースホルダーを削除し、
+              本人写真へ差し替えてください。
 
-            例：
-            <img
-              src="assets/profile.jpg"
-              width="800"
-              height="800"
-              alt="BETTER HOME DESIGN 二級建築士のプロフィール写真"
-              loading="lazy"
-            />
-          -->
-          <div class="portrait-placeholder">
-            <div>
+              推奨例：
+
+              <img
+                src="assets/profile.jpg"
+                width="800"
+                height="1000"
+                alt="BETTER HOME DESIGN 代表・二級建築士のプロフィール写真"
+                loading="lazy"
+              >
+            -->
+
+            <div class="profile-placeholder">
               <strong>
-                本人写真へ差し替え
+                本人写真を掲載
               </strong>
 
               <span>
-                顔写真または図面を確認している仕事風景を推奨
+                顔が分かる自然な写真、または図面を確認している仕事風景
               </span>
             </div>
           </div>
 
           <div class="profile-copy">
             <span class="eyebrow">
-              PROFILE
+              ARCHITECT PROFILE
             </span>
 
             <h2>
-              図面を直す前に、<br />
+              図面を直す前に、<br>
               判断の軸を一緒に整理します
             </h2>
 
+            <!--
+              以下は公開前に本人の事実に基づく内容へ
+              必ず書き換えてください。
+            -->
+
             <p>
-              家づくりでは、選択肢が多いほど、
-              「何を優先し、どこまで変更するか」が分からなくなることがあります。
+              ここに、ご自身が住宅やリノベーションに携わってきた経歴、
+              得意な相談分野、このサービスを始めた理由を記載します。
             </p>
 
             <p>
-              このサービスでは、建築会社の提案を一方的に否定せず、
-              第三者の建築士として、
-              ご家族の暮らし方と図面を照らし合わせます。
+              肩書きだけではなく、
+              「どのような施主の、どのような迷いを支援したいのか」を
+              ご自身の言葉で書くと信頼につながります。
             </p>
 
             <p>
-              すべてを変更するのではなく、
-              見直す場所、今のままでよい場所、
-              建築会社へ確認することを分け、
-              次の打ち合わせで判断できる状態を目指します。
+              建築会社の提案を一方的に否定するのではなく、
+              ご家族の暮らし方と図面を照らし合わせ、
+              納得して次の打ち合わせへ進める状態を目指します。
             </p>
 
-            <span class="credential">
-              BETTER HOME DESIGN｜二級建築士
-            </span>
+            <div class="profile-name">
+              ここに氏名または活動名
+            </div>
+
+            <div>
+              BETTER HOME DESIGN 代表
+            </div>
+
+            <ul class="credential-list">
+              <li>二級建築士</li>
+              <li>ここに実務分野</li>
+              <li>オンライン全国対応</li>
+            </ul>
+
+            <div class="profile-links">
+              <!-- 実際のURLへ変更してください -->
+              <a
+                href="#"
+                aria-label="Instagramを見る"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="#"
+                aria-label="noteを見る"
+              >
+                note
+              </a>
+
+              <a
+                href="#cases"
+              >
+                相談事例
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div class="placeholder-notice">
+          <strong>公開前の必須作業：</strong>
+          本人写真、氏名または活動名、資格、経歴、SNSリンクを
+          実際の内容へ差し替えてください。
+          プレースホルダーのまま公開すると、申込率と信用を大きく損ないます。
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
+    <section
+      id="faq"
+      class="faq"
+    >
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">
@@ -1895,18 +2988,62 @@
           <h2>
             よくある質問
           </h2>
+
+          <p>
+            申し込み前に気になりやすい点をまとめています。
+          </p>
         </div>
 
         <div class="faq-grid">
+          <details>
+            <summary>
+              無料診断との違いは何ですか？
+            </summary>
+
+            <p>
+              無料診断では、図面上で優先して確認したい論点をお伝えします。
+              個別相談では、ご家族の生活習慣、家具寸法、収納方法、
+              将来の変化などを確認し、
+              「変更候補」「現状維持」「建築会社へ確認してから決める」
+              に分けて判断を整理します。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              相談すれば間取りを描き直してもらえますか？
+            </summary>
+
+            <p>
+              本サービスは、間取り全体の新規設計や
+              詳細図面の作成を目的としたものではありません。
+              現在の計画について、優先して見直す場所、
+              現状を活かせる場所、建築会社へ確認する事項を整理します。
+            </p>
+          </details>
+
           <details>
             <summary>
               契約前でも相談できますか？
             </summary>
 
             <p>
-              はい。契約前、設計打ち合わせ中、
-              間取り確定前、着工前にご相談いただけます。
-              変更期限が近い場合は、申込フォームに期限をご記入ください。
+              はい。契約前、設計打ち合わせ中、間取り確定前、
+              着工前の方を主な対象としています。
+              変更期限が近い場合は、申込フォームへ期限をご記入ください。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              どのような図面が必要ですか？
+            </summary>
+
+            <p>
+              現在検討中の間取り図1案をご提出ください。
+              寸法、建具、窓、設備、方位などが確認できる図面が望ましいですが、
+              資料の状態により判断できる範囲が変わります。
+              氏名や住所は、可能な範囲でマスキングしていただけます。
             </p>
           </details>
 
@@ -1917,45 +3054,21 @@
 
             <p>
               間取り図と事前回答の確認、75分のオンライン相談、
-              変更する場所、そのままでよい場所、
-              建築会社への質問、ご家族で決める事項をまとめた
-              判断整理シートが含まれます。
+              変更候補、現状維持、建築会社への質問、
+              ご家族で決める事項をまとめた判断整理シートが含まれます。
             </p>
           </details>
 
           <details>
             <summary>
-              3Dパースは料金に含まれますか？
+              簡易3Dは必ず作成されますか？
             </summary>
 
             <p>
-              重点空間1か所の簡易3D確認が含まれます。
-              作成に必要な寸法や資料が不足する場合は、
-              家具配置や寸法を記載した2D資料など、
-              判断に適した方法へ置き換えることがあります。
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              詳細なCGパースを作ってもらえますか？
-            </summary>
-
-            <p>
-              本サービスの簡易3Dは、
-              家具配置や空間の関係を確認するためのものです。
-              建物全体の詳細CGや販売用パースは料金に含まれません。
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              スマートフォンから参加できますか？
-            </summary>
-
-            <p>
-              参加できます。ただし、図面や確認資料を共有するため、
-              パソコンまたはタブレットでの参加を推奨しています。
+              重点空間の確認が必要な場合は、
+              ご提出資料と相談内容に応じて、
+              簡易3Dまたは2D家具配置資料を作成します。
+              詳細CGや建物全体の完成予想図は含まれません。
             </p>
           </details>
 
@@ -1965,8 +3078,9 @@
             </summary>
 
             <p>
-              はい。Google Meetを使用するため、
+              はい。Google Meetを利用するため、
               日本全国からオンラインでご相談いただけます。
+              図面共有のため、パソコンまたはタブレットでの参加を推奨します。
             </p>
           </details>
 
@@ -1976,33 +3090,10 @@
             </summary>
 
             <p>
-              はい。建築会社を否定する表現ではなく、
-              寸法、仕様、使い方などを確認する質問として整理します。
-              代理交渉はサービスに含まれません。
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              フォーム送信後、すぐ料金が発生しますか？
-            </summary>
-
-            <p>
-              いいえ。フォーム送信だけでは予約確定・決済完了にはなりません。
-              相談内容と資料を確認後、
-              対応可否、日程、決済方法をご案内します。
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              日程変更やキャンセル条件はどこで確認できますか？
-            </summary>
-
-            <p>
-              お支払い前に、
-              日程変更・キャンセル・返金条件を含む利用条件をご案内します。
-              内容をご確認いただいた後に決済へ進みます。
+              はい。建築会社の提案を否定する表現ではなく、
+              寸法、仕様、家具配置、使い方などを確認する
+              具体的な質問へ整理します。
+              建築会社との代理交渉は含まれません。
             </p>
           </details>
 
@@ -2012,42 +3103,92 @@
             </summary>
 
             <p>
-              本サービスでは、構造・耐震・法規・施工可否を確定判断しません。
-              必要な場合は、契約中の設計者・施工会社や、
+              本サービスでは、構造・耐震・法規・断熱性能・
+              施工可否を確定判断しません。
+              必要な場合は、契約中の設計者・施工会社または
               対応可能な専門家へご確認ください。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              フォーム送信後、すぐに料金が発生しますか？
+            </summary>
+
+            <p>
+              いいえ。フォーム送信だけでは予約確定や決済にはなりません。
+              資料と相談内容を確認後、
+              対応可否、日程、利用条件、お支払い方法をご案内します。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              相談を断られることはありますか？
+            </summary>
+
+            <p>
+              ご相談内容がサービスの対象範囲外である場合、
+              決定期限までに十分な対応時間を確保できない場合、
+              必要資料が不足している場合などは、
+              対応できないことがあります。
+              その場合、フォーム送信による料金は発生しません。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              キャンセルや日程変更はできますか？
+            </summary>
+
+            <p>
+              日程変更・キャンセル・返金条件は、
+              お支払い前に利用条件としてご案内します。
+              内容をご確認いただいたうえで決済へお進みください。
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- 最終CTA -->
+    <!-- Final CTA -->
     <section class="final-cta">
       <div class="narrow">
+        <span class="eyebrow">
+          BEFORE YOUR NEXT MEETING
+        </span>
+
         <h2>
-          次の打ち合わせまでに、<br />
+          次の打ち合わせまでに、<br>
           判断することを整理しませんか。
         </h2>
 
         <p>
-          不安な場所をすべて変更するのではなく、
-          優先して見直す場所と、
-          今の計画を活かせる場所を分けて整理します。
+          無料診断で見つかった確認点を、
+          すべて変更するのではなく、
+          「変更する・そのまま進める・確認してから決める」
+          の3つに分けて整理します。
         </p>
 
         <a
-          class="button button-light js-apply-link"
+          class="button button-light button-arrow js-apply-link"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
           target="_blank"
           rel="noopener noreferrer"
           data-cta-location="final"
         >
-          間取りセカンドオピニオンを申し込む
+          次回打ち合わせ前の相談を申し込む
         </a>
+
+        <p class="cta-microcopy">
+          フォーム送信だけでは料金は発生しません。<br>
+          ご提出内容を確認後、対応可否と日程をご案内します。
+        </p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -2060,7 +3201,8 @@
         </div>
 
         <p class="copyright">
-          © <span id="copyright-year">2026</span>
+          ©
+          <span id="copyright-year">2026</span>
           BETTER HOME DESIGN
         </p>
       </div>
@@ -2070,148 +3212,336 @@
         aria-label="フッターナビゲーション"
       >
         <!--
-          公開前に各ページを作成してください。
-          GitHub Pagesの場合は同じフォルダ内に配置します。
+          公開前に以下のページを作成し、
+          正しいURLへ変更してください。
         -->
-        <a href="./privacy.html">
+
+        <a href="privacy.html">
           プライバシーポリシー
         </a>
 
-        <a href="./legal.html">
+        <a href="tokushoho.html">
           特定商取引法に基づく表記
         </a>
 
-        <a href="./terms.html">
-          利用条件
+        <a href="terms.html">
+          利用規約
+        </a>
+
+        <a href="cancellation.html">
+          キャンセル・返金条件
+        </a>
+
+        <a href="contact.html">
+          お問い合わせ
         </a>
       </nav>
     </div>
   </footer>
 
+  <!-- Mobile fixed CTA -->
+  <div
+    class="mobile-fixed-cta"
+    aria-label="相談申し込み"
+  >
+    <div class="mobile-fixed-cta-inner">
+      <div class="mobile-fixed-price">
+        <strong>
+          33,000円
+        </strong>
+
+        <small>
+          税込・75分
+        </small>
+      </div>
+
+      <a
+        class="button button-primary js-apply-link"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cta-location="mobile_fixed"
+      >
+        対応可否を確認する
+      </a>
+    </div>
+  </div>
+
   <script>
-    "use strict";
+    (function () {
+      "use strict";
 
-    // ========================================================
-    // Googleフォーム申込URL
-    // ========================================================
+      /*
+       * =====================================================
+       * 基本設定
+       * =====================================================
+       */
 
-    const GOOGLE_FORM_URL =
-      "https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform";
+      const CONFIG = {
+        diagnosisSource: "diagnosis_email",
 
-    // ========================================================
-    // メール・広告から受け取った計測パラメータを
-    // Googleフォームへのリンクへ引き継ぎます。
-    // ========================================================
+        /*
+         * Googleフォームの事前入力用entry IDです。
+         *
+         * Googleフォームで、
+         * ・診断受付ID
+         * ・流入元
+         * ・CTA位置
+         * ・リードランク
+         * などの質問を作成した後、
+         * 「事前入力したURLを取得」からentry IDを確認してください。
+         *
+         * 未設定の項目はフォームURLへ追加されません。
+         */
+        formEntryIds: {
+          referenceId: "",
+          source: "",
+          medium: "",
+          campaign: "",
+          content: "",
+          ctaLocation: ""
+        },
 
-    const TRACKING_PARAMETERS = [
-      "utm_source",
-      "utm_medium",
-      "utm_campaign",
-      "utm_content",
-      "utm_term",
-      "lead_id",
-      "lead_rank"
-    ];
+        /*
+         * URLから引き継ぐパラメータです。
+         * 個人名・メールアドレス・住所などは含めないでください。
+         */
+        allowedParams: [
+          "utm_source",
+          "utm_medium",
+          "utm_campaign",
+          "utm_content",
+          "ref"
+        ]
+      };
 
-    function buildApplicationUrl() {
-      const formUrl =
-        new URL(GOOGLE_FORM_URL);
+      /*
+       * =====================================================
+       * URLパラメータ
+       * =====================================================
+       */
 
-      const pageParameters =
-        new URLSearchParams(
-          window.location.search
-        );
+      const currentParams =
+        new URLSearchParams(window.location.search);
 
-      TRACKING_PARAMETERS.forEach(
-        function (parameterName) {
-          const value =
-            pageParameters.get(parameterName);
+      const utmSource =
+        currentParams.get("utm_source") || "";
 
-          if (value) {
-            formUrl.searchParams.set(
-              parameterName,
-              value
-            );
-          }
-        }
-      );
+      const referenceId =
+        currentParams.get("ref") || "";
 
-      return formUrl.toString();
-    }
+      const isDiagnosisVisitor =
+        utmSource === CONFIG.diagnosisSource ||
+        Boolean(referenceId);
 
-    // ========================================================
-    // すべての申込ボタンへURLを設定
-    // ========================================================
+      /*
+       * =====================================================
+       * 無料診断メール経由の表示
+       * =====================================================
+       */
 
-    const applicationUrl =
-      buildApplicationUrl();
+      const diagnosisBanner =
+        document.getElementById("diagnosis-banner");
 
-    const applicationLinks =
-      document.querySelectorAll(
-        ".js-apply-link"
-      );
-
-    applicationLinks.forEach(
-      function (link) {
-        link.href = applicationUrl;
+      if (
+        isDiagnosisVisitor &&
+        diagnosisBanner
+      ) {
+        diagnosisBanner.classList.add("is-visible");
       }
-    );
 
-    // ========================================================
-    // CTAクリック計測
-    //
-    // GA4のgtagを導入した場合は、
-    // consultation_cta_clickとして記録されます。
-    // ========================================================
+      /*
+       * =====================================================
+       * Googleフォームへのパラメータ引き継ぎ
+       * =====================================================
+       */
 
-    applicationLinks.forEach(
-      function (link) {
+      const applyLinks =
+        document.querySelectorAll(".js-apply-link");
+
+      applyLinks.forEach(function (link) {
+        let formUrl;
+
+        try {
+          formUrl = new URL(link.href);
+        } catch (error) {
+          console.error(
+            "申込フォームURLを解析できません。",
+            error
+          );
+          return;
+        }
+
+        /*
+         * Googleフォーム側に事前入力項目を設定した場合のみ、
+         * entry IDを使って値を渡します。
+         */
+
+        const entryIds =
+          CONFIG.formEntryIds;
+
+        const ctaLocation =
+          link.dataset.ctaLocation || "unknown";
+
+        if (
+          entryIds.referenceId &&
+          referenceId
+        ) {
+          formUrl.searchParams.set(
+            entryIds.referenceId,
+            referenceId
+          );
+        }
+
+        if (
+          entryIds.source &&
+          currentParams.get("utm_source")
+        ) {
+          formUrl.searchParams.set(
+            entryIds.source,
+            currentParams.get("utm_source")
+          );
+        }
+
+        if (
+          entryIds.medium &&
+          currentParams.get("utm_medium")
+        ) {
+          formUrl.searchParams.set(
+            entryIds.medium,
+            currentParams.get("utm_medium")
+          );
+        }
+
+        if (
+          entryIds.campaign &&
+          currentParams.get("utm_campaign")
+        ) {
+          formUrl.searchParams.set(
+            entryIds.campaign,
+            currentParams.get("utm_campaign")
+          );
+        }
+
+        if (
+          entryIds.content &&
+          currentParams.get("utm_content")
+        ) {
+          formUrl.searchParams.set(
+            entryIds.content,
+            currentParams.get("utm_content")
+          );
+        }
+
+        if (entryIds.ctaLocation) {
+          formUrl.searchParams.set(
+            entryIds.ctaLocation,
+            ctaLocation
+          );
+        }
+
+        link.href =
+          formUrl.toString();
+
+        /*
+         * CTAクリック計測
+         *
+         * GA4のgtagが設置されている場合だけ送信します。
+         * refなどの個別照合IDはGA4へ送信しません。
+         */
+
         link.addEventListener(
           "click",
           function () {
-            const location =
-              link.dataset.ctaLocation ||
-              "unknown";
+            const eventData = {
+              cta_location:
+                ctaLocation,
+
+              traffic_source:
+                currentParams.get("utm_source") ||
+                "direct",
+
+              traffic_medium:
+                currentParams.get("utm_medium") ||
+                "none",
+
+              campaign:
+                currentParams.get("utm_campaign") ||
+                "none",
+
+              lead_rank:
+                currentParams.get("utm_content") ||
+                "unknown"
+            };
 
             if (
-              typeof window.gtag ===
-              "function"
+              typeof window.gtag === "function"
             ) {
               window.gtag(
                 "event",
-                "consultation_cta_click",
-                {
-                  cta_location: location,
-                  button_text:
-                    link.textContent.trim()
-                }
+                "apply_click",
+                eventData
               );
             }
 
+            /*
+             * GA4未導入でもブラウザの開発者ツールで
+             * 動作確認できるようにしています。
+             */
             console.log(
-              "CTAクリック:",
-              location
+              "apply_click",
+              eventData
             );
           }
         );
-      }
-    );
+      });
 
-    // ========================================================
-    // 著作権年を自動更新
-    // ========================================================
+      /*
+       * =====================================================
+       * コピーライト年
+       * =====================================================
+       */
 
-    const yearElement =
-      document.getElementById(
-        "copyright-year"
-      );
-
-    if (yearElement) {
-      yearElement.textContent =
-        String(
-          new Date().getFullYear()
+      const copyrightYear =
+        document.getElementById(
+          "copyright-year"
         );
-    }
+
+      if (copyrightYear) {
+        copyrightYear.textContent =
+          String(new Date().getFullYear());
+      }
+
+      /*
+       * =====================================================
+       * 外部リンクの安全設定
+       * =====================================================
+       */
+
+      document
+        .querySelectorAll(
+          'a[target="_blank"]'
+        )
+        .forEach(function (link) {
+          const currentRel =
+            link.getAttribute("rel") || "";
+
+          const relValues =
+            new Set(
+              currentRel
+                .split(/\s+/)
+                .filter(Boolean)
+            );
+
+          relValues.add("noopener");
+          relValues.add("noreferrer");
+
+          link.setAttribute(
+            "rel",
+            Array.from(relValues).join(" ")
+          );
+        });
+    })();
   </script>
 </body>
 </html>
