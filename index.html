@@ -14,23 +14,12 @@
 
   <meta
     name="description"
-    content="ハウスメーカーから提案された間取りのモヤモヤを、二級建築士が第三者の視点で整理。変更を検討する場所、現在案を活かせる場所、建築会社への質問、ご家族で決めることを明確にするオンライン相談です。"
+    content="ハウスメーカーから提案された間取りを、二級建築士が第三者の視点で確認。変更を検討する場所、現在案を活かせる場所、建築会社へ確認すること、ご家族で決めることを整理します。"
   >
 
-  <meta
-    name="robots"
-    content="index,follow,max-image-preview:large"
-  >
-
-  <meta
-    name="author"
-    content="BETTER HOME DESIGN"
-  >
-
-  <meta
-    name="theme-color"
-    content="#173f37"
-  >
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="BETTER HOME DESIGN">
+  <meta name="theme-color" content="#173f37">
 
   <link
     rel="canonical"
@@ -40,28 +29,22 @@
   <!-- OGP -->
   <meta
     property="og:title"
-    content="建築士の間取りセカンドオピニオン"
+    content="その間取り、決める前に。｜建築士の間取りセカンドオピニオン"
   >
 
   <meta
     property="og:description"
-    content="希望は伝えた。それでも残る「この間取りで進めて大丈夫？」を、次の打ち合わせで判断できる形に整理します。"
+    content="変更する場所、活かせる場所、確認してから決める場所を整理。次の打ち合わせで判断できる状態をつくります。"
   >
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     property="og:url"
     content="https://emy-renovation.github.io/madori-consulting/"
   >
 
-  <meta
-    property="og:site_name"
-    content="BETTER HOME DESIGN"
-  >
+  <meta property="og:site_name" content="BETTER HOME DESIGN">
 
   <!-- 公開前に1200×630pxの画像を配置 -->
   <meta
@@ -74,19 +57,16 @@
     content="建築士の間取りセカンドオピニオン"
   >
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
+  <meta name="twitter:card" content="summary_large_image">
 
   <meta
     name="twitter:title"
-    content="建築士の間取りセカンドオピニオン"
+    content="その間取り、決める前に。"
   >
 
   <meta
     name="twitter:description"
-    content="ハウスメーカーの間取りに感じるモヤモヤを、次の打ち合わせで判断できる形に整理します。"
+    content="ハウスメーカーの間取りを、次の打ち合わせで判断できる形に整理します。"
   >
 
   <meta
@@ -100,16 +80,20 @@
        ======================================================== */
 
     :root {
+      --brand-950: #102f29;
       --brand-900: #173f37;
       --brand-800: #215248;
       --brand-700: #2f6559;
+      --brand-200: #cfe1db;
       --brand-100: #e8f2ef;
       --brand-050: #f3f8f6;
 
+      --gold-800: #76501f;
       --gold-700: #865d27;
       --gold-600: #a97936;
       --gold-100: #f5ead7;
 
+      --ink-950: #19201c;
       --ink-900: #202622;
       --ink-700: #454e49;
       --ink-600: #5d6862;
@@ -122,6 +106,15 @@
       --warning: #fff7e7;
       --line: #dbe3df;
       --line-dark: #c8d4ce;
+
+      --success-bg: #e3f2ec;
+      --success-text: #245f4c;
+      --change-bg: #f9e7e7;
+      --change-text: #883838;
+      --confirm-bg: #f8ebcf;
+      --confirm-text: #75521f;
+      --family-bg: #ece9f9;
+      --family-text: #51428a;
 
       --shadow-sm:
         0 8px 24px rgba(23, 63, 55, 0.06);
@@ -150,7 +143,7 @@
     }
 
     /* ========================================================
-       2. 基本設定
+       2. リセット・基本設定
        ======================================================== */
 
     *,
@@ -241,7 +234,7 @@
       z-index: 1000;
       padding: 10px 16px;
       color: #ffffff;
-      background: var(--brand-900);
+      background: var(--brand-950);
       border-radius: 8px;
       text-decoration: none;
       transform: translateY(-160%);
@@ -271,7 +264,7 @@
       color: var(--gold-700);
       font-size: 12px;
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.15em;
       line-height: 1.5;
     }
 
@@ -283,7 +276,7 @@
     }
 
     .section-heading {
-      max-width: 790px;
+      max-width: 800px;
       margin: 0 auto 44px;
       text-align: center;
     }
@@ -291,13 +284,13 @@
     .section-heading h2 {
       margin: 0;
       color: var(--brand-900);
-      font-size: clamp(29px, 4vw, 45px);
+      font-size: clamp(29px, 4vw, 44px);
       line-height: 1.42;
       letter-spacing: 0;
     }
 
     .section-heading p {
-      max-width: 700px;
+      max-width: 710px;
       margin: 18px auto 0;
       color: var(--ink-600);
     }
@@ -362,14 +355,14 @@
 
     .button-outline {
       color: var(--brand-900);
-      background: rgba(255, 255, 255, 0.62);
+      background: rgba(255, 255, 255, 0.65);
       border-color: rgba(47, 101, 89, 0.30);
     }
 
     .button-arrow::after {
       content: "→";
-      font-size: 17px;
       flex: 0 0 auto;
+      font-size: 17px;
     }
 
     .button-row {
@@ -493,16 +486,16 @@
        ======================================================== */
 
     .hero {
-      padding: 92px 0 78px;
+      padding: 88px 0 76px;
       background:
         radial-gradient(
-          circle at 12% 0%,
+          circle at 10% 0%,
           rgba(169, 121, 54, 0.20),
           transparent 31%
         ),
         radial-gradient(
-          circle at 92% 15%,
-          rgba(47, 101, 89, 0.13),
+          circle at 93% 13%,
+          rgba(47, 101, 89, 0.14),
           transparent 28%
         ),
         linear-gradient(
@@ -544,17 +537,22 @@
     }
 
     .hero h1 {
-      max-width: 720px;
-      margin: 22px 0 20px;
+      max-width: 680px;
+      margin: 22px 0 18px;
       color: var(--brand-900);
-      font-size: clamp(37px, 5vw, 61px);
-      line-height: 1.28;
-      letter-spacing: 0;
+      font-size: clamp(42px, 5.3vw, 66px);
+      line-height: 1.22;
+      letter-spacing: -0.015em;
     }
 
     .hero h1 em {
+      display: block;
+      margin-top: 9px;
       color: var(--gold-700);
+      font-size: 0.58em;
       font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
     }
 
     .hero-lead {
@@ -594,7 +592,7 @@
       background:
         linear-gradient(
           145deg,
-          var(--brand-900),
+          var(--brand-950),
           var(--brand-700)
         );
       border-radius: var(--radius-xl);
@@ -648,7 +646,7 @@
       align-items: start;
       padding: 14px;
       color: var(--brand-900);
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: var(--radius-sm);
       font-size: 14px;
       font-weight: 900;
@@ -665,7 +663,7 @@
 
     .decision-panel-note {
       margin: 18px 0 0;
-      color: rgba(255, 255, 255, 0.79);
+      color: rgba(255, 255, 255, 0.80);
       font-size: 12px;
     }
 
@@ -709,7 +707,55 @@
     }
 
     /* ========================================================
-       9. 顧客ベネフィット
+       9. 共感・問題
+       ======================================================== */
+
+    .problems {
+      background: var(--surface-soft);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .problem-card {
+      padding: 27px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .problem-number {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 15px;
+      place-items: center;
+      color: #ffffff;
+      background: var(--brand-700);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .problem-card h3 {
+      margin: 0 0 10px;
+      color: var(--brand-900);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .problem-card p {
+      margin: 0;
+      color: var(--ink-600);
+      font-size: 14px;
+    }
+
+    /* ========================================================
+       10. ベネフィット
        ======================================================== */
 
     .benefits {
@@ -775,7 +821,7 @@
     }
 
     /* ========================================================
-       10. 無料と有料の違い
+       11. 無料診断と個別相談の違い
        ======================================================== */
 
     .difference {
@@ -842,7 +888,7 @@
     }
 
     .difference-column.paid p {
-      color: rgba(255, 255, 255, 0.81);
+      color: rgba(255, 255, 255, 0.82);
     }
 
     .difference-arrow {
@@ -862,54 +908,6 @@
 
     .difference-summary strong {
       color: var(--brand-900);
-    }
-
-    /* ========================================================
-       11. 顧客の悩み
-       ======================================================== */
-
-    .problems {
-      background: var(--surface-soft);
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .problem-card {
-      padding: 27px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .problem-number {
-      display: inline-grid;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 15px;
-      place-items: center;
-      color: #ffffff;
-      background: var(--brand-700);
-      border-radius: 50%;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .problem-card h3 {
-      margin: 0 0 10px;
-      color: var(--brand-900);
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
-    .problem-card p {
-      margin: 0;
-      color: var(--ink-600);
-      font-size: 14px;
     }
 
     /* ========================================================
@@ -946,7 +944,7 @@
       background:
         linear-gradient(
           145deg,
-          var(--brand-900),
+          var(--brand-950),
           var(--brand-700)
         );
       box-shadow: var(--shadow-md);
@@ -1006,7 +1004,7 @@
       gap: 10px;
       padding: 13px 14px;
       color: var(--brand-900);
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: var(--radius-sm);
       font-size: 14px;
       font-weight: 800;
@@ -1022,13 +1020,13 @@
     .example-result {
       margin: 18px 0 0;
       padding-top: 18px;
-      color: rgba(255, 255, 255, 0.84);
+      color: rgba(255, 255, 255, 0.85);
       border-top: 1px solid rgba(255, 255, 255, 0.20);
       font-size: 13px;
     }
 
     /* ========================================================
-       13. 確認方法
+       13. 判断の視点
        ======================================================== */
 
     .method {
@@ -1071,7 +1069,61 @@
     }
 
     /* ========================================================
-       14. 成果物
+       14. 費用・将来性の考え方
+       ======================================================== */
+
+    .cost-perspective {
+      background: var(--brand-950);
+      color: #ffffff;
+    }
+
+    .cost-perspective .section-heading h2 {
+      color: #ffffff;
+    }
+
+    .cost-perspective .section-heading p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .cost-perspective .eyebrow {
+      color: #f2d6a7;
+    }
+
+    .cost-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cost-card {
+      padding: 27px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-lg);
+    }
+
+    .cost-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .cost-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+    }
+
+    .cost-note {
+      max-width: 850px;
+      margin: 24px auto 0;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* ========================================================
+       15. 成果物
        ======================================================== */
 
     .deliverables {
@@ -1121,8 +1173,7 @@
     }
 
     /* ========================================================
-       15. 成果物サンプル
-       スマホでは表をカード化
+       16. 成果物サンプル
        ======================================================== */
 
     .document-sample {
@@ -1173,10 +1224,6 @@
       font-weight: 900;
     }
 
-    .sample-items {
-      display: grid;
-    }
-
     .sample-item {
       display: grid;
       grid-template-columns: 125px 1fr 1.4fr 1.4fr;
@@ -1212,23 +1259,23 @@
     }
 
     .status-change {
-      color: #8d3131;
-      background: #fbe4e4;
+      color: var(--change-text);
+      background: var(--change-bg);
     }
 
     .status-keep {
-      color: #24644f;
-      background: #e2f3ec;
+      color: var(--success-text);
+      background: var(--success-bg);
     }
 
     .status-confirm {
-      color: #75521f;
-      background: #f8ebcf;
+      color: var(--confirm-text);
+      background: var(--confirm-bg);
     }
 
     .status-family {
-      color: #51428a;
-      background: #ece9f9;
+      color: var(--family-text);
+      background: var(--family-bg);
     }
 
     .sample-document-footer {
@@ -1239,7 +1286,7 @@
     }
 
     /* ========================================================
-       16. 対象範囲
+       17. 対象範囲
        ======================================================== */
 
     .scope {
@@ -1305,7 +1352,7 @@
     }
 
     .scope-alert {
-      max-width: 870px;
+      max-width: 880px;
       margin: 24px auto 0;
       padding: 18px 20px;
       color: var(--ink-700);
@@ -1320,12 +1367,16 @@
     }
 
     /* ========================================================
-       17. 事例・お客様の声
-       未編集時はhiddenで非表示
+       18. 事例・お客様の声・プロフィール
        ======================================================== */
 
-    .cases {
+    .cases,
+    .profile {
       background: #ffffff;
+    }
+
+    .voices {
+      background: var(--warm);
     }
 
     .case-grid,
@@ -1337,11 +1388,11 @@
 
     .case-card,
     .voice-card {
+      overflow: hidden;
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      overflow: hidden;
     }
 
     .case-image {
@@ -1375,10 +1426,6 @@
       font-size: 13px;
     }
 
-    .voices {
-      background: var(--warm);
-    }
-
     .voice-mark {
       color: var(--gold-600);
       font-family: Georgia, serif;
@@ -1395,8 +1442,81 @@
       font-weight: 800;
     }
 
+    .profile-box {
+      display: grid;
+      grid-template-columns:
+        minmax(280px, 0.76fr)
+        minmax(0, 1.24fr);
+      gap: 42px;
+      align-items: center;
+      padding: 40px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+    }
+
+    .profile-image {
+      width: 100%;
+      min-height: 410px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: var(--brand-100);
+      border-radius: var(--radius-lg);
+    }
+
+    .profile-copy h2 {
+      margin: 0 0 18px;
+      color: var(--brand-900);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.43;
+    }
+
+    .profile-copy p {
+      margin: 0 0 14px;
+      color: var(--ink-600);
+    }
+
+    .profile-data {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 7px 14px;
+      margin: 22px 0 0;
+      padding: 18px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+    }
+
+    .profile-data dt {
+      color: var(--brand-900);
+      font-weight: 900;
+    }
+
+    .profile-data dd {
+      margin: 0;
+      color: var(--ink-600);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      padding: 8px 13px;
+      color: var(--brand-900);
+      background: var(--brand-100);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
     /* ========================================================
-       18. フロー
+       19. 相談の流れ
        ======================================================== */
 
     .flow {
@@ -1442,7 +1562,7 @@
     }
 
     /* ========================================================
-       19. 料金
+       20. 料金
        ======================================================== */
 
     .pricing {
@@ -1463,7 +1583,7 @@
       background:
         linear-gradient(
           140deg,
-          var(--brand-900),
+          var(--brand-950),
           var(--brand-700)
         );
       border-radius: 34px;
@@ -1516,7 +1636,7 @@
 
     .price-caption {
       margin: 0 0 28px;
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.79);
       font-size: 14px;
     }
 
@@ -1567,118 +1687,8 @@
     .price-action-note {
       max-width: 660px;
       margin: 14px auto 0;
-      color: rgba(255, 255, 255, 0.77);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 12px;
-    }
-
-    /* ========================================================
-       20. プロフィール
-       ======================================================== */
-
-    .profile {
-      background: #ffffff;
-    }
-
-    .profile-box {
-      display: grid;
-      grid-template-columns:
-        minmax(280px, 0.76fr)
-        minmax(0, 1.24fr);
-      gap: 42px;
-      align-items: center;
-      padding: 40px;
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-    }
-
-    .profile-image {
-      width: 100%;
-      min-height: 410px;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      background: var(--brand-100);
-      border-radius: var(--radius-lg);
-    }
-
-    .profile-placeholder {
-      min-height: 410px;
-      display: grid;
-      place-items: center;
-      padding: 28px;
-      color: var(--brand-900);
-      background:
-        linear-gradient(
-          145deg,
-          var(--brand-100),
-          var(--warm)
-        );
-      border: 1px dashed rgba(47, 101, 89, 0.30);
-      border-radius: var(--radius-lg);
-      text-align: center;
-    }
-
-    .profile-placeholder strong {
-      display: block;
-      font-size: 19px;
-    }
-
-    .profile-placeholder span {
-      display: block;
-      margin-top: 8px;
-      color: var(--ink-500);
-      font-size: 12px;
-    }
-
-    .profile-copy h2 {
-      margin: 0 0 18px;
-      color: var(--brand-900);
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.43;
-    }
-
-    .profile-copy p {
-      margin: 0 0 14px;
-      color: var(--ink-600);
-    }
-
-    .profile-data {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 7px 14px;
-      margin: 22px 0 0;
-      padding: 18px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      font-size: 13px;
-    }
-
-    .profile-data dt {
-      color: var(--brand-900);
-      font-weight: 900;
-    }
-
-    .profile-data dd {
-      margin: 0;
-      color: var(--ink-600);
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .social-links a {
-      padding: 8px 13px;
-      color: var(--brand-900);
-      background: var(--brand-100);
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      text-decoration: none;
     }
 
     /* ========================================================
@@ -1750,8 +1760,8 @@
         ),
         linear-gradient(
           145deg,
-          #143830,
-          #2f6559
+          var(--brand-950),
+          var(--brand-700)
         );
       text-align: center;
     }
@@ -1777,7 +1787,7 @@
     .site-footer {
       padding: 38px 0;
       color: rgba(255, 255, 255, 0.78);
-      background: #0f2e28;
+      background: #0b2721;
       font-size: 12px;
     }
 
@@ -1833,12 +1843,9 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-side {
-        max-width: 720px;
-      }
-
       .benefit-grid,
       .problem-grid,
+      .cost-grid,
       .case-grid,
       .voice-grid,
       .method-grid,
@@ -1846,9 +1853,8 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .profile-placeholder,
-      .profile-image {
-        min-height: 320px;
+      .decision-panel {
+        max-width: 720px;
       }
     }
 
@@ -1875,7 +1881,7 @@
       .container,
       .reading-container {
         width: min(
-          100% - 30px,
+          calc(100% - 30px),
           var(--content-width)
         );
       }
@@ -1903,7 +1909,8 @@
         font-size: 15px;
       }
 
-      .section-note {
+      .section-note,
+      .cost-note {
         text-align: left;
       }
 
@@ -1934,7 +1941,7 @@
       }
 
       .hero {
-        padding: 54px 0 52px;
+        padding: 52px 0 50px;
       }
 
       .hero-grid {
@@ -1942,18 +1949,26 @@
       }
 
       .qualification {
+        padding: 7px 12px;
         font-size: 11px;
       }
 
       .hero h1 {
         margin: 18px 0;
-        font-size: clamp(30px, 8.8vw, 39px);
-        line-height: 1.4;
+        font-size: clamp(37px, 11vw, 46px);
+        line-height: 1.27;
+      }
+
+      .hero h1 em {
+        margin-top: 10px;
+        font-size: 0.53em;
+        line-height: 1.52;
       }
 
       .hero-lead {
         margin-bottom: 24px;
         font-size: 15px;
+        line-height: 1.88;
       }
 
       .button-row {
@@ -1998,7 +2013,7 @@
       }
 
       .trust-list li {
-        padding: 17px 10px;
+        padding: 17px 9px;
         border-bottom: 1px solid var(--line);
         font-size: 12px;
       }
@@ -2013,6 +2028,7 @@
 
       .benefit-grid,
       .problem-grid,
+      .cost-grid,
       .case-grid,
       .voice-grid,
       .method-grid,
@@ -2027,11 +2043,13 @@
       .benefit-card,
       .problem-card,
       .method-card,
+      .cost-card,
       .flow-card {
         padding: 22px;
       }
 
-      .benefit-card h3 {
+      .benefit-card h3,
+      .cost-card h3 {
         font-size: 18px;
       }
 
@@ -2072,6 +2090,12 @@
         font-size: 20px;
       }
 
+      .organize-list li {
+        grid-template-columns: 30px 1fr;
+        padding: 12px;
+        font-size: 13px;
+      }
+
       .deliverable-card {
         grid-template-columns: 42px 1fr;
         gap: 14px;
@@ -2099,7 +2123,7 @@
 
       /*
        * スマホでは横スクロール表にせず、
-       * 1案件ずつカードとして表示。
+       * 1論点ずつ縦カードで表示します。
        */
       .sample-item {
         display: block;
@@ -2158,7 +2182,6 @@
         border-radius: 24px;
       }
 
-      .profile-placeholder,
       .profile-image {
         min-height: 260px;
       }
@@ -2231,7 +2254,11 @@
       }
 
       .hero h1 {
-        font-size: 30px;
+        font-size: 36px;
+      }
+
+      .hero h1 em {
+        font-size: 0.55em;
       }
 
       .hero-meta {
@@ -2270,7 +2297,7 @@
 
   <!-- ======================================================
        構造化データ
-       公開前に事業者情報を実情報へ編集してください
+       公開前に事業者情報を実情報へ変更してください
        ====================================================== -->
 
   <script type="application/ld+json">
@@ -2293,7 +2320,7 @@
         "@id": "https://emy-renovation.github.io/madori-consulting/#service",
         "name": "建築士の間取りセカンドオピニオン",
         "serviceType": "オンライン間取り相談",
-        "description": "ハウスメーカー等から提案された間取りについて、変更候補、現状維持、建築会社への確認事項、ご家族で決める事項を整理するオンライン相談。",
+        "description": "ハウスメーカー等から提案された間取りについて、変更候補、現在案を活かせる場所、建築会社への確認事項、ご家族で決める事項を整理するオンライン相談。",
         "provider": {
           "@id": "https://emy-renovation.github.io/madori-consulting/#business"
         },
@@ -2322,7 +2349,7 @@
         "name": "無料診断と個別相談は何が違いますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "無料診断では、図面上で優先して確認したい論点を整理します。個別相談では、ご家族の生活習慣や家具寸法などを確認し、変更候補、現状維持、建築会社への確認、ご家族で決めることに分けて整理します。"
+          "text": "無料診断では図面上で優先して確認したい論点を整理します。個別相談では、ご家族の生活習慣、家具寸法、収納物、優先順位を確認し、変更を検討する場所、現在案を活かせる場所、建築会社へ確認すること、ご家族で決めることに分けて整理します。"
         }
       },
       {
@@ -2330,7 +2357,7 @@
         "name": "相談には何が含まれますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "間取り図1案と事前回答の確認、75分のオンライン相談、建築会社への質問整理、相談後の判断整理シートなどが含まれます。"
+          "text": "現在検討中の間取り図1案と事前回答の確認、75分のオンライン相談、建築会社への質問整理、相談後の判断整理シートなどが含まれます。"
         }
       },
       {
@@ -2338,7 +2365,7 @@
         "name": "採光や構造についても相談できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "図面から確認できる範囲で論点や確認事項を整理できますが、採光、法規、構造、耐震、施工可否等の確定判断は行いません。"
+          "text": "図面から読み取れる範囲で論点や確認事項を整理できますが、採光、法規、構造、耐震、施工可否等の確定判断や保証は行いません。"
         }
       },
       {
@@ -2359,7 +2386,7 @@
     本文へ移動
   </a>
 
-  <!-- 無料診断メールから来た場合のみ表示 -->
+  <!-- 無料診断メール経由の場合のみ表示 -->
   <div
     id="diagnosis-entry"
     class="diagnosis-entry"
@@ -2372,7 +2399,7 @@
 
       <span>
         診断で見つかった確認点を、
-        「変更するかどうか」まで整理する個別相談です。
+        次の打ち合わせで判断できる形まで整理します。
       </span>
     </div>
   </div>
@@ -2397,10 +2424,10 @@
         class="global-nav"
         aria-label="メインナビゲーション"
       >
+        <a href="#concerns">よくある悩み</a>
         <a href="#benefits">相談後の変化</a>
         <a href="#difference">無料診断との違い</a>
         <a href="#deliverables">成果物</a>
-        <a href="#scope">対象範囲</a>
         <a href="#price">料金</a>
         <a href="#faq">FAQ</a>
 
@@ -2430,23 +2457,22 @@
           </div>
 
           <h1 id="hero-title">
-            希望は全部伝えた。<br>
-            それでも残る
-            <em>「この間取りで進めて大丈夫？」</em>
-            を整理します。
+            その間取り、<br>
+            決める前に。
+            <em>
+              変更する場所と、活かせる場所を整理します。
+            </em>
           </h1>
 
           <p id="hero-lead" class="hero-lead">
-            広いLDK、1階収納、ランドリールーム、
-            洗面と脱衣室の分離、必要な個室数。
-            一つひとつは大切な希望でも、
-            限られた延床面積の中では、
-            収納を増やすと廊下が狭くなるなど、
-            別の場所へ影響が出ることがあります。
+            収納を増やすと通路が狭くなる。
+            LDKを広くすると個室や収納が小さくなる。
+            一つの希望を叶えるほど、別の場所へ影響が出るのが
+            間取りの難しいところです。
 
             <strong>
-              ご家族が守りたい暮らしを確認し、
-              変更する場所、今のままでよい場所、
+              ご家族の暮らし、家具、収納、面積、将来性を確認し、
+              変更する場所・現在案を活かす場所・
               建築会社へ確認してから決める場所を整理します。
             </strong>
           </p>
@@ -2459,7 +2485,7 @@
               rel="noopener noreferrer"
               data-cta-location="hero"
             >
-              次の打ち合わせ前に判断を整理する
+              相談できる内容か確認する
             </a>
 
             <a
@@ -2472,7 +2498,7 @@
 
           <p class="button-note">
             フォーム送信だけでは料金は発生しません。
-            資料確認後に対応可否・日程・お支払い方法をご案内します。
+            資料確認後に、対応可否・候補日・お支払い方法をご案内します。
           </p>
 
           <ul class="hero-meta">
@@ -2492,19 +2518,19 @@
           </p>
 
           <h2>
-            モヤモヤを、4つの判断に分けて整理します
+            不安を、4つの判断に分けて整理します
           </h2>
 
           <ol class="decision-list">
             <li>変更を優先して検討する場所</li>
             <li>現在の計画を活かせる場所</li>
             <li>建築会社へ確認してから決めること</li>
-            <li>ご家族で話し合って決めること</li>
+            <li>ご家族で優先順位を決めること</li>
           </ol>
 
           <p class="decision-panel-note">
-            間取りを採点するのではなく、
-            「何を基準に決めるか」を整理する相談です。
+            間取りを採点したり、建築会社を否定したりするのではなく、
+            納得して決めるための判断材料を整理します。
           </p>
         </aside>
       </div>
@@ -2515,22 +2541,22 @@
       <div class="container">
         <ul class="trust-list">
           <li>
-            二級建築士
+            二級建築士が対応
             <small>第三者の立場で確認</small>
           </li>
 
           <li>
-            間取り図1案
-            <small>希望と制約を横断確認</small>
+            図面だけで判断しない
+            <small>暮らし・家具・収納まで確認</small>
           </li>
 
           <li>
-            Google Meet
-            <small>日本全国から相談可能</small>
+            オンライン相談
+            <small>日本全国から参加可能</small>
           </li>
 
           <li>
-            相談後も残る
+            相談後も判断に使える
             <small>判断整理シート付き</small>
           </li>
         </ul>
@@ -2538,7 +2564,119 @@
     </section>
 
     <!-- ====================================================
-         顧客ベネフィット
+         よくある悩み
+         ==================================================== -->
+
+    <section id="concerns" class="problems">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            YOUR CONCERNS
+          </span>
+
+          <h2>
+            希望は入っているのに、<br class="desktop-break">
+            暮らしやすいか判断できない
+          </h2>
+
+          <p>
+            間取りの悩みは、希望が足りないからではありません。
+            希望同士がぶつかったときに、
+            <strong>
+              どちらを優先すれば後悔が少ないのか分からない
+            </strong>
+            ことから生まれます。
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span class="problem-number">01</span>
+
+            <h3>
+              収納を増やしたら、通路が狭くなった
+            </h3>
+
+            <p>
+              1階衣類収納を設けた結果、
+              洗面前の通路が窮屈になるなど、
+              一つの希望が別の動線へ影響している。
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <span class="problem-number">02</span>
+
+            <h3>
+              希望と延床面積が両立しない
+            </h3>
+
+            <p>
+              広いLDK、ランドリールーム、ヌック、
+              必要な個室数を確保しながら、
+              延床面積の上限にも収めたい。
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <span class="problem-number">03</span>
+
+            <h3>
+              家具を置いた後の広さが分からない
+            </h3>
+
+            <p>
+              ベッド足元の通路、ダイニングチェアを引くスペース、
+              扉の開閉など、図面の寸法だけでは生活を想像しにくい。
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <span class="problem-number">04</span>
+
+            <h3>
+              収納量と収納場所が合っているか不安
+            </h3>
+
+            <p>
+              収納面積はあっても、使う場所の近くにあるか、
+              実際の衣類や日用品が無理なく収まるか判断できない。
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <span class="problem-number">05</span>
+
+            <h3>
+              使いにくそうな余白が気になる
+            </h3>
+
+            <p>
+              主寝室の入口が通路のようになっている、
+              階段下が活かされていないなど、
+              面積を有効に使えているか確認したい。
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <span class="problem-number">06</span>
+
+            <h3>
+              採光や外観の変化も確認したい
+            </h3>
+
+            <p>
+              窓の位置で明るさに影響がないか、
+              間取り変更によって屋根や外観が
+              当初のイメージから変わっていないか気になる。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         相談後の変化
          ==================================================== -->
 
     <section id="benefits" class="benefits">
@@ -2549,13 +2687,14 @@
           </span>
 
           <h2>
-            相談後は、間取りの見え方ではなく、<br class="desktop-break">
-            「決め方」が変わります
+            相談後に変わるのは、<br class="desktop-break">
+            間取りの「見方」と「決め方」です
           </h2>
 
           <p>
             正解を一方的に押しつけるのではなく、
-            ご家族が納得して次の打ち合わせへ進める状態を目指します。
+            ご家族が理由を持って判断し、
+            次の打ち合わせへ進める状態を目指します。
           </p>
         </div>
 
@@ -2564,12 +2703,12 @@
             <span class="benefit-icon">01</span>
 
             <h3>
-              この間取りで進めてよい部分が分かる
+              変更すべき場所が分かる
             </h3>
 
             <p>
-              不安な場所をすべて変更するのではなく、
-              現在案の良さと、そのまま活かせる部分を確認できます。
+              暮らしへの影響と、完成後の直しにくさを踏まえ、
+              優先して見直したい場所を整理します。
             </p>
           </article>
 
@@ -2577,27 +2716,25 @@
             <span class="benefit-icon">02</span>
 
             <h3>
-              面積を増やす前に優先順位を見直せる
+              今のままでよい場所も分かる
             </h3>
 
             <p>
-              LDK、収納、ランドリー、個室などを比較し、
-              延床面積の上限内で守りたい条件を明確にします。
+              不安だからすべて変えるのではなく、
+              現在案の良さと、そのまま活かせる部分を確認します。
             </p>
           </article>
 
           <article class="benefit-card">
-            <span class="benefit-icon">
-03</span>
+            <span class="benefit-icon">03</span>
 
             <h3>
-              建築会社へ具体的に質問できる
+              面積を増やす前に整理できる
             </h3>
 
             <p>
-              「何となく狭い」ではなく、
-              家具配置後の有効寸法や収納仕様など、
-              担当者が回答できる言葉へ変換します。
+              広さを追加して解決する前に、
+              使い方、配置、優先順位で改善できる可能性を検討します。
             </p>
           </article>
 
@@ -2605,12 +2742,12 @@
             <span class="benefit-icon">04</span>
 
             <h3>
-              夫婦で同じ判断基準を共有できる
+              建築会社へ具体的に質問できる
             </h3>
 
             <p>
-              必須条件と、できれば実現したい条件を分け、
-              希望がぶつかったときの判断軸を整理します。
+              「何となく狭い」を、有効寸法、家具配置、
+              建具や収納仕様など、回答可能な質問へ変換します。
             </p>
           </article>
 
@@ -2618,12 +2755,12 @@
             <span class="benefit-icon">05</span>
 
             <h3>
-              次の打ち合わせで決めることが分かる
+              ご家族で判断基準を共有できる
             </h3>
 
             <p>
-              変更候補、確認事項、家族で決めることが明確になり、
-              限られた打ち合わせ時間を有効に使えます。
+              必ず守りたい条件と、代替できる条件を分け、
+              希望がぶつかったときの判断軸をそろえます。
             </p>
           </article>
 
@@ -2631,12 +2768,12 @@
             <span class="benefit-icon">06</span>
 
             <h3>
-              建てた後の「確認しておけば」を減らせる
+              次の打ち合わせで迷いにくくなる
             </h3>
 
             <p>
-              家具、通路、収納、日常動線を間取り確定前に確認し、
-              暮らし始めてから気づきやすい不便を整理します。
+              変更依頼、確認事項、家族で決めることを分け、
+              限られた打ち合わせ時間を有効に使える状態にします。
             </p>
           </article>
         </div>
@@ -2655,19 +2792,17 @@
           </span>
 
           <h2>
-            無料診断では論点を見つけ、<br class="desktop-break">
-            個別相談では判断まで整理します
+            無料診断は「気づく」ため。<br class="desktop-break">
+            個別相談は「決める」ため。
           </h2>
 
           <p>
-            無料診断でお伝えするのは、
-            図面上で優先して確認したいポイントです。
+            無料診断では、図面上で優先して確認したい論点をお伝えします。
             個別相談では暮らし方や家具寸法まで確認し、
             <strong>
-              変更するか、そのまま進めるか、
-              建築会社へ確認してから決めるか
+              その論点をどう扱うか
             </strong>
-            を整理します。
+            まで整理します。
           </p>
         </div>
 
@@ -2679,14 +2814,13 @@
               </span>
 
               <h3>
-                確認すべき論点を見つける
+                確認したい論点を見つける
               </h3>
 
               <p>
-                ご提出いただいた図面から、
+                ご提出いただいた図面をもとに、
                 良い点と、優先して確認したい点を整理します。
-                ご家族の詳しい生活条件を踏まえた判断や、
-                具体的な設計変更は含みません。
+                ご家族への聞き取りや個別の判断整理は含みません。
               </p>
             </article>
 
@@ -2703,14 +2837,13 @@
               </span>
 
               <h3>
-                変更するかどうかを整理する
+                どう判断するかまで整理する
               </h3>
 
               <p>
                 ご家族の生活習慣、収納物、家具寸法、
-                将来の変化や面積上限を確認。
-                希望と制約を照らし合わせ、
-                次の打ち合わせで判断できる状態をつくります。
+                面積上限や将来の変化を確認。
+                変更・維持・要確認・家族で決定に分けて整理します。
               </p>
             </article>
           </div>
@@ -2718,124 +2851,10 @@
           <p class="difference-summary">
             有料相談は、無料診断の項目数を増やすサービスではありません。
             <strong>
-              「気になる点」を「次に決めること」へ変えるサービス
+              「気になる」を「次に何をするか」へ変えるサービス
             </strong>
             です。
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================
-         よくあるモヤモヤ
-         ==================================================== -->
-
-    <section id="concerns" class="problems">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">
-            YOUR CONCERNS
-          </span>
-
-          <h2>
-            要望は伝えた。<br class="mobile-break">
-            それでも残るモヤモヤへ
-          </h2>
-
-          <p>
-            間取りの難しさは、希望が足りないことではありません。
-            <strong>
-              希望同士がぶつかったときに、
-              何を優先すればよいか分からなくなること
-            </strong>
-            にあります。
-          </p>
-        </div>
-
-        <div class="problem-grid">
-          <article class="problem-card">
-            <span class="problem-number">01</span>
-
-            <h3>
-              収納を増やしたら、通路が狭くなった
-            </h3>
-
-            <p>
-              1階衣類収納を設けた結果、
-              洗面前の廊下が窮屈になるなど、
-              一つの希望が別の動線へ影響している。
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span class="problem-number">02</span>
-
-            <h3>
-              希望と延床面積が両立しない
-            </h3>
-
-            <p>
-              約20畳のLDK、ランドリールーム、ヌック、
-              必要な個室数を確保しながら、
-              延床面積の上限にも収めたい。
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span class="problem-number">03</span>
-
-            <h3>
-              図面上の寸法で生活できるか不安
-            </h3>
-
-            <p>
-              ベッド足元の45cm、家具を置いた後の通路、
-              扉の開閉などが、
-              日常生活で支障にならないか判断できない。
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span class="problem-number">04</span>
-
-            <h3>
-              収納量と収納場所が適切か分からない
-            </h3>
-
-            <p>
-              収納面積はあっても、
-              洗濯や朝の支度で使う場所と収納場所が合っているか、
-              実際の収納物が収まるか不安。
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span class="problem-number">05</span>
-
-            <h3>
-              2階に使いにくい余白がある
-            </h3>
-
-            <p>
-              主寝室の入口が通路のようになっている、
-              階段下にデッドスペースがあるなど、
-              面積をもっと有効に使えないか確認したい。
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <span class="problem-number">06</span>
-
-            <h3>
-              採光や外観の変化も気になる
-            </h3>
-
-            <p>
-              室内の明るさに問題はないか、
-              屋根の傾斜や間取り変更によって、
-              好みだった外観が変わったのではないか確認したい。
-            </p>
-          </article>
         </div>
       </div>
     </section>
@@ -2855,8 +2874,8 @@
           </span>
 
           <h2>
-            バラバラに見える希望と不安を、<br class="desktop-break">
-            一つの判断へつなげます
+            希望を削るのではなく、<br class="desktop-break">
+            優先順位を明確にする
           </h2>
 
           <p>
@@ -2864,7 +2883,7 @@
             <strong>
               面積・動線・収納・家具・安全性・将来性
             </strong>
-            の関係を確認し、優先順位を整理します。
+            の関係を確認し、納得できる選択肢に整理します。
           </p>
         </div>
 
@@ -2875,20 +2894,20 @@
             </span>
 
             <h3>
-              希望は具体的。でも、全部を優先できるか分からない
+              大切な希望が多く、何を優先するか決められない
             </h3>
 
             <ul class="request-list">
               <li>
-                家族団欒のため、約20畳のLDKを確保したい
+                家族で過ごせる、ゆとりのあるLDKにしたい
               </li>
 
               <li>
-                洗濯と朝の支度を楽にする1階衣類収納がほしい
+                洗濯と朝の支度が楽になる1階衣類収納がほしい
               </li>
 
               <li>
-                入浴中も使えるよう、洗面と脱衣室を分けたい
+                洗面室と脱衣室を分けたい
               </li>
 
               <li>
@@ -2896,27 +2915,27 @@
               </li>
 
               <li>
-                靴を脱ぎ履きしやすい玄関L型框にしたい
+                靴を脱ぎ履きしやすい玄関にしたい
               </li>
 
               <li>
-                子どもの遊び場になるヌックがほしい
+                子どもが過ごせるヌックがほしい
               </li>
 
               <li>
-                安全のため、階段の踊り場は必須
+                安全性を考えて階段に踊り場がほしい
               </li>
 
               <li>
-                就寝時や掃除で使える2階洗面は必須
+                就寝時や掃除に使える2階洗面がほしい
               </li>
 
               <li>
-                主寝室2室・子ども部屋2室を確保したい
+                家族に必要な個室数を確保したい
               </li>
 
               <li>
-                すべてを延床36.5坪以内に収めたい
+                予算と延床面積の上限にも収めたい
               </li>
             </ul>
           </article>
@@ -2927,7 +2946,7 @@
             </span>
 
             <h3>
-              「ほしい・不安」を、判断できる項目へ変換
+              「ほしい」と「不安」を、判断できる項目へ
             </h3>
 
             <ol class="organize-list">
@@ -2935,7 +2954,7 @@
                 <span>01</span>
 
                 <div>
-                  必須条件と、実現できればうれしい条件を分ける
+                  必ず守る条件と、代替できる条件を分ける
                 </div>
               </li>
 
@@ -2943,8 +2962,7 @@
                 <span>02</span>
 
                 <div>
-                  1階収納で得られる家事効率と、
-                  洗面前通路への影響を比較する
+                  1階収納の利便性と、通路への影響を比較する
                 </div>
               </li>
 
@@ -2952,8 +2970,7 @@
                 <span>03</span>
 
                 <div>
-                  LDKの畳数ではなく、
-                  家具配置後に使える広さを確認する
+                  LDKの畳数ではなく、家具配置後の広さを確認する
                 </div>
               </li>
 
@@ -2961,8 +2978,7 @@
                 <span>04</span>
 
                 <div>
-                  階段下や主寝室入口の余白を、
-                  収納や有効面積として活かせるか確認する
+                  使いにくい余白を収納や居室へ活かせるか確認する
                 </div>
               </li>
 
@@ -2970,8 +2986,7 @@
                 <span>05</span>
 
                 <div>
-                  ベッド周辺の通路を、
-                  家具の実寸と日常動作から確認する
+                  ベッドやダイニング周辺を家具の実寸で確認する
                 </div>
               </li>
 
@@ -2979,8 +2994,7 @@
                 <span>06</span>
 
                 <div>
-                  採光・屋根・外観について、
-                  建築会社へ確認する質問をつくる
+                  採光・屋根・外観について建築会社への質問をつくる
                 </div>
               </li>
 
@@ -2988,16 +3002,15 @@
                 <span>07</span>
 
                 <div>
-                  面積上限の中で、守る条件、
-                  代替できる条件、削る候補を明確にする
+                  面積上限の中で守るものと調整するものを決める
                 </div>
               </li>
             </ol>
 
             <p class="example-result">
-              最終的に、変更を優先する場所、
-              現在案を活かす場所、建築会社の回答を受けて決める場所、
-              ご家族で話し合う場所へ分けて整理します。
+              変更を優先する場所、現在案を活かす場所、
+              建築会社の回答を受けて決める場所、
+              ご家族で優先順位を決める場所へ分けて整理します。
             </p>
           </article>
         </div>
@@ -3005,7 +3018,7 @@
     </section>
 
     <!-- ====================================================
-         確認方法
+         判断の視点
          ==================================================== -->
 
     <section id="method" class="method">
@@ -3016,12 +3029,14 @@
           </span>
 
           <h2>
-            広さだけでも、動線だけでも判断しません
+            図面の形だけではなく、<br class="desktop-break">
+            暮らしとの相性を確認します
           </h2>
 
           <p>
-            一つの希望だけを切り取らず、
-            ご家族の暮らしと建物全体への影響を横断して確認します。
+            「一般的に良い間取りか」ではなく、
+            ご家族の行動、家具、収納物、優先順位に
+            合っているかを確認します。
           </p>
         </div>
 
@@ -3035,7 +3050,7 @@
 
             <p>
               必須条件、できれば実現したい条件、
-              代替案を検討できる条件に分けます。
+              代替できる条件を分けます。
             </p>
           </article>
 
@@ -3048,7 +3063,7 @@
 
             <p>
               帰宅、洗濯、朝の支度、入浴、就寝など、
-              実際の行動順に図面を確認します。
+              実際の行動順に確認します。
             </p>
           </article>
 
@@ -3060,8 +3075,8 @@
             </h3>
 
             <p>
-              畳数だけでなく、家具を置いた後の通路、
-              建具の開閉、収納の使い方を確認します。
+              畳数だけでなく、家具配置後の通路や
+              建具の開閉を確認します。
             </p>
           </article>
 
@@ -3073,11 +3088,78 @@
             </h3>
 
             <p>
-              収納を増やすと廊下が狭くなるなど、
-              得られる効果と別の場所への影響を比較します。
+              一つの希望で得られる効果と、
+              別の場所への影響を比較します。
             </p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         費用・将来性の視点
+         ==================================================== -->
+
+    <section class="cost-perspective">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            COST &amp; FUTURE
+          </span>
+
+          <h2>
+            「広くすれば解決」だけにしない
+          </h2>
+
+          <p>
+            面積追加や仕様変更には、建築費だけでなく、
+            将来の維持管理にも影響する場合があります。
+            まずは暮らしに必要な条件を整理します。
+          </p>
+        </div>
+
+        <div class="cost-grid">
+          <article class="cost-card">
+            <h3>
+              面積を増やす前に、使い方を確認
+            </h3>
+
+            <p>
+              広さの追加が本当に必要か、
+              家具配置、収納の奥行き、動線の取り方で
+              改善できないかを検討します。
+            </p>
+          </article>
+
+          <article class="cost-card">
+            <h3>
+              変更の優先度を見極める
+            </h3>
+
+            <p>
+              完成後に直しにくい部分と、
+              家具や収納用品で調整しやすい部分を分け、
+              費用をかける順番を整理します。
+            </p>
+          </article>
+
+          <article class="cost-card">
+            <h3>
+              将来の暮らしも想定する
+            </h3>
+
+            <p>
+              子どもの成長、働き方、家事負担などを踏まえ、
+              今だけでなく将来も使いやすいかを確認します。
+            </p>
+          </article>
+        </div>
+
+        <p class="cost-note">
+          ※本サービスに、住宅ローン設計、家計診断、
+          税務相談、工事費査定、建物状況調査は含まれません。
+          費用や性能の確定判断は、各分野の専門家へご確認ください。
+        </p>
       </div>
     </section>
 
@@ -3093,13 +3175,14 @@
           </span>
 
           <h2>
-            次の打ち合わせで使える形にしてお渡しします
+            次の打ち合わせで使える形にして、<br class="desktop-break">
+            お渡しします
           </h2>
 
           <p>
             75分話して終わるサービスではありません。
             建築会社やご家族との話し合いに使える
-            <strong>判断整理シート</strong>としてまとめます。
+            <strong>判断整理シート</strong>にまとめます。
           </p>
         </div>
 
@@ -3114,7 +3197,7 @@
 
               <p>
                 暮らしへの影響と、
-                建築後に変更しにくい度合いを踏まえて整理します。
+                完成後の変更しにくさを踏まえて整理します。
               </p>
             </div>
           </article>
@@ -3128,8 +3211,8 @@
               </h3>
 
               <p>
-                不安だからすべて変更するのではなく、
-                現在案の良さや維持できる部分も明確にします。
+                現在案の良さと、
+                無理に変更しなくてもよい部分を明確にします。
               </p>
             </div>
           </article>
@@ -3144,7 +3227,7 @@
 
               <p>
                 寸法、家具配置、窓、収納仕様などを、
-                担当者が回答しやすい質問へ変換します。
+                回答を得やすい質問へ変換します。
               </p>
             </div>
           </article>
@@ -3158,8 +3241,8 @@
               </h3>
 
               <p>
-                必須条件と希望条件を分け、
-                ご家族で話し合うべき選択肢を整理します。
+                ご家族の価値観によって答えが変わる項目を、
+                選択肢とともに整理します。
               </p>
             </div>
           </article>
@@ -3173,7 +3256,7 @@
               </h3>
 
               <p>
-                論点、判断理由、確認事項、次の行動を、
+                論点、判断理由、確認事項、次の行動を
                 一覧で確認できる資料にします。
               </p>
             </div>
@@ -3184,11 +3267,11 @@
 
             <div>
               <h3>
-                重点空間の視覚確認資料
+                重点箇所の視覚確認資料
               </h3>
 
               <p>
-                必要に応じて、重点空間1か所を
+                必要に応じて重点箇所1か所を、
                 簡易3Dまたは2D家具配置資料で確認します。
               </p>
             </div>
@@ -3196,7 +3279,7 @@
         </div>
 
         <p class="section-note">
-          ※視覚確認方法は、図面の情報量と相談内容に応じて選定します。
+          ※視覚確認の方法は、図面の情報量と相談内容に応じて選定します。
           詳細CG、実施設計図、建築確認用図面の作成ではありません。
         </p>
       </div>
@@ -3214,12 +3297,12 @@
           </span>
 
           <h2>
-            「何が気になるか」から、<br class="desktop-break">
-            「次に何をするか」が分かる資料へ
+            「気になる」で終わらず、<br class="desktop-break">
+            次の行動まで明確に
           </h2>
 
           <p>
-            以下は、判断整理シートの説明用サンプルです。
+            以下は判断整理シートの説明用サンプルです。
             実際の内容は、ご提出いただく図面と相談内容によって異なります。
           </p>
         </div>
@@ -3263,7 +3346,7 @@
                 class="sample-cell"
                 data-label="判断理由"
               >
-                朝の支度には有効ですが、
+                朝の支度には便利ですが、
                 収納の奥行きによって通行と建具の開閉が
                 重なる可能性があります。
               </div>
@@ -3283,7 +3366,7 @@
                 data-label="判断区分"
               >
                 <span class="sample-status status-keep">
-                  現状を活用
+                  現在案を活用
                 </span>
               </div>
 
@@ -3298,8 +3381,8 @@
                 class="sample-cell"
                 data-label="判断理由"
               >
-                希望する家具を配置しても、
-                家族が集まる範囲と配膳動線を
+                使用予定の家具を配置しても、
+                家族が集まる場所と配膳動線を
                 確保できる見込みがあります。
               </div>
 
@@ -3333,8 +3416,8 @@
                 class="sample-cell"
                 data-label="判断理由"
               >
-                ベッドフレームの実寸、カーテン、
-                建具の納まりによって使える幅が変わります。
+                ベッドフレーム、カーテン、建具の納まりによって、
+                実際に使える幅が変わります。
               </div>
 
               <div
@@ -3401,20 +3484,21 @@
           </span>
 
           <h2>
-            できることと、できないことを明確にしています
+            相談できることを、<br class="desktop-break">
+            あらかじめ明確にしています
           </h2>
 
           <p>
             本サービスは、第三者の建築士による
-            <strong>間取りと暮らしの意思決定支援</strong>です。
-            設計契約や性能保証を行うサービスではありません。
+            <strong>間取りと暮らしの判断支援</strong>です。
+            設計契約、性能保証、建物状況調査ではありません。
           </p>
         </div>
 
         <div class="scope-grid">
           <article class="scope-box included">
             <h3>
-              相談に含まれること
+              基本料金に含まれること
             </h3>
 
             <ul class="scope-list">
@@ -3439,7 +3523,7 @@
               </li>
 
               <li>
-                変更候補・現状維持・要確認事項の整理
+                変更候補・現在案を活かす場所の整理
               </li>
 
               <li>
@@ -3455,14 +3539,14 @@
               </li>
 
               <li>
-                必要に応じた重点空間の視覚確認資料
+                必要に応じた重点箇所の視覚確認資料
               </li>
             </ul>
           </article>
 
           <article class="scope-box excluded">
             <h3>
-              相談に含まれないこと
+              基本料金に含まれないこと
             </h3>
 
             <ul class="scope-list">
@@ -3471,15 +3555,15 @@
               </li>
 
               <li>
-                採光・換気・断熱性能等の保証
+                採光・換気・断熱性能等の計算や保証
+              </li>
+
+              <li>
+                建物状況調査・現地検査・施工検査
               </li>
 
               <li>
                 確認申請や設計図書の作成
-              </li>
-
-              <li>
-                施工可否・工事品質の保証
               </li>
 
               <li>
@@ -3499,7 +3583,7 @@
               </li>
 
               <li>
-                費用・工期の確定判断
+                工事費・住宅ローン・家計の個別診断
               </li>
             </ul>
           </article>
@@ -3519,8 +3603,8 @@
     </section>
 
     <!-- ====================================================
-         実績・事例テンプレート
-         実案件を入れた後にhiddenを削除
+         実績・事例
+         実案件へ編集した後にhiddenを削除
          ==================================================== -->
 
     <section id="cases" class="cases" hidden>
@@ -3535,8 +3619,8 @@
           </h2>
 
           <p>
-            相談前の悩みと、
-            相談後にどのような判断ができたかをご紹介します。
+            相談前に迷っていたことと、
+            相談後に決められたことをご紹介します。
           </p>
         </div>
 
@@ -3547,7 +3631,7 @@
               src="assets/case-01.jpg"
               width="800"
               height="500"
-              alt="相談事例の図面または確認資料"
+              alt="相談事例1の図面または確認資料"
               loading="lazy"
               decoding="async"
             >
@@ -3558,12 +3642,12 @@
               </small>
 
               <h3>
-                事例の見出しを入力
+                相談前の悩みが伝わる見出し
               </h3>
 
               <p>
-                相談前の悩み、変更した場所、
-                現在案を活かした場所、
+                相談前の状況、確認した論点、
+                変更した場所、活かした場所、
                 相談後に決められたことを入力します。
               </p>
             </div>
@@ -3575,7 +3659,7 @@
               src="assets/case-02.jpg"
               width="800"
               height="500"
-              alt="相談事例の図面または確認資料"
+              alt="相談事例2の図面または確認資料"
               loading="lazy"
               decoding="async"
             >
@@ -3586,11 +3670,11 @@
               </small>
 
               <h3>
-                事例の見出しを入力
+                相談後の変化が伝わる見出し
               </h3>
 
               <p>
-                顧客が何に迷い、
+                単に間取りを変更した事例ではなく、
                 どのような判断基準を得られたかを入力します。
               </p>
             </div>
@@ -3602,7 +3686,7 @@
               src="assets/case-03.jpg"
               width="800"
               height="500"
-              alt="相談事例の図面または確認資料"
+              alt="相談事例3の図面または確認資料"
               loading="lazy"
               decoding="async"
             >
@@ -3613,12 +3697,12 @@
               </small>
 
               <h3>
-                事例の見出しを入力
+                現在案を活かした事例の見出し
               </h3>
 
               <p>
-                間取りの変更内容だけでなく、
-                変更しなかった理由も入力します。
+                変更した内容だけでなく、
+                変更しなくてもよいと判断した理由も入力します。
               </p>
             </div>
           </article>
@@ -3627,8 +3711,8 @@
     </section>
 
     <!-- ====================================================
-         お客様の声テンプレート
-         実際の声を入れた後にhiddenを削除
+         お客様の声
+         実際の声へ編集した後にhiddenを削除
          ==================================================== -->
 
     <section id="voices" class="voices" hidden>
@@ -3655,7 +3739,8 @@
 
             <blockquote>
               実際にいただいたお客様の声を入力します。
-              相談前の悩みと相談後の変化が分かる内容を掲載します。
+              相談前の悩みと、相談後に変わったことが
+              分かる内容を掲載します。
             </blockquote>
 
             <cite>
@@ -3698,232 +3783,22 @@
     </section>
 
     <!-- ====================================================
-         相談の流れ
-         ==================================================== -->
-
-    <section id="flow" class="flow">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">
-            CONSULTATION FLOW
-          </span>
-
-          <h2>
-            お申し込みから相談後まで
-          </h2>
-
-          <p>
-            フォームを送信した時点では、
-            予約確定や料金の発生はありません。
-          </p>
-        </div>
-
-        <div class="flow-grid">
-          <article class="flow-card">
-            <h3>
-              申込フォームを送信
-            </h3>
-
-            <p>
-              現在の状況、決定期限、気になる点をご入力いただき、
-              間取り図をご提出ください。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <h3>
-              内容と資料を確認
-            </h3>
-
-            <p>
-              ご相談の対象範囲と資料を確認し、
-              対応可否、候補日、決済方法をご案内します。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <h3>
-              日程確定・事前確認
-            </h3>
-
-            <p>
-              ご入金後に予約確定となります。
-              相談日までに図面と事前回答を確認します。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <h3>
-              オンライン相談
-            </h3>
-
-            <p>
-              Google Meetで75分間、
-              暮らし方と図面を照らし合わせて判断を整理します。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <h3>
-              判断整理シートを送付
-            </h3>
-
-            <p>
-              変更候補、現状維持、建築会社への質問、
-              ご家族で決めることをまとめます。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <h3>
-              次の打ち合わせへ
-            </h3>
-
-            <p>
-              整理した質問と優先順位を使い、
-              建築会社との打ち合わせを進めていただきます。
-            </p>
-          </article>
-        </div>
-
-        <p class="section-note">
-          ※対応可否のご連絡時期や資料送付時期は、
-          お申し込み後の案内でお知らせします。
-        </p>
-      </div>
-    </section>
-
-    <!-- ====================================================
-         料金
-         ==================================================== -->
-
-    <section id="price" class="pricing">
-      <div class="container">
-        <div class="price-card">
-          <div class="price-head">
-            <span class="eyebrow">
-              CONSULTATION FEE
-            </span>
-
-            <h2>
-              建築士の間取り<br class="mobile-break">
-              セカンドオピニオン
-            </h2>
-
-            <div class="price">
-              33,000円
-              <small>（税込）</small>
-            </div>
-
-            <p class="price-caption">
-              契約前・間取り確定前のオンライン個別相談
-            </p>
-          </div>
-
-          <div class="price-body">
-            <ul class="price-list">
-              <li>
-                間取り図1案と事前回答の確認
-              </li>
-
-              <li>
-                Google Meetによる個別相談75分
-              </li>
-
-              <li>
-                動線・収納・家具配置・有効寸法の確認
-              </li>
-
-              <li>
-                変更候補と現状維持の整理
-              </li>
-
-              <li>
-                建築会社への質問整理
-              </li>
-
-              <li>
-                ご家族で決める事項の整理
-              </li>
-
-              <li>
-                相談後の判断整理シート
-              </li>
-
-              <li>
-                必要に応じた重点空間の視覚確認資料
-              </li>
-            </ul>
-
-            <div class="price-side-note">
-              <strong>
-                時間ではなく、判断材料を持ち帰る相談です
-              </strong>
-
-              <p>
-                間取りを全面的に描き直すサービスではありません。
-                現在の提案をもとに、
-                守りたい暮らしと変更を優先する場所を整理します。
-              </p>
-            </div>
-          </div>
-
-          <div class="price-action">
-            <a
-              class="button button-light button-arrow js-apply-link"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta-location="price"
-            >
-              図面を提出して対応可否を確認する
-            </a>
-
-            <p class="price-action-note">
-              フォーム送信だけでは料金は発生しません。
-              ご提出内容を確認後、
-              対応可否・日程・お支払い方法をご案内します。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================
          プロフィール
-         内容を編集した後にhiddenを削除
+         実情報へ編集した後にhiddenを削除
          ==================================================== -->
 
     <section id="profile" class="profile" hidden>
       <div class="container">
         <div class="profile-box">
-          <!--
-            写真を設定する場合は、下のprofile-placeholderを削除し、
-            このコメント内のimgを使用してください。
-
-            <img
-              class="profile-image"
-              src="assets/profile.jpg"
-              width="900"
-              height="1125"
-              alt="BETTER HOME DESIGN代表・二級建築士の氏名"
-              loading="lazy"
-              decoding="async"
-            >
-          -->
-
-          <div class="profile-placeholder">
-            <div>
-              <strong>
-                本人写真を掲載
-              </strong>
-
-              <span>
-                顔が分かる自然な写真、または<br>
-                図面を確認している仕事風景を推奨
-              </span>
-            </div>
-          </div>
+          <img
+            class="profile-image"
+            src="assets/profile.jpg"
+            width="900"
+            height="1125"
+            alt="BETTER HOME DESIGN代表・二級建築士の氏名"
+            loading="lazy"
+            decoding="async"
+          >
 
           <div class="profile-copy">
             <span class="eyebrow">
@@ -3941,7 +3816,7 @@
             </p>
 
             <p>
-              間取りのセカンドオピニオンを始めた理由や、
+              間取りのセカンドオピニオンを始めた理由と、
               お客様との相談で大切にしている考え方を入力します。
             </p>
 
@@ -3965,7 +3840,7 @@
               </dt>
 
               <dd>
-                二級建築士｜正確な登録情報へ変更
+                二級建築士｜登録情報を正確に記載
               </dd>
 
               <dt>
@@ -3973,7 +3848,7 @@
               </dt>
 
               <dd>
-                住宅・リノベーション等の実務経歴
+                住宅設計・リノベーション等の実務経歴
               </dd>
 
               <dt>
@@ -4016,6 +3891,202 @@
     </section>
 
     <!-- ====================================================
+         相談の流れ
+         ==================================================== -->
+
+    <section id="flow" class="flow">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            CONSULTATION FLOW
+          </span>
+
+          <h2>
+            お申し込みから相談後まで
+          </h2>
+
+          <p>
+            フォームを送信した時点では、
+            予約確定や料金の発生はありません。
+          </p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <h3>
+              フォームを送信
+            </h3>
+
+            <p>
+              現在の状況、決定期限、気になる点をご入力いただき、
+              間取り図をご提出ください。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <h3>
+              内容と資料を確認
+            </h3>
+
+            <p>
+              ご相談内容と資料を確認し、
+              対応可否、候補日、決済方法をご案内します。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <h3>
+              日程確定・事前確認
+            </h3>
+
+            <p>
+              ご入金後に予約確定となります。
+              相談日までに図面と事前回答を確認します。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <h3>
+              オンライン相談
+            </h3>
+
+            <p>
+              Google Meetで75分間、
+              暮らし方と図面を照らし合わせて整理します。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <h3>
+              判断整理シートを送付
+            </h3>
+
+            <p>
+              変更候補、現在案を活かす場所、
+              質問事項、家族で決めることをまとめます。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <h3>
+              次の打ち合わせへ
+            </h3>
+
+            <p>
+              整理した質問と優先順位を使い、
+              建築会社との打ち合わせを進めていただきます。
+            </p>
+          </article>
+        </div>
+
+        <p class="section-note">
+          ※対応可否の回答時期、判断整理シートの送付時期、
+          キャンセル条件は、申込フォームと利用規約に明記してください。
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         料金
+         ==================================================== -->
+
+    <section id="price" class="pricing">
+      <div class="container">
+        <div class="price-card">
+          <div class="price-head">
+            <span class="eyebrow">
+              CONSULTATION FEE
+            </span>
+
+            <h2>
+              建築士の間取り<br class="mobile-break">
+              セカンドオピニオン
+            </h2>
+
+            <div class="price">
+              33,000円
+              <small>（税込）</small>
+            </div>
+
+            <p class="price-caption">
+              間取り確定前のオンライン個別相談
+            </p>
+          </div>
+
+          <div class="price-body">
+            <ul class="price-list">
+              <li>
+                現在検討中の間取り図1案
+              </li>
+
+              <li>
+                図面と事前回答の確認
+              </li>
+
+              <li>
+                Google Meetによる個別相談75分
+              </li>
+
+              <li>
+                動線・収納・家具配置・有効寸法の確認
+              </li>
+
+              <li>
+                変更候補と現在案を活かす場所の整理
+              </li>
+
+              <li>
+                建築会社への質問整理
+              </li>
+
+              <li>
+                ご家族で決める事項の整理
+              </li>
+
+              <li>
+                相談後の判断整理シート
+              </li>
+
+              <li>
+                必要に応じた重点箇所の視覚確認資料
+              </li>
+            </ul>
+
+            <div class="price-side-note">
+              <strong>
+                75分の会話だけに対する料金ではありません
+              </strong>
+
+              <p>
+                事前の図面確認、個別相談、
+                質問事項の整理、相談後の資料作成までを含みます。
+                現在案を判断するための材料を持ち帰るサービスです。
+              </p>
+            </div>
+          </div>
+
+          <div class="price-action">
+            <a
+              class="button button-light button-arrow js-apply-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta-location="price"
+            >
+              相談できる内容か確認する
+            </a>
+
+            <p class="price-action-note">
+              フォーム送信だけでは料金は発生しません。
+              ご提出内容を確認後、
+              対応可否・候補日・お支払い方法をご案内します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
          FAQ
          ==================================================== -->
 
@@ -4039,20 +4110,20 @@
 
             <p>
               無料診断では、図面上で優先して確認したい論点を整理します。
-              個別相談では、ご家族の生活習慣、家具寸法、収納物、
-              優先順位を確認し、変更候補・現状維持・建築会社への確認・
-              ご家族で決めることに分けて整理します。
+              個別相談では、生活習慣、家具寸法、収納物、
+              優先順位を確認し、変更・維持・要確認・
+              家族で決定に分けて整理します。
             </p>
           </details>
 
           <details>
             <summary>
-              ハウスメーカーへ失礼になりませんか？
+              ハウスメーカーに失礼になりませんか？
             </summary>
 
             <p>
               建築会社の提案を否定するためのサービスではありません。
-              漠然とした不安を、寸法、仕様、暮らし方などの
+              漠然とした不安を、寸法、仕様、使い方などの
               具体的な確認事項へ変換し、
               建設的に打ち合わせできる状態を目指します。
             </p>
@@ -4066,7 +4137,7 @@
             <p>
               間取り図を全面的に設計し直すサービスではありません。
               現在案をもとに、変更を検討する場所、
-              現状を活かせる場所、建築会社へ確認する事項を整理します。
+              活かせる場所、建築会社へ確認する事項を整理します。
             </p>
           </details>
 
@@ -4077,7 +4148,7 @@
 
             <p>
               収納面積だけでなく、収納する物、使う場所、
-              出し入れの頻度、必要な奥行きなどを確認します。
+              出し入れの頻度、必要な奥行きを確認します。
               収納物の情報が具体的なほど、実生活に近い整理ができます。
             </p>
           </details>
@@ -4090,8 +4161,7 @@
             <p>
               使用予定の家具寸法をご提出いただければ、
               家具配置後の通路や建具との関係を確認します。
-              商品寸法と施工後の有効寸法は異なる場合があるため、
-              最終寸法は建築会社へ確認していただきます。
+              施工後の最終的な有効寸法は、建築会社へご確認ください。
             </p>
           </details>
 
@@ -4103,8 +4173,8 @@
             <p>
               図面や資料から読み取れる範囲で、
               窓の位置や周辺条件など、
-              建築会社へ確認すべき論点を整理します。
-              採光性能、法規適合、室内の明るさを保証するものではありません。
+              建築会社へ確認したい論点を整理します。
+              採光計算、法規適合、明るさの保証は含まれません。
             </p>
           </details>
 
@@ -4115,9 +4185,36 @@
 
             <p>
               間取り変更と外観・屋根形状の関係について、
-              ご提出資料から確認できる論点を整理します。
+              ご提出資料から読み取れる論点を整理します。
               構造、施工可否、法規等の最終判断は、
               契約中の設計者・施工会社へご確認ください。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              建物の欠陥や施工不良も診断できますか？
+            </summary>
+
+            <p>
+              本サービスは図面上の間取り相談であり、
+              建物状況調査、ホームインスペクション、
+              現地検査、施工品質の判定は含みません。
+              現地調査が必要な場合は、
+              対応資格を持つ専門家へご依頼ください。
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              住宅ローンや家計も相談できますか？
+            </summary>
+
+            <p>
+              本サービスに住宅ローン設計、家計診断、
+              保険、税務、資産運用の個別相談は含まれません。
+              面積や仕様の変更が費用に影響し得る点は整理しますが、
+              具体的な資金計画は各分野の専門家へご確認ください。
             </p>
           </details>
 
@@ -4129,7 +4226,7 @@
             <p>
               平面図だけでは重点箇所を判断しにくい場合に、
               簡易3Dまたは2D家具配置資料を作成します。
-              確認方法は、資料と相談内容に応じて建築士が選定します。
+              確認方法は資料と相談内容に応じて選定します。
             </p>
           </details>
 
@@ -4141,7 +4238,7 @@
             <p>
               基本料金の対象は、現在検討中の間取り図1案です。
               複数案の詳細比較をご希望の場合は、
-              内容を確認したうえで対応可否や追加費用をご案内します。
+              内容を確認したうえで対応可否と追加費用をご案内します。
             </p>
           </details>
 
@@ -4176,7 +4273,7 @@
 
             <p>
               ご提出資料は、相談対応と必要な記録管理のために使用します。
-              保存期間や外部サービスの利用については、
+              保存期間や外部サービスの利用は、
               プライバシーポリシーに記載します。
               図面内の氏名や住所は、可能な範囲で隠してご提出ください。
             </p>
@@ -4192,14 +4289,13 @@
     <section class="final-cta">
       <div class="reading-container">
         <h2>
-          この間取りで進む前に、<br>
-          「何を決めるか」を整理する。
+          間取りを決める前に、<br>
+          判断する順番を整える。
         </h2>
 
         <p>
           不安な場所をすべて変更する必要はありません。
-          ご家族にとって優先度の高い変更と、
-          現在の計画を活かせる部分を分け、
+          優先して見直す場所と、現在案を活かせる場所を分け、
           建築会社と話す内容を明確にします。
         </p>
 
@@ -4210,7 +4306,7 @@
           rel="noopener noreferrer"
           data-cta-location="final"
         >
-          次の打ち合わせ前に判断を整理する
+          相談できる内容か確認する
         </a>
 
         <p class="final-note">
@@ -4247,7 +4343,6 @@
         class="footer-links"
         aria-label="フッターナビゲーション"
       >
-        <!-- 公開前に各ページを作成してください -->
         <a href="privacy.html">
           プライバシーポリシー
         </a>
@@ -4273,7 +4368,7 @@
 
   <div
     id="mobile-fixed-cta"
-    class="mobile-fixed-cta"
+    class="mobile-fixed-cta is-hidden"
   >
     <a
       class="button button-primary button-arrow js-apply-link"
@@ -4282,7 +4377,7 @@
       rel="noopener noreferrer"
       data-cta-location="mobile_fixed"
     >
-      相談の対応可否を確認する
+      相談できる内容か確認する
     </a>
   </div>
 
@@ -4299,12 +4394,12 @@
        * 公開前設定
        * =====================================================
        *
-       * analyticsMode:
-       * - "none"：計測しない
-       * - "gtag"：GA4のgtagを使用
-       * - "gtm"：Google Tag Managerを使用
+       * analyticsMode
+       * "none"：計測しない
+       * "gtag"：GA4のgtagを使用
+       * "gtm" ：Google Tag Managerを使用
        *
-       * gtagとGTMの両方へ同じイベントを送ると、
+       * 同じイベントをgtagとGTMの両方へ送信すると、
        * 二重計測になる可能性があります。
        */
       var CONFIG = {
@@ -4317,10 +4412,10 @@
           "consultation_apply_click",
 
         /*
-         * Googleフォームで管理用の質問を作成し、
+         * Googleフォームに管理用の質問を作り、
          * 「事前入力したURLを取得」からentry IDを確認します。
          *
-         * 設定例：
+         * 例：
          * referralId: "entry.123456789"
          */
         formEntryIds: {
@@ -4403,23 +4498,27 @@
 
         if (heroTitle) {
           heroTitle.innerHTML =
-            "無料診断で見つかった確認点を、" +
-            "<em>変更する・そのまま進める・確認してから決める</em>" +
-            "に整理します。";
+            "診断結果を、<br>" +
+            "次の判断へ。" +
+            "<em>" +
+            "変更する場所と、活かせる場所を整理します。" +
+            "</em>";
         }
 
         if (heroLead) {
           heroLead.innerHTML =
             "無料診断では、図面上で優先して確認したい論点をお伝えしました。" +
             "個別相談では、ご家族の生活習慣、家具寸法、収納物、" +
-            "面積上限や将来の変化を確認します。" +
-            "<strong>その場所を変更するか、現在案を活かすか、" +
-            "建築会社の回答を受けて決めるか</strong>まで整理します。";
+            "面積上限や将来の変化まで確認します。" +
+            "<strong>" +
+            "変更するか、現在案を活かすか、" +
+            "建築会社の回答を受けて決めるかまで整理します。" +
+            "</strong>";
         }
 
         if (heroCta) {
           heroCta.textContent =
-            "無料診断の確認点を判断まで整理する";
+            "診断結果を判断まで整理する";
         }
       }
 
@@ -4455,11 +4554,6 @@
               ) || "unknown"
             );
 
-          /*
-           * 一般の計測パラメータもURLへ引き継ぎます。
-           * Googleフォームの回答として保存するには、
-           * 下のentry ID設定が別途必要です。
-           */
           [
             "utm_source",
             "utm_medium",
@@ -4580,9 +4674,6 @@
                   leadRank || "unknown"
               };
 
-              /*
-               * 設定した方式のどちらか一方だけへ送信します。
-               */
               if (
                 CONFIG.analyticsMode === "gtag" &&
                 typeof window.gtag === "function"
@@ -4592,9 +4683,7 @@
                   CONFIG.analyticsEventName,
                   eventData
                 );
-              }
-
-              if (
+              } else if (
                 CONFIG.analyticsMode === "gtm"
               ) {
                 window.dataLayer =
@@ -4639,12 +4728,22 @@
             ".final-cta"
           );
 
+        if (!fixedCta) {
+          return;
+        }
+
+        /*
+         * IntersectionObserver非対応環境では、
+         * ヒーロー通過後のスクロール量で表示します。
+         */
         if (
-          !fixedCta ||
           !hero ||
           !finalCta ||
           !("IntersectionObserver" in window)
         ) {
+          fixedCta.classList.remove(
+            "is-hidden"
+          );
           return;
         }
 
@@ -4726,7 +4825,7 @@
         value
       ) {
         /*
-         * refには推測しにくいランダムIDのみを使用してください。
+         * refには推測されにくいランダムIDのみを使用してください。
          * 氏名、メールアドレス、電話番号はURLへ含めません。
          */
         var normalized =
