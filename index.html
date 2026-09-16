@@ -1183,6 +1183,36 @@
       font-weight: 900;
     }
 
+    .next-card-footnote {
+      margin: auto 0 0;
+      padding-top: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .transfer-note {
+      margin: 0 0 18px;
+      padding: 13px 15px;
+      color: var(--brand);
+      background: rgba(255, 255, 255, 0.94);
+      border-left: 4px solid var(--gold-2);
+      border-radius: 12px;
+    }
+
+    .transfer-note strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .transfer-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
     .next-support-note {
       margin: 22px 0 0;
       color: var(--muted);
@@ -2393,7 +2423,7 @@
             </div>
           </div>
 
-          <div class="price-action">
+                    <div class="price-action">
             <a
               class="button light js-apply"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
@@ -2418,7 +2448,9 @@
       <div class="container">
         <div class="next-support-box">
           <div class="next-support-intro">
-            <span class="eyebrow">AFTER CONSULTATION</span>
+            <span class="eyebrow">
+              AFTER CONSULTATION
+            </span>
 
             <h2>
               相談後、継続サポートが必要になった場合も、<br>
@@ -2435,13 +2467,15 @@
           </div>
 
           <div class="next-support-grid">
+            <!-- 間取りフォローアップ -->
             <article class="next-card">
               <p class="next-card-label">
                 修正後の間取りを、確定まで確認したい方
-
               </p>
 
-              <h3>間取りフォローアップ</h3>
+              <h3>
+                間取りフォローアップ
+              </h3>
 
               <p class="next-card-price">
                 追加55,000円（税込）
@@ -2460,14 +2494,22 @@
                 <li>契約期間中のテキスト相談</li>
               </ul>
 
-              <a class="text-link" href="#faq">
+              <p class="next-card-footnote">
+                ※内装・照明・電気図の確認は含まれません。
+              </p>
+
+              <a
+                class="text-link"
+                href="#faq"
+              >
                 継続条件を確認する →
               </a>
-            </article
+            </article>
+
+            <!-- 家づくりトータル伴走サポート -->
             <article class="next-card main">
               <p class="next-card-label">
                 内装・照明・電気図まで伴走してほしい方
-
               </p>
 
               <h3>
@@ -2492,22 +2534,32 @@
                 <li>契約期間中のテキスト相談</li>
               </ul>
 
-              <a
-  class="button accent js-total-support"
-  href="../total-support/?utm_source=madori_consulting&amp;utm_medium=referral&amp;utm_campaign=service_upgrade&amp;customer_stage=considering_total_support"
-  data-location="next_support_section
-"
->
-  トータル伴走の内容を見る
-</a>
+              <div class="transfer-note">
+                <strong>
+                  セカンドオピニオンから移行する場合
+                </strong>
 
+                <span>
+                  実施後7日以内のお申し込みは、
+                  情報の引継ぎ分として22,000円を充当します。
+                </span>
+              </div>
+
+              <a
+                class="button accent js-total-support"
+                href="../total-support/?utm_source=madori_consulting&amp;utm_medium=referral&amp;utm_campaign=service_upgrade&amp;customer_stage=considering_total_support"
+                data-location="next_support_section"
+              >
+                トータル伴走の内容を見る
+              </a>
             </article>
           </div>
 
           <p class="next-support-note">
             継続サポートは自動契約ではありません。
             ご希望、建築スケジュール、対応枠を確認し、
-            内容と料金に同意いただいた場合のみ別途契約となります。
+            内容と料金に同意いただいた場合のみ
+            別途契約となります。
           </p>
         </div>
       </div>
@@ -2517,7 +2569,9 @@
     <section id="flow" class="flow">
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">CONSULTATION FLOW</span>
+          <span class="eyebrow">
+            CONSULTATION FLOW
+          </span>
 
           <h2>
             お申し込みから相談後まで
@@ -2532,7 +2586,9 @@
 
         <div class="flow-grid">
           <article class="flow-card">
-            <h3>フォーム送信</h3>
+            <h3>
+              フォーム送信
+            </h3>
 
             <p>
               現在の状況、決定期限、
@@ -2541,7 +2597,9 @@
           </article>
 
           <article class="flow-card">
-            <h3>図面・資料の提出</h3>
+            <h3>
+              図面・資料の提出
+            </h3>
 
             <p>
               現在検討中の間取り図や、
@@ -2550,7 +2608,9 @@
           </article>
 
           <article class="flow-card">
-            <h3>対応可否のご案内</h3>
+            <h3>
+              対応可否のご案内
+            </h3>
 
             <p>
               資料を確認し、
@@ -2559,7 +2619,9 @@
           </article>
 
           <article class="flow-card">
-            <h3>ご予約確定</h3>
+            <h3>
+              ご予約確定
+            </h3>
 
             <p>
               サービス内容への同意と
@@ -2568,7 +2630,9 @@
           </article>
 
           <article class="flow-card">
-            <h3>オンライン相談</h3>
+            <h3>
+              オンライン相談
+            </h3>
 
             <p>
               Google Meetで75分、
@@ -2577,7 +2641,9 @@
           </article>
 
           <article class="flow-card">
-            <h3>判断整理シート送付</h3>
+            <h3>
+              判断整理シート送付
+            </h3>
 
             <p>
               相談内容を整理し、
@@ -2592,9 +2658,13 @@
     <section id="faq" class="faq">
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">FAQ</span>
+          <span class="eyebrow">
+            FAQ
+          </span>
 
-          <h2>よくある質問</h2>
+          <h2>
+            よくある質問
+          </h2>
         </div>
 
         <div class="faq-grid">
@@ -2644,7 +2714,6 @@
               図面から読み取れる論点は整理できますが、
               法規、構造、性能、施工可否の
               確定判断や保証は行いません。
-
               最終判断は、設計・施工を担当する
               建築会社へご確認ください。
             </p>
@@ -2724,7 +2793,7 @@
 
               トータル伴走サポートへの追加支払額は
               198,000円（税込）、
-              単発相談との合計支払額は
+              セカンドオピニオンとの合計支払額は
               231,000円（税込）です。
             </p>
           </details>
@@ -2819,13 +2888,13 @@
             href="../total-support/?utm_source=madori_consulting&amp;utm_medium=referral&amp;utm_campaign=service_upgrade&amp;customer_stage=considering_total_support"
             data-location="final_total_support"
           >
-            家全体の伴走サポートを見る
+            内装・電気図までの伴走を見る
           </a>
         </div>
 
         <p class="final-note">
           まず間取りだけ確認したい方は33,000円の個別相談、
-          間取りから内装・電気図まで支援が必要な方は
+          間取りから内装・照明・電気図まで支援が必要な方は
           トータル伴走サポートをご確認ください。
         </p>
       </div>
@@ -3061,8 +3130,10 @@
       /*
        * トータル伴走サポートへのリンクを設定します。
        *
-       * リンクごとのcustomer_stageは
-       * HTMLに設定された値を優先します。
+       * この公開LPから遷移する人は、
+       * セカンドオピニオン相談済みとは限りません。
+       * そのため、顧客段階は原則として
+       * considering_total_supportを使用します。
        */
       function updateTotalSupportLinks() {
         var links =
@@ -3100,6 +3171,18 @@
               ) ||
               "considering_total_support"
             );
+
+          /*
+           * 公開LP上のリンクから、
+           * 誤って相談後扱いになることを防止します。
+           */
+          if (
+            customerStage !==
+            "considering_total_support"
+          ) {
+            customerStage =
+              "considering_total_support";
+          }
 
           url.searchParams.set(
             "utm_source",
@@ -3141,11 +3224,15 @@
               sendEvent(
                 "total_support_click",
                 {
-                  cta_location: ctaLocation,
+                  cta_location:
+                    ctaLocation,
+
                   requested_service:
                     "家づくりトータル伴走サポート220000円",
+
                   customer_stage:
                     customerStage,
+
                   traffic_source:
                     "madori_consulting"
                 }
@@ -3349,3 +3436,4 @@
   </script>
 </body>
 </html>
+
