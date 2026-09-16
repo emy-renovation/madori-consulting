@@ -8,14 +8,20 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <title>建築士の間取りセカンドオピニオン｜BETTER HOME DESIGN</title>
+  <title>
+    建築士の間取りセカンドオピニオン｜BETTER HOME DESIGN
+  </title>
 
   <meta
     name="description"
-    content="ハウスメーカーから提案された間取りを、二級建築士が第三者の視点で確認。変更する場所、活かせる場所、建築会社への確認事項、ご家族で決めることを整理します。33,000円・オンライン全国対応。"
+    content="ハウスメーカーから提案された間取りを、二級建築士が第三者の視点で確認。変更する場所、活かせる場所、建築会社への確認事項、ご家族で決めることを整理します。33,000円（税込）・全国オンライン対応。"
   >
 
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  >
+
   <meta name="author" content="BETTER HOME DESIGN">
   <meta name="theme-color" content="#173f46">
 
@@ -24,8 +30,23 @@
     href="https://emy-renovation.github.io/madori-consulting/"
   >
 
+  <!-- OGP -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="BETTER HOME DESIGN">
+
+  <meta
+    property="og:url"
+    content="https://emy-renovation.github.io/madori-consulting/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="BETTER HOME DESIGN"
+  >
+
+  <meta
+    property="og:locale"
+    content="ja_JP"
+  >
 
   <meta
     property="og:title"
@@ -34,12 +55,7 @@
 
   <meta
     property="og:description"
-    content="変更する場所、活かせる場所、確認してから決める場所を整理します。"
-  >
-
-  <meta
-    property="og:url"
-    content="https://emy-renovation.github.io/madori-consulting/"
+    content="変更する場所、活かせる場所、確認してから決める場所を、二級建築士が第三者の視点で整理します。"
   >
 
   <meta
@@ -47,7 +63,56 @@
     content="https://emy-renovation.github.io/madori-consulting/assets/og-madori.jpg"
   >
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    property="og:image:secure_url"
+    content="https://emy-renovation.github.io/madori-consulting/assets/og-madori.jpg"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="建築士の間取りセカンドオピニオン"
+  >
+
+  <!-- X -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="その間取り、決める前に。｜建築士の間取りセカンドオピニオン"
+  >
+
+  <meta
+    name="twitter:description"
+    content="変更する場所、活かせる場所、確認してから決める場所を、二級建築士が第三者の視点で整理します。"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://emy-renovation.github.io/madori-consulting/assets/og-madori.jpg"
+  >
+
+  <meta
+    name="twitter:image:alt"
+    content="建築士の間取りセカンドオピニオン"
+  >
 
   <style>
     :root {
@@ -61,12 +126,10 @@
       --ink: #202a2e;
       --muted: #5e6a6f;
       --line: #d9e3e5;
-      --white: #fff;
+      --white: #ffffff;
       --bg: #f6f8f8;
       --warm: #fbf7ec;
-      --danger-soft: #fae8e8;
-      --success-soft: #e6f2ed;
-      --shadow: 0 20px 55px rgba(23, 63, 70, .11);
+      --shadow: 0 20px 55px rgba(23, 63, 70, 0.11);
       --radius: 24px;
       --max: 1120px;
       --reading: 760px;
@@ -93,7 +156,6 @@
 
     body {
       margin: 0;
-      padding: 0;
       color: var(--ink);
       background: var(--bg);
       font-family: var(--font);
@@ -117,7 +179,7 @@
     }
 
     :focus-visible {
-      outline: 3px solid rgba(165, 117, 36, .6);
+      outline: 3px solid rgba(165, 117, 36, 0.62);
       outline-offset: 4px;
     }
 
@@ -160,7 +222,7 @@
       color: var(--gold);
       font-size: 11px;
       font-weight: 900;
-      letter-spacing: .14em;
+      letter-spacing: 0.14em;
     }
 
     .eyebrow::before {
@@ -208,12 +270,14 @@
       background: var(--brand-2);
       border: 1px solid transparent;
       border-radius: 999px;
-      box-shadow: 0 14px 30px rgba(23, 63, 70, .19);
+      box-shadow: 0 14px 30px rgba(23, 63, 70, 0.19);
       font-weight: 900;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      transition: .18s ease;
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease;
     }
 
     .button:hover {
@@ -232,8 +296,8 @@
 
     .button.outline {
       color: var(--brand);
-      background: rgba(255, 255, 255, .7);
-      border-color: rgba(50, 107, 115, .3);
+      background: rgba(255, 255, 255, 0.76);
+      border-color: rgba(50, 107, 115, 0.3);
       box-shadow: none;
     }
 
@@ -251,7 +315,7 @@
 
     .diagnosis {
       display: none;
-      padding: 10px 0;
+      padding: 10px 15px;
       color: var(--brand);
       background: var(--gold-light);
       font-size: 12px;
@@ -267,7 +331,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, .94);
+      background: rgba(255, 255, 255, 0.94);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(14px);
     }
@@ -289,7 +353,7 @@
     .brand strong {
       display: block;
       font-size: 14px;
-      letter-spacing: .07em;
+      letter-spacing: 0.07em;
     }
 
     .brand small {
@@ -324,15 +388,23 @@
       position: relative;
       padding: 86px 0 74px;
       background:
-        radial-gradient(circle at 8% 5%, rgba(196, 225, 233, .9), transparent 32%),
-        radial-gradient(circle at 92% 15%, rgba(240, 208, 119, .45), transparent 25%),
+        radial-gradient(
+          circle at 8% 5%,
+          rgba(196, 225, 233, 0.9),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 92% 15%,
+          rgba(240, 208, 119, 0.45),
+          transparent 25%
+        ),
         linear-gradient(145deg, #fff, #edf6f7);
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 52px;
       align-items: center;
     }
@@ -341,10 +413,10 @@
       display: inline-flex;
       padding: 7px 13px;
       color: var(--brand);
-      background: rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--line);
       border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(23, 63, 70, .07);
+      box-shadow: 0 8px 20px rgba(23, 63, 70, 0.07);
       font-size: 11px;
       font-weight: 900;
     }
@@ -354,14 +426,14 @@
       color: var(--brand);
       font-size: clamp(42px, 5.2vw, 66px);
       line-height: 1.22;
-      letter-spacing: -.02em;
+      letter-spacing: -0.02em;
     }
 
     .hero h1 em {
       display: block;
       margin-top: 10px;
       color: var(--gold);
-      font-size: .54em;
+      font-size: 0.54em;
       font-style: normal;
       line-height: 1.5;
     }
@@ -406,7 +478,7 @@
     .decision small {
       color: #efd79d;
       font-weight: 900;
-      letter-spacing: .13em;
+      letter-spacing: 0.13em;
     }
 
     .decision h2 {
@@ -421,7 +493,7 @@
       margin: 0;
       padding: 0;
       list-style: none;
-      counter-reset: item;
+      counter-reset: decision;
     }
 
     .decision li {
@@ -437,15 +509,15 @@
     }
 
     .decision li::before {
-      counter-increment: item;
-      content: "0" counter(item);
+      counter-increment: decision;
+      content: "0" counter(decision);
       color: var(--gold);
       font-size: 10px;
     }
 
     .decision p {
       margin: 16px 0 0;
-      color: rgba(255, 255, 255, .75);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 11px;
     }
 
@@ -500,7 +572,7 @@
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(23, 63, 70, .06);
+      box-shadow: 0 8px 24px rgba(23, 63, 70, 0.06);
     }
 
     .card-number {
@@ -576,7 +648,7 @@
     }
 
     .difference-card.paid p {
-      color: rgba(255, 255, 255, .8);
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .difference-arrow {
@@ -585,6 +657,81 @@
       color: var(--gold);
       font-size: 28px;
       font-weight: 900;
+    }
+
+    .work {
+      background: #fff;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(23, 63, 70, 0.08);
+    }
+
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #f4f4f4;
+    }
+
+    .work-card.plan img {
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .work-copy {
+      padding: 19px 20px 22px;
+    }
+
+    .work-copy small {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .work-copy h3 {
+      margin: 4px 0 7px;
+      color: var(--brand);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .work-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .visual-gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+      gap: 12px;
+      margin-top: 42px;
+    }
+
+    .visual-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      background: #eee;
+      border-radius: 18px;
+    }
+
+    .visual-gallery img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
     }
 
     .deliverable-grid {
@@ -627,13 +774,69 @@
       font-size: 13px;
     }
 
+    .voices {
+      background: var(--warm);
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .voice-card {
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(23, 63, 70, 0.07);
+    }
+
+    .voice-image {
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 16px;
+    }
+
+    .voice-image img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+    }
+
+    .voice-card blockquote {
+      margin: 20px 0 0;
+      color: var(--brand);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.9;
+    }
+
+    .voice-card blockquote::before {
+      content: "“";
+      display: block;
+      height: 28px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 46px;
+      line-height: 1;
+    }
+
+    .voice-card cite {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-style: normal;
+    }
+
     .profile {
       background: #fff;
     }
 
     .profile-box {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
+      grid-template-columns: 0.75fr 1.25fr;
       gap: 38px;
       align-items: center;
       padding: 36px;
@@ -649,7 +852,11 @@
       overflow: hidden;
       color: var(--brand);
       background:
-        radial-gradient(circle at 25% 15%, rgba(240, 208, 119, .5), transparent 25%),
+        radial-gradient(
+          circle at 25% 15%,
+          rgba(240, 208, 119, 0.5),
+          transparent 25%
+        ),
         linear-gradient(145deg, #fff, var(--brand-soft));
       border-radius: 22px;
       text-align: center;
@@ -718,7 +925,11 @@
 
     .price-section {
       background:
-        radial-gradient(circle at 10% 0%, rgba(240, 208, 119, .3), transparent 28%),
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(240, 208, 119, 0.3),
+          transparent 28%
+        ),
         linear-gradient(145deg, #eaf4f5, #faf5e7);
     }
 
@@ -754,7 +965,7 @@
 
     .price-caption {
       margin: 0 0 24px;
-      color: rgba(255, 255, 255, .75);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 13px;
     }
 
@@ -804,7 +1015,7 @@
 
     .price-action p {
       margin: 12px 0 0;
-      color: rgba(255, 255, 255, .72);
+      color: rgba(255, 255, 255, 0.72);
       font-size: 11px;
     }
 
@@ -897,7 +1108,11 @@
     .final {
       color: #fff;
       background:
-        radial-gradient(circle at 10% 0%, rgba(240, 208, 119, .27), transparent 30%),
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(240, 208, 119, 0.27),
+          transparent 30%
+        ),
         linear-gradient(145deg, var(--navy), var(--brand-2));
       text-align: center;
     }
@@ -910,12 +1125,12 @@
 
     .final p {
       margin: 18px auto 25px;
-      color: rgba(255, 255, 255, .8);
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .footer {
       padding: 36px 0;
-      color: rgba(255, 255, 255, .72);
+      color: rgba(255, 255, 255, 0.72);
       background: #09272c;
       font-size: 11px;
     }
@@ -940,12 +1155,12 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, .75);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     .copyright {
       margin: 12px 0 0;
-      color: rgba(255, 255, 255, .42);
+      color: rgba(255, 255, 255, 0.42);
     }
 
     .fixed-cta {
@@ -963,8 +1178,17 @@
       }
 
       .card-grid,
-      .flow-grid {
+      .flow-grid,
+      .work-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .visual-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .visual-gallery figure:first-child {
+        grid-column: 1 / -1;
       }
     }
 
@@ -1065,12 +1289,19 @@
       .deliverable-grid,
       .flow-grid,
       .faq-grid,
-      .price-content {
+      .price-content,
+      .work-grid,
+      .voice-grid,
+      .visual-gallery {
         grid-template-columns: 1fr;
       }
 
-      .card {
-        padding: 21px;
+      .visual-gallery figure:first-child {
+        grid-column: auto;
+      }
+
+      .visual-gallery img {
+        min-height: 220px;
       }
 
       .difference-box {
@@ -1083,11 +1314,6 @@
       .difference-arrow {
         min-height: 28px;
         transform: rotate(90deg);
-      }
-
-      .deliverable {
-        grid-template-columns: 40px 1fr;
-        padding: 19px;
       }
 
       .profile-box {
@@ -1103,10 +1329,6 @@
 
       .profile-data {
         grid-template-columns: 1fr;
-      }
-
-      .profile-data dd + dt {
-        margin-top: 7px;
       }
 
       .price-card {
@@ -1136,9 +1358,9 @@
         padding:
           9px 13px
           calc(9px + env(safe-area-inset-bottom));
-        background: rgba(255, 255, 255, .96);
+        background: rgba(255, 255, 255, 0.96);
         border-top: 1px solid var(--line);
-        box-shadow: 0 -8px 25px rgba(23, 63, 70, .12);
+        box-shadow: 0 -8px 25px rgba(23, 63, 70, 0.12);
       }
 
       .fixed-cta.hidden {
@@ -1198,16 +1420,18 @@
       },
       {
         "@type": "Service",
+        "@id": "https://emy-renovation.github.io/madori-consulting/#service",
         "name": "建築士の間取りセカンドオピニオン",
         "provider": {
           "@id": "https://emy-renovation.github.io/madori-consulting/#business"
         },
-        "description": "現在検討中の間取り図1案を確認し、変更、維持、確認事項、ご家族で決めることを整理するオンライン相談。",
+        "description": "現在検討中の間取り図1案を確認し、変更する場所、活かせる場所、確認事項、ご家族で決めることを整理するオンライン相談。",
         "offers": {
           "@type": "Offer",
           "price": "33000",
           "priceCurrency": "JPY",
-          "availability": "https://schema.org/LimitedAvailability"
+          "availability": "https://schema.org/LimitedAvailability",
+          "url": "https://emy-renovation.github.io/madori-consulting/"
         }
       }
     ]
@@ -1232,7 +1456,8 @@
       <nav class="nav" aria-label="メインナビゲーション">
         <a href="#concerns">お悩み</a>
         <a href="#difference">無料診断との違い</a>
-        <a href="#deliverables">成果物</a>
+        <a href="#works">相談例</a>
+        <a href="#voices">お客様の声</a>
         <a href="#profile">担当者</a>
         <a href="#price">料金</a>
 
@@ -1257,20 +1482,19 @@
             二級建築士による第三者レビュー
           </div>
 
-          <h1 id="hero-title">
+          <h1>
             その間取り、<br>
             決める前に。
+
             <em>
               変更する場所と、活かせる場所を整理します。
             </em>
           </h1>
 
-          <p id="hero-lead" class="hero-lead">
+          <p class="hero-lead">
             希望は伝えた。でも、このまま進めてよいか決めきれない。
             そんな間取り確定前の不安を、
-            <strong>
-              暮らし・家具・収納・動線・将来性
-            </strong>
+            <strong>暮らし・家具・収納・動線・将来性</strong>
             から確認します。
           </p>
 
@@ -1306,9 +1530,7 @@
         <aside class="decision">
           <small>AFTER CONSULTATION</small>
 
-          <h2>
-            不安を、4つの判断に分けます
-          </h2>
+          <h2>不安を、4つの判断に分けます</h2>
 
           <ol>
             <li>変更を優先して検討する場所</li>
@@ -1372,37 +1594,49 @@
           <article class="card">
             <span class="card-number">01</span>
             <h3>収納を増やすと通路が狭くなる</h3>
-            <p>収納の便利さと、通行・建具の使いやすさを比較したい。</p>
+            <p>
+              収納の便利さと、通行・建具の使いやすさを比較したい。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">02</span>
             <h3>希望と延床面積が両立しない</h3>
-            <p>LDK、収納、個室など、限られた面積で優先順位を決めたい。</p>
+            <p>
+              LDK、収納、個室など、限られた面積で優先順位を決めたい。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">03</span>
             <h3>家具を置いた後の広さが分からない</h3>
-            <p>畳数ではなく、家具配置後の通路や使い方を確認したい。</p>
+            <p>
+              畳数ではなく、家具配置後の通路や使い方を確認したい。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">04</span>
             <h3>収納量が足りるか不安</h3>
-            <p>収納面積だけでなく、使う場所と収納物が合っているか知りたい。</p>
+            <p>
+              収納面積だけでなく、使う場所と収納物が合っているか知りたい。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">05</span>
             <h3>建築会社への伝え方が分からない</h3>
-            <p>「何となく不安」を、回答してもらえる具体的な質問にしたい。</p>
+            <p>
+              「何となく不安」を、回答してもらえる具体的な質問にしたい。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">06</span>
             <h3>今の案を変えすぎるのも不安</h3>
-            <p>変更すべき場所だけでなく、そのまま活かせる場所も知りたい。</p>
+            <p>
+              変更すべき場所だけでなく、そのまま活かせる場所も知りたい。
+            </p>
           </article>
         </div>
       </div>
@@ -1428,19 +1662,25 @@
           <article class="card">
             <span class="card-number">01</span>
             <h3>見直す優先順位が分かる</h3>
-            <p>暮らしへの影響と、完成後の直しにくさから優先度を整理します。</p>
+            <p>
+              暮らしへの影響と、完成後の直しにくさから優先度を整理します。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">02</span>
             <h3>現在案の良さも確認できる</h3>
-            <p>不安だから全部変えるのではなく、活かせる部分を明確にします。</p>
+            <p>
+              不安だから全部変えるのではなく、活かせる部分を明確にします。
+            </p>
           </article>
 
           <article class="card">
             <span class="card-number">03</span>
             <h3>次の打ち合わせで質問できる</h3>
-            <p>寸法、仕様、家具配置など、建築会社への質問に変換します。</p>
+            <p>
+              寸法、仕様、家具配置など、建築会社への質問に変換します。
+            </p>
           </article>
         </div>
       </div>
@@ -1479,6 +1719,126 @@
       </div>
     </section>
 
+    <section id="works" class="work">
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">CONSULTATION EXAMPLES</span>
+
+          <h2>
+            図面だけでなく、<br>
+            暮らし方まで照らして確認します
+          </h2>
+
+          <p>
+            収納する物、家具の大きさ、通路、視線、家事動線などを確認し、
+            次の打ち合わせで伝えられる形へ整理します。
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card plan">
+            <img
+              src="assets/floorplan-review.jpg"
+              alt="間取り図へ動線や収納、視線について書き込んだ確認例"
+              width="1100"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+
+            <div class="work-copy">
+              <small>FLOOR PLAN REVIEW</small>
+              <h3>動線・収納・視線を図面上で確認</h3>
+              <p>
+                間取り図へ書き込みながら、
+                暮らしに影響する論点を具体的に整理します。
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card plan">
+            <img
+              src="assets/floorplan-proposal.png"
+              alt="間取りの改善提案プランの作成例"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+            >
+
+            <div class="work-copy">
+              <small>IMPROVEMENT PLAN</small>
+              <h3>改善する理由と方向性を整理</h3>
+              <p>
+                変更案だけを示すのではなく、
+                何がどう使いやすくなるかを分かりやすくお伝えします。
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card plan">
+            <img
+              src="assets/storage-review.jpg"
+              alt="収納する物と収納場所を図面上で整理した例"
+              width="716"
+              height="1021"
+              loading="lazy"
+              decoding="async"
+            >
+
+            <div class="work-copy">
+              <small>STORAGE PLANNING</small>
+              <h3>収納量を「使う場所」から確認</h3>
+              <p>
+                面積だけではなく、何をどこで使い、
+                どこへ戻すかまで考えて収納計画を確認します。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="visual-gallery" aria-label="空間検討イメージ">
+          <figure>
+            <img
+              src="assets/render-01.jpg"
+              alt="家具配置と生活動線を検討した明るいLDKのイメージ"
+              width="1024"
+              height="576"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure>
+            <img
+              src="assets/render-04.jpg"
+              alt="ダイニングからリビングへの視線を検討した室内イメージ"
+              width="576"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <figure>
+            <img
+              src="assets/render-08.png"
+              alt="家具配置と照明計画を検討したLDKの完成イメージ"
+              width="1024"
+              height="576"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+
+        <p class="note">
+          ※掲載画像は相談・提案イメージです。個別相談の成果物は、
+          ご相談内容や図面の状況により異なります。
+        </p>
+      </div>
+    </section>
+
     <section id="deliverables" class="deliverables">
       <div class="container">
         <div class="heading">
@@ -1508,7 +1868,9 @@
             <span>02</span>
             <div>
               <h3>現在案を活かせる場所</h3>
-              <p>変更しなくてよいと考えられる理由を整理します。</p>
+              <p>
+                変更しなくてよいと考えられる理由を整理します。
+              </p>
             </div>
           </article>
 
@@ -1516,7 +1878,9 @@
             <span>03</span>
             <div>
               <h3>建築会社への質問</h3>
-              <p>寸法や仕様など、回答を得やすい質問に整えます。</p>
+              <p>
+                寸法や仕様など、回答を得やすい質問に整えます。
+              </p>
             </div>
           </article>
 
@@ -1524,13 +1888,81 @@
             <span>04</span>
             <div>
               <h3>ご家族で決めること</h3>
-              <p>価値観によって答えが変わる項目を分けます。</p>
+              <p>
+                価値観によって答えが変わる項目を分けます。
+              </p>
             </div>
           </article>
         </div>
 
         <p class="note">
-          ※全面的な間取り作成、実施設計図、法規・構造の確定判断は含みません。
+          ※全面的な間取り作成、実施設計図、
+          法規・構造・施工可否の確定判断は含みません。
+        </p>
+      </div>
+    </section>
+
+    <section id="voices" class="voices">
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">CUSTOMER VOICES</span>
+
+          <h2>ご相談いただいた方の声</h2>
+
+          <p>
+            「この間取りで進めてよいのか」という不安を、
+            納得して判断できる状態へ変えていきます。
+          </p>
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card">
+            <div class="voice-image">
+              <img
+                src="assets/voice-04.png"
+                alt="間取りや家具、照明の配置について相談されたお客様の感想"
+                width="768"
+                height="946"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <blockquote>
+              素人では気づけない視点からの提案もあり、
+              納得できる形に変更できました。
+            </blockquote>
+
+            <cite>
+              間取り・家具・照明配置についてご相談のお客様
+            </cite>
+          </article>
+
+          <article class="voice-card">
+            <div class="voice-image">
+              <img
+                src="assets/voice-03.jpg"
+                alt="家づくりの判断について相談されたお客様の感想"
+                width="1024"
+                height="541"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <blockquote>
+              迷ったときに知識と経験で適切に提案していただけることが、
+              家づくりの大きなサポートになると思います。
+            </blockquote>
+
+            <cite>
+              家づくりの優先順位についてご相談のお客様
+            </cite>
+          </article>
+        </div>
+
+        <p class="note">
+          ※掲載許可をいただいたご感想です。感じ方や結果には個人差があります。
         </p>
       </div>
     </section>
@@ -1539,21 +1971,19 @@
       <div class="container">
         <div class="profile-box">
           <div class="profile-media">
-            <!--
-              assets/profile-emi-uruma.jpgを配置した後、
-              下のplaceholderを削除し、imgのhiddenを削除してください。
-            -->
             <div class="profile-placeholder">
               <strong>プロフィール写真</strong>
-              <small>本人写真または仕事風景を掲載</small>
+              <small>二級建築士・漆間絵美</small>
             </div>
 
             <img
-              src="assets/profile-emi-uruma.jpg"
+              class="profile-photo"
+              src="https://emy-renovation.github.io/total-support/assets/profile-emi-uruma.jpg"
               alt="BETTER HOME DESIGNの二級建築士・漆間絵美"
               width="900"
               height="1125"
               loading="lazy"
+              decoding="async"
               hidden
             >
           </div>
@@ -1562,7 +1992,10 @@
             <span class="eyebrow">ARCHITECT PROFILE</span>
 
             <h2>漆間 絵美</h2>
-            <p class="kana">うるま えみ｜二級建築士</p>
+
+            <p class="kana">
+              うるま えみ｜二級建築士
+            </p>
 
             <p class="profile-message">
               間取りを否定するのではなく、
@@ -1587,7 +2020,9 @@
               <dd>二級建築士</dd>
 
               <dt>経験</dt>
-              <dd>新築・リノベーション設計 合計800棟以上</dd>
+              <dd>
+                新築・リノベーション設計 合計800棟以上
+              </dd>
 
               <dt>対応</dt>
               <dd>オンライン・日本全国</dd>
@@ -1603,7 +2038,9 @@
           <div class="price-head">
             <span class="eyebrow">CONSULTATION FEE</span>
 
-            <h2>建築士の間取りセカンドオピニオン</h2>
+            <h2>
+              建築士の間取りセカンドオピニオン
+            </h2>
 
             <div class="price">
               33,000円
@@ -1626,7 +2063,9 @@
             </ul>
 
             <div class="price-value">
-              <strong>75分の会話だけの料金ではありません</strong>
+              <strong>
+                75分の会話だけの料金ではありません
+              </strong>
 
               <p>
                 事前の図面確認、個別相談、
@@ -1665,32 +2104,44 @@
         <div class="flow-grid">
           <article class="flow-card">
             <h3>フォーム送信</h3>
-            <p>現在の状況、期限、気になる点、図面をご提出ください。</p>
+            <p>
+              現在の状況、期限、気になる点、図面をご提出ください。
+            </p>
           </article>
 
           <article class="flow-card">
             <h3>資料確認</h3>
-            <p>対応可否、候補日、決済方法をご案内します。</p>
+            <p>
+              対応可否、候補日、決済方法をご案内します。
+            </p>
           </article>
 
           <article class="flow-card">
             <h3>予約確定</h3>
-            <p>ご入金後に予約確定となり、事前確認を始めます。</p>
+            <p>
+              ご入金後に予約確定となり、事前確認を始めます。
+            </p>
           </article>
 
           <article class="flow-card">
             <h3>オンライン相談</h3>
-            <p>Google Meetで75分、図面と暮らしを照らして整理します。</p>
+            <p>
+              Google Meetで75分、図面と暮らしを照らして整理します。
+            </p>
           </article>
 
           <article class="flow-card">
             <h3>資料送付</h3>
-            <p>相談内容を判断整理シートにまとめて送付します。</p>
+            <p>
+              相談内容を判断整理シートにまとめて送付します。
+            </p>
           </article>
 
           <article class="flow-card">
             <h3>次の打ち合わせへ</h3>
-            <p>質問と優先順位を使って、建築会社とお話しいただけます。</p>
+            <p>
+              質問と優先順位を使って、建築会社とお話しいただけます。
+            </p>
           </article>
         </div>
       </div>
@@ -1705,7 +2156,10 @@
 
         <div class="faq-grid">
           <details>
-            <summary>間取りを描き直してもらえますか？</summary>
+            <summary>
+              間取りを描き直してもらえますか？
+            </summary>
+
             <p>
               全面的な設計代行ではありません。
               現在案をもとに、見直す場所と改善方針を整理します。
@@ -1713,7 +2167,10 @@
           </details>
 
           <details>
-            <summary>ハウスメーカーに失礼になりませんか？</summary>
+            <summary>
+              ハウスメーカーに失礼になりませんか？
+            </summary>
+
             <p>
               建築会社を否定するサービスではありません。
               漠然とした不安を、具体的な質問へ変換します。
@@ -1721,7 +2178,10 @@
           </details>
 
           <details>
-            <summary>採光や構造も判断できますか？</summary>
+            <summary>
+              採光や構造も判断できますか？
+            </summary>
+
             <p>
               図面から読み取れる論点は整理できますが、
               法規、構造、性能、施工可否の確定判断は行いません。
@@ -1729,28 +2189,50 @@
           </details>
 
           <details>
-            <summary>相談後に高額サービスを勧められませんか？</summary>
+            <summary>
+              相談後に高額サービスを勧められませんか？
+            </summary>
+
             <p>
               本相談だけで完了して問題ありません。
               継続支援が適している場合も、
               ご希望を確認せず契約を勧めることはありません。
               継続サービスの内容は
-              <a href="../total-support/">こちらで事前に公開</a>
+              <a
+                href="https://emy-renovation.github.io/total-support/"
+              >
+                こちらで事前に公開
+              </a>
               しています。
             </p>
           </details>
 
           <details>
-            <summary>相談後も継続して依頼できますか？</summary>
+            <summary>
+              相談後も継続して依頼できますか？
+            </summary>
+
             <p>
               ご希望があり、スケジュールと相談内容が適合する場合は、
-              間取り・内装・電気図までの伴走サポートをご案内できます。
-              申込みは別契約で、33,000円相談の必須条件ではありません。
+              間取り・内装・電気図・家具配置までの
+              家づくり伴走サポートをご案内できます。
+              別契約のため、33,000円相談の必須条件ではありません。
+            </p>
+
+            <p>
+              <a
+                href="https://emy-renovation.github.io/total-support/"
+              >
+                家づくり伴走サポートの内容を見る
+              </a>
             </p>
           </details>
 
           <details>
-            <summary>フォーム送信で料金が発生しますか？</summary>
+            <summary>
+              フォーム送信で料金が発生しますか？
+            </summary>
+
             <p>
               発生しません。資料確認後のご案内に同意し、
               お支払いが完了した時点で予約確定となります。
@@ -1788,19 +2270,41 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <div class="footer-brand">BETTER HOME DESIGN</div>
-        <div>毎日が心地よくなる空間づくり</div>
+        <div class="footer-brand">
+          BETTER HOME DESIGN
+        </div>
+
+        <div>
+          毎日が心地よくなる空間づくり
+        </div>
 
         <p class="copyright">
-          © <span id="year">2026</span> BETTER HOME DESIGN
+          © <span id="year">2026</span>
+          BETTER HOME DESIGN
         </p>
       </div>
 
-      <nav class="footer-links" aria-label="フッターナビゲーション">
-        <a href="../total-support/">家づくり伴走サポート</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="legal.html">特定商取引法に基づく表記</a>
-        <a href="terms.html">利用規約</a>
+      <nav
+        class="footer-links"
+        aria-label="フッターナビゲーション"
+      >
+        <a
+          href="https://emy-renovation.github.io/total-support/"
+        >
+          家づくり伴走サポート
+        </a>
+
+        <a href="privacy.html">
+          プライバシーポリシー
+        </a>
+
+        <a href="legal.html">
+          特定商取引法に基づく表記
+        </a>
+
+        <a href="terms.html">
+          利用規約
+        </a>
       </nav>
     </div>
   </footer>
@@ -1817,10 +2321,17 @@
     </a>
   </div>
 
+  <script
   <script>
     (function () {
       "use strict";
 
+      /*
+       * Googleフォームと計測設定
+       *
+       * Googleフォームの事前入力用IDを取得したら、
+       * entryIds内の空欄へ設定してください。
+       */
       var CONFIG = {
         formUrl:
           "https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform",
@@ -1835,6 +2346,9 @@
         }
       };
 
+      /*
+       * URLパラメータを取得
+       */
       var params =
         new URLSearchParams(window.location.search);
 
@@ -1851,6 +2365,9 @@
       var diagnosisVisitor =
         source === "diagnosis_email";
 
+      /*
+       * 無料診断メール経由の場合に案内を表示
+       */
       if (diagnosisVisitor) {
         var diagnosis =
           document.getElementById("diagnosis");
@@ -1860,6 +2377,9 @@
         }
       }
 
+      /*
+       * 申込みボタンのリンクを設定
+       */
       document
         .querySelectorAll(".js-apply")
         .forEach(function (link) {
@@ -1872,6 +2392,10 @@
               "unknown"
             );
 
+          /*
+           * LPへ付いているUTMパラメータを
+           * Googleフォームへ引き継ぎます。
+           */
           [
             "utm_source",
             "utm_medium",
@@ -1887,6 +2411,10 @@
             }
           });
 
+          /*
+           * Googleフォーム固有のentry IDが
+           * 設定されている場合のみ事前入力します。
+           */
           setEntry(
             url,
             CONFIG.entryIds.source,
@@ -1916,11 +2444,17 @@
           link.href =
             url.toString();
 
-          link.addEventListener("click", function () {
-            sendEvent(location);
-          });
+          link.addEventListener(
+            "click",
+            function () {
+              sendEvent(location);
+            }
+          );
         });
 
+      /*
+       * Googleフォームの事前入力値を設定
+       */
       function setEntry(
         url,
         entryId,
@@ -1931,10 +2465,19 @@
           value &&
           /^entry\.\d+$/.test(entryId)
         ) {
-          url.searchParams.set(entryId, value);
+          url.searchParams.set(
+            entryId,
+            value
+          );
         }
       }
 
+      /*
+       * CTAクリック計測
+       *
+       * analyticsModeがnoneの間は
+       * 外部へデータを送信しません。
+       */
       function sendEvent(location) {
         var data = {
           cta_location: location,
@@ -1960,14 +2503,21 @@
             window.dataLayer || [];
 
           window.dataLayer.push({
-            event: "consultation_apply_click",
-            cta_location: location,
+            event:
+              "consultation_apply_click",
+
+            cta_location:
+              location,
+
             requested_service:
               data.requested_service
           });
         }
       }
 
+      /*
+       * URLから取得した値を安全な文字列に整える
+       */
       function clean(value) {
         return String(value || "")
           .replace(/[<>"'`]/g, "")
@@ -1975,6 +2525,9 @@
           .substring(0, 100);
       }
 
+      /*
+       * コピーライトの年を自動更新
+       */
       var year =
         document.getElementById("year");
 
@@ -1983,8 +2536,71 @@
           String(new Date().getFullYear());
       }
 
+      /*
+       * プロフィール画像の自動表示
+       *
+       * 画像が正常に読み込めた場合のみ、
+       * プレースホルダーを非表示にします。
+       */
+      var profilePhoto =
+        document.querySelector(
+          ".profile-photo"
+        );
+
+      var profilePlaceholder =
+        document.querySelector(
+          ".profile-placeholder"
+        );
+
+      if (profilePhoto) {
+        function showProfilePhoto() {
+          profilePhoto.hidden = false;
+
+          if (profilePlaceholder) {
+            profilePlaceholder.hidden = true;
+          }
+        }
+
+        function showProfilePlaceholder() {
+          profilePhoto.hidden = true;
+
+          if (profilePlaceholder) {
+            profilePlaceholder.hidden = false;
+          }
+        }
+
+        profilePhoto.addEventListener(
+          "load",
+          showProfilePhoto
+        );
+
+        profilePhoto.addEventListener(
+          "error",
+          showProfilePlaceholder
+        );
+
+        /*
+         * キャッシュ済み画像では、
+         * loadイベントが先に完了している場合があります。
+         */
+        if (
+          profilePhoto.complete &&
+          profilePhoto.naturalWidth > 0
+        ) {
+          showProfilePhoto();
+        }
+      }
+
+      /*
+       * スマートフォン固定CTA
+       *
+       * ファーストビュー表示中と
+       * 最終CTA表示中は固定ボタンを隠します。
+       */
       var fixed =
-        document.getElementById("fixed-cta");
+        document.getElementById(
+          "fixed-cta"
+        );
 
       var hero =
         document.querySelector(".hero");
@@ -2008,25 +2624,35 @@
           );
         }
 
-        new IntersectionObserver(
-          function (entries) {
-            heroVisible =
-              entries[0].isIntersecting;
+        var heroObserver =
+          new IntersectionObserver(
+            function (entries) {
+              heroVisible =
+                entries[0].isIntersecting;
 
-            updateFixed();
-          },
-          { threshold: 0.08 }
-        ).observe(hero);
+              updateFixed();
+            },
+            {
+              threshold: 0.08
+            }
+          );
 
-        new IntersectionObserver(
-          function (entries) {
-            finalVisible =
-              entries[0].isIntersecting;
+        heroObserver.observe(hero);
 
-            updateFixed();
-          },
-          { threshold: 0.08 }
-        ).observe(final);
+        var finalObserver =
+          new IntersectionObserver(
+            function (entries) {
+              finalVisible =
+                entries[0].isIntersecting;
+
+              updateFixed();
+            },
+            {
+              threshold: 0.08
+            }
+          );
+
+        finalObserver.observe(final);
       } else if (fixed) {
         fixed.classList.remove("hidden");
       }
