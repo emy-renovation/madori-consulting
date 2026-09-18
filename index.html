@@ -1219,7 +1219,6 @@
       font-size: 11px;
       text-align: center;
     }
-
     /* 相談の流れ */
 
     .flow-grid {
@@ -1344,33 +1343,96 @@
     /* Footer */
 
     .footer {
-      padding: 36px 0;
+      padding: 44px 0 36px;
       color: rgba(255, 255, 255, 0.72);
       background: #09272c;
       font-size: 11px;
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 28px;
+      display: grid;
+      grid-template-columns:
+        minmax(220px, 0.8fr)
+        minmax(300px, 1.2fr);
+      gap: 34px 56px;
+      align-items: start;
     }
 
     .footer-brand {
       color: var(--white);
       font-size: 14px;
       font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-description {
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .footer-qualification {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .footer-navigation {
+      display: grid;
+      gap: 20px;
+    }
+
+    .footer-navigation-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-navigation-title {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 10px 17px;
+      gap: 8px 18px;
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: underline;
+      text-decoration-color:
+        rgba(255, 255, 255, 0.28);
+      text-underline-offset: 4px;
+      transition:
+        color 0.18s ease,
+        text-decoration-color 0.18s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      text-decoration-color: var(--gold-2);
+    }
+
+    .footer-links a[aria-current="page"] {
+      color: var(--white);
+      font-weight: 900;
+      text-decoration-color: var(--gold-2);
+    }
+
+    .footer-legal-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding-top: 20px;
+      color: rgba(255, 255, 255, 0.48);
+      border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+      font-size: 10px;
+      line-height: 1.8;
     }
 
     .copyright {
@@ -1415,7 +1477,8 @@
       }
 
       body {
-        padding-bottom: calc(78px + env(safe-area-inset-bottom));
+        padding-bottom:
+          calc(78px + env(safe-area-inset-bottom));
         font-size: 15px;
       }
 
@@ -1584,11 +1647,17 @@
       }
 
       .footer-inner {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .footer-links {
         justify-content: flex-start;
+        gap: 10px 16px;
+      }
+
+      .footer-legal-note {
+        grid-column: auto;
       }
 
       .final {
@@ -1607,7 +1676,8 @@
           calc(9px + env(safe-area-inset-bottom));
         background: rgba(255, 255, 255, 0.96);
         border-top: 1px solid var(--line);
-        box-shadow: 0 -8px 25px rgba(23, 63, 70, 0.12);
+        box-shadow:
+          0 -8px 25px rgba(23, 63, 70, 0.12);
         backdrop-filter: blur(12px);
       }
 
@@ -1742,9 +1812,14 @@
 </head>
 
 <body>
-  <a class="skip" href="#main">本文へ移動</a>
+  <a class="skip" href="#main">
+    本文へ移動
+  </a>
 
-  <div id="diagnosis" class="diagnosis">
+  <div
+    id="diagnosis"
+    class="diagnosis"
+  >
     無料診断で見つかった論点を、
     次の打ち合わせで判断できる形まで整理します。
   </div>
@@ -1757,10 +1832,15 @@
         aria-label="ページ上部へ戻る"
       >
         <strong>BETTER HOME DESIGN</strong>
-        <small>建築士の間取りセカンドオピニオン</small>
+        <small>
+          建築士の間取りセカンドオピニオン
+        </small>
       </a>
 
-      <nav class="nav" aria-label="メインナビゲーション">
+      <nav
+        class="nav"
+        aria-label="メインナビゲーション"
+      >
         <a href="#concerns">お悩み</a>
         <a href="#difference">無料診断との違い</a>
         <a href="#works">相談例</a>
@@ -1783,7 +1863,10 @@
 
   <main id="main">
     <!-- Hero -->
-    <section id="top" class="hero">
+    <section
+      id="top"
+      class="hero"
+    >
       <div class="container hero-grid">
         <div>
           <div class="qualification">
@@ -1795,12 +1878,15 @@
             決める前に。
 
             <em>
-              変更する場所と、活かせる場所を整理します。
+              変更する場所と、
+              活かせる場所を整理します。
             </em>
           </h1>
 
           <p class="hero-lead">
-            希望は伝えた。でも、このまま進めてよいか決めきれない。
+            希望は伝えた。でも、このまま進めてよいか
+            決めきれない。
+
             そんな間取り確定前の不安を、
             <strong>
               暮らし・家具・収納・動線・将来性
@@ -1819,7 +1905,10 @@
               相談できる内容か確認する
             </a>
 
-            <a class="button outline" href="#difference">
+            <a
+              class="button outline"
+              href="#difference"
+            >
               無料診断との違いを見る
             </a>
           </div>
@@ -1840,13 +1929,26 @@
         <aside class="decision">
           <small>AFTER CONSULTATION</small>
 
-          <h2>不安を、4つの判断に分けます</h2>
+          <h2>
+            不安を、4つの判断に分けます
+          </h2>
 
           <ol>
-            <li>変更を優先して検討する場所</li>
-            <li>現在の計画を活かせる場所</li>
-            <li>建築会社へ確認してから決めること</li>
-            <li>ご家族で優先順位を決めること</li>
+            <li>
+              変更を優先して検討する場所
+            </li>
+
+            <li>
+              現在の計画を活かせる場所
+            </li>
+
+            <li>
+              建築会社へ確認してから決めること
+            </li>
+
+            <li>
+              ご家族で優先順位を決めること
+            </li>
           </ol>
 
           <p>
@@ -1858,7 +1960,10 @@
     </section>
 
     <!-- Trust -->
-    <section class="trust" aria-label="サービス概要">
+    <section
+      class="trust"
+      aria-label="サービス概要"
+    >
       <div class="container">
         <ul class="trust-list">
           <li>
@@ -1868,7 +1973,9 @@
 
           <li>
             設計経験800棟以上
-            <small>新築・リノベーション</small>
+            <small>
+              新築・リノベーション
+            </small>
           </li>
 
           <li>
@@ -1885,10 +1992,15 @@
     </section>
 
     <!-- お悩み -->
-    <section id="concerns" class="concerns">
+    <section
+      id="concerns"
+      class="concerns"
+    >
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">YOUR CONCERNS</span>
+          <span class="eyebrow">
+            YOUR CONCERNS
+          </span>
 
           <h2>
             希望は入っているのに、<br>
@@ -1905,15 +2017,24 @@
         <div class="card-grid">
           <article class="card">
             <span class="card-number">01</span>
-            <h3>収納を増やすと通路が狭くなる</h3>
+
+            <h3>
+              収納を増やすと通路が狭くなる
+            </h3>
+
             <p>
-              収納の便利さと、通行・建具の使いやすさを比較したい。
+              収納の便利さと、
+              通行・建具の使いやすさを比較したい。
             </p>
           </article>
 
           <article class="card">
             <span class="card-number">02</span>
-            <h3>希望と延床面積が両立しない</h3>
+
+            <h3>
+              希望と延床面積が両立しない
+            </h3>
+
             <p>
               LDK、収納、個室など、
               限られた面積で優先順位を決めたい。
@@ -1922,15 +2043,24 @@
 
           <article class="card">
             <span class="card-number">03</span>
-            <h3>家具を置いた後の広さが分からない</h3>
+
+            <h3>
+              家具を置いた後の広さが分からない
+            </h3>
+
             <p>
-              畳数ではなく、家具配置後の通路や使い方を確認したい。
+              畳数ではなく、
+              家具配置後の通路や使い方を確認したい。
             </p>
           </article>
 
           <article class="card">
             <span class="card-number">04</span>
-            <h3>収納量が足りるか不安</h3>
+
+            <h3>
+              収納量が足りるか不安
+            </h3>
+
             <p>
               収納面積だけでなく、
               使う場所と収納物が合っているか知りたい。
@@ -1939,7 +2069,11 @@
 
           <article class="card">
             <span class="card-number">05</span>
-            <h3>建築会社への伝え方が分からない</h3>
+
+            <h3>
+              建築会社への伝え方が分からない
+            </h3>
+
             <p>
               「何となく不安」を、
               回答してもらえる具体的な質問にしたい。
@@ -1948,7 +2082,11 @@
 
           <article class="card">
             <span class="card-number">06</span>
-            <h3>今の案を変えすぎるのも不安</h3>
+
+            <h3>
+              今の案を変えすぎるのも不安
+            </h3>
+
             <p>
               変更すべき場所だけでなく、
               そのまま活かせる場所も知りたい。
@@ -1962,7 +2100,9 @@
     <section class="benefits">
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">WHAT CHANGES</span>
+          <span class="eyebrow">
+            WHAT CHANGES
+          </span>
 
           <h2>
             間取りの正解ではなく、<br>
@@ -1979,7 +2119,11 @@
         <div class="card-grid">
           <article class="card">
             <span class="card-number">01</span>
-            <h3>見直す優先順位が分かる</h3>
+
+            <h3>
+              見直す優先順位が分かる
+            </h3>
+
             <p>
               暮らしへの影響と、
               完成後の直しにくさから優先度を整理します。
@@ -1988,7 +2132,11 @@
 
           <article class="card">
             <span class="card-number">02</span>
-            <h3>現在案の良さも確認できる</h3>
+
+            <h3>
+              現在案の良さも確認できる
+            </h3>
+
             <p>
               不安だから全部変えるのではなく、
               活かせる部分を明確にします。
@@ -1997,7 +2145,11 @@
 
           <article class="card">
             <span class="card-number">03</span>
-            <h3>次の打ち合わせで質問できる</h3>
+
+            <h3>
+              次の打ち合わせで質問できる
+            </h3>
+
             <p>
               寸法、仕様、家具配置など、
               建築会社への質問に変換します。
@@ -2008,10 +2160,15 @@
     </section>
 
     <!-- 無料診断との差 -->
-    <section id="difference" class="difference">
+    <section
+      id="difference"
+      class="difference"
+    >
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">FREE TO PAID</span>
+          <span class="eyebrow">
+            FREE TO PAID
+          </span>
 
           <h2>
             無料診断は「気づく」ため。<br>
@@ -2021,12 +2178,15 @@
 
         <div class="difference-box">
           <article class="difference-card">
-            <h3>無料簡易診断</h3>
+            <h3>
+              無料簡易診断
+            </h3>
 
             <p>
               図面上で良い点と、
               優先して確認したい論点をお伝えします。
-              詳細なヒアリングや個別の判断整理は含みません。
+              詳細なヒアリングや
+              個別の判断整理は含みません。
             </p>
           </article>
 
@@ -2038,10 +2198,13 @@
           </div>
 
           <article class="difference-card paid">
-            <h3>33,000円個別相談</h3>
+            <h3>
+              33,000円個別相談
+            </h3>
 
             <p>
-              生活習慣、家具寸法、収納物、優先順位を確認し、
+              生活習慣、家具寸法、収納物、
+              優先順位を確認し、
               「変更」「維持」「要確認」「家族で決定」
               に分けて整理します。
             </p>
@@ -2049,12 +2212,16 @@
         </div>
       </div>
     </section>
-
     <!-- 相談例 -->
-    <section id="works" class="work">
+    <section
+      id="works"
+      class="work"
+    >
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">CONSULTATION EXAMPLES</span>
+          <span class="eyebrow">
+            CONSULTATION EXAMPLES
+          </span>
 
           <h2>
             図面だけでなく、<br>
@@ -2080,12 +2247,18 @@
             >
 
             <div class="work-copy">
-              <small>FLOOR PLAN REVIEW</small>
-              <h3>動線・収納・視線を図面上で確認</h3>
+              <small>
+                FLOOR PLAN REVIEW
+              </small>
+
+              <h3>
+                動線・収納・視線を図面上で確認
+              </h3>
 
               <p>
                 間取り図へ書き込みながら、
-                暮らしに影響する論点を具体的に整理します。
+                暮らしに影響する論点を
+                具体的に整理します。
               </p>
             </div>
           </article>
@@ -2101,12 +2274,18 @@
             >
 
             <div class="work-copy">
-              <small>IMPROVEMENT DIRECTION</small>
-              <h3>改善する理由と方向性を整理</h3>
+              <small>
+                IMPROVEMENT DIRECTION
+              </small>
+
+              <h3>
+                改善する理由と方向性を整理
+              </h3>
 
               <p>
                 変更案だけを示すのではなく、
-                何がどう使いやすくなるかを分かりやすくお伝えします。
+                何がどう使いやすくなるかを
+                分かりやすくお伝えします。
               </p>
             </div>
           </article>
@@ -2122,12 +2301,19 @@
             >
 
             <div class="work-copy">
-              <small>STORAGE PLANNING</small>
-              <h3>収納量を「使う場所」から確認</h3>
+              <small>
+                STORAGE PLANNING
+              </small>
+
+              <h3>
+                収納量を「使う場所」から確認
+              </h3>
 
               <p>
-                面積だけではなく、何をどこで使い、
-                どこへ戻すかまで考えて収納計画を確認します。
+                面積だけではなく、
+                何をどこで使い、
+                どこへ戻すかまで考えて
+                収納計画を確認します。
               </p>
             </div>
           </article>
@@ -2180,10 +2366,15 @@
     </section>
 
     <!-- 成果物 -->
-    <section id="deliverables" class="deliverables">
+    <section
+      id="deliverables"
+      class="deliverables"
+    >
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">WHAT YOU RECEIVE</span>
+          <span class="eyebrow">
+            WHAT YOU RECEIVE
+          </span>
 
           <h2>
             次の打ち合わせで使える形にして、<br>
@@ -2192,7 +2383,8 @@
 
           <p>
             75分話して終わるのではなく、
-            相談後も確認できる判断整理シートを作成します。
+            相談後も確認できる
+            判断整理シートを作成します。
           </p>
         </div>
 
@@ -2201,8 +2393,13 @@
             <span>01</span>
 
             <div>
-              <h3>変更を検討する場所</h3>
-              <p>見直す理由と優先度を整理します。</p>
+              <h3>
+                変更を検討する場所
+              </h3>
+
+              <p>
+                見直す理由と優先度を整理します。
+              </p>
             </div>
           </article>
 
@@ -2210,10 +2407,13 @@
             <span>02</span>
 
             <div>
-              <h3>現在案を活かせる場所</h3>
+              <h3>
+                現在案を活かせる場所
+              </h3>
 
               <p>
-                変更しなくてよいと考えられる理由を整理します。
+                変更しなくてよいと考えられる理由を
+                整理します。
               </p>
             </div>
           </article>
@@ -2222,7 +2422,9 @@
             <span>03</span>
 
             <div>
-              <h3>建築会社への質問</h3>
+              <h3>
+                建築会社への質問
+              </h3>
 
               <p>
                 寸法や仕様など、
@@ -2235,10 +2437,13 @@
             <span>04</span>
 
             <div>
-              <h3>ご家族で決めること</h3>
+              <h3>
+                ご家族で決めること
+              </h3>
 
               <p>
-                価値観によって答えが変わる項目を分けます。
+                価値観によって答えが変わる項目を
+                分けます。
               </p>
             </div>
           </article>
@@ -2252,12 +2457,19 @@
     </section>
 
     <!-- お客様の声 -->
-    <section id="voices" class="voices">
+    <section
+      id="voices"
+      class="voices"
+    >
       <div class="container">
         <div class="heading">
-          <span class="eyebrow">CUSTOMER VOICES</span>
+          <span class="eyebrow">
+            CUSTOMER VOICES
+          </span>
 
-          <h2>ご相談いただいた方の声</h2>
+          <h2>
+            ご相談いただいた方の声
+          </h2>
 
           <p>
             「この間取りで進めてよいのか」という不安を、
@@ -2284,7 +2496,8 @@
             </blockquote>
 
             <cite>
-              間取り・家具・照明配置についてご相談のお客様
+              間取り・家具・照明配置について
+              ご相談のお客様
             </cite>
           </article>
 
@@ -2301,12 +2514,14 @@
             </div>
 
             <blockquote>
-              迷ったときに知識と経験で適切に提案していただけることが、
+              迷ったときに知識と経験で
+              適切に提案していただけることが、
               家づくりの大きなサポートになると思います。
             </blockquote>
 
             <cite>
-              家づくりの優先順位についてご相談のお客様
+              家づくりの優先順位について
+              ご相談のお客様
             </cite>
           </article>
         </div>
@@ -2319,7 +2534,10 @@
     </section>
 
     <!-- プロフィール -->
-    <section id="profile" class="profile">
+    <section
+      id="profile"
+      class="profile"
+    >
       <div class="container">
         <div class="profile-box">
           <div class="profile-media">
@@ -2335,9 +2553,13 @@
           </div>
 
           <div class="profile-copy">
-            <span class="eyebrow">ARCHITECT PROFILE</span>
+            <span class="eyebrow">
+              ARCHITECT PROFILE
+            </span>
 
-            <h2>漆間 絵美</h2>
+            <h2>
+              漆間 絵美
+            </h2>
 
             <p class="kana">
               うるま えみ｜二級建築士
@@ -2350,16 +2572,20 @@
 
             <p>
               ハウスメーカーや住宅会社にて、
-              新築・リノベーション設計を合計800棟以上経験。
+              新築・リノベーション設計を
+              合計800棟以上経験。
 
               設計・インテリアコーディネーターとして、
-              数多くの住まいづくりをサポートしてきました。
+              数多くの住まいづくりを
+              サポートしてきました。
             </p>
 
             <p>
               図面だけを見るのではなく、
-              ご家族の暮らし、家具、収納、優先順位を確認し、
-              建築会社との打ち合わせに使える形へ整理します。
+              ご家族の暮らし、家具、収納、
+              優先順位を確認し、
+              建築会社との打ち合わせに使える形へ
+              整理します。
             </p>
 
             <dl class="profile-data">
@@ -2367,13 +2593,20 @@
               <dd>二級建築士</dd>
 
               <dt>経験</dt>
-              <dd>新築・リノベーション設計 合計800棟以上</dd>
+              <dd>
+                新築・リノベーション設計
+                合計800棟以上
+              </dd>
 
               <dt>専門領域</dt>
-              <dd>住宅設計・間取り・収納・インテリア</dd>
+              <dd>
+                住宅設計・間取り・収納・インテリア
+              </dd>
 
               <dt>対応</dt>
-              <dd>オンライン・日本全国</dd>
+              <dd>
+                オンライン・日本全国
+              </dd>
             </dl>
           </div>
         </div>
@@ -2381,11 +2614,16 @@
     </section>
 
     <!-- 料金 -->
-    <section id="price" class="price-section">
+    <section
+      id="price"
+      class="price-section"
+    >
       <div class="container">
         <div class="price-card">
           <div class="price-head">
-            <span class="eyebrow">CONSULTATION FEE</span>
+            <span class="eyebrow">
+              CONSULTATION FEE
+            </span>
 
             <h2>
               建築士の間取りセカンドオピニオン
@@ -2403,12 +2641,29 @@
 
           <div class="price-content">
             <ul class="price-list">
-              <li>現在検討中の間取り図1案</li>
-              <li>図面と事前回答の確認</li>
-              <li>Google Meetによる相談75分</li>
-              <li>動線・収納・家具配置の確認</li>
-              <li>建築会社への質問整理</li>
-              <li>判断整理シートの送付</li>
+              <li>
+                現在検討中の間取り図1案
+              </li>
+
+              <li>
+                図面と事前回答の確認
+              </li>
+
+              <li>
+                Google Meetによる相談75分
+              </li>
+
+              <li>
+                動線・収納・家具配置の確認
+              </li>
+
+              <li>
+                建築会社への質問整理
+              </li>
+
+              <li>
+                判断整理シートの送付
+              </li>
             </ul>
 
             <div class="price-value">
@@ -2418,12 +2673,13 @@
 
               <p>
                 事前の図面確認、個別相談、
-                質問事項の整理、相談後の資料作成までを含みます。
+                質問事項の整理、
+                相談後の資料作成までを含みます。
               </p>
             </div>
           </div>
 
-                    <div class="price-action">
+          <div class="price-action">
             <a
               class="button light js-apply"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
@@ -2436,7 +2692,8 @@
 
             <p>
               フォーム送信だけでは料金は発生しません。
-              対応可否・候補日・お支払い方法をご案内します。
+              対応可否・候補日・お支払い方法を
+              ご案内します。
             </p>
           </div>
         </div>
@@ -2444,7 +2701,10 @@
     </section>
 
     <!-- 相談後の選択肢 -->
-    <section id="next-support" class="next-support">
+    <section
+      id="next-support"
+      class="next-support"
+    >
       <div class="container">
         <div class="next-support-box">
           <div class="next-support-intro">
@@ -2470,7 +2730,8 @@
             <!-- 間取りフォローアップ -->
             <article class="next-card">
               <p class="next-card-label">
-                修正後の間取りを、確定まで確認したい方
+                修正後の間取りを、
+                確定まで確認したい方
               </p>
 
               <h3>
@@ -2487,11 +2748,25 @@
               </p>
 
               <ul>
-                <li>セカンドオピニオン利用者限定</li>
-                <li>追加4週間</li>
-                <li>オンライン面談1回</li>
-                <li>修正図面の確認2回まで</li>
-                <li>契約期間中のテキスト相談</li>
+                <li>
+                  セカンドオピニオン利用者限定
+                </li>
+
+                <li>
+                  追加4週間
+                </li>
+
+                <li>
+                  オンライン面談1回
+                </li>
+
+                <li>
+                  修正図面の確認2回まで
+                </li>
+
+                <li>
+                  契約期間中のテキスト相談
+                </li>
               </ul>
 
               <p class="next-card-footnote">
@@ -2509,7 +2784,8 @@
             <!-- 家づくりトータル伴走サポート -->
             <article class="next-card main">
               <p class="next-card-label">
-                内装・照明・電気図まで伴走してほしい方
+                内装・照明・電気図まで
+                伴走してほしい方
               </p>
 
               <h3>
@@ -2527,11 +2803,25 @@
               </p>
 
               <ul>
-                <li>基本期間12週間</li>
-                <li>オンライン面談5回</li>
-                <li>間取り・収納・家具配置の整理</li>
-                <li>内装・照明・電気図の確認</li>
-                <li>契約期間中のテキスト相談</li>
+                <li>
+                  基本期間12週間
+                </li>
+
+                <li>
+                  オンライン面談5回
+                </li>
+
+                <li>
+                  間取り・収納・家具配置の整理
+                </li>
+
+                <li>
+                  内装・照明・電気図の確認
+                </li>
+
+                <li>
+                  契約期間中のテキスト相談
+                </li>
               </ul>
 
               <div class="transfer-note">
@@ -2541,7 +2831,8 @@
 
                 <span>
                   実施後7日以内のお申し込みは、
-                  情報の引継ぎ分として22,000円を充当します。
+                  情報の引継ぎ分として
+                  22,000円を充当します。
                 </span>
               </div>
 
@@ -2564,9 +2855,11 @@
         </div>
       </div>
     </section>
-
     <!-- 相談の流れ -->
-    <section id="flow" class="flow">
+    <section
+      id="flow"
+      class="flow"
+    >
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -2647,7 +2940,8 @@
 
             <p>
               相談内容を整理し、
-              次の打ち合わせで使える資料として送付します。
+              次の打ち合わせで使える資料として
+              送付します。
             </p>
           </article>
         </div>
@@ -2655,7 +2949,10 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="faq">
+    <section
+      id="faq"
+      class="faq"
+    >
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -2701,7 +2998,8 @@
             <p>
               建築会社を否定するサービスではありません。
               漠然とした不安を具体的な質問へ変え、
-              建築会社と建設的に話し合える状態を目指します。
+              建築会社と建設的に話し合える状態を
+              目指します。
             </p>
           </details>
 
@@ -2851,7 +3149,8 @@
             <p>
               フォーム送信だけでは料金は発生しません。
               資料確認後のご案内に同意し、
-              お支払いが完了した時点で予約確定となります。
+              お支払いが完了した時点で
+              予約確定となります。
             </p>
           </details>
         </div>
@@ -2893,8 +3192,10 @@
         </div>
 
         <p class="final-note">
-          まず間取りだけ確認したい方は33,000円の個別相談、
-          間取りから内装・照明・電気図まで支援が必要な方は
+          まず間取りだけ確認したい方は
+          33,000円の個別相談、
+          間取りから内装・照明・電気図まで
+          支援が必要な方は
           トータル伴走サポートをご確認ください。
         </p>
       </div>
@@ -2904,14 +3205,18 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div>
+      <div class="footer-company">
         <div class="footer-brand">
           BETTER HOME DESIGN
         </div>
 
-        <div>
+        <div class="footer-description">
           毎日が心地よくなる空間づくり
         </div>
+
+        <p class="footer-qualification">
+          二級建築士 漆間絵美
+        </p>
 
         <p class="copyright">
           © <span id="year">2026</span>
@@ -2919,34 +3224,76 @@
         </p>
       </div>
 
-      <nav
-        class="footer-links"
-        aria-label="フッターナビゲーション"
-      >
-        <a
-          class="js-total-support"
-          href="../total-support/?utm_source=madori_consulting&amp;utm_medium=referral&amp;utm_campaign=service_upgrade&amp;customer_stage=considering_total_support"
-          data-location="footer"
-        >
-          家づくり伴走サポート
-        </a>
+      <div class="footer-navigation">
+        <div class="footer-navigation-group">
+          <p class="footer-navigation-title">
+            SERVICES
+          </p>
 
-        <a href="privacy.html">
-          プライバシーポリシー
-        </a>
+          <nav
+            class="footer-links"
+            aria-label="サービス情報"
+          >
+            <a
+              href="https://emy-renovation.github.io/madori-consulting/"
+              aria-current="page"
+            >
+              間取りセカンドオピニオン
+            </a>
 
-        <a href="legal.html">
-          特定商取引法に基づく表記
-        </a>
+            <a
+              class="js-total-support"
+              href="https://emy-renovation.github.io/total-support/?utm_source=madori_consulting&amp;utm_medium=referral&amp;utm_campaign=service_upgrade&amp;customer_stage=considering_total_support"
+              data-location="footer"
+            >
+              家づくりトータル伴走サポート
+            </a>
+          </nav>
+        </div>
 
-        <a href="terms.html">
-          利用規約
-        </a>
+        <div class="footer-navigation-group">
+          <p class="footer-navigation-title">
+            LEGAL &amp; SUPPORT
+          </p>
 
-        <a href="contact.html">
-          お問い合わせ
-        </a>
-      </nav>
+          <nav
+            class="footer-links"
+            aria-label="法務情報とお問い合わせ"
+          >
+            <a
+              href="https://emy-renovation.github.io/legal/privacy.html"
+            >
+              プライバシーポリシー
+            </a>
+
+            <a
+              href="https://emy-renovation.github.io/legal/tokusho.html"
+            >
+              特定商取引法に基づく表記
+            </a>
+
+            <a
+              href="https://emy-renovation.github.io/legal/terms.html"
+            >
+              利用規約
+            </a>
+
+            <a
+              href="https://emy-renovation.github.io/legal/contact.html"
+            >
+              お問い合わせ
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <p class="footer-legal-note">
+        本サービスは、間取りや家づくりに関する
+        判断材料を整理するための相談サービスです。
+        法規、構造、性能、施工可否などの最終確認は、
+        設計・施工を担当する建築会社または
+        各分野の専門家へご確認ください。
+      </p>
     </div>
   </footer>
 
@@ -2965,7 +3312,6 @@
       相談できる内容か確認する
     </a>
   </div>
-
   <!-- JavaScript -->
   <script>
     (function () {
@@ -2984,33 +3330,51 @@
         totalSupportUrl:
           "https://emy-renovation.github.io/total-support/",
 
-        analyticsMode: "none",
+        analyticsMode:
+          "none",
 
         entryIds: {
-          source: "",
-          ctaLocation: "",
-          requestedService: "",
-          referralId: ""
+          source:
+            "",
+
+          ctaLocation:
+            "",
+
+          requestedService:
+            "",
+
+          referralId:
+            ""
         }
       };
 
       var params =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+          window.location.search
+        );
 
       var source =
         cleanTrackingValue(
-          params.get("utm_source") ||
-          params.get("source") ||
+          params.get(
+            "utm_source"
+          ) ||
+          params.get(
+            "source"
+          ) ||
           ""
         );
 
       var referralId =
         cleanTrackingValue(
-          params.get("ref") || ""
+          params.get(
+            "ref"
+          ) ||
+          ""
         );
 
       var diagnosisVisitor =
-        source === "diagnosis_email";
+        source ===
+        "diagnosis_email";
 
       showDiagnosisMessage();
       updateApplicationLinks();
@@ -3019,7 +3383,7 @@
       setupMobileFixedCta();
 
       /*
-       * 無料診断メール経由の場合のみ
+       * 無料診断メール経由の場合のみ、
        * ページ上部へ専用メッセージを表示します。
        */
       function showDiagnosisMessage() {
@@ -3028,10 +3392,14 @@
         }
 
         var diagnosis =
-          document.getElementById("diagnosis");
+          document.getElementById(
+            "diagnosis"
+          );
 
         if (diagnosis) {
-          diagnosis.classList.add("show");
+          diagnosis.classList.add(
+            "show"
+          );
         }
       }
 
@@ -3040,91 +3408,109 @@
        */
       function updateApplicationLinks() {
         var links =
-          document.querySelectorAll(".js-apply");
-
-        links.forEach(function (link) {
-          var url;
-
-          try {
-            url = new URL(CONFIG.formUrl);
-          } catch (error) {
-            console.error(
-              "GoogleフォームのURLが正しくありません。",
-              error
-            );
-
-            return;
-          }
-
-          var ctaLocation =
-            cleanTrackingValue(
-              link.getAttribute("data-location") ||
-              "unknown"
-            );
-
-          copyUtmParameters(url);
-
-          url.searchParams.set(
-            "requested_service",
-            "間取りセカンドオピニオン33000円"
+          document.querySelectorAll(
+            ".js-apply"
           );
 
-          url.searchParams.set(
-            "cta_location",
-            ctaLocation
-          );
+        links.forEach(
+          function (link) {
+            var url;
 
-          url.searchParams.set(
-            "customer_stage",
-            diagnosisVisitor
-              ? "after_free_diagnosis"
-              : "considering_second_opinion"
-          );
+            try {
+              url =
+                new URL(
+                  CONFIG.formUrl
+                );
 
-          setFormEntry(
-            url,
-            CONFIG.entryIds.source,
-            diagnosisVisitor
-              ? "無料診断メール"
-              : source || "madori_consulting_lp"
-          );
-
-          setFormEntry(
-            url,
-            CONFIG.entryIds.ctaLocation,
-            ctaLocation
-          );
-
-          setFormEntry(
-            url,
-            CONFIG.entryIds.requestedService,
-            "間取りセカンドオピニオン33000円"
-          );
-
-          setFormEntry(
-            url,
-            CONFIG.entryIds.referralId,
-            referralId
-          );
-
-          link.href = url.toString();
-
-          link.addEventListener(
-            "click",
-            function () {
-              sendEvent(
-                "consultation_apply_click",
-                {
-                  cta_location: ctaLocation,
-                  requested_service:
-                    "間取りセカンドオピニオン33000円",
-                  traffic_source:
-                    source || "direct"
-                }
+            } catch (error) {
+              console.error(
+                "GoogleフォームのURLが正しくありません。",
+                error
               );
+
+              return;
             }
-          );
-        });
+
+            var ctaLocation =
+              cleanTrackingValue(
+                link.getAttribute(
+                  "data-location"
+                ) ||
+                "unknown"
+              );
+
+            copyUtmParameters(
+              url
+            );
+
+            url.searchParams.set(
+              "requested_service",
+              "間取りセカンドオピニオン33000円"
+            );
+
+            url.searchParams.set(
+              "cta_location",
+              ctaLocation
+            );
+
+            url.searchParams.set(
+              "customer_stage",
+              diagnosisVisitor
+                ? "after_free_diagnosis"
+                : "considering_second_opinion"
+            );
+
+            setFormEntry(
+              url,
+              CONFIG.entryIds.source,
+              diagnosisVisitor
+                ? "無料診断メール"
+                : source ||
+                  "madori_consulting_lp"
+            );
+
+            setFormEntry(
+              url,
+              CONFIG.entryIds.ctaLocation,
+              ctaLocation
+            );
+
+            setFormEntry(
+              url,
+              CONFIG.entryIds.requestedService,
+              "間取りセカンドオピニオン33000円"
+            );
+
+            setFormEntry(
+              url,
+              CONFIG.entryIds.referralId,
+              referralId
+            );
+
+            link.href =
+              url.toString();
+
+            link.addEventListener(
+              "click",
+              function () {
+                sendEvent(
+                  "consultation_apply_click",
+                  {
+                    cta_location:
+                      ctaLocation,
+
+                    requested_service:
+                      "間取りセカンドオピニオン33000円",
+
+                    traffic_source:
+                      source ||
+                      "direct"
+                  }
+                );
+              }
+            );
+          }
+        );
       }
 
       /*
@@ -3141,131 +3527,147 @@
             ".js-total-support"
           );
 
-        links.forEach(function (link) {
-          var url;
+        links.forEach(
+          function (link) {
+            var url;
 
-          try {
-            url = new URL(
-              link.getAttribute("href"),
-              window.location.href
-            );
-          } catch (error) {
-            console.error(
-              "トータルサポートのURLが正しくありません。",
-              error
-            );
+            try {
+              url =
+                new URL(
+                  link.getAttribute(
+                    "href"
+                  ),
+                  window.location.href
+                );
 
-            return;
-          }
+            } catch (error) {
+              console.error(
+                "トータルサポートのURLが正しくありません。",
+                error
+              );
 
-          var ctaLocation =
-            cleanTrackingValue(
-              link.getAttribute("data-location") ||
-              "unknown"
-            );
+              return;
+            }
 
-          var customerStage =
-            cleanTrackingValue(
-              url.searchParams.get(
-                "customer_stage"
-              ) ||
+            var ctaLocation =
+              cleanTrackingValue(
+                link.getAttribute(
+                  "data-location"
+                ) ||
+                "unknown"
+              );
+
+            var customerStage =
+              cleanTrackingValue(
+                url.searchParams.get(
+                  "customer_stage"
+                ) ||
+                "considering_total_support"
+              );
+
+            /*
+             * 公開LP上のリンクから、
+             * 誤って相談後扱いになることを防止します。
+             */
+            if (
+              customerStage !==
               "considering_total_support"
-            );
+            ) {
+              customerStage =
+                "considering_total_support";
+            }
 
-          /*
-           * 公開LP上のリンクから、
-           * 誤って相談後扱いになることを防止します。
-           */
-          if (
-            customerStage !==
-            "considering_total_support"
-          ) {
-            customerStage =
-              "considering_total_support";
-          }
-
-          url.searchParams.set(
-            "utm_source",
-            "madori_consulting"
-          );
-
-          url.searchParams.set(
-            "utm_medium",
-            "referral"
-          );
-
-          url.searchParams.set(
-            "utm_campaign",
-            "service_upgrade"
-          );
-
-          url.searchParams.set(
-            "utm_content",
-            ctaLocation
-          );
-
-          url.searchParams.set(
-            "customer_stage",
-            customerStage
-          );
-
-          if (referralId) {
             url.searchParams.set(
-              "ref",
-              referralId
+              "utm_source",
+              "madori_consulting"
             );
-          }
 
-          link.href = url.toString();
+            url.searchParams.set(
+              "utm_medium",
+              "referral"
+            );
 
-          link.addEventListener(
-            "click",
-            function () {
-              sendEvent(
-                "total_support_click",
-                {
-                  cta_location:
-                    ctaLocation,
+            url.searchParams.set(
+              "utm_campaign",
+              "service_upgrade"
+            );
 
-                  requested_service:
-                    "家づくりトータル伴走サポート220000円",
+            url.searchParams.set(
+              "utm_content",
+              ctaLocation
+            );
 
-                  customer_stage:
-                    customerStage,
+            url.searchParams.set(
+              "customer_stage",
+              customerStage
+            );
 
-                  traffic_source:
-                    "madori_consulting"
-                }
+            if (referralId) {
+              url.searchParams.set(
+                "ref",
+                referralId
               );
             }
-          );
-        });
+
+            link.href =
+              url.toString();
+
+            link.addEventListener(
+              "click",
+              function () {
+                sendEvent(
+                  "total_support_click",
+                  {
+                    cta_location:
+                      ctaLocation,
+
+                    requested_service:
+                      "家づくりトータル伴走サポート220000円",
+
+                    customer_stage:
+                      customerStage,
+
+                    traffic_source:
+                      "madori_consulting"
+                  }
+                );
+              }
+            );
+          }
+        );
       }
 
       /*
        * LPへ付いているUTMパラメータを
        * Googleフォームへ引き継ぎます。
        */
-      function copyUtmParameters(url) {
+      function copyUtmParameters(
+        url
+      ) {
         [
           "utm_source",
           "utm_medium",
           "utm_campaign",
           "utm_content",
           "utm_term"
-        ].forEach(function (key) {
-          var value =
-            cleanTrackingValue(
-              params.get(key) || ""
-            );
+        ].forEach(
+          function (key) {
+            var value =
+              cleanTrackingValue(
+                params.get(
+                  key
+                ) ||
+                ""
+              );
 
-          if (value) {
-            url.searchParams.set(
-              key,
-              value
-            );
+            if (value) {
+              url.searchParams.set(
+                key,
+                value
+              );
+            }
           }
-        });
+        );
       }
 
       /*
@@ -3277,11 +3679,18 @@
         entryId,
         value
       ) {
-        if (!entryId || !value) {
+        if (
+          !entryId ||
+          !value
+        ) {
           return;
         }
 
-        if (!/^entry\.\d+$/.test(entryId)) {
+        if (
+          !/^entry\.\d+$/.test(
+            entryId
+          )
+        ) {
           console.warn(
             "Googleフォームのentry IDが正しくありません：",
             entryId
@@ -3307,8 +3716,10 @@
         eventData
       ) {
         if (
-          CONFIG.analyticsMode === "gtag" &&
-          typeof window.gtag === "function"
+          CONFIG.analyticsMode ===
+            "gtag" &&
+          typeof window.gtag ===
+            "function"
         ) {
           window.gtag(
             "event",
@@ -3318,15 +3729,18 @@
         }
 
         if (
-          CONFIG.analyticsMode === "gtm"
+          CONFIG.analyticsMode ===
+          "gtm"
         ) {
           window.dataLayer =
-            window.dataLayer || [];
+            window.dataLayer ||
+            [];
 
           window.dataLayer.push(
             Object.assign(
               {
-                event: eventName
+                event:
+                  eventName
               },
               eventData
             )
@@ -3338,13 +3752,21 @@
        * URLから取得した計測値を
        * 安全な文字列に整えます。
        */
-      function cleanTrackingValue(value) {
-        return String(value || "")
+      function cleanTrackingValue(
+        value
+      ) {
+        return String(
+          value ||
+          ""
+        )
           .replace(
             /[^a-zA-Z0-9_\-ぁ-んァ-ヶ一-龠]/g,
             ""
           )
-          .substring(0, 100);
+          .substring(
+            0,
+            100
+          );
       }
 
       /*
@@ -3352,11 +3774,16 @@
        */
       function updateCopyrightYear() {
         var year =
-          document.getElementById("year");
+          document.getElementById(
+            "year"
+          );
 
         if (year) {
           year.textContent =
-            String(new Date().getFullYear());
+            String(
+              new Date()
+                .getFullYear()
+            );
         }
       }
 
@@ -3373,10 +3800,14 @@
           );
 
         var hero =
-          document.querySelector(".hero");
+          document.querySelector(
+            ".hero"
+          );
 
         var final =
-          document.querySelector(".final");
+          document.querySelector(
+            ".final"
+          );
 
         if (!fixed) {
           return;
@@ -3385,19 +3816,29 @@
         if (
           !hero ||
           !final ||
-          !("IntersectionObserver" in window)
+          !(
+            "IntersectionObserver" in
+            window
+          )
         ) {
-          fixed.classList.remove("hidden");
+          fixed.classList.remove(
+            "hidden"
+          );
+
           return;
         }
 
-        var heroVisible = true;
-        var finalVisible = false;
+        var heroVisible =
+          true;
+
+        var finalVisible =
+          false;
 
         function updateFixedVisibility() {
           fixed.classList.toggle(
             "hidden",
-            heroVisible || finalVisible
+            heroVisible ||
+            finalVisible
           );
         }
 
@@ -3405,12 +3846,14 @@
           new IntersectionObserver(
             function (entries) {
               heroVisible =
-                entries[0].isIntersecting;
+                entries[0]
+                  .isIntersecting;
 
               updateFixedVisibility();
             },
             {
-              threshold: 0.08
+              threshold:
+                0.08
             }
           );
 
@@ -3418,17 +3861,24 @@
           new IntersectionObserver(
             function (entries) {
               finalVisible =
-                entries[0].isIntersecting;
+                entries[0]
+                  .isIntersecting;
 
               updateFixedVisibility();
             },
             {
-              threshold: 0.08
+              threshold:
+                0.08
             }
           );
 
-        heroObserver.observe(hero);
-        finalObserver.observe(final);
+        heroObserver.observe(
+          hero
+        );
+
+        finalObserver.observe(
+          final
+        );
 
         updateFixedVisibility();
       }
@@ -3436,4 +3886,3 @@
   </script>
 </body>
 </html>
-
