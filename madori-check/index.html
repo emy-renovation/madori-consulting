@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    建築士の無料間取り整理診断｜BETTER HOME DESIGN
+  </title>
+
+  <meta
+    name="description"
+    content="二級建築士が、現在案の活かせる点と、優先して確認したい2つのポイントを整理します。Googleログイン不要・無料でお申し込みいただけます。"
+  >
+
+  <!-- LINEなどのSNSに表示する情報 -->
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="BETTER HOME DESIGN"
+  >
+
+  <meta
+    property="og:title"
+    content="建築士の無料間取り整理診断"
+  >
+
+  <meta
+    property="og:description"
+    content="現在案の活かせる点と、優先して確認したい2つのポイントを二級建築士が整理します。"
+  >
+
+  <meta
+    property="og:url"
+    content="https://emy-renovation.github.io/madori-check/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://emy-renovation.github.io/madori-check/og-madori.png"
+  >
+
+  <meta
+    property="og:image:secure_url"
+    content="https://emy-renovation.github.io/madori-check/og-madori.png"
+  >
+
+  <meta
+    property="og:image:type"
+    content="image/png"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1024"
+  >
+
+  <meta
+    property="og:image:height"
+    content="536"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="BETTER HOME DESIGN 建築士の無料間取り整理診断"
+  >
+
+  <!-- Xなどへの共有にも対応 -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="建築士の無料間取り整理診断"
+  >
+
+  <meta
+    name="twitter:description"
+    content="現在案の活かせる点と、優先して確認したい2つのポイントを二級建築士が整理します。"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://emy-renovation.github.io/madori-check/og-madori.png"
+  >
+
+  <style>
+    :root {
+      --green: #2f6f5e;
+      --green-dark: #1f5145;
+      --green-soft: #eaf4f0;
+      --orange: #c2410c;
+      --orange-dark: #9a3412;
+      --ink: #26332f;
+      --muted: #66736e;
+      --line: #dce5e1;
+      --background: #f6f8f7;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(47, 111, 94, 0.09),
+          transparent 32%
+        ),
+        var(--background);
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+      line-height: 1.8;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(100% - 32px, 780px);
+      margin: 0 auto;
+      padding: 42px 0 70px;
+    }
+
+    .brand {
+      margin: 0 0 20px;
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-align: center;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 20px 55px rgba(31, 81, 69, 0.12);
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #ddd4ca;
+    }
+
+    .content {
+      padding: 38px 40px 40px;
+    }
+
+    .eyebrow {
+      margin: 0 0 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--green-dark);
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .lead {
+      margin: 21px 0 0;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .lead strong {
+      color: var(--green-dark);
+    }
+
+    .points {
+      display: grid;
+      gap: 10px;
+      margin: 26px 0 30px;
+      padding: 19px 21px;
+      background: var(--green-soft);
+      border: 1px solid #cce3da;
+      border-radius: 13px;
+      list-style: none;
+    }
+
+    .points li {
+      position: relative;
+      padding-left: 27px;
+      font-size: 14px;
+    }
+
+    .points li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .button {
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      color: var(--white);
+      background: var(--orange);
+      border-radius: 11px;
+      box-shadow: 0 10px 25px rgba(194, 65, 12, 0.20);
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--orange-dark);
+      box-shadow: 0 13px 28px rgba(154, 52, 18, 0.24);
+      transform: translateY(-1px);
+    }
+
+    .note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .safety {
+      margin: 24px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 24px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .footer strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 20px, 780px);
+        padding: 20px 0 45px;
+      }
+
+      .brand {
+        margin-bottom: 14px;
+        font-size: 14px;
+      }
+
+      .card {
+        border-radius: 15px;
+      }
+
+      .content {
+        padding: 27px 21px 30px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      .lead {
+        font-size: 15px;
+      }
+
+      .button {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <p class="brand">
+      BETTER HOME DESIGN
+    </p>
+
+    <article class="card">
+      <img
+        class="hero-image"
+        src="./og-madori.png"
+        alt="間取りの活かせる点と優先して確認したい2つのポイント"
+        width="1024"
+        height="536"
+      >
+
+      <div class="content">
+        <p class="eyebrow">
+          FREE FLOOR PLAN CHECK
+        </p>
+
+        <h1>
+          建築士の<br>
+          無料間取り整理診断
+        </h1>
+
+        <p class="lead">
+          お送りいただいた間取り図とご相談内容をもとに、
+          <strong>
+            現在案の活かせる点と、優先して確認したい2つのポイント
+          </strong>
+          を整理してお届けします。
+        </p>
+
+        <ul class="points">
+          <li>二級建築士・漆間絵美が最終確認</li>
+          <li>Googleアカウントへのログイン不要</li>
+          <li>無料・オンライン完結</li>
+          <li>フォーム送信だけでは契約・決済になりません</li>
+        </ul>
+
+        <a
+          class="button"
+          href="https://script.google.com/macros/s/AKfycbyeVW5ZPVg-kI1qojE850vgZR-s0t7v1mJm9ytUImGiwp_ewOQMzh-hYpAOtPRdxplM/exec?utm_source=line&amp;utm_medium=message&amp;utm_campaign=free_diagnosis"
+        >
+          無料診断フォームへ進む
+        </a>
+
+        <p class="note">
+          入力時間の目安は5〜10分です。
+        </p>
+
+        <div class="safety">
+          無料診断は、提出された図面とフォーム回答をもとにした簡易確認です。
+          法規、構造、耐震、断熱、施工可否などを確定・保証するものではありません。
+        </div>
+      </div>
+    </article>
+
+    <footer class="footer">
+      <strong>BETTER HOME DESIGN</strong>
+      二級建築士・漆間絵美
+    </footer>
+  </main>
+</body>
+</html>
