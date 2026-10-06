@@ -10,7 +10,32 @@
 
   <meta
     name="description"
-    content="実際に寄せられた家づくり相談の傾向をもとに、間取り・収納・建具・クロス・照明を建築士がどのように整理するかを紹介します。"
+    content="間取り・収納・建具・クロス・照明の迷いを、二級建築士が一つの暮らしとして整理する検討事例。相談後に何を判断できるようになるのか、成果物例とともに紹介します。"
+  >
+
+  <meta
+    name="theme-color"
+    content="#173b33"
+  >
+
+  <meta
+    property="og:title"
+    content="間取り・収納・内装の検討事例｜BETTER HOME DESIGN"
+  >
+
+  <meta
+    property="og:description"
+    content="一つずつは好き。でも、家全体ではしっくりこない。建築士が迷いを判断できる形へ整理します。"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://emy-renovation.github.io/madori-consulting/case-study/"
   >
 
   <title>
@@ -19,39 +44,49 @@
 
   <style>
     :root {
-      --green-950: #173b33;
-      --green-900: #204a40;
-      --green-800: #2e6154;
-      --green-700: #3d7566;
-      --green-100: #e6f0ec;
+      --green-950: #14372f;
+      --green-900: #1b463b;
+      --green-800: #2c6052;
+      --green-700: #417a69;
+      --green-600: #568f7d;
+      --green-200: #c9ddd5;
+      --green-100: #e3efea;
       --green-50: #f2f7f5;
 
-      --orange-700: #a9552c;
-      --orange-600: #bd693b;
-      --orange-100: #f7e8dc;
+      --orange-800: #8f4725;
+      --orange-700: #a9562d;
+      --orange-600: #bc693c;
+      --orange-200: #ebcbb6;
+      --orange-100: #f6e6da;
       --orange-50: #fff8f2;
 
-      --red-700: #a34848;
-      --red-100: #fae9e9;
+      --red-700: #9d4545;
+      --red-100: #faeaea;
+      --red-50: #fff8f8;
 
-      --blue-700: #476f85;
-      --blue-100: #e7f0f4;
+      --blue-700: #466e83;
+      --blue-100: #e5eff4;
+      --blue-50: #f6fafc;
 
+      --gold: #c29a5b;
       --ink: #26342f;
-      --muted: #64716c;
-      --line: #d9e2de;
+      --muted: #65736d;
+      --muted-light: #86918c;
+      --line: #d8e1dd;
+      --line-dark: #bdcbc5;
       --paper: #ffffff;
       --base: #f5f7f6;
-      --warm: #f3efe8;
+      --warm: #f4f0e9;
 
       --shadow:
-        0 20px 55px rgba(23, 59, 51, 0.11);
+        0 22px 60px rgba(20, 55, 47, 0.11);
 
       --shadow-small:
-        0 10px 30px rgba(23, 59, 51, 0.07);
+        0 10px 30px rgba(20, 55, 47, 0.07);
 
       --radius-large: 28px;
       --radius: 19px;
+      --radius-small: 12px;
       --max-width: 1160px;
     }
 
@@ -61,6 +96,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -74,6 +110,7 @@
         Meiryo,
         sans-serif;
       line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
     }
 
     img,
@@ -90,6 +127,20 @@
     input,
     textarea {
       font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      overflow-wrap: anywhere;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
     }
 
     .container {
@@ -122,7 +173,7 @@
       z-index: 100;
       background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
     }
 
     .header-inner {
@@ -130,10 +181,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 25px;
     }
 
     .brand {
+      flex: 0 0 auto;
       text-decoration: none;
     }
 
@@ -146,7 +198,7 @@
         serif;
       font-size: 17px;
       letter-spacing: 0.09em;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     .brand small {
@@ -158,7 +210,7 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 19px;
     }
 
     .nav a {
@@ -171,7 +223,7 @@
       color: var(--green-700);
     }
 
-    .nav-cta {
+    .nav .nav-cta {
       padding: 9px 16px;
       color: #fff;
       background: var(--green-800);
@@ -179,18 +231,19 @@
     }
 
     .hero {
-      padding: 92px 0 76px;
+      position: relative;
+      padding: 94px 0 78px;
       overflow: hidden;
       background:
         radial-gradient(
-          circle at 88% 15%,
-          rgba(61, 117, 102, 0.15),
+          circle at 88% 14%,
+          rgba(65, 122, 105, 0.16),
           transparent 31%
         ),
         radial-gradient(
-          circle at 9% 90%,
-          rgba(189, 105, 59, 0.09),
-          transparent 27%
+          circle at 10% 88%,
+          rgba(188, 105, 60, 0.09),
+          transparent 28%
         ),
         linear-gradient(
           180deg,
@@ -199,11 +252,28 @@
         );
     }
 
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -170px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(65, 122, 105, 0.14);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 65px rgba(65, 122, 105, 0.035),
+        0 0 0 130px rgba(65, 122, 105, 0.025);
+      pointer-events: none;
+    }
+
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns:
-        minmax(0, 1.12fr)
-        minmax(320px, 0.88fr);
+        minmax(0, 1.1fr)
+        minmax(330px, 0.9fr);
       align-items: center;
       gap: 58px;
     }
@@ -221,15 +291,9 @@
 
     .eyebrow::before {
       content: "";
-      width: 27px;
+      width: 28px;
       height: 2px;
       background: currentColor;
-    }
-
-    h1,
-    h2,
-    h3 {
-      text-wrap: balance;
     }
 
     h1 {
@@ -239,35 +303,43 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(39px, 5.6vw, 67px);
+      font-size: clamp(39px, 5.7vw, 67px);
       font-weight: 600;
+      letter-spacing: -0.025em;
       line-height: 1.36;
     }
 
     .hero-subtitle {
       display: block;
       margin-top: 18px;
-      color: var(--orange-700);
+      color: var(--orange-800);
       font-family:
         "Hiragino Kaku Gothic ProN",
         "Yu Gothic",
         sans-serif;
-      font-size: clamp(17px, 2.2vw, 25px);
+      font-size: clamp(17px, 2.15vw, 25px);
       font-weight: 800;
+      letter-spacing: 0;
       line-height: 1.65;
     }
 
     .hero-lead {
-      max-width: 720px;
+      max-width: 710px;
       margin: 25px 0 0;
       font-size: 16px;
     }
 
     .hero-lead strong {
       color: var(--green-950);
+      background:
+        linear-gradient(
+          transparent 66%,
+          rgba(194, 154, 91, 0.23) 66%
+        );
     }
 
-    .hero-actions {
+    .hero-actions,
+    .final-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -276,42 +348,51 @@
 
     .button {
       display: inline-flex;
-      min-height: 54px;
+      min-height: 55px;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 12px 23px;
+      padding: 12px 24px;
       border: 1px solid transparent;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 900;
+      line-height: 1.5;
       text-align: center;
       text-decoration: none;
       transition:
         transform 0.2s ease,
-        background-color 0.2s ease;
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
     }
 
+    .button:focus-visible,
+    .nav a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(65, 122, 105, 0.32);
+      outline-offset: 4px;
+    }
+
     .button-primary {
       color: #fff;
       background: var(--orange-600);
       box-shadow:
-        0 13px 28px
-        rgba(169, 85, 44, 0.21);
+        0 14px 30px
+        rgba(143, 71, 37, 0.2);
     }
 
     .button-primary:hover {
-      background: var(--orange-700);
+      background: var(--orange-800);
     }
 
     .button-secondary {
       color: var(--green-950);
       background: #fff;
-      border-color: var(--line);
+      border-color: var(--line-dark);
     }
 
     .button-dark {
@@ -319,21 +400,35 @@
       background: var(--green-800);
     }
 
-    .hero-note {
+    .hero-note,
+    .button-note {
       margin: 13px 0 0;
       color: var(--muted);
       font-size: 11px;
     }
 
     .hero-card {
+      position: relative;
       padding: 29px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--line);
       border-radius: var(--radius-large);
       box-shadow: var(--shadow);
     }
 
-    .hero-card-label {
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 28px;
+      width: 82px;
+      height: 9px;
+      background: var(--gold);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .hero-card-label,
+    .pill {
       display: inline-block;
       margin-bottom: 14px;
       padding: 5px 10px;
@@ -353,7 +448,7 @@
 
     .hero-card-list {
       display: grid;
-      gap: 12px;
+      gap: 13px;
       margin: 21px 0 0;
       padding: 0;
       list-style: none;
@@ -361,7 +456,7 @@
 
     .hero-card-list li {
       display: grid;
-      grid-template-columns: 27px 1fr;
+      grid-template-columns: 29px 1fr;
       gap: 11px;
       align-items: start;
       color: var(--muted);
@@ -370,8 +465,8 @@
 
     .hero-card-list strong {
       display: grid;
-      width: 27px;
-      height: 27px;
+      width: 29px;
+      height: 29px;
       place-items: center;
       color: #fff;
       background: var(--green-700);
@@ -390,7 +485,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px 34px;
+      gap: 14px 34px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -404,7 +499,7 @@
     .trust-list li::before {
       content: "✓";
       margin-right: 8px;
-      color: #b6d5ca;
+      color: #b7d7cc;
     }
 
     .section {
@@ -429,7 +524,7 @@
     }
 
     .heading {
-      max-width: 810px;
+      max-width: 820px;
       margin: 0 auto 46px;
       text-align: center;
     }
@@ -447,6 +542,7 @@
         serif;
       font-size: clamp(30px, 4.3vw, 48px);
       font-weight: 600;
+      letter-spacing: -0.02em;
       line-height: 1.5;
     }
 
@@ -461,16 +557,17 @@
     }
 
     .section-dark .heading p {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.74);
     }
 
-    .source-note {
-      max-width: 900px;
-      margin: 0 auto 32px;
+    .source-note,
+    .info-note {
+      max-width: 930px;
+      margin: 0 auto 31px;
       padding: 19px 22px;
       color: #4f5d57;
       background: var(--orange-50);
-      border: 1px solid #ebd8c8;
+      border: 1px solid #ead7c8;
       border-left: 5px solid var(--orange-600);
       border-radius: 13px;
       font-size: 12px;
@@ -486,24 +583,27 @@
     .voice-card {
       position: relative;
       padding: 25px;
+      overflow: hidden;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow-small);
     }
 
-    .voice-card::before {
+    .voice-card::after {
       content: "“";
       position: absolute;
-      top: 11px;
-      right: 19px;
+      top: 6px;
+      right: 16px;
       color: var(--green-100);
       font-family: Georgia, serif;
-      font-size: 58px;
+      font-size: 62px;
       line-height: 1;
     }
 
     .voice-card strong {
+      position: relative;
+      z-index: 1;
       display: block;
       margin-bottom: 8px;
       color: var(--green-950);
@@ -519,28 +619,35 @@
     }
 
     .problem-box {
-      max-width: 910px;
-      margin: 35px auto 0;
-      padding: 28px;
-      background: var(--green-950);
+      max-width: 920px;
+      margin: 34px auto 0;
+      padding: 29px;
+      color: #fff;
+      background:
+        linear-gradient(
+          135deg,
+          var(--green-950),
+          var(--green-800)
+        );
       border-radius: var(--radius);
       text-align: center;
+      box-shadow: var(--shadow-small);
     }
 
     .problem-box p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.83);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 14px;
     }
 
     .problem-box strong {
       color: #fff;
-      font-size: 18px;
+      font-size: 19px;
     }
 
     .case-list {
       display: grid;
-      gap: 32px;
+      gap: 34px;
     }
 
     .case-card {
@@ -553,8 +660,8 @@
 
     .case-header {
       display: grid;
-      grid-template-columns: 95px 1fr;
-      gap: 23px;
+      grid-template-columns: 88px 1fr;
+      gap: 22px;
       align-items: center;
       padding: 30px;
       border-bottom: 1px solid var(--line);
@@ -562,14 +669,14 @@
 
     .case-number {
       display: grid;
-      width: 78px;
-      height: 78px;
+      width: 74px;
+      height: 74px;
       place-items: center;
       color: #fff;
       background: var(--green-800);
       border-radius: 50%;
       font-family: Georgia, serif;
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 800;
     }
 
@@ -595,15 +702,57 @@
       font-size: 12px;
     }
 
-    .case-body {
+    .case-content {
+      display: grid;
+      grid-template-columns:
+        minmax(270px, 0.72fr)
+        minmax(0, 1.28fr);
+    }
+
+    .case-visual {
+      display: grid;
+      min-height: 400px;
+      place-items: center;
+      padding: 28px;
+      background:
+        linear-gradient(
+          145deg,
+          #e8efec,
+          #f8faf9
+        );
+      border-right: 1px solid var(--line);
+    }
+
+    .diagram {
+      width: 100%;
+      max-width: 390px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow-small);
+    }
+
+    .diagram-caption {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .plan-svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .case-analysis {
       display: grid;
       grid-template-columns:
         repeat(3, minmax(0, 1fr));
     }
 
     .case-column {
-      min-height: 100%;
-      padding: 27px;
+      padding: 26px 24px;
       border-right: 1px solid var(--line);
     }
 
@@ -612,23 +761,23 @@
     }
 
     .case-column.before {
-      background: #fffafa;
+      background: var(--red-50);
     }
 
     .case-column.review {
-      background: #f6f9f8;
+      background: var(--blue-50);
     }
 
     .case-column.after {
-      background: #f4faf7;
+      background: var(--green-50);
     }
 
     .case-label {
       display: inline-flex;
-      margin-bottom: 15px;
-      padding: 5px 10px;
+      margin-bottom: 14px;
+      padding: 5px 9px;
       border-radius: 999px;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 900;
     }
 
@@ -650,19 +799,14 @@
     .case-column h4 {
       margin: 0 0 10px;
       color: var(--green-950);
-      font-size: 16px;
-    }
-
-    .case-column p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     .point-list {
       display: grid;
       gap: 10px;
-      margin: 16px 0 0;
+      margin: 15px 0 0;
       padding: 0;
       list-style: none;
     }
@@ -670,40 +814,33 @@
     .point-list li {
       position: relative;
       padding-left: 22px;
-      color: #4f5d57;
-      font-size: 12px;
+      color: #50605a;
+      font-size: 11px;
+    }
+
+    .before .point-list li::before,
+    .review .point-list li::before {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      display: grid;
+      width: 15px;
+      height: 15px;
+      place-items: center;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 8px;
+      font-weight: 900;
     }
 
     .before .point-list li::before {
       content: "!";
-      position: absolute;
-      top: 3px;
-      left: 0;
-      display: grid;
-      width: 15px;
-      height: 15px;
-      place-items: center;
-      color: #fff;
       background: var(--red-700);
-      border-radius: 50%;
-      font-size: 9px;
-      font-weight: 900;
     }
 
     .review .point-list li::before {
       content: "?";
-      position: absolute;
-      top: 3px;
-      left: 0;
-      display: grid;
-      width: 15px;
-      height: 15px;
-      place-items: center;
-      color: #fff;
       background: var(--blue-700);
-      border-radius: 50%;
-      font-size: 9px;
-      font-weight: 900;
     }
 
     .after .point-list li::before {
@@ -726,76 +863,242 @@
       color: var(--green-950);
     }
 
-    .flow-grid {
+    .deliverable-grid {
       display: grid;
       grid-template-columns:
-        repeat(5, minmax(0, 1fr));
-      gap: 14px;
+        minmax(0, 1.08fr)
+        minmax(320px, 0.92fr);
+      gap: 28px;
+      align-items: start;
     }
 
-    .flow-card {
-      position: relative;
-      padding: 23px 18px;
+    .sheet {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .sheet-header {
+      padding: 22px 24px;
+      color: #fff;
+      background: var(--green-950);
+    }
+
+    .sheet-header small {
+      display: block;
+      margin-bottom: 4px;
+      color: #b8d2c9;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+    }
+
+    .sheet-header h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .sheet-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .sheet-meta span {
+      padding: 4px 8px;
+      color: var(--green-950);
+      background: #fff;
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .sheet-table-wrap {
+      overflow-x: auto;
+    }
+
+    .sheet-table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+
+    .sheet-table th,
+    .sheet-table td {
+      padding: 15px 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .sheet-table th:last-child,
+    .sheet-table td:last-child {
+      border-right: 0;
+    }
+
+    .sheet-table thead th {
+      color: var(--green-950);
+      background: var(--green-100);
+      font-weight: 900;
+    }
+
+    .sheet-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .priority {
+      display: inline-flex;
+      min-width: 31px;
+      justify-content: center;
+      padding: 3px 6px;
+      border-radius: 999px;
+      font-size: 8px;
+      font-weight: 900;
+    }
+
+    .priority-high {
+      color: var(--red-700);
+      background: var(--red-100);
+    }
+
+    .priority-middle {
+      color: var(--orange-800);
+      background: var(--orange-100);
+    }
+
+    .priority-keep {
+      color: var(--green-800);
+      background: var(--green-100);
+    }
+
+    .sheet-note {
+      padding: 13px 20px;
+      color: var(--muted);
+      background: #f8faf9;
+      border-top: 1px solid var(--line);
+      font-size: 9px;
+    }
+
+    .deliverable-copy {
+      padding: 28px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
     }
 
-    .flow-card:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      top: 50%;
-      right: -13px;
-      z-index: 2;
-      color: var(--green-700);
-      font-weight: 900;
-      transform: translateY(-50%);
+    .deliverable-copy h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 23px;
+      line-height: 1.55;
     }
 
-    .flow-card strong {
+    .deliverable-copy > p {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .result-list {
       display: grid;
-      width: 32px;
-      height: 32px;
-      margin-bottom: 13px;
+      gap: 11px;
+      margin: 21px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .result-list li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 11px;
+      align-items: start;
+      color: #4d5d57;
+      font-size: 12px;
+    }
+
+    .result-list strong {
+      display: grid;
+      width: 30px;
+      height: 30px;
       place-items: center;
       color: #fff;
       background: var(--green-700);
       border-radius: 50%;
       font-family: Georgia, serif;
-      font-size: 12px;
+      font-size: 10px;
     }
 
-    .flow-card h3 {
-      margin: 0 0 7px;
+    .timing-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .timing-card {
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+    }
+
+    .timing-card span {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--orange-700);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .timing-card h3 {
+      margin: 0 0 8px;
       color: var(--green-950);
-      font-size: 14px;
+      font-size: 15px;
     }
 
-    .flow-card p {
+    .timing-card p {
       margin: 0;
       color: var(--muted);
       font-size: 11px;
     }
 
-    .deliverables {
+    .timing-alert {
+      max-width: 900px;
+      margin: 27px auto 0;
+      padding: 20px 23px;
+      color: #4f5e58;
+      background: var(--orange-50);
+      border: 1px solid #ead7c8;
+      border-radius: 13px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .scope-grid {
       display: grid;
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 29px;
+      gap: 19px;
     }
 
-    .deliverable-box {
-      padding: 25px;
+    .scope-box {
+      padding: 27px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
     }
 
-    .deliverable-box h3 {
+    .scope-box h3 {
       margin: 0 0 15px;
       color: var(--green-950);
-      font-size: 18px;
+      font-size: 19px;
     }
 
     .check-list,
@@ -835,15 +1138,16 @@
       display: grid;
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 970px;
+      gap: 23px;
+      max-width: 990px;
       margin: 0 auto;
     }
 
     .service-card {
+      position: relative;
       display: flex;
       flex-direction: column;
-      padding: 30px;
+      padding: 31px;
       color: var(--ink);
       background: #fff;
       border: 1px solid var(--line);
@@ -853,6 +1157,21 @@
 
     .service-card.featured {
       border: 3px solid var(--orange-600);
+    }
+
+    .service-card.featured::before {
+      content: "家全体の決定が続く方へ";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      padding: 5px 13px;
+      color: #fff;
+      background: var(--orange-600);
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
+      white-space: nowrap;
+      transform: translateX(-50%);
     }
 
     .service-badge {
@@ -866,22 +1185,17 @@
       font-weight: 900;
     }
 
-    .featured .service-badge {
-      color: var(--orange-700);
-      background: var(--orange-100);
-    }
-
     .service-card h3 {
       margin: 0;
       color: var(--green-950);
-      font-size: 23px;
+      font-size: 24px;
     }
 
     .price {
-      margin: 10px 0 16px;
+      margin: 9px 0 15px;
       color: var(--green-950);
       font-family: Georgia, serif;
-      font-size: 33px;
+      font-size: 34px;
       font-weight: 800;
     }
 
@@ -899,10 +1213,17 @@
       font-size: 12px;
     }
 
+    .fit-title {
+      margin: 20px 0 9px;
+      color: var(--green-950);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
     .service-list {
       display: grid;
       gap: 9px;
-      margin: 20px 0 25px;
+      margin: 0 0 25px;
       padding: 0;
       list-style: none;
     }
@@ -910,8 +1231,8 @@
     .service-list li {
       position: relative;
       padding-left: 23px;
-      color: #4d5c56;
-      font-size: 12px;
+      color: #4e5d57;
+      font-size: 11px;
     }
 
     .service-list li::before {
@@ -928,9 +1249,9 @@
     }
 
     .service-note {
-      max-width: 880px;
-      margin: 25px auto 0;
-      color: rgba(255, 255, 255, 0.73);
+      max-width: 900px;
+      margin: 26px auto 0;
+      color: rgba(255, 255, 255, 0.72);
       font-size: 11px;
       text-align: center;
     }
@@ -938,9 +1259,9 @@
     .architect-grid {
       display: grid;
       grid-template-columns:
-        minmax(250px, 0.7fr)
-        minmax(0, 1.3fr);
-      gap: 42px;
+        minmax(270px, 0.72fr)
+        minmax(0, 1.28fr);
+      gap: 45px;
       align-items: center;
     }
 
@@ -952,7 +1273,7 @@
       background:
         linear-gradient(
           145deg,
-          #e4ece8,
+          #dfe9e5,
           #f8faf9
         );
       border: 1px solid var(--line);
@@ -969,17 +1290,14 @@
       font-family: Georgia, serif;
       font-size: 31px;
       letter-spacing: 0.08em;
+      line-height: 1.35;
     }
 
     .architect-mark span {
       display: block;
-      margin-top: 8px;
+      margin-top: 10px;
       color: var(--muted);
       font-size: 12px;
-    }
-
-    .architect-content .eyebrow {
-      margin-bottom: 13px;
     }
 
     .architect-content h2 {
@@ -989,13 +1307,13 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(30px, 4vw, 45px);
+      font-size: clamp(30px, 4vw, 46px);
       font-weight: 600;
       line-height: 1.5;
     }
 
     .architect-content p {
-      margin: 18px 0 0;
+      margin: 17px 0 0;
       color: var(--muted);
       font-size: 13px;
     }
@@ -1020,8 +1338,60 @@
       font-weight: 800;
     }
 
+    .faq-list {
+      max-width: 900px;
+      display: grid;
+      gap: 12px;
+      margin: 0 auto;
+    }
+
+    .faq-list details {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .faq-list summary {
+      position: relative;
+      padding: 19px 53px 19px 21px;
+      color: var(--green-950);
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: var(--green-700);
+      font-size: 23px;
+      transform: translateY(-50%);
+    }
+
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 21px 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
     .final-cta {
-      padding: 94px 0;
+      padding: 96px 0;
       color: #fff;
       background:
         radial-gradient(
@@ -1037,13 +1407,13 @@
     }
 
     .final-cta-inner {
-      max-width: 850px;
+      max-width: 860px;
       margin: 0 auto;
       text-align: center;
     }
 
     .final-cta .eyebrow {
-      color: #bad7ce;
+      color: #b9d7cd;
     }
 
     .final-cta h2 {
@@ -1052,7 +1422,7 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(31px, 4.7vw, 51px);
+      font-size: clamp(31px, 4.8vw, 51px);
       font-weight: 600;
       line-height: 1.5;
     }
@@ -1064,22 +1434,18 @@
     }
 
     .final-actions {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 28px;
     }
 
     .final-note {
       margin-top: 14px;
-      color: rgba(255, 255, 255, 0.65);
+      color: rgba(255, 255, 255, 0.64);
       font-size: 11px;
     }
 
     .footer {
-      padding: 38px 0;
-      color: #afc7be;
+      padding: 39px 0 90px;
+      color: #adc5bc;
       background: #102f28;
       text-align: center;
     }
@@ -1108,9 +1474,55 @@
       font-size: 10px;
     }
 
+    .mobile-cta {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 90;
+      display: none;
+      padding:
+        9px 12px
+        calc(9px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.96);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-cta a {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--orange-600);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1060px) {
+      .case-content {
+        grid-template-columns: 1fr;
+      }
+
+      .case-visual {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .case-analysis {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
-      .architect-grid {
+      .architect-grid,
+      .deliverable-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1123,13 +1535,9 @@
           repeat(2, minmax(0, 1fr));
       }
 
-      .flow-grid {
+      .timing-grid {
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
-      }
-
-      .flow-card:not(:last-child)::after {
-        display: none;
       }
     }
 
@@ -1138,7 +1546,9 @@
         display: none;
       }
 
-      .case-body {
+      .case-analysis,
+      .service-grid,
+      .scope-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1149,11 +1559,6 @@
 
       .case-column:last-child {
         border-bottom: 0;
-      }
-
-      .service-grid,
-      .deliverables {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1166,7 +1571,7 @@
       }
 
       .header-inner {
-        min-height: 66px;
+        min-height: 65px;
       }
 
       .brand strong {
@@ -1177,8 +1582,12 @@
         font-size: 9px;
       }
 
+      .nav-cta {
+        display: none;
+      }
+
       .hero {
-        padding: 58px 0 53px;
+        padding: 58px 0 52px;
       }
 
       .section {
@@ -1195,33 +1604,43 @@
       }
 
       .voice-grid,
-      .flow-grid,
+      .timing-grid,
       .credential-list {
         grid-template-columns: 1fr;
       }
 
       .case-header {
-        grid-template-columns: 58px 1fr;
-        gap: 15px;
-        padding: 23px 19px;
+        grid-template-columns: 55px 1fr;
+        gap: 14px;
+        padding: 22px 18px;
       }
 
       .case-number {
-        width: 54px;
-        height: 54px;
+        width: 52px;
+        height: 52px;
         font-size: 15px;
       }
 
-      .case-column {
-        padding: 23px 20px;
+      .case-visual {
+        padding: 18px;
+      }
+
+      .case-column,
+      .scope-box,
+      .deliverable-copy {
+        padding: 22px 19px;
       }
 
       .service-card {
-        padding: 24px 21px;
+        padding: 25px 21px;
       }
 
       .architect-panel {
         min-height: 270px;
+      }
+
+      .mobile-cta {
+        display: block;
       }
     }
 
@@ -1235,6 +1654,22 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "BETTER HOME DESIGN",
+    "url": "https://emy-renovation.github.io/madori-consulting/",
+    "description": "二級建築士による間取りセカンドオピニオンと家づくり伴走サポート",
+    "areaServed": "JP",
+    "serviceType": [
+      "間取りセカンドオピニオン",
+      "家づくり相談",
+      "オンライン建築相談"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -1253,12 +1688,14 @@
       </a>
 
       <nav class="nav" aria-label="メインメニュー">
-        <a href="#voices">相談内容</a>
+        <a href="#concerns">よくある悩み</a>
         <a href="#cases">検討事例</a>
+        <a href="#deliverable">成果物</a>
         <a href="#services">相談の選び方</a>
 
         <a
           class="nav-cta"
+          data-cta="header-form"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
         >
           対応可否を確認
@@ -1287,19 +1724,20 @@
           </h1>
 
           <p class="hero-lead">
-            家づくりでは、間取りが決まった後も、
-            収納、床、建具、壁紙、照明、コンセントなど、
-            たくさんの判断が続きます。
+            希望は伝えた。間取りも悪くない。
+            それでも決めきれないのは、
+            あなたに知識やセンスがないからではありません。
             <strong>
-              問題は選択肢が少ないことではなく、
-              判断の基準が一つにつながっていないこと
+              別々に決めてきた選択を、
+              家全体の判断軸で確認できていない
             </strong>
-            かもしれません。
+            からかもしれません。
           </p>
 
           <div class="hero-actions">
             <a
               class="button button-primary"
+              data-cta="hero-form"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
             >
               自分の図面も相談できるか確認する
@@ -1326,16 +1764,16 @@
           </span>
 
           <h2>
-            建築士は、図面のどこを見て、<br>
-            何を整理するのか。
+            図面を採点するのではなく、<br>
+            次の判断を整理します。
           </h2>
 
           <ul class="hero-card-list">
             <li>
               <strong>1</strong>
               <span>
-                「何となくしっくりこない」を、
-                確認できる論点に変える
+                「何となく不安」を、
+                確認できる論点へ変える
               </span>
             </li>
 
@@ -1350,15 +1788,15 @@
             <li>
               <strong>3</strong>
               <span>
-                間取り・収納・内装・照明を、
-                同じ判断軸でつなげる
+                建築会社から回答を得られる
+                具体的な質問へ置き換える
               </span>
             </li>
 
             <li>
               <strong>4</strong>
               <span>
-                単発相談で足りるか、
+                一度の相談で足りるか、
                 継続的な伴走が必要かを整理する
               </span>
             </li>
@@ -1372,14 +1810,14 @@
         <ul class="trust-list">
           <li>二級建築士・漆間絵美が対応</li>
           <li>住宅設計経験800棟以上</li>
-          <li>新築・リノベーション対応</li>
+          <li>新築・リノベーション</li>
           <li>全国オンライン相談</li>
         </ul>
       </div>
     </section>
 
     <section
-      id="voices"
+      id="concerns"
       class="section section-white"
     >
       <div class="container">
@@ -1401,24 +1839,24 @@
 
         <div class="source-note">
           以下は、実際に寄せられた複数の相談内容をもとに、
-          個人や住宅を特定できない形へ短く再構成したものです。
+          個人や住宅を特定できない形へ再構成したものです。
           特定のお客様の発言や実邸事例として掲載しているものではありません。
         </div>
 
         <div class="voice-grid">
           <article class="voice-card">
-            <strong>間取りを決定できない</strong>
+            <strong>間取りを決めきれない</strong>
             <p>
               希望は入っているのに、
-              しっくりくる間取りなのか判断できない。
+              このまま確定してよいのか判断できない。
             </p>
           </article>
 
           <article class="voice-card">
             <strong>リビングと水まわり</strong>
             <p>
-              家事のしやすさ、来客時の見え方、
-              子どもの居場所を一緒に考えたい。
+              家事、来客、子どもの居場所を
+              一緒に考えた配置になっているか不安。
             </p>
           </article>
 
@@ -1447,10 +1885,10 @@
           </article>
 
           <article class="voice-card">
-            <strong>照明計画</strong>
+            <strong>照明とコンセント</strong>
             <p>
-              ダウンライトの数や位置が、
-              実際の暮らしに合っているのか判断できない。
+              家具配置が曖昧なまま、
+              電気図の決定期限が近づいている。
             </p>
           </article>
         </div>
@@ -1461,7 +1899,7 @@
               悩みが多いのではありません。
             </strong>
             <br>
-            間取り・収納・内装・照明を、
+            間取り・収納・内装・照明を
             別々の期限で決めなければならないため、
             家全体の判断軸が見えにくくなっています。
           </p>
@@ -1480,20 +1918,20 @@
           </span>
 
           <h2>
-            建築士の役割は、<br>
-            正解を押しつけることではありません。
+            建築士は、どこを見て<br>
+            何を整理するのか。
           </h2>
 
           <p>
             「変更」「維持」「要確認」「家族で決めること」に分け、
-            次の打ち合わせで判断できる形に整えます。
+            次の打ち合わせで判断できる形へ整えます。
           </p>
         </div>
 
         <div class="source-note">
-          以下は、相談傾向を説明するための架空の検討モデルです。
+          以下は相談傾向を説明するための架空の検討モデルです。
           実在する間取りやお客様のビフォーアフターではありません。
-          実際の提案は、敷地・構造・法規・予算・建築会社の仕様を確認して行います。
+          実際の判断には、敷地・構造・法規・予算・建築会社の仕様確認が必要です。
         </div>
 
         <div class="case-list">
@@ -1512,96 +1950,292 @@
                 </h3>
 
                 <p>
-                  リビング、水まわり、外遊びを
-                  部屋名ではなく一日の動きで確認する事例。
+                  部屋名だけでは見えない問題を、
+                  一日の動きと視線から確認します。
                 </p>
               </div>
             </header>
 
-            <div class="case-body">
-              <section class="case-column before">
-                <span class="case-label">
-                  相談時の状態
-                </span>
+            <div class="case-content">
+              <div class="case-visual">
+                <figure class="diagram">
+                  <svg
+                    class="plan-svg"
+                    viewBox="0 0 400 315"
+                    role="img"
+                    aria-labelledby="plan-title plan-desc"
+                  >
+                    <title id="plan-title">
+                      生活動線と視線の確認例
+                    </title>
 
-                <h4>
-                  希望は入っているが、
-                  同時使用が検討されていない
-                </h4>
+                    <desc id="plan-desc">
+                      キッチン、リビング、水まわり、子どもの居場所と、
+                      重なりやすい動線を示した架空の簡略図です。
+                    </desc>
 
-                <ul class="point-list">
-                  <li>
-                    洗面・浴室へ行く人がリビングを横切る
-                  </li>
-                  <li>
-                    子どもの居場所がキッチンから見えにくい
-                  </li>
-                  <li>
-                    道路側の外遊び場所に視線と安全の不安がある
-                  </li>
-                  <li>
-                    吹き抜けを使わず開放感を出したい
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="18"
+                      y="18"
+                      width="364"
+                      height="250"
+                      rx="5"
+                      fill="#f4f0e8"
+                      stroke="#415b51"
+                      stroke-width="5"
+                    />
 
-              <section class="case-column review">
-                <span class="case-label">
-                  建築士が確認すること
-                </span>
+                    <rect
+                      x="28"
+                      y="28"
+                      width="210"
+                      height="150"
+                      fill="#e7e0d4"
+                      stroke="#8b9993"
+                    />
 
-                <h4>
-                  面積よりも、視線と動線の関係を確認
-                </h4>
+                    <rect
+                      x="28"
+                      y="178"
+                      width="210"
+                      height="80"
+                      fill="#d7d3c9"
+                      stroke="#8b9993"
+                    />
 
-                <ul class="point-list">
-                  <li>
-                    料理中にどこまで見守りたいか
-                  </li>
-                  <li>
-                    来客と入浴・洗濯の時間が重なるか
-                  </li>
-                  <li>
-                    道路・隣家からの視線をどこで遮るか
-                  </li>
-                  <li>
-                    横方向の視線で広がりをつくれるか
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="238"
+                      y="28"
+                      width="134"
+                      height="65"
+                      fill="#d7e0dd"
+                      stroke="#8b9993"
+                    />
 
-              <section class="case-column after">
-                <span class="case-label">
-                  整理後の判断
-                </span>
+                    <rect
+                      x="238"
+                      y="93"
+                      width="134"
+                      height="85"
+                      fill="#cad7d4"
+                      stroke="#8b9993"
+                    />
 
-                <h4>
-                  「広くする」より、
-                  つながり方を整える
-                </h4>
+                    <rect
+                      x="238"
+                      y="178"
+                      width="134"
+                      height="80"
+                      fill="#b8d3ae"
+                      stroke="#6e926a"
+                    />
 
-                <ul class="point-list">
-                  <li>
-                    水まわりへの経路をLDKの中心から外す
-                  </li>
-                  <li>
-                    キッチンから見守れる居場所を決める
-                  </li>
-                  <li>
-                    外部空間は安全・視線・排水も含めて検討する
-                  </li>
-                  <li>
-                    吹き抜け以外の窓・建具・天井の連続性を確認する
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="45"
+                      y="40"
+                      width="145"
+                      height="32"
+                      rx="4"
+                      fill="#777c79"
+                    />
+
+                    <rect
+                      x="82"
+                      y="105"
+                      width="92"
+                      height="44"
+                      rx="4"
+                      fill="#a77c56"
+                    />
+
+                    <text
+                      x="133"
+                      y="96"
+                      text-anchor="middle"
+                      font-size="13"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      LDK
+                    </text>
+
+                    <text
+                      x="133"
+                      y="223"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      個室
+                    </text>
+
+                    <text
+                      x="305"
+                      y="66"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      玄関
+                    </text>
+
+                    <text
+                      x="305"
+                      y="137"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      水まわり
+                    </text>
+
+                    <text
+                      x="305"
+                      y="222"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      子どもの居場所
+                    </text>
+
+                    <path
+                      d="M320 60 C250 70, 235 110, 183 125 C225 135, 250 135, 300 135"
+                      fill="none"
+                      stroke="#bd4747"
+                      stroke-width="9"
+                      stroke-linecap="round"
+                      opacity="0.7"
+                    />
+
+                    <circle
+                      cx="205"
+                      cy="126"
+                      r="31"
+                      fill="rgba(189,71,71,.20)"
+                      stroke="#bd4747"
+                      stroke-width="3"
+                      stroke-dasharray="6 5"
+                    />
+
+                    <line
+                      x1="160"
+                      y1="54"
+                      x2="288"
+                      y2="213"
+                      stroke="#417a69"
+                      stroke-width="4"
+                      stroke-dasharray="8 6"
+                    />
+
+                    <text
+                      x="200"
+                      y="294"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="700"
+                      fill="#65736d"
+                    >
+                      赤：動線の交差　緑：見守りの視線
+                    </text>
+                  </svg>
+
+                  <figcaption class="diagram-caption">
+                    説明用の架空図です。実際の提案図ではありません。
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="case-analysis">
+                <section class="case-column before">
+                  <span class="case-label">
+                    相談時の状態
+                  </span>
+
+                  <h4>
+                    希望は入っているが、
+                    同時使用が見えない
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      水まわりへ行く人がLDKを横切る
+                    </li>
+                    <li>
+                      子どもの居場所がキッチンから見えにくい
+                    </li>
+                    <li>
+                      外遊び場所に道路や視線の不安がある
+                    </li>
+                    <li>
+                      吹き抜けなしで広く見せたい
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column review">
+                  <span class="case-label">
+                    建築士の確認
+                  </span>
+
+                  <h4>
+                    面積より先に、
+                    視線と時間帯を確認
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      料理中にどこまで見守りたいか
+                    </li>
+                    <li>
+                      来客と入浴の時間が重なるか
+                    </li>
+                    <li>
+                      道路や隣家からどこが見えるか
+                    </li>
+                    <li>
+                      横方向へ視線を伸ばせるか
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column after">
+                  <span class="case-label">
+                    整理する判断
+                  </span>
+
+                  <h4>
+                    「広くする」より、
+                    つながり方を整える
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      水まわり経路をLDKの中心から外す
+                    </li>
+                    <li>
+                      キッチンから見える居場所を決める
+                    </li>
+                    <li>
+                      外部空間は安全や排水も確認する
+                    </li>
+                    <li>
+                      窓・建具・天井の連続性を検討する
+                    </li>
+                  </ul>
+                </section>
+              </div>
             </div>
 
             <footer class="case-footer">
-              <strong>大切な点：</strong>
+              <strong>建築士の視点：</strong>
               中庭や減築が唯一の答えではありません。
-              敷地条件や工法、予算を確認したうえで、
-              変更可能な方向を建築会社へ質問できる形にします。
+              変更可能な範囲と優先順位を整理し、
+              建築会社へ確認できる質問に変えます。
             </footer>
           </article>
 
@@ -1620,95 +2254,258 @@
                 </h3>
 
                 <p>
-                  収納率だけでは分からない、
-                  収納物・建具・通路の関係を確認する事例。
+                  収納面積ではなく、
+                  収納物・人・扉の動きを重ねて確認します。
                 </p>
               </div>
             </header>
 
-            <div class="case-body">
-              <section class="case-column before">
-                <span class="case-label">
-                  相談時の状態
-                </span>
+            <div class="case-content">
+              <div class="case-visual">
+                <figure class="diagram">
+                  <svg
+                    class="plan-svg"
+                    viewBox="0 0 400 315"
+                    role="img"
+                    aria-labelledby="storage-title storage-desc"
+                  >
+                    <title id="storage-title">
+                      収納と建具の干渉確認例
+                    </title>
 
-                <h4>
-                  収納面積はあるが、
-                  片づけに移動が必要
-                </h4>
+                    <desc id="storage-desc">
+                      収納扉、室内扉、人の立つ位置が重なる状況を示した架空の簡略図です。
+                    </desc>
 
-                <ul class="point-list">
-                  <li>
-                    上着や鞄の収納が玄関から離れている
-                  </li>
-                  <li>
-                    洗濯物を各部屋へ運ぶ距離が長い
-                  </li>
-                  <li>
-                    開き戸と収納扉の動きが重なる
-                  </li>
-                  <li>
-                    家具を置くと扉の前が狭くなる
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="25"
+                      y="25"
+                      width="350"
+                      height="225"
+                      fill="#f1eee6"
+                      stroke="#425c52"
+                      stroke-width="5"
+                    />
 
-              <section class="case-column review">
-                <span class="case-label">
-                  建築士が確認すること
-                </span>
+                    <rect
+                      x="45"
+                      y="45"
+                      width="95"
+                      height="175"
+                      fill="#c9b28b"
+                      stroke="#78694f"
+                      stroke-width="2"
+                    />
 
-                <h4>
-                  「何畳あるか」ではなく、
-                  何をどこで使うか
-                </h4>
+                    <line
+                      x1="92"
+                      y1="45"
+                      x2="92"
+                      y2="220"
+                      stroke="#78694f"
+                    />
 
-                <ul class="point-list">
-                  <li>
-                    収納する物の種類・量・使用頻度
-                  </li>
-                  <li>
-                    帰宅、洗濯、着替えの一連の動作
-                  </li>
-                  <li>
-                    扉を開けたときに人が立つ位置
-                  </li>
-                  <li>
-                    可動棚・奥行き・コンセントの必要性
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="250"
+                      y="45"
+                      width="100"
+                      height="80"
+                      fill="#d8e1de"
+                      stroke="#7e8d87"
+                    />
 
-              <section class="case-column after">
-                <span class="case-label">
-                  整理後の判断
-                </span>
+                    <rect
+                      x="250"
+                      y="125"
+                      width="100"
+                      height="95"
+                      fill="#ccd5d2"
+                      stroke="#7e8d87"
+                    />
 
-                <h4>
-                  収納を増やす前に、
-                  置く場所と扉を見直す
-                </h4>
+                    <path
+                      d="M250 125 L185 125"
+                      stroke="#9d4545"
+                      stroke-width="5"
+                    />
 
-                <ul class="point-list">
-                  <li>
-                    帰宅用品は玄関から生活空間までの途中へ置く
-                  </li>
-                  <li>
-                    洗濯関連収納を洗面・脱衣室の近くへまとめる
-                  </li>
-                  <li>
-                    狭い場所では引き戸や折れ戸も比較する
-                  </li>
-                  <li>
-                    家具配置後の有効通路寸法を確認する
-                  </li>
-                </ul>
-              </section>
+                    <path
+                      d="M250 125 A65 65 0 0 1 250 190"
+                      fill="none"
+                      stroke="#9d4545"
+                      stroke-width="3"
+                      stroke-dasharray="6 5"
+                    />
+
+                    <path
+                      d="M140 120 L205 120"
+                      stroke="#9d4545"
+                      stroke-width="5"
+                    />
+
+                    <path
+                      d="M140 120 A65 65 0 0 0 140 185"
+                      fill="none"
+                      stroke="#9d4545"
+                      stroke-width="3"
+                      stroke-dasharray="6 5"
+                    />
+
+                    <circle
+                      cx="196"
+                      cy="154"
+                      r="32"
+                      fill="rgba(157,69,69,.21)"
+                      stroke="#9d4545"
+                      stroke-width="3"
+                    />
+
+                    <text
+                      x="92"
+                      y="138"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      収納
+                    </text>
+
+                    <text
+                      x="300"
+                      y="88"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      洗面
+                    </text>
+
+                    <text
+                      x="300"
+                      y="178"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="700"
+                      fill="#26342f"
+                    >
+                      廊下
+                    </text>
+
+                    <text
+                      x="197"
+                      y="158"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="900"
+                      fill="#9d4545"
+                    >
+                      干渉
+                    </text>
+
+                    <text
+                      x="200"
+                      y="290"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="700"
+                      fill="#65736d"
+                    >
+                      扉が開く範囲と、人が立つ場所を確認
+                    </text>
+                  </svg>
+
+                  <figcaption class="diagram-caption">
+                    収納量だけでなく、建具と使用位置を重ねます。
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="case-analysis">
+                <section class="case-column before">
+                  <span class="case-label">
+                    相談時の状態
+                  </span>
+
+                  <h4>
+                    面積はあるのに、
+                    片づけに移動が必要
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      上着の収納が玄関から離れている
+                    </li>
+                    <li>
+                      洗濯物を各部屋へ運ぶ距離が長い
+                    </li>
+                    <li>
+                      開き戸と収納扉が重なる
+                    </li>
+                    <li>
+                      家具を置くと扉の前が狭くなる
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column review">
+                  <span class="case-label">
+                    建築士の確認
+                  </span>
+
+                  <h4>
+                    何畳あるかより、
+                    何をどこで使うか
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      収納物の種類・量・使用頻度
+                    </li>
+                    <li>
+                      帰宅・洗濯・着替えの動作
+                    </li>
+                    <li>
+                      扉を開ける人が立つ位置
+                    </li>
+                    <li>
+                      棚奥行きとコンセントの必要性
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column after">
+                  <span class="case-label">
+                    整理する判断
+                  </span>
+
+                  <h4>
+                    増やす前に、
+                    置く場所と扉を見直す
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      帰宅用品を玄関動線上へ置く
+                    </li>
+                    <li>
+                      洗濯収納を水まわりへ近づける
+                    </li>
+                    <li>
+                      引き戸・折れ戸も比較する
+                    </li>
+                    <li>
+                      家具配置後の有効幅を確認する
+                    </li>
+                  </ul>
+                </section>
+              </div>
             </div>
 
             <footer class="case-footer">
-              <strong>大切な点：</strong>
-              収納は面積が多ければよいとは限りません。
+              <strong>建築士の視点：</strong>
+              収納率だけで暮らしやすさは決まりません。
               収納物・使う場所・人の動き・建具をセットで確認します。
             </footer>
           </article>
@@ -1719,7 +2516,7 @@
 
               <div>
                 <span class="case-category">
-                  クロス・建具・照明・キッチン
+                  クロス・建具・キッチン・照明
                 </span>
 
                 <h3>
@@ -1728,99 +2525,594 @@
                 </h3>
 
                 <p>
-                  グレー・グレージュを中心に、
-                  床、壁、天井、建具、照明を統合する事例。
+                  色名だけでなく、
+                  面積・明度・自然光・照明を一緒に確認します。
                 </p>
               </div>
             </header>
 
-            <div class="case-body">
-              <section class="case-column before">
-                <span class="case-label">
-                  相談時の状態
-                </span>
+            <div class="case-content">
+              <div class="case-visual">
+                <figure class="diagram">
+                  <svg
+                    class="plan-svg"
+                    viewBox="0 0 400 315"
+                    role="img"
+                    aria-labelledby="color-title color-desc"
+                  >
+                    <title id="color-title">
+                      内装配色の確認例
+                    </title>
 
-                <h4>
-                  一つずつ選び、
-                  全体像が見えなくなっている
-                </h4>
+                    <desc id="color-desc">
+                      明るいグレージュを基調に、床、木部、濃色を面積比で示しています。
+                    </desc>
 
-                <ul class="point-list">
-                  <li>
-                    床・壁・天井に異なるグレーを使用
-                  </li>
-                  <li>
-                    建具とキッチンの色温度が合わない
-                  </li>
-                  <li>
-                    大梁だけ濃いクロスにするか迷う
-                  </li>
-                  <li>
-                    ダウンライトが均等に並んでいる
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="24"
+                      y="25"
+                      width="352"
+                      height="210"
+                      rx="8"
+                      fill="#ffffff"
+                      stroke="#415b51"
+                      stroke-width="3"
+                    />
 
-              <section class="case-column review">
-                <span class="case-label">
-                  建築士が確認すること
-                </span>
+                    <rect
+                      x="40"
+                      y="42"
+                      width="205"
+                      height="175"
+                      fill="#e7e3da"
+                    />
 
-                <h4>
-                  色名ではなく、
-                  明度・面積・自然光で比較
-                </h4>
+                    <rect
+                      x="245"
+                      y="42"
+                      width="78"
+                      height="175"
+                      fill="#827d74"
+                    />
 
-                <ul class="point-list">
-                  <li>
-                    方位と窓から入る自然光の色
-                  </li>
-                  <li>
-                    床・壁・天井の明度差と面積比
-                  </li>
-                  <li>
-                    木目、建具、キッチンの色味
-                  </li>
-                  <li>
-                    食事・くつろぎ・家事に必要な光
-                  </li>
-                </ul>
-              </section>
+                    <rect
+                      x="323"
+                      y="42"
+                      width="36"
+                      height="140"
+                      fill="#8d6c4d"
+                    />
 
-              <section class="case-column after">
-                <span class="case-label">
-                  整理後の判断
-                </span>
+                    <rect
+                      x="323"
+                      y="182"
+                      width="36"
+                      height="35"
+                      fill="#405d55"
+                    />
 
-                <h4>
-                  基調色を決め、
-                  濃色を使う場所を限定
-                </h4>
+                    <text
+                      x="142"
+                      y="122"
+                      text-anchor="middle"
+                      font-size="16"
+                      font-weight="900"
+                      fill="#4a4b47"
+                    >
+                      70%
+                    </text>
 
-                <ul class="point-list">
-                  <li>
-                    広い面は明るいグレージュを基調にする
-                  </li>
-                  <li>
-                    濃いグレーは建具や小面積へ限定する
-                  </li>
-                  <li>
-                    梁は強調する理由があるか確認する
-                  </li>
-                  <li>
-                    照明を生活場面ごとの回路に分ける
-                  </li>
-                </ul>
-              </section>
+                    <text
+                      x="142"
+                      y="145"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="700"
+                      fill="#4a4b47"
+                    >
+                      明るい基調色
+                    </text>
+
+                    <text
+                      x="284"
+                      y="122"
+                      text-anchor="middle"
+                      font-size="15"
+                      font-weight="900"
+                      fill="#ffffff"
+                    >
+                      20%
+                    </text>
+
+                    <text
+                      x="284"
+                      y="145"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#ffffff"
+                    >
+                      床・中間色
+                    </text>
+
+                    <text
+                      x="341"
+                      y="110"
+                      text-anchor="middle"
+                      font-size="12"
+                      font-weight="900"
+                      fill="#ffffff"
+                    >
+                      8%
+                    </text>
+
+                    <text
+                      x="341"
+                      y="204"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="900"
+                      fill="#ffffff"
+                    >
+                      2%
+                    </text>
+
+                    <line
+                      x1="55"
+                      y1="260"
+                      x2="345"
+                      y2="260"
+                      stroke="#d8e1dd"
+                      stroke-width="2"
+                    />
+
+                    <circle
+                      cx="100"
+                      cy="260"
+                      r="15"
+                      fill="#f3c67a"
+                      opacity="0.65"
+                    />
+
+                    <circle
+                      cx="200"
+                      cy="260"
+                      r="15"
+                      fill="#f2b45f"
+                      opacity="0.72"
+                    />
+
+                    <circle
+                      cx="300"
+                      cy="260"
+                      r="15"
+                      fill="#e9a951"
+                      opacity="0.78"
+                    />
+
+                    <text
+                      x="100"
+                      y="291"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#65736d"
+                    >
+                      自然光
+                    </text>
+
+                    <text
+                      x="200"
+                      y="291"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#65736d"
+                    >
+                      温白色
+                    </text>
+
+                    <text
+                      x="300"
+                      y="291"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#65736d"
+                    >
+                      電球色
+                    </text>
+                  </svg>
+
+                  <figcaption class="diagram-caption">
+                    色名ではなく、面積・明度・光源を同じ条件で比較します。
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="case-analysis">
+                <section class="case-column before">
+                  <span class="case-label">
+                    相談時の状態
+                  </span>
+
+                  <h4>
+                    一つずつ選び、
+                    全体像が見えなくなっている
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      床・壁・天井に異なるグレーを使用
+                    </li>
+                    <li>
+                      建具とキッチンの色味が合わない
+                    </li>
+                    <li>
+                      梁だけ濃いクロスにするか迷う
+                    </li>
+                    <li>
+                      ダウンライトが均等に並んでいる
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column review">
+                  <span class="case-label">
+                    建築士の確認
+                  </span>
+
+                  <h4>
+                    色名ではなく、
+                    明度・面積・光で比較
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      方位と窓から入る自然光
+                    </li>
+                    <li>
+                      床・壁・天井の明度差
+                    </li>
+                    <li>
+                      木目・建具・キッチンの色味
+                    </li>
+                    <li>
+                      生活場面ごとに必要な光
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="case-column after">
+                  <span class="case-label">
+                    整理する判断
+                  </span>
+
+                  <h4>
+                    基調色を決め、
+                    濃色を使う場所を限定
+                  </h4>
+
+                  <ul class="point-list">
+                    <li>
+                      広い面は明るい色を基調にする
+                    </li>
+                    <li>
+                      濃いグレーは小面積へ限定する
+                    </li>
+                    <li>
+                      梁を強調する理由を確認する
+                    </li>
+                    <li>
+                      照明を生活場面ごとに分ける
+                    </li>
+                  </ul>
+                </section>
+              </div>
             </div>
 
             <footer class="case-footer">
-              <strong>大切な点：</strong>
-              クロス品番だけでは判断できません。
-              実物サンプル、床、建具、キッチン、自然光、
-              照明の色温度を同じ条件で確認します。
+              <strong>建築士の視点：</strong>
+              クロス品番だけでは判断しません。
+              床・建具・キッチン・自然光・照明の色温度を、
+              同じ空間に現れる要素として確認します。
             </footer>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="deliverable"
+      class="section section-white"
+    >
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            WHAT YOU TAKE HOME
+          </span>
+
+          <h2>
+            相談後に残るのは、<br>
+            建築士の感想ではありません。
+          </h2>
+
+          <p>
+            次の打ち合わせで行動できるように、
+            確認場所・優先度・質問内容を判断整理シートへまとめます。
+          </p>
+        </div>
+
+        <div class="deliverable-grid">
+          <article class="sheet">
+            <header class="sheet-header">
+              <small>
+                DECISION ORGANIZING SHEET / SAMPLE
+              </small>
+
+              <h3>
+                判断整理シート・記載例
+              </h3>
+
+              <div class="sheet-meta">
+                <span>変更を検討</span>
+                <span>現在案を活かす</span>
+                <span>HMへ確認</span>
+                <span>家族で決定</span>
+              </div>
+            </header>
+
+            <div class="sheet-table-wrap">
+              <table class="sheet-table">
+                <thead>
+                  <tr>
+                    <th>確認場所</th>
+                    <th>現在の状態</th>
+                    <th>次の行動</th>
+                    <th>優先度</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>
+                      洗面入口
+                    </td>
+
+                    <td>
+                      開き戸と通行位置が重なりやすい
+                    </td>
+
+                    <td>
+                      引き戸へ変更可能か、壁内設備と合わせて建築会社へ確認
+                    </td>
+
+                    <td>
+                      <span class="priority priority-high">
+                        高
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      玄関収納
+                    </td>
+
+                    <td>
+                      上着と鞄を置く場所が生活動線から離れている
+                    </td>
+
+                    <td>
+                      収納物一覧を作り、棚奥行きとハンガーパイプ位置を再確認
+                    </td>
+
+                    <td>
+                      <span class="priority priority-middle">
+                        中
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      LDKの窓
+                    </td>
+
+                    <td>
+                      視線が抜け、明るさも確保できている
+                    </td>
+
+                    <td>
+                      現在案を活かし、カーテン取付位置のみ確認
+                    </td>
+
+                    <td>
+                      <span class="priority priority-keep">
+                        維持
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      ダイニング照明
+                    </td>
+
+                    <td>
+                      テーブル位置が未確定のまま配線位置が決まっている
+                    </td>
+
+                    <td>
+                      テーブル寸法を決め、配線変更期限までに中心位置を回答
+                    </td>
+
+                    <td>
+                      <span class="priority priority-high">
+                        高
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      LDKクロス
+                    </td>
+
+                    <td>
+                      床より青みが強く、照明下で冷たく見える可能性がある
+                    </td>
+
+                    <td>
+                      大判サンプルを床・建具と並べ、昼夜の光で比較
+                    </td>
+
+                    <td>
+                      <span class="priority priority-middle">
+                        中
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <footer class="sheet-note">
+              ※上記は成果物の形式を説明するための架空サンプルです。
+              実際の内容は、ご提出資料とヒアリング内容に応じて変わります。
+            </footer>
+          </article>
+
+          <article class="deliverable-copy">
+            <span class="pill">
+              相談後に整理できること
+            </span>
+
+            <h3>
+              「どう思いますか？」を、<br>
+              次の行動へ変えます。
+            </h3>
+
+            <p>
+              相談の目的は、建築士から大量の修正案を受け取ることではありません。
+              ご家族が納得して、建築会社との打ち合わせを前へ進められる状態をつくることです。
+            </p>
+
+            <ul class="result-list">
+              <li>
+                <strong>1</strong>
+
+                <span>
+                  <b>変更を優先して検討する場所</b><br>
+                  完成後に直しにくく、暮らしへの影響が大きい場所を整理します。
+                </span>
+              </li>
+
+              <li>
+                <strong>2</strong>
+
+                <span>
+                  <b>現在案をそのまま活かせる場所</b><br>
+                  不安だから全部変えるのではなく、良い部分も明確にします。
+                </span>
+              </li>
+
+              <li>
+                <strong>3</strong>
+
+                <span>
+                  <b>建築会社へ確認する寸法・仕様</b><br>
+                  感覚的な不安を、回答してもらえる具体的な質問にします。
+                </span>
+              </li>
+
+              <li>
+                <strong>4</strong>
+
+                <span>
+                  <b>ご家族で優先順位を決めること</b><br>
+                  建築士が決めることと、ご家族が選ぶことを分けます。
+                </span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            BEST TIMING
+          </span>
+
+          <h2>
+            相談するなら、<br>
+            変更できるうちに。
+          </h2>
+
+          <p>
+            家づくりは、工程が進むほど変更できる範囲が小さくなります。
+            不安が具体的になった時点が、相談のタイミングです。
+          </p>
+        </div>
+
+        <div class="timing-grid">
+          <article class="timing-card">
+            <span>01</span>
+
+            <h3>
+              HM・工務店を比較中
+            </h3>
+
+            <p>
+              会社名だけでなく、提案内容や標準仕様、進め方を比較したい段階。
+            </p>
+          </article>
+
+          <article class="timing-card">
+            <span>02</span>
+
+            <h3>
+              間取り確定前
+            </h3>
+
+            <p>
+              希望は入ったものの、契約・確認申請前に第三者の視点で確認したい段階。
+            </p>
+          </article>
+
+          <article class="timing-card">
+            <span>03</span>
+
+            <h3>
+              内装・建具を決定中
+            </h3>
+
+            <p>
+              床、建具、キッチン、クロスを家全体でどう合わせるか迷う段階。
+            </p>
+          </article>
+
+          <article class="timing-card">
+            <span>04</span>
+
+            <h3>
+              電気図の確定前
+            </h3>
+
+            <p>
+              家具、照明、スイッチ、コンセントの位置を暮らしに合わせて確認したい段階。
+            </p>
+          </article>
+        </div>
+
+        <div class="timing-alert">
+          次の打ち合わせや決定期限が近い場合は、
+          フォームに日付をご記入ください。
+          ただし、短納期での対応を保証するものではなく、
+          資料と受付状況を確認して対応可否をご案内します。
         </div>
       </div>
     </section>
@@ -1829,99 +3121,91 @@
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
-            HOW WE REVIEW
+            CONSULTATION SCOPE
           </span>
 
           <h2>
-            あなたの図面では、<br>
-            この順番で整理します。
+            対応できることと、<br>
+            含まれないこと。
           </h2>
 
           <p>
-            図面を見て思いつきで修正案を出すのではなく、
-            ご家族の生活と決定期限を確認して進めます。
+            申込み後の認識違いを防ぐために、
+            33,000円の個別相談の範囲を明確にしています。
           </p>
         </div>
 
-        <div class="flow-grid">
-          <article class="flow-card">
-            <strong>01</strong>
-            <h3>資料を確認</h3>
-            <p>
-              間取り図、仕様書、内装資料、決定期限を確認します。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <strong>02</strong>
-            <h3>悩みを分解</h3>
-            <p>
-              「何となく不安」を、確認できる論点へ変えます。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <strong>03</strong>
-            <h3>優先順位を整理</h3>
-            <p>
-              完成後の直しにくさと暮らしへの影響から並べます。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <strong>04</strong>
-            <h3>質問へ変換</h3>
-            <p>
-              建築会社から回答を得られる具体的な質問にします。
-            </p>
-          </article>
-
-          <article class="flow-card">
-            <strong>05</strong>
-            <h3>次の判断を明確化</h3>
-            <p>
-              変更、維持、要確認、家族で決めることに分けます。
-            </p>
-          </article>
-        </div>
-
-        <div class="deliverables">
-          <article class="deliverable-box">
+        <div class="scope-grid">
+          <article class="scope-box">
             <h3>
               33,000円個別相談に含まれること
             </h3>
 
             <ul class="check-list">
-              <li>間取り図1案の事前確認</li>
-              <li>オンライン面談75分</li>
-              <li>現在案の良い点と確認点の整理</li>
-              <li>変更を優先して検討する場所</li>
-              <li>建築会社へ確認する質問</li>
-              <li>判断整理シート</li>
+              <li>
+                間取り図1案と関連資料の事前確認
+              </li>
+
+              <li>
+                オンライン面談75分
+              </li>
+
+              <li>
+                現在案の良い点と確認点の整理
+              </li>
+
+              <li>
+                変更を優先して検討する場所の整理
+              </li>
+
+              <li>
+                建築会社へ確認する質問の整理
+              </li>
+
+              <li>
+                判断整理シート
+              </li>
             </ul>
           </article>
 
-          <article class="deliverable-box">
+          <article class="scope-box">
             <h3>
               通常の個別相談に含まれないこと
             </h3>
 
             <ul class="exclude-list">
-              <li>確認申請用・施工用図面の作成</li>
-              <li>構造計算や法令適合の最終判定</li>
-              <li>新規間取り図の完成設計</li>
-              <li>実施設計レベルの電気図作成</li>
-              <li>完成予想3Dパースの制作</li>
-              <li>建築会社との代理交渉</li>
+              <li>
+                確認申請用・施工用図面の作成
+              </li>
+
+              <li>
+                構造計算や法令適合の最終判定
+              </li>
+
+              <li>
+                新規間取り図の完成設計
+              </li>
+
+              <li>
+                実施設計レベルの電気図作成
+              </li>
+
+              <li>
+                完成予想3Dパースの制作
+              </li>
+
+              <li>
+                建築会社との代理交渉
+              </li>
             </ul>
           </article>
         </div>
 
-        <div class="source-note" style="margin-top: 25px;">
-          このページの検討事例や図解は、
-          建築士の確認視点を説明するためのものです。
-          33,000円の個別相談で、新規間取り図や3Dパースを
-          一式納品することを示すものではありません。
+        <div class="info-note" style="margin-top: 26px; margin-bottom: 0;">
+          <strong>クロス・照明・建具だけでも相談できます。</strong><br>
+          ただし、75分で整理できる一つの相談テーマが目安です。
+          間取り、収納、内装、照明、コンセントなど複数分野の決定が続く場合は、
+          12週間トータル伴走の方が適していることがあります。
         </div>
       </div>
     </section>
@@ -1937,24 +3221,24 @@
           </span>
 
           <h2>
-            一度の判断整理で足りる人。<br>
-            決定が続く間、伴走が必要な人。
+            今回の判断を整理するか。<br>
+            家づくりの決定を一緒に進めるか。
           </h2>
 
           <p>
-            高額なサポートを一律に勧めるのではなく、
-            現在の状況と残っている決定から選びます。
+            高額なサービスを一律に勧めるのではなく、
+            現在の段階と残っている決定から選びます。
           </p>
         </div>
 
         <div class="service-grid">
           <article class="service-card">
             <span class="service-badge">
-              次の打ち合わせを整理したい
+              一つのテーマを整理したい
             </span>
 
             <h3>
-              間取り個別相談
+              家づくり個別相談
             </h3>
 
             <div class="price">
@@ -1963,28 +3247,52 @@
             </div>
 
             <p>
-              現在の間取り1案について、
+              現在の図面や資料をもとに、
               次の打ち合わせで判断する内容を整理します。
             </p>
 
+            <h4 class="fit-title">
+              このような方に適しています
+            </h4>
+
             <ul class="service-list">
-              <li>図面1案</li>
-              <li>オンライン75分</li>
-              <li>判断整理シート</li>
-              <li>変更・維持・要確認を整理</li>
+              <li>
+                間取り1案を第三者に確認してほしい
+              </li>
+
+              <li>
+                収納・建具など一つのテーマを整理したい
+              </li>
+
+              <li>
+                クロス・照明・色合わせを相談したい
+              </li>
+
+              <li>
+                次の打ち合わせで聞くことを明確にしたい
+              </li>
+
+              <li>
+                一度の面談で方向性を決めたい
+              </li>
             </ul>
 
             <a
               class="button button-dark"
+              data-cta="single-form"
               href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
             >
-              対応できる相談か確認する
+              個別相談の対応可否を確認
             </a>
+
+            <p class="button-note">
+              図面・相談内容を確認後にご案内します。
+            </p>
           </article>
 
           <article class="service-card featured">
             <span class="service-badge">
-              家全体の決定が続いている
+              複数の決定をつなげたい
             </span>
 
             <h3>
@@ -1998,30 +3306,54 @@
 
             <p>
               間取りから収納、家具、内装、照明、電気図まで、
-              家全体を一つの方針で整えます。
+              家全体を一つの判断軸で整えます。
             </p>
 
+            <h4 class="fit-title">
+              このような方に適しています
+            </h4>
+
             <ul class="service-list">
-              <li>基本期間12週間</li>
-              <li>オンライン面談5回</li>
-              <li>期間中のテキスト相談</li>
-              <li>間取りから内装・電気図まで確認</li>
+              <li>
+                間取り確定後も多くの決定が残っている
+              </li>
+
+              <li>
+                床・建具・キッチン・クロスを統一したい
+              </li>
+
+              <li>
+                照明・スイッチ・コンセントも確認したい
+              </li>
+
+              <li>
+                建築会社との打ち合わせが複数回残っている
+              </li>
+
+              <li>
+                期間中に継続して質問・相談したい
+              </li>
             </ul>
 
             <a
               class="button button-primary"
+              data-cta="total-support"
               href="https://emy-renovation.github.io/total-support/"
             >
               トータル伴走の内容を見る
               <span aria-hidden="true">→</span>
             </a>
+
+            <p class="button-note">
+              基本期間12週間・オンライン面談5回。
+            </p>
           </article>
         </div>
 
         <p class="service-note">
           フォーム送信だけでは契約・決済になりません。
           現在の進捗、資料、決定期限を確認し、
-          サポートが適している場合のみご案内します。
+          ご相談に適した方法をご案内します。
         </p>
       </div>
     </section>
@@ -2054,14 +3386,23 @@
           <p>
             間取りのセカンドオピニオンは、
             建築会社の提案を一方的に採点するものではありません。
-            ご家族の暮らしに照らし、
-            現在案の良さ、確認が必要な場所、
-            優先して検討したい場所を整理するものです。
+            ご家族の暮らしに照らして、
+            現在案の良い部分、確認が必要な部分、
+            優先して検討したい部分を整理するものです。
           </p>
 
           <p>
-            感覚的な不安を具体的な質問へ変えることで、
-            建築会社との次の打ち合わせを進めやすくします。
+            住宅設計業務を通じて、
+            新築・リノベーションを含む800棟以上の
+            計画・提案・図面確認に携わってきました。
+            その経験をもとに、感覚的な不安を、
+            建築会社から回答を得られる具体的な質問へ変えます。
+          </p>
+
+          <p>
+            なお、最終的な法令・構造・施工可否は、
+            敷地条件や採用工法を把握している
+            建築会社・設計者への確認が必要です。
           </p>
 
           <ul class="credential-list">
@@ -2070,6 +3411,117 @@
             <li>新築・リノベーション</li>
             <li>全国オンライン対応</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            FREQUENTLY ASKED QUESTIONS
+          </span>
+
+          <h2>
+            相談前によくある不安。
+          </h2>
+
+          <p>
+            「この内容で相談してよいのか」という段階でも、
+            対応可否フォームから確認できます。
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>
+              間取りがまだ完成していなくても相談できますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                検討中の図面があれば相談できます。
+                ただし、候補案が多数ある場合や、
+                ゼロから間取りを設計するご依頼は、
+                33,000円の個別相談の範囲を超えることがあります。
+                現在の資料を確認したうえで、適した方法をご案内します。
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              クロスや照明だけでも相談できますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                相談できます。
+                75分で整理できる一つのテーマを目安に、
+                床・建具・キッチン・壁紙の色合わせや、
+                照明・スイッチ・コンセントの確認を行います。
+                家全体に複数の未決事項がある場合は、
+                トータル伴走が適することがあります。
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              ハウスメーカーへ相談したことが知られますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                BETTER HOME DESIGNから建築会社へ連絡することはありません。
+                相談内容をもとに、依頼者ご自身が確認できる質問へ整理します。
+                建築会社との代理交渉は通常サービスに含まれません。
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              間取りを作り直してもらえますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                個別相談は、現在案の論点と判断を整理するサービスです。
+                新規間取り図の完成設計や施工図の作成は含まれません。
+                必要な場合は、対応可能な範囲を資料確認後にご案内します。
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              3Dパースも作ってもらえますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                通常の33,000円個別相談に、
+                完成予想3Dパースの制作・納品は含まれません。
+                このページの図解は、建築士の確認視点を
+                分かりやすく説明するための架空モデルです。
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              フォームを送ると申込みになりますか？
+            </summary>
+
+            <div class="faq-answer">
+              <p>
+                フォーム送信だけでは契約・決済になりません。
+                資料、ご相談内容、決定期限、受付状況を確認し、
+                対応可能な場合に正式な流れをご案内します。
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -2086,21 +3538,23 @@
         </h2>
 
         <p>
-          現在の間取りを全部変える必要はありません。
-          活かせる場所と、今確認しておきたい場所を分けて、
-          次の打ち合わせで判断できる形に整えます。
+          現在の計画を全部変える必要はありません。
+          活かせる場所と、今確認したい場所を分けて、
+          次の打ち合わせで判断できる形へ整えます。
         </p>
 
         <div class="final-actions">
           <a
             class="button button-primary"
+            data-cta="final-form"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
           >
-            33,000円個別相談の対応可否を確認
+            個別相談の対応可否を確認する
           </a>
 
           <a
             class="button button-secondary"
+            data-cta="final-total-support"
             href="https://emy-renovation.github.io/total-support/"
           >
             12週間の伴走サポートを見る
@@ -2117,7 +3571,9 @@
 
   <footer class="footer">
     <div class="container">
-      <strong>BETTER HOME DESIGN</strong>
+      <strong>
+        BETTER HOME DESIGN
+      </strong>
 
       <p>
         二級建築士・漆間絵美
@@ -2127,13 +3583,13 @@
         <a
           href="https://emy-renovation.github.io/madori-consulting/"
         >
-          間取り個別相談
+          間取り・家づくり個別相談
         </a>
 
         <a
           href="https://emy-renovation.github.io/total-support/"
         >
-          トータル伴走サポート
+          12週間トータル伴走
         </a>
 
         <a href="#main">
@@ -2146,5 +3602,134 @@
       </p>
     </div>
   </footer>
+
+  <div class="mobile-cta">
+    <a
+      data-cta="mobile-form"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+    >
+      自分の相談が対応可能か確認する
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /*
+       * -----------------------------------------------
+       * CTAクリック計測
+       * -----------------------------------------------
+       *
+       * GA4を別途導入した場合、data-cta属性付きリンクの
+       * クリックをイベントとして送信します。
+       *
+       * GA4が未導入でもエラーにはなりません。
+       */
+
+      var ctaLinks =
+        document.querySelectorAll(
+          '[data-cta]'
+        );
+
+      ctaLinks.forEach(function (link) {
+        link.addEventListener(
+          'click',
+          function () {
+            var ctaName =
+              link.getAttribute(
+                'data-cta'
+              );
+
+            if (
+              typeof window.gtag ===
+              'function'
+            ) {
+              window.gtag(
+                'event',
+                'select_cta',
+                {
+                  cta_name: ctaName,
+                  link_url: link.href
+                }
+              );
+            }
+          }
+        );
+      });
+
+      /*
+       * -----------------------------------------------
+       * 外部リンクへの流入元引き継ぎ
+       * -----------------------------------------------
+       *
+       * SNSやLINEからUTM付きで訪問した場合、
+       * Googleフォームおよびtotal-supportへのリンクへ
+       * utm_source等を引き継ぎます。
+       */
+
+      var currentParameters =
+        new URLSearchParams(
+          window.location.search
+        );
+
+      var trackingKeys = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_content',
+        'utm_term'
+      ];
+
+      var trackingValues = {};
+
+      trackingKeys.forEach(
+        function (key) {
+          if (
+            currentParameters.has(key)
+          ) {
+            trackingValues[key] =
+              currentParameters.get(key);
+          }
+        }
+      );
+
+      if (
+        Object.keys(
+          trackingValues
+        ).length > 0
+      ) {
+        ctaLinks.forEach(
+          function (link) {
+            try {
+              var destination =
+                new URL(
+                  link.href,
+                  window.location.href
+                );
+
+              Object.keys(
+                trackingValues
+              ).forEach(
+                function (key) {
+                  destination.searchParams.set(
+                    key,
+                    trackingValues[key]
+                  );
+                }
+              );
+
+              link.href =
+                destination.toString();
+            } catch (error) {
+              /*
+               * URLとして解釈できないリンクは変更しません。
+               */
+            }
+          }
+        );
+      }
+    }());
+  </script>
 </body>
 </html>
