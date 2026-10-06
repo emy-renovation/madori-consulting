@@ -10,28 +10,22 @@
 
   <meta
     name="description"
-    content="間取り・収納・建具・クロス・照明の迷いを、二級建築士が一つの暮らしとして整理する検討事例。相談後に何を判断できるようになるのか、成果物例とともに紹介します。"
+    content="間取り・収納・建具・クロス・照明の迷いを、二級建築士が一つの暮らしとして整理。建築士が図面のどこを見て、相談後に何を判断できるようになるのかを、検討事例と成果物例で紹介します。"
   >
 
-  <meta
-    name="theme-color"
-    content="#173b33"
-  >
+  <meta name="theme-color" content="#173c33">
 
   <meta
     property="og:title"
-    content="間取り・収納・内装の検討事例｜BETTER HOME DESIGN"
+    content="建築士の検討事例｜BETTER HOME DESIGN"
   >
 
   <meta
     property="og:description"
-    content="一つずつは好き。でも、家全体ではしっくりこない。建築士が迷いを判断できる形へ整理します。"
+    content="一つずつは好き。でも、家全体ではしっくりこない。間取り・収納・内装・照明を、一つの暮らしとして整理します。"
   >
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     property="og:url"
@@ -39,55 +33,57 @@
   >
 
   <title>
-    間取り・収納・内装の検討事例｜BETTER HOME DESIGN
+    建築士の検討事例｜間取り・収納・内装の判断整理
   </title>
 
   <style>
     :root {
-      --green-950: #14372f;
-      --green-900: #1b463b;
-      --green-800: #2c6052;
-      --green-700: #417a69;
-      --green-600: #568f7d;
-      --green-200: #c9ddd5;
-      --green-100: #e3efea;
+      --green-950: #12372e;
+      --green-900: #17453a;
+      --green-800: #285f51;
+      --green-700: #3f7868;
+      --green-600: #5a9381;
+      --green-300: #accdc1;
+      --green-200: #cde0d9;
+      --green-100: #e5f0ec;
       --green-50: #f2f7f5;
 
-      --orange-800: #8f4725;
-      --orange-700: #a9562d;
-      --orange-600: #bc693c;
-      --orange-200: #ebcbb6;
-      --orange-100: #f6e6da;
+      --orange-800: #8d4523;
+      --orange-700: #a8552c;
+      --orange-600: #bd6939;
+      --orange-200: #ebc6ad;
+      --orange-100: #f8e7da;
       --orange-50: #fff8f2;
 
-      --red-700: #9d4545;
-      --red-100: #faeaea;
+      --red-700: #994747;
+      --red-100: #f8e5e5;
       --red-50: #fff8f8;
 
-      --blue-700: #466e83;
-      --blue-100: #e5eff4;
-      --blue-50: #f6fafc;
+      --blue-700: #466e81;
+      --blue-100: #e3eef3;
+      --blue-50: #f5fafc;
 
-      --gold: #c29a5b;
-      --ink: #26342f;
-      --muted: #65736d;
-      --muted-light: #86918c;
-      --line: #d8e1dd;
-      --line-dark: #bdcbc5;
-      --paper: #ffffff;
+      --gold: #c39b5d;
+      --ink: #263630;
+      --muted: #66756f;
+      --muted-light: #86928d;
+      --line: #d7e1dd;
+      --line-dark: #bdcbc6;
+
+      --white: #fff;
       --base: #f5f7f6;
-      --warm: #f4f0e9;
+      --warm: #f3eee6;
 
       --shadow:
-        0 22px 60px rgba(20, 55, 47, 0.11);
+        0 24px 65px rgba(18, 55, 46, 0.11);
 
       --shadow-small:
-        0 10px 30px rgba(20, 55, 47, 0.07);
+        0 12px 35px rgba(18, 55, 46, 0.075);
 
-      --radius-large: 28px;
-      --radius: 19px;
-      --radius-small: 12px;
-      --max-width: 1160px;
+      --radius-large: 30px;
+      --radius: 20px;
+      --radius-small: 13px;
+      --max-width: 1180px;
     }
 
     * {
@@ -96,7 +92,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 88px;
     }
 
     body {
@@ -124,8 +120,7 @@
     }
 
     button,
-    input,
-    textarea {
+    input {
       font: inherit;
     }
 
@@ -144,10 +139,7 @@
     }
 
     .container {
-      width: min(
-        calc(100% - 40px),
-        var(--max-width)
-      );
+      width: min(calc(100% - 40px), var(--max-width));
       margin-inline: auto;
     }
 
@@ -167,13 +159,14 @@
       transform: translateY(0);
     }
 
+    /* Header */
     .header {
       position: sticky;
       top: 0;
       z-index: 100;
       background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(15px);
     }
 
     .header-inner {
@@ -181,7 +174,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .brand {
@@ -192,10 +185,7 @@
     .brand strong {
       display: block;
       color: var(--green-950);
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 17px;
       letter-spacing: 0.09em;
       line-height: 1.3;
@@ -230,280 +220,9 @@
       border-radius: 999px;
     }
 
-    .hero {
-      position: relative;
-      padding: 94px 0 78px;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 88% 14%,
-          rgba(65, 122, 105, 0.16),
-          transparent 31%
-        ),
-        radial-gradient(
-          circle at 10% 88%,
-          rgba(188, 105, 60, 0.09),
-          transparent 28%
-        ),
-        linear-gradient(
-          180deg,
-          #ffffff,
-          #edf4f1
-        );
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -120px;
-      bottom: -170px;
-      width: 430px;
-      height: 430px;
-      border: 1px solid rgba(65, 122, 105, 0.14);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 65px rgba(65, 122, 105, 0.035),
-        0 0 0 130px rgba(65, 122, 105, 0.025);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(330px, 0.9fr);
-      align-items: center;
-      gap: 58px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 18px;
-      color: var(--green-700);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: currentColor;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--green-950);
-      font-family:
-        "Yu Mincho",
-        "Hiragino Mincho ProN",
-        serif;
-      font-size: clamp(39px, 5.7vw, 67px);
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.36;
-    }
-
-    .hero-subtitle {
-      display: block;
-      margin-top: 18px;
-      color: var(--orange-800);
-      font-family:
-        "Hiragino Kaku Gothic ProN",
-        "Yu Gothic",
-        sans-serif;
-      font-size: clamp(17px, 2.15vw, 25px);
-      font-weight: 800;
-      letter-spacing: 0;
-      line-height: 1.65;
-    }
-
-    .hero-lead {
-      max-width: 710px;
-      margin: 25px 0 0;
-      font-size: 16px;
-    }
-
-    .hero-lead strong {
-      color: var(--green-950);
-      background:
-        linear-gradient(
-          transparent 66%,
-          rgba(194, 154, 91, 0.23) 66%
-        );
-    }
-
-    .hero-actions,
-    .final-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 29px;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 55px;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 12px 24px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      line-height: 1.5;
-      text-align: center;
-      text-decoration: none;
-      transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button:focus-visible,
-    .nav a:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid rgba(65, 122, 105, 0.32);
-      outline-offset: 4px;
-    }
-
-    .button-primary {
-      color: #fff;
-      background: var(--orange-600);
-      box-shadow:
-        0 14px 30px
-        rgba(143, 71, 37, 0.2);
-    }
-
-    .button-primary:hover {
-      background: var(--orange-800);
-    }
-
-    .button-secondary {
-      color: var(--green-950);
-      background: #fff;
-      border-color: var(--line-dark);
-    }
-
-    .button-dark {
-      color: #fff;
-      background: var(--green-800);
-    }
-
-    .hero-note,
-    .button-note {
-      margin: 13px 0 0;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .hero-card {
-      position: relative;
-      padding: 29px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      top: -9px;
-      left: 28px;
-      width: 82px;
-      height: 9px;
-      background: var(--gold);
-      border-radius: 8px 8px 0 0;
-    }
-
-    .hero-card-label,
-    .pill {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 5px 10px;
-      color: var(--green-800);
-      background: var(--green-100);
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 900;
-    }
-
-    .hero-card h2 {
-      margin: 0;
-      color: var(--green-950);
-      font-size: 22px;
-      line-height: 1.55;
-    }
-
-    .hero-card-list {
-      display: grid;
-      gap: 13px;
-      margin: 21px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .hero-card-list li {
-      display: grid;
-      grid-template-columns: 29px 1fr;
-      gap: 11px;
-      align-items: start;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .hero-card-list strong {
-      display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      color: #fff;
-      background: var(--green-700);
-      border-radius: 50%;
-      font-family: Georgia, serif;
-      font-size: 11px;
-    }
-
-    .trust-bar {
-      padding: 19px 0;
-      color: #fff;
-      background: var(--green-950);
-    }
-
-    .trust-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px 34px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .trust-list li {
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .trust-list li::before {
-      content: "✓";
-      margin-right: 8px;
-      color: #b7d7cc;
-    }
-
+    /* Common */
     .section {
-      padding: 90px 0;
+      padding: 94px 0;
     }
 
     .section-white {
@@ -523,9 +242,27 @@
       background: var(--green-950);
     }
 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 17px;
+      color: var(--green-700);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.17em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
     .heading {
-      max-width: 820px;
-      margin: 0 auto 46px;
+      max-width: 830px;
+      margin: 0 auto 48px;
       text-align: center;
     }
 
@@ -540,49 +277,429 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(30px, 4.3vw, 48px);
+      font-size: clamp(30px, 4.4vw, 49px);
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       line-height: 1.5;
+    }
+
+    .heading p {
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .section-dark .heading h2 {
       color: #fff;
     }
 
-    .heading p {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     .section-dark .heading p {
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(255, 255, 255, 0.72);
     }
 
-    .source-note,
-    .info-note {
-      max-width: 930px;
-      margin: 0 auto 31px;
-      padding: 19px 22px;
-      color: #4f5d57;
-      background: var(--orange-50);
-      border: 1px solid #ead7c8;
-      border-left: 5px solid var(--orange-600);
-      border-radius: 13px;
+    .button {
+      display: inline-flex;
+      min-height: 55px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 25px;
+      color: var(--green-950);
+      background: #fff;
+      border: 1px solid var(--line-dark);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button:focus-visible,
+    .nav a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(63, 120, 104, 0.35);
+      outline-offset: 4px;
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--orange-600);
+      border-color: var(--orange-600);
+      box-shadow: 0 14px 32px rgba(141, 69, 35, 0.22);
+    }
+
+    .button-primary:hover {
+      background: var(--orange-800);
+    }
+
+    .button-green {
+      color: #fff;
+      background: var(--green-800);
+      border-color: var(--green-800);
+    }
+
+    .button-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 96px 0 84px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 87% 16%,
+          rgba(63, 120, 104, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 8% 90%,
+          rgba(189, 105, 57, 0.09),
+          transparent 25%
+        ),
+        linear-gradient(180deg, #fff, #ecf4f1);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -170px;
+      bottom: -190px;
+      width: 490px;
+      height: 490px;
+      border: 1px solid rgba(63, 120, 104, 0.14);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 65px rgba(63, 120, 104, 0.035),
+        0 0 0 130px rgba(63, 120, 104, 0.025);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(350px, 0.92fr);
+      align-items: center;
+      gap: 62px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--green-950);
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+      font-size: clamp(40px, 5.9vw, 69px);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1.34;
+    }
+
+    .hero-subtitle {
+      display: block;
+      margin-top: 19px;
+      color: var(--orange-800);
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+      font-size: clamp(17px, 2.1vw, 24px);
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 1.65;
+    }
+
+    .hero-lead {
+      max-width: 710px;
+      margin: 24px 0 0;
+      font-size: 15px;
+    }
+
+    .hero-lead strong {
+      color: var(--green-950);
+      background:
+        linear-gradient(
+          transparent 66%,
+          rgba(195, 155, 93, 0.25) 66%
+        );
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .hero-note {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .visual-sheet {
+      position: absolute;
+      inset: 12px 15px auto auto;
+      width: 88%;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+      transform: rotate(1.8deg);
+    }
+
+    .visual-sheet::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 32px;
+      width: 85px;
+      height: 10px;
+      background: var(--gold);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .visual-label {
+      display: inline-flex;
+      padding: 5px 10px;
+      color: var(--green-800);
+      background: var(--green-100);
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .visual-sheet h2 {
+      margin: 14px 0 18px;
+      color: var(--green-950);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .mini-plan {
+      padding: 13px;
+      background: #f6f8f7;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .visual-card {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      width: 73%;
+      padding: 20px;
+      background: var(--green-950);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transform: rotate(-2deg);
+    }
+
+    .visual-card small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green-300);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .visual-card ul {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .visual-card li {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .visual-card li::before {
+      content: "✓";
+      display: grid;
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      color: var(--green-950);
+      background: #c5ded5;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    /* Trust */
+    .trust-bar {
+      padding: 19px 0;
+      color: #fff;
+      background: var(--green-950);
+    }
+
+    .trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trust-list li {
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      margin-right: 8px;
+      color: var(--green-300);
+    }
+
+    /* Route selector */
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 23px;
+      max-width: 1030px;
+      margin: 0 auto;
+    }
+
+    .route-card {
+      position: relative;
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      padding: 34px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow-small);
+    }
+
+    .route-card::after {
+      content: attr(data-number);
+      position: absolute;
+      top: -35px;
+      right: 12px;
+      color: var(--green-50);
+      font-family: Georgia, serif;
+      font-size: 145px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .route-card.featured {
+      border: 3px solid var(--orange-600);
+    }
+
+    .route-badge {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      margin-bottom: 15px;
+      padding: 5px 11px;
+      color: var(--green-800);
+      background: var(--green-100);
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .route-card.featured .route-badge {
+      color: var(--orange-800);
+      background: var(--orange-100);
+    }
+
+    .route-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--green-950);
+      font-size: 25px;
+      line-height: 1.5;
+    }
+
+    .route-card > p {
+      position: relative;
+      z-index: 1;
+      margin: 12px 0 0;
+      color: var(--muted);
       font-size: 12px;
     }
 
-    .voice-grid {
+    .route-list {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 27px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .route-list li {
+      position: relative;
+      padding-left: 24px;
+      color: #4f5e58;
+      font-size: 12px;
+    }
+
+    .route-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green-700);
+      font-weight: 900;
+    }
+
+    .route-card .button {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    /* Concerns */
+    .concern-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .voice-card {
+    .concern-card {
       position: relative;
-      padding: 25px;
+      padding: 27px;
       overflow: hidden;
       background: #fff;
       border: 1px solid var(--line);
@@ -590,18 +707,18 @@
       box-shadow: var(--shadow-small);
     }
 
-    .voice-card::after {
+    .concern-card::after {
       content: "“";
       position: absolute;
-      top: 6px;
-      right: 16px;
+      top: 3px;
+      right: 15px;
       color: var(--green-100);
       font-family: Georgia, serif;
-      font-size: 62px;
+      font-size: 68px;
       line-height: 1;
     }
 
-    .voice-card strong {
+    .concern-card strong {
       position: relative;
       z-index: 1;
       display: block;
@@ -610,18 +727,18 @@
       font-size: 15px;
     }
 
-    .voice-card p {
+    .concern-card p {
       position: relative;
       z-index: 1;
       margin: 0;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    .problem-box {
-      max-width: 920px;
+    .empathy-box {
+      max-width: 950px;
       margin: 34px auto 0;
-      padding: 29px;
+      padding: 30px;
       color: #fff;
       background:
         linear-gradient(
@@ -630,24 +747,38 @@
           var(--green-800)
         );
       border-radius: var(--radius);
-      text-align: center;
       box-shadow: var(--shadow-small);
+      text-align: center;
     }
 
-    .problem-box p {
+    .empathy-box strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 20px;
+    }
+
+    .empathy-box p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
     }
 
-    .problem-box strong {
-      color: #fff;
-      font-size: 19px;
+    /* Case cards */
+    .disclosure {
+      max-width: 960px;
+      margin: 0 auto 32px;
+      padding: 18px 21px;
+      color: #52615b;
+      background: var(--orange-50);
+      border: 1px solid #ead4c5;
+      border-left: 5px solid var(--orange-600);
+      border-radius: 12px;
+      font-size: 11px;
     }
 
     .case-list {
       display: grid;
-      gap: 34px;
+      gap: 35px;
     }
 
     .case-card {
@@ -660,7 +791,7 @@
 
     .case-header {
       display: grid;
-      grid-template-columns: 88px 1fr;
+      grid-template-columns: 78px 1fr;
       gap: 22px;
       align-items: center;
       padding: 30px;
@@ -669,141 +800,125 @@
 
     .case-number {
       display: grid;
-      width: 74px;
-      height: 74px;
+      width: 70px;
+      height: 70px;
       place-items: center;
       color: #fff;
       background: var(--green-800);
       border-radius: 50%;
       font-family: Georgia, serif;
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 900;
     }
 
     .case-category {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       color: var(--orange-700);
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 900;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
     }
 
     .case-header h3 {
       margin: 0;
       color: var(--green-950);
-      font-size: clamp(22px, 3vw, 31px);
+      font-size: clamp(21px, 3vw, 31px);
       line-height: 1.5;
     }
 
-    .case-header p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .case-content {
+    .case-body {
       display: grid;
       grid-template-columns:
-        minmax(270px, 0.72fr)
-        minmax(0, 1.28fr);
+        minmax(290px, 0.8fr)
+        minmax(0, 1.2fr);
     }
 
     .case-visual {
       display: grid;
-      min-height: 400px;
+      min-height: 430px;
       place-items: center;
-      padding: 28px;
+      padding: 29px;
       background:
-        linear-gradient(
-          145deg,
-          #e8efec,
-          #f8faf9
-        );
+        linear-gradient(145deg, #e5eeea, #fafcfb);
       border-right: 1px solid var(--line);
     }
 
     .diagram {
       width: 100%;
-      max-width: 390px;
-      padding: 18px;
+      max-width: 400px;
+      padding: 17px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 18px;
       box-shadow: var(--shadow-small);
     }
 
-    .diagram-caption {
-      margin: 13px 0 0;
+    .diagram figcaption {
+      margin-top: 12px;
       color: var(--muted);
-      font-size: 10px;
+      font-size: 9px;
       text-align: center;
     }
 
-    .plan-svg {
-      width: 100%;
-      height: auto;
-    }
-
-    .case-analysis {
+    .case-process {
       display: grid;
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .case-column {
-      padding: 26px 24px;
+    .process-column {
+      padding: 26px 22px;
       border-right: 1px solid var(--line);
     }
 
-    .case-column:last-child {
+    .process-column:last-child {
       border-right: 0;
     }
 
-    .case-column.before {
+    .process-column.before {
       background: var(--red-50);
     }
 
-    .case-column.review {
+    .process-column.review {
       background: var(--blue-50);
     }
 
-    .case-column.after {
+    .process-column.result {
       background: var(--green-50);
     }
 
-    .case-label {
+    .process-label {
       display: inline-flex;
-      margin-bottom: 14px;
+      margin-bottom: 13px;
       padding: 5px 9px;
       border-radius: 999px;
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 900;
     }
 
-    .before .case-label {
+    .before .process-label {
       color: var(--red-700);
       background: var(--red-100);
     }
 
-    .review .case-label {
+    .review .process-label {
       color: var(--blue-700);
       background: var(--blue-100);
     }
 
-    .after .case-label {
+    .result .process-label {
       color: var(--green-800);
       background: var(--green-100);
     }
 
-    .case-column h4 {
-      margin: 0 0 10px;
+    .process-column h4 {
+      margin: 0;
       color: var(--green-950);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.55;
     }
 
-    .point-list {
+    .process-list {
       display: grid;
       gap: 10px;
       margin: 15px 0 0;
@@ -811,64 +926,75 @@
       list-style: none;
     }
 
-    .point-list li {
+    .process-list li {
       position: relative;
-      padding-left: 22px;
+      padding-left: 21px;
       color: #50605a;
-      font-size: 11px;
+      font-size: 10px;
     }
 
-    .before .point-list li::before,
-    .review .point-list li::before {
+    .process-list li::before {
       position: absolute;
-      top: 4px;
       left: 0;
+      font-weight: 900;
+    }
+
+    .before .process-list li::before {
+      content: "!";
+      color: var(--red-700);
+    }
+
+    .review .process-list li::before {
+      content: "?";
+      color: var(--blue-700);
+    }
+
+    .result .process-list li::before {
+      content: "✓";
+      color: var(--green-700);
+    }
+
+    .case-outcome {
       display: grid;
-      width: 15px;
-      height: 15px;
+      grid-template-columns: auto 1fr;
+      gap: 15px;
+      align-items: start;
+      padding: 23px 28px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+
+    .outcome-icon {
+      display: grid;
+      width: 40px;
+      height: 40px;
       place-items: center;
       color: #fff;
+      background: var(--orange-600);
       border-radius: 50%;
-      font-size: 8px;
+      font-size: 14px;
       font-weight: 900;
     }
 
-    .before .point-list li::before {
-      content: "!";
-      background: var(--red-700);
-    }
-
-    .review .point-list li::before {
-      content: "?";
-      background: var(--blue-700);
-    }
-
-    .after .point-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--green-700);
-      font-weight: 900;
-    }
-
-    .case-footer {
-      padding: 20px 28px;
-      color: #4d5c56;
-      background: #f8faf9;
-      border-top: 1px solid var(--line);
+    .case-outcome strong {
+      display: block;
+      color: var(--green-950);
       font-size: 12px;
     }
 
-    .case-footer strong {
-      color: var(--green-950);
+    .case-outcome p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 11px;
     }
 
+    /* Deliverable */
     .deliverable-grid {
       display: grid;
       grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(320px, 0.92fr);
-      gap: 28px;
+        minmax(0, 1.1fr)
+        minmax(320px, 0.9fr);
+      gap: 29px;
       align-items: start;
     }
 
@@ -888,31 +1014,30 @@
 
     .sheet-header small {
       display: block;
-      margin-bottom: 4px;
-      color: #b8d2c9;
-      font-size: 9px;
+      color: var(--green-300);
+      font-size: 8px;
       font-weight: 900;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.15em;
     }
 
     .sheet-header h3 {
-      margin: 0;
+      margin: 5px 0 0;
       font-size: 20px;
     }
 
-    .sheet-meta {
+    .sheet-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 11px;
+      margin-top: 12px;
     }
 
-    .sheet-meta span {
+    .sheet-tags span {
       padding: 4px 8px;
       color: var(--green-950);
       background: #fff;
       border-radius: 999px;
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 900;
     }
 
@@ -922,16 +1047,16 @@
 
     .sheet-table {
       width: 100%;
-      min-width: 620px;
+      min-width: 650px;
       border-collapse: collapse;
     }
 
     .sheet-table th,
     .sheet-table td {
-      padding: 15px 14px;
+      padding: 14px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      font-size: 10px;
+      font-size: 9px;
       text-align: left;
       vertical-align: top;
     }
@@ -953,9 +1078,9 @@
 
     .priority {
       display: inline-flex;
-      min-width: 31px;
+      min-width: 32px;
       justify-content: center;
-      padding: 3px 6px;
+      padding: 3px 7px;
       border-radius: 999px;
       font-size: 8px;
       font-weight: 900;
@@ -966,7 +1091,7 @@
       background: var(--red-100);
     }
 
-    .priority-middle {
+    .priority-mid {
       color: var(--orange-800);
       background: var(--orange-100);
     }
@@ -976,19 +1101,31 @@
       background: var(--green-100);
     }
 
-    .sheet-note {
-      padding: 13px 20px;
+    .sheet-footer {
+      padding: 13px 19px;
       color: var(--muted);
       background: #f8faf9;
       border-top: 1px solid var(--line);
-      font-size: 9px;
+      font-size: 8px;
     }
 
     .deliverable-copy {
-      padding: 28px;
+      padding: 29px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+    }
+
+    .pill {
+      display: inline-flex;
+      margin-bottom: 13px;
+      padding: 5px 10px;
+      color: var(--green-800);
+      background: var(--green-100);
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
     }
 
     .deliverable-copy h3 {
@@ -1001,12 +1138,12 @@
     .deliverable-copy > p {
       margin: 13px 0 0;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .result-list {
       display: grid;
-      gap: 11px;
+      gap: 12px;
       margin: 21px 0 0;
       padding: 0;
       list-style: none;
@@ -1017,11 +1154,15 @@
       grid-template-columns: 30px 1fr;
       gap: 11px;
       align-items: start;
-      color: #4d5d57;
-      font-size: 12px;
+      color: #50605a;
+      font-size: 11px;
     }
 
-    .result-list strong {
+    .result-list b {
+      color: var(--green-950);
+    }
+
+    .result-number {
       display: grid;
       width: 30px;
       height: 30px;
@@ -1031,158 +1172,74 @@
       border-radius: 50%;
       font-family: Georgia, serif;
       font-size: 10px;
-    }
-
-    .timing-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .timing-card {
-      padding: 24px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-small);
-    }
-
-    .timing-card span {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--orange-700);
-      font-family: Georgia, serif;
-      font-size: 13px;
       font-weight: 900;
     }
 
-    .timing-card h3 {
-      margin: 0 0 8px;
-      color: var(--green-950);
-      font-size: 15px;
+    /* Service decision */
+    .decision-panel {
+      max-width: 1040px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #fff;
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
     }
 
-    .timing-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .timing-alert {
-      max-width: 900px;
-      margin: 27px auto 0;
-      padding: 20px 23px;
-      color: #4f5e58;
-      background: var(--orange-50);
-      border: 1px solid #ead7c8;
-      border-radius: 13px;
-      font-size: 12px;
+    .decision-question {
+      padding: 30px;
+      color: #fff;
+      background: var(--green-950);
       text-align: center;
     }
 
-    .scope-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 19px;
-    }
-
-    .scope-box {
-      padding: 27px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .scope-box h3 {
-      margin: 0 0 15px;
-      color: var(--green-950);
-      font-size: 19px;
-    }
-
-    .check-list,
-    .exclude-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .check-list li,
-    .exclude-list li {
-      position: relative;
-      padding-left: 25px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--green-700);
+    .decision-question small {
+      display: block;
+      color: var(--green-300);
+      font-size: 9px;
       font-weight: 900;
+      letter-spacing: 0.13em;
     }
 
-    .exclude-list li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--orange-700);
-      font-weight: 900;
+    .decision-question h3 {
+      margin: 7px 0 0;
+      font-size: clamp(22px, 3.6vw, 35px);
     }
 
-    .service-grid {
+    .decision-grid {
       display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 23px;
-      max-width: 990px;
-      margin: 0 auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .service-card {
       position: relative;
       display: flex;
+      min-height: 100%;
       flex-direction: column;
-      padding: 31px;
-      color: var(--ink);
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .service-card + .service-card {
+      border-left: 1px solid var(--line);
     }
 
     .service-card.featured {
-      border: 3px solid var(--orange-600);
+      background: var(--orange-50);
     }
 
-    .service-card.featured::before {
-      content: "家全体の決定が続く方へ";
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      padding: 5px 13px;
-      color: #fff;
-      background: var(--orange-600);
-      border-radius: 999px;
-      font-size: 9px;
-      font-weight: 900;
-      white-space: nowrap;
-      transform: translateX(-50%);
-    }
-
-    .service-badge {
+    .service-type {
       align-self: flex-start;
-      margin-bottom: 14px;
+      margin-bottom: 13px;
       padding: 5px 10px;
       color: var(--green-800);
       background: var(--green-100);
       border-radius: 999px;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 900;
+    }
+
+    .featured .service-type {
+      color: var(--orange-800);
+      background: var(--orange-100);
     }
 
     .service-card h3 {
@@ -1192,7 +1249,7 @@
     }
 
     .price {
-      margin: 9px 0 15px;
+      margin: 9px 0 13px;
       color: var(--green-950);
       font-family: Georgia, serif;
       font-size: 34px;
@@ -1200,39 +1257,35 @@
     }
 
     .price small {
-      font-family:
-        "Hiragino Kaku Gothic ProN",
-        sans-serif;
-      font-size: 11px;
-      font-weight: 700;
+      font-family: "Yu Gothic", sans-serif;
+      font-size: 10px;
     }
 
-    .service-card > p {
+    .service-description {
       margin: 0;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    .fit-title {
-      margin: 20px 0 9px;
+    .service-card h4 {
+      margin: 21px 0 9px;
       color: var(--green-950);
-      font-size: 12px;
-      font-weight: 900;
+      font-size: 11px;
     }
 
     .service-list {
       display: grid;
       gap: 9px;
-      margin: 0 0 25px;
+      margin: 0 0 26px;
       padding: 0;
       list-style: none;
     }
 
     .service-list li {
       position: relative;
-      padding-left: 23px;
-      color: #4e5d57;
-      font-size: 11px;
+      padding-left: 22px;
+      color: #4f5e58;
+      font-size: 10px;
     }
 
     .service-list li::before {
@@ -1248,34 +1301,23 @@
       margin-top: auto;
     }
 
-    .service-note {
-      max-width: 900px;
-      margin: 26px auto 0;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 11px;
-      text-align: center;
-    }
-
+    /* Architect */
     .architect-grid {
       display: grid;
       grid-template-columns:
-        minmax(270px, 0.72fr)
-        minmax(0, 1.28fr);
-      gap: 45px;
+        minmax(280px, 0.75fr)
+        minmax(0, 1.25fr);
+      gap: 48px;
       align-items: center;
     }
 
     .architect-panel {
-      min-height: 390px;
+      min-height: 410px;
       display: grid;
       place-items: center;
       padding: 32px;
       background:
-        linear-gradient(
-          145deg,
-          #dfe9e5,
-          #f8faf9
-        );
+        linear-gradient(145deg, #dfeae6, #fafcfb);
       border: 1px solid var(--line);
       border-radius: var(--radius-large);
     }
@@ -1288,56 +1330,56 @@
       display: block;
       color: var(--green-950);
       font-family: Georgia, serif;
-      font-size: 31px;
+      font-size: 33px;
       letter-spacing: 0.08em;
       line-height: 1.35;
     }
 
     .architect-mark span {
       display: block;
-      margin-top: 10px;
+      margin-top: 11px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    .architect-content h2 {
+    .architect-copy h2 {
       margin: 0;
       color: var(--green-950);
       font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(29px, 4vw, 45px);
       font-weight: 600;
       line-height: 1.5;
     }
 
-    .architect-content p {
-      margin: 17px 0 0;
+    .architect-copy p {
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    .credential-list {
+    .credentials {
       display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 24px 0 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+      margin: 23px 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .credential-list li {
-      padding: 13px 15px;
+    .credentials li {
+      padding: 12px 14px;
       color: var(--green-950);
       background: var(--green-50);
       border: 1px solid var(--line);
       border-radius: 11px;
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 10px;
+      font-weight: 900;
     }
 
+    /* FAQ */
     .faq-list {
       max-width: 900px;
       display: grid;
@@ -1354,9 +1396,9 @@
 
     .faq-list summary {
       position: relative;
-      padding: 19px 53px 19px 21px;
+      padding: 19px 54px 19px 21px;
       color: var(--green-950);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       cursor: pointer;
       list-style: none;
@@ -1383,21 +1425,22 @@
     .faq-answer {
       padding: 0 21px 20px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .faq-answer p {
       margin: 0;
     }
 
+    /* Final CTA */
     .final-cta {
-      padding: 96px 0;
+      padding: 100px 0;
       color: #fff;
       background:
         radial-gradient(
-          circle at 85% 15%,
+          circle at 85% 10%,
           rgba(255, 255, 255, 0.1),
-          transparent 29%
+          transparent 27%
         ),
         linear-gradient(
           135deg,
@@ -1406,17 +1449,17 @@
         );
     }
 
-    .final-cta-inner {
-      max-width: 860px;
+    .final-inner {
+      max-width: 870px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .final-cta .eyebrow {
-      color: #b9d7cd;
+    .final-inner .eyebrow {
+      color: var(--green-300);
     }
 
-    .final-cta h2 {
+    .final-inner h2 {
       margin: 0;
       font-family:
         "Yu Mincho",
@@ -1427,26 +1470,30 @@
       line-height: 1.5;
     }
 
-    .final-cta p {
-      margin: 19px auto 0;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 14px;
+    .final-inner p {
+      margin: 18px auto 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
     }
 
     .final-actions {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .final-note {
-      margin-top: 14px;
-      color: rgba(255, 255, 255, 0.64);
-      font-size: 11px;
+      color: rgba(255, 255, 255, 0.62) !important;
+      font-size: 10px !important;
     }
 
+    /* Footer */
     .footer {
-      padding: 39px 0 90px;
-      color: #adc5bc;
-      background: #102f28;
+      padding: 40px 0 92px;
+      color: #adc6bd;
+      background: #0f3028;
       text-align: center;
     }
 
@@ -1459,7 +1506,7 @@
 
     .footer p {
       margin: 5px 0 0;
-      font-size: 10px;
+      font-size: 9px;
     }
 
     .footer-links {
@@ -1467,11 +1514,11 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 18px;
-      margin-top: 15px;
+      margin: 14px 0;
     }
 
     .footer-links a {
-      font-size: 10px;
+      font-size: 9px;
     }
 
     .mobile-cta {
@@ -1491,19 +1538,19 @@
 
     .mobile-cta a {
       display: flex;
-      min-height: 48px;
+      min-height: 49px;
       align-items: center;
       justify-content: center;
       color: #fff;
       background: var(--orange-600);
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
       text-decoration: none;
     }
 
-    @media (max-width: 1060px) {
-      .case-content {
+    @media (max-width: 1050px) {
+      .case-body {
         grid-template-columns: 1fr;
       }
 
@@ -1512,66 +1559,63 @@
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
-
-      .case-analysis {
-        grid-template-columns:
-          repeat(3, minmax(0, 1fr));
-      }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 960px) {
       .hero-grid,
-      .architect-grid,
-      .deliverable-grid {
+      .deliverable-grid,
+      .architect-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-card {
-        max-width: 680px;
+      .hero-visual {
+        max-width: 650px;
+        min-height: 490px;
       }
 
-      .voice-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
-      }
-
-      .timing-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+      .concern-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 790px) {
+    @media (max-width: 800px) {
       .nav a:not(.nav-cta) {
         display: none;
       }
 
-      .case-analysis,
-      .service-grid,
-      .scope-grid {
+      .case-process {
         grid-template-columns: 1fr;
       }
 
-      .case-column {
+      .process-column {
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .case-column:last-child {
+      .process-column:last-child {
         border-bottom: 0;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
+      .route-grid,
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card + .service-card {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
       .container {
-        width: min(
-          calc(100% - 24px),
-          var(--max-width)
-        );
+        width: min(calc(100% - 24px), var(--max-width));
       }
 
       .header-inner {
-        min-height: 65px;
+        min-height: 64px;
       }
 
       .brand strong {
@@ -1579,7 +1623,7 @@
       }
 
       .brand small {
-        font-size: 9px;
+        font-size: 8px;
       }
 
       .nav-cta {
@@ -1587,11 +1631,11 @@
       }
 
       .hero {
-        padding: 58px 0 52px;
+        padding: 58px 0 53px;
       }
 
       .section {
-        padding: 67px 0;
+        padding: 68px 0;
       }
 
       .hero-actions,
@@ -1603,40 +1647,55 @@
         width: 100%;
       }
 
-      .voice-grid,
-      .timing-grid,
-      .credential-list {
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .visual-sheet {
+        width: 94%;
+      }
+
+      .visual-card {
+        width: 83%;
+      }
+
+      .concern-grid,
+      .credentials {
         grid-template-columns: 1fr;
       }
 
+      .route-card,
+      .service-card,
+      .deliverable-copy {
+        padding: 24px 20px;
+      }
+
       .case-header {
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 53px 1fr;
         gap: 14px;
         padding: 22px 18px;
       }
 
       .case-number {
-        width: 52px;
-        height: 52px;
-        font-size: 15px;
+        width: 51px;
+        height: 51px;
+        font-size: 14px;
       }
 
       .case-visual {
-        padding: 18px;
+        padding: 17px;
       }
 
-      .case-column,
-      .scope-box,
-      .deliverable-copy {
+      .process-column {
         padding: 22px 19px;
       }
 
-      .service-card {
-        padding: 25px 21px;
+      .case-outcome {
+        padding: 20px 18px;
       }
 
       .architect-panel {
-        min-height: 270px;
+        min-height: 280px;
       }
 
       .mobile-cta {
@@ -1665,8 +1724,9 @@
     "areaServed": "JP",
     "serviceType": [
       "間取りセカンドオピニオン",
-      "家づくり相談",
-      "オンライン建築相談"
+      "家づくり個別相談",
+      "オンライン建築相談",
+      "家づくり伴走サポート"
     ]
   }
   </script>
@@ -1688,10 +1748,10 @@
       </a>
 
       <nav class="nav" aria-label="メインメニュー">
-        <a href="#concerns">よくある悩み</a>
+        <a href="#choose">相談の選び方</a>
         <a href="#cases">検討事例</a>
         <a href="#deliverable">成果物</a>
-        <a href="#services">相談の選び方</a>
+        <a href="#services">サービス比較</a>
 
         <a
           class="nav-cta"
@@ -1718,18 +1778,18 @@
             しっくりこない。
 
             <span class="hero-subtitle">
-              間取り・収納・建具・クロス・照明を、
-              別々ではなく一つの暮らしとして整理します。
+              間取り・収納・建具・クロス・照明を、<br>
+              一つの暮らしとして整理します。
             </span>
           </h1>
 
           <p class="hero-lead">
-            希望は伝えた。間取りも悪くない。
+            希望は伝えた。提案も悪くない。
             それでも決めきれないのは、
             あなたに知識やセンスがないからではありません。
             <strong>
               別々に決めてきた選択を、
-              家全体の判断軸で確認できていない
+              家全体の基準で確認できていない
             </strong>
             からかもしれません。
           </p>
@@ -1737,15 +1797,14 @@
           <div class="hero-actions">
             <a
               class="button button-primary"
-              data-cta="hero-form"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+              href="#choose"
             >
-              自分の図面も相談できるか確認する
-              <span aria-hidden="true">→</span>
+              自分に合う相談を30秒で確認
+              <span aria-hidden="true">↓</span>
             </a>
 
             <a
-              class="button button-secondary"
+              class="button"
               href="#cases"
             >
               建築士の検討例を見る
@@ -1753,55 +1812,190 @@
           </div>
 
           <p class="hero-note">
-            フォーム送信だけでは料金は発生しません。
-            資料確認後に対応可否をご案内します。
+            事例・成果物・相談の選び方を、このページで確認できます。
           </p>
         </div>
 
-        <aside class="hero-card">
-          <span class="hero-card-label">
-            このページで分かること
-          </span>
+        <div class="hero-visual" aria-label="判断整理のイメージ">
+          <div class="visual-sheet">
+            <span class="visual-label">
+              建築士の確認例
+            </span>
 
-          <h2>
-            図面を採点するのではなく、<br>
-            次の判断を整理します。
-          </h2>
+            <h2>
+              「何となく不安」を、<br>
+              確認できる論点へ。
+            </h2>
 
-          <ul class="hero-card-list">
-            <li>
-              <strong>1</strong>
-              <span>
-                「何となく不安」を、
-                確認できる論点へ変える
-              </span>
-            </li>
+            <div class="mini-plan">
+              <svg
+                viewBox="0 0 440 275"
+                role="img"
+                aria-labelledby="hero-plan-title hero-plan-desc"
+              >
+                <title id="hero-plan-title">
+                  間取りの動線確認イメージ
+                </title>
 
-            <li>
-              <strong>2</strong>
-              <span>
-                変更する場所だけでなく、
-                現在案を活かせる場所も確認する
-              </span>
-            </li>
+                <desc id="hero-plan-desc">
+                  LDK、玄関、水まわり、収納の位置と、
+                  人の移動が重なる場所を示す架空図です。
+                </desc>
 
-            <li>
-              <strong>3</strong>
-              <span>
-                建築会社から回答を得られる
-                具体的な質問へ置き換える
-              </span>
-            </li>
+                <rect
+                  x="15"
+                  y="15"
+                  width="410"
+                  height="210"
+                  rx="5"
+                  fill="#f1eee7"
+                  stroke="#385d51"
+                  stroke-width="5"
+                />
 
-            <li>
-              <strong>4</strong>
-              <span>
-                一度の相談で足りるか、
-                継続的な伴走が必要かを整理する
-              </span>
-            </li>
-          </ul>
-        </aside>
+                <rect
+                  x="27"
+                  y="27"
+                  width="235"
+                  height="125"
+                  fill="#e7dfd2"
+                  stroke="#899891"
+                />
+
+                <rect
+                  x="27"
+                  y="152"
+                  width="235"
+                  height="61"
+                  fill="#d5d0c7"
+                  stroke="#899891"
+                />
+
+                <rect
+                  x="262"
+                  y="27"
+                  width="151"
+                  height="61"
+                  fill="#d8e2df"
+                  stroke="#899891"
+                />
+
+                <rect
+                  x="262"
+                  y="88"
+                  width="151"
+                  height="64"
+                  fill="#cbd9d5"
+                  stroke="#899891"
+                />
+
+                <rect
+                  x="262"
+                  y="152"
+                  width="151"
+                  height="61"
+                  fill="#bdd4cc"
+                  stroke="#899891"
+                />
+
+                <text
+                  x="144"
+                  y="91"
+                  text-anchor="middle"
+                  font-size="14"
+                  font-weight="800"
+                  fill="#263630"
+                >
+                  LDK
+                </text>
+
+                <text
+                  x="337"
+                  y="64"
+                  text-anchor="middle"
+                  font-size="12"
+                  font-weight="800"
+                  fill="#263630"
+                >
+                  玄関
+                </text>
+
+                <text
+                  x="337"
+                  y="126"
+                  text-anchor="middle"
+                  font-size="12"
+                  font-weight="800"
+                  fill="#263630"
+                >
+                  水まわり
+                </text>
+
+                <text
+                  x="337"
+                  y="188"
+                  text-anchor="middle"
+                  font-size="12"
+                  font-weight="800"
+                  fill="#263630"
+                >
+                  収納
+                </text>
+
+                <path
+                  d="M350 58 C285 70 273 106 220 112 C270 123 292 128 346 128"
+                  fill="none"
+                  stroke="#ba5454"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                  opacity="0.72"
+                />
+
+                <circle
+                  cx="246"
+                  cy="115"
+                  r="31"
+                  fill="rgba(186,84,84,.20)"
+                  stroke="#ba5454"
+                  stroke-width="3"
+                  stroke-dasharray="6 5"
+                />
+
+                <line
+                  x1="140"
+                  y1="55"
+                  x2="328"
+                  y2="183"
+                  stroke="#3f7868"
+                  stroke-width="4"
+                  stroke-dasharray="8 6"
+                />
+
+                <text
+                  x="220"
+                  y="255"
+                  text-anchor="middle"
+                  font-size="11"
+                  font-weight="800"
+                  fill="#66756f"
+                >
+                  動線・視線・建具・家具を重ねて確認
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="visual-card">
+            <small>AFTER CONSULTATION</small>
+
+            <ul>
+              <li>変更を検討する場所</li>
+              <li>現在案を活かす場所</li>
+              <li>建築会社へ確認すること</li>
+              <li>ご家族で決めること</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1811,15 +2005,127 @@
           <li>二級建築士・漆間絵美が対応</li>
           <li>住宅設計経験800棟以上</li>
           <li>新築・リノベーション</li>
-          <li>全国オンライン相談</li>
+          <li>全国オンライン対応</li>
         </ul>
       </div>
     </section>
 
     <section
-      id="concerns"
+      id="choose"
       class="section section-white"
     >
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            FIND YOUR SUPPORT
+          </span>
+
+          <h2>
+            今、確認したいのは<br>
+            どちらですか？
+          </h2>
+
+          <p>
+            高いサービスを選ぶのではなく、
+            残っている決定の数と期間で選びます。
+          </p>
+        </div>
+
+        <div class="route-grid">
+          <article
+            class="route-card"
+            data-number="A"
+          >
+            <span class="route-badge">
+              一つの判断を整理したい
+            </span>
+
+            <h3>
+              今の間取りや、<br>
+              一つの悩みを確認したい
+            </h3>
+
+            <p>
+              次の打ち合わせまでに、
+              優先して確認することを整理したい方へ。
+            </p>
+
+            <ul class="route-list">
+              <li>
+                間取り1案を第三者に確認してほしい
+              </li>
+
+              <li>
+                収納・建具など一つの論点で迷っている
+              </li>
+
+              <li>
+                クロス・照明・色合わせを相談したい
+              </li>
+
+              <li>
+                一度の相談で方向性を決めたい
+              </li>
+            </ul>
+
+            <a
+              class="button button-green"
+              href="#single-support"
+            >
+              33,000円個別相談を見る
+            </a>
+          </article>
+
+          <article
+            class="route-card featured"
+            data-number="B"
+          >
+            <span class="route-badge">
+              複数の決定をつなげたい
+            </span>
+
+            <h3>
+              間取りの後も、<br>
+              決めることが続いている
+            </h3>
+
+            <p>
+              間取り・収納・内装・照明を、
+              家全体の判断軸で整えたい方へ。
+            </p>
+
+            <ul class="route-list">
+              <li>
+                今後2〜3か月、打ち合わせが続く
+              </li>
+
+              <li>
+                床・建具・キッチン・クロスも未決定
+              </li>
+
+              <li>
+                照明・コンセント・家具まで確認したい
+              </li>
+
+              <li>
+                修正案を継続して確認してほしい
+              </li>
+            </ul>
+
+            <a
+              class="button button-primary"
+              data-cta="route-total-support"
+              href="https://emy-renovation.github.io/total-support/"
+            >
+              12週間トータル伴走を見る
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -1827,80 +2133,73 @@
           </span>
 
           <h2>
-            実際に寄せられるのは、<br>
-            一つでは終わらない悩みです。
+            一つでは終わらない悩みを、<br>
+            抱えていませんか？
           </h2>
 
           <p>
-            間取りだけ、クロスだけの問題に見えても、
-            別の決定とつながっていることがあります。
+            間取りだけの問題に見えても、
+            収納・建具・家具・照明とつながっていることがあります。
           </p>
         </div>
 
-        <div class="source-note">
-          以下は、実際に寄せられた複数の相談内容をもとに、
-          個人や住宅を特定できない形へ再構成したものです。
-          特定のお客様の発言や実邸事例として掲載しているものではありません。
-        </div>
-
-        <div class="voice-grid">
-          <article class="voice-card">
-            <strong>間取りを決めきれない</strong>
+        <div class="concern-grid">
+          <article class="concern-card">
+            <strong>このまま間取りを確定してよい？</strong>
             <p>
               希望は入っているのに、
-              このまま確定してよいのか判断できない。
+              完成後の暮らしを想像すると決めきれない。
             </p>
           </article>
 
-          <article class="voice-card">
-            <strong>リビングと水まわり</strong>
+          <article class="concern-card">
+            <strong>収納は、これで足りる？</strong>
             <p>
-              家事、来客、子どもの居場所を
-              一緒に考えた配置になっているか不安。
+              面積はあるけれど、
+              使う場所や扉の開き方が気になる。
             </p>
           </article>
 
-          <article class="voice-card">
-            <strong>収納と建具</strong>
+          <article class="concern-card">
+            <strong>家具を置いても通れる？</strong>
             <p>
-              収納量だけでなく、
-              扉の位置や出し入れのしやすさも気になる。
+              畳数では広く見えるけれど、
+              家具配置後の通路が分からない。
             </p>
           </article>
 
-          <article class="voice-card">
-            <strong>クロスと建具の色</strong>
+          <article class="concern-card">
+            <strong>床・建具・キッチンが合わない</strong>
             <p>
-              サンプル単体では好きでも、
-              床やキッチンと合うか分からない。
+              一つずつは好きなのに、
+              組み合わせると統一感がない。
             </p>
           </article>
 
-          <article class="voice-card">
-            <strong>グレーの使い方</strong>
+          <article class="concern-card">
+            <strong>照明とコンセントが決められない</strong>
             <p>
-              床、壁、天井をグレー系にしたいが、
-              暗く狭く見えないか心配。
+              家具や生活場面が曖昧なまま、
+              電気図の期限が近づいている。
             </p>
           </article>
 
-          <article class="voice-card">
-            <strong>照明とコンセント</strong>
+          <article class="concern-card">
+            <strong>担当者へどう伝えればよい？</strong>
             <p>
-              家具配置が曖昧なまま、
-              電気図の決定期限が近づいている。
+              「何となく不安」を、
+              具体的な質問に変えられない。
             </p>
           </article>
         </div>
 
-        <div class="problem-box">
+        <div class="empathy-box">
+          <strong>
+            悩みが多いのではありません。
+          </strong>
+
           <p>
-            <strong>
-              悩みが多いのではありません。
-            </strong>
-            <br>
-            間取り・収納・内装・照明を
-            別々の期限で決めなければならないため、
+            間取り・収納・内装・照明を別々の期限で決めるため、
             家全体の判断軸が見えにくくなっています。
           </p>
         </div>
@@ -1909,7 +2208,7 @@
 
     <section
       id="cases"
-      class="section section-soft"
+      class="section section-white"
     >
       <div class="container">
         <div class="heading">
@@ -1923,18 +2222,20 @@
           </h2>
 
           <p>
-            「変更」「維持」「要確認」「家族で決めること」に分け、
-            次の打ち合わせで判断できる形へ整えます。
+            問題点を並べるだけでなく、
+            「次に何を判断するか」まで整理します。
           </p>
         </div>
 
-        <div class="source-note">
-          以下は相談傾向を説明するための架空の検討モデルです。
-          実在する間取りやお客様のビフォーアフターではありません。
-          実際の判断には、敷地・構造・法規・予算・建築会社の仕様確認が必要です。
+        <div class="disclosure">
+          以下は、実際に寄せられる複数の相談傾向をもとに再構成した
+          架空の検討モデルです。実在するお客様や実邸の
+          ビフォーアフターではありません。実際の判断には、
+          敷地・構造・法規・予算・建築会社の仕様確認が必要です。
         </div>
 
         <div class="case-list">
+          <!-- CASE 01 -->
           <article class="case-card">
             <header class="case-header">
               <span class="case-number">01</span>
@@ -1945,266 +2246,226 @@
                 </span>
 
                 <h3>
-                  部屋は足りている。
+                  部屋は足りている。<br>
                   でも、家族の動きがぶつかっている。
                 </h3>
-
-                <p>
-                  部屋名だけでは見えない問題を、
-                  一日の動きと視線から確認します。
-                </p>
               </div>
             </header>
 
-            <div class="case-content">
+            <div class="case-body">
               <div class="case-visual">
                 <figure class="diagram">
                   <svg
-                    class="plan-svg"
-                    viewBox="0 0 400 315"
+                    viewBox="0 0 420 330"
                     role="img"
-                    aria-labelledby="plan-title plan-desc"
+                    aria-labelledby="case01-title case01-desc"
                   >
-                    <title id="plan-title">
-                      生活動線と視線の確認例
+                    <title id="case01-title">
+                      家族の動線と視線の検討図
                     </title>
 
-                    <desc id="plan-desc">
-                      キッチン、リビング、水まわり、子どもの居場所と、
-                      重なりやすい動線を示した架空の簡略図です。
+                    <desc id="case01-desc">
+                      LDK、水まわり、玄関、子どもの居場所と、
+                      動線が交差する部分を示した架空図です。
                     </desc>
 
                     <rect
                       x="18"
                       y="18"
-                      width="364"
-                      height="250"
+                      width="384"
+                      height="255"
                       rx="5"
-                      fill="#f4f0e8"
-                      stroke="#415b51"
+                      fill="#f1eee6"
+                      stroke="#3e5d53"
                       stroke-width="5"
                     />
 
                     <rect
-                      x="28"
-                      y="28"
-                      width="210"
+                      x="29"
+                      y="29"
+                      width="220"
                       height="150"
-                      fill="#e7e0d4"
-                      stroke="#8b9993"
+                      fill="#e6ded1"
+                      stroke="#89968f"
                     />
 
                     <rect
-                      x="28"
-                      y="178"
-                      width="210"
-                      height="80"
-                      fill="#d7d3c9"
-                      stroke="#8b9993"
+                      x="29"
+                      y="179"
+                      width="220"
+                      height="83"
+                      fill="#d7d2c9"
+                      stroke="#89968f"
                     />
 
                     <rect
-                      x="238"
-                      y="28"
-                      width="134"
-                      height="65"
-                      fill="#d7e0dd"
-                      stroke="#8b9993"
+                      x="249"
+                      y="29"
+                      width="142"
+                      height="66"
+                      fill="#d8e2df"
+                      stroke="#89968f"
                     />
 
                     <rect
-                      x="238"
-                      y="93"
-                      width="134"
-                      height="85"
-                      fill="#cad7d4"
-                      stroke="#8b9993"
+                      x="249"
+                      y="95"
+                      width="142"
+                      height="84"
+                      fill="#cbd8d4"
+                      stroke="#89968f"
                     />
 
                     <rect
-                      x="238"
-                      y="178"
-                      width="134"
-                      height="80"
-                      fill="#b8d3ae"
-                      stroke="#6e926a"
-                    />
-
-                    <rect
-                      x="45"
-                      y="40"
-                      width="145"
-                      height="32"
-                      rx="4"
-                      fill="#777c79"
-                    />
-
-                    <rect
-                      x="82"
-                      y="105"
-                      width="92"
-                      height="44"
-                      rx="4"
-                      fill="#a77c56"
+                      x="249"
+                      y="179"
+                      width="142"
+                      height="83"
+                      fill="#bdd6b5"
+                      stroke="#759071"
                     />
 
                     <text
-                      x="133"
-                      y="96"
+                      x="139"
+                      y="105"
                       text-anchor="middle"
-                      font-size="13"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-size="14"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       LDK
                     </text>
 
                     <text
-                      x="133"
-                      y="223"
+                      x="139"
+                      y="225"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       個室
                     </text>
 
                     <text
-                      x="305"
-                      y="66"
+                      x="320"
+                      y="67"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       玄関
                     </text>
 
                     <text
-                      x="305"
-                      y="137"
+                      x="320"
+                      y="139"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       水まわり
                     </text>
 
                     <text
-                      x="305"
-                      y="222"
+                      x="320"
+                      y="224"
                       text-anchor="middle"
-                      font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-size="11"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       子どもの居場所
                     </text>
 
                     <path
-                      d="M320 60 C250 70, 235 110, 183 125 C225 135, 250 135, 300 135"
+                      d="M335 62 C280 72 260 113 205 127 C255 139 279 140 330 139"
                       fill="none"
-                      stroke="#bd4747"
-                      stroke-width="9"
+                      stroke="#b94f4f"
+                      stroke-width="10"
                       stroke-linecap="round"
-                      opacity="0.7"
+                      opacity="0.72"
                     />
 
                     <circle
-                      cx="205"
-                      cy="126"
-                      r="31"
-                      fill="rgba(189,71,71,.20)"
-                      stroke="#bd4747"
+                      cx="230"
+                      cy="129"
+                      r="32"
+                      fill="rgba(185,79,79,.18)"
+                      stroke="#b94f4f"
                       stroke-width="3"
                       stroke-dasharray="6 5"
                     />
 
                     <line
-                      x1="160"
-                      y1="54"
-                      x2="288"
-                      y2="213"
-                      stroke="#417a69"
+                      x1="135"
+                      y1="57"
+                      x2="305"
+                      y2="216"
+                      stroke="#3f7868"
                       stroke-width="4"
                       stroke-dasharray="8 6"
                     />
 
                     <text
-                      x="200"
-                      y="294"
+                      x="210"
+                      y="307"
                       text-anchor="middle"
                       font-size="11"
-                      font-weight="700"
-                      fill="#65736d"
+                      font-weight="800"
+                      fill="#66756f"
                     >
                       赤：動線の交差　緑：見守りの視線
                     </text>
                   </svg>
 
-                  <figcaption class="diagram-caption">
+                  <figcaption>
                     説明用の架空図です。実際の提案図ではありません。
                   </figcaption>
                 </figure>
               </div>
 
-              <div class="case-analysis">
-                <section class="case-column before">
-                  <span class="case-label">
+              <div class="case-process">
+                <section class="process-column before">
+                  <span class="process-label">
                     相談時の状態
                   </span>
 
                   <h4>
                     希望は入っているが、
-                    同時使用が見えない
+                    同時使用が見えていない
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      水まわりへ行く人がLDKを横切る
-                    </li>
-                    <li>
-                      子どもの居場所がキッチンから見えにくい
-                    </li>
-                    <li>
-                      外遊び場所に道路や視線の不安がある
-                    </li>
-                    <li>
-                      吹き抜けなしで広く見せたい
-                    </li>
+                  <ul class="process-list">
+                    <li>水まわりへ行く人がLDKを横切る</li>
+                    <li>子どもの居場所が見えにくい</li>
+                    <li>来客と入浴の動線が重なる</li>
+                    <li>吹き抜けなしで広く見せたい</li>
                   </ul>
                 </section>
 
-                <section class="case-column review">
-                  <span class="case-label">
+                <section class="process-column review">
+                  <span class="process-label">
                     建築士の確認
                   </span>
 
                   <h4>
                     面積より先に、
-                    視線と時間帯を確認
+                    時間・視線・移動を確認
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      料理中にどこまで見守りたいか
-                    </li>
-                    <li>
-                      来客と入浴の時間が重なるか
-                    </li>
-                    <li>
-                      道路や隣家からどこが見えるか
-                    </li>
-                    <li>
-                      横方向へ視線を伸ばせるか
-                    </li>
+                  <ul class="process-list">
+                    <li>料理中にどこまで見守りたいか</li>
+                    <li>誰の移動が何時に重なるか</li>
+                    <li>道路や隣家からどこが見えるか</li>
+                    <li>横方向へ視線を伸ばせるか</li>
                   </ul>
                 </section>
 
-                <section class="case-column after">
-                  <span class="case-label">
+                <section class="process-column result">
+                  <span class="process-label">
                     整理する判断
                   </span>
 
@@ -2213,32 +2474,32 @@
                     つながり方を整える
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      水まわり経路をLDKの中心から外す
-                    </li>
-                    <li>
-                      キッチンから見える居場所を決める
-                    </li>
-                    <li>
-                      外部空間は安全や排水も確認する
-                    </li>
-                    <li>
-                      窓・建具・天井の連続性を検討する
-                    </li>
+                  <ul class="process-list">
+                    <li>水まわり動線をLDK中央から外す</li>
+                    <li>キッチンから見える居場所を決める</li>
+                    <li>来客時の見え方を確認する</li>
+                    <li>窓・建具・天井の連続性を検討する</li>
                   </ul>
                 </section>
               </div>
             </div>
 
-            <footer class="case-footer">
-              <strong>建築士の視点：</strong>
-              中庭や減築が唯一の答えではありません。
-              変更可能な範囲と優先順位を整理し、
-              建築会社へ確認できる質問に変えます。
+            <footer class="case-outcome">
+              <span class="outcome-icon">→</span>
+
+              <div>
+                <strong>相談後に目指す状態</strong>
+
+                <p>
+                  間取り全体を作り直すのではなく、
+                  水まわりへの経路とキッチンからの視線を
+                  優先して再確認できる状態にします。
+                </p>
+              </div>
             </footer>
           </article>
 
+          <!-- CASE 02 -->
           <article class="case-card">
             <header class="case-header">
               <span class="case-number">02</span>
@@ -2249,208 +2510,204 @@
                 </span>
 
                 <h3>
-                  収納は多い。
+                  収納は多い。<br>
                   でも、使う場所と合っていない。
                 </h3>
-
-                <p>
-                  収納面積ではなく、
-                  収納物・人・扉の動きを重ねて確認します。
-                </p>
               </div>
             </header>
 
-            <div class="case-content">
+            <div class="case-body">
               <div class="case-visual">
                 <figure class="diagram">
                   <svg
-                    class="plan-svg"
-                    viewBox="0 0 400 315"
+                    viewBox="0 0 420 330"
                     role="img"
-                    aria-labelledby="storage-title storage-desc"
+                    aria-labelledby="case02-title case02-desc"
                   >
-                    <title id="storage-title">
-                      収納と建具の干渉確認例
+                    <title id="case02-title">
+                      収納と建具の干渉確認図
                     </title>
 
-                    <desc id="storage-desc">
-                      収納扉、室内扉、人の立つ位置が重なる状況を示した架空の簡略図です。
+                    <desc id="case02-desc">
+                      収納扉、洗面入口、人の立ち位置が
+                      重なる状況を示す架空図です。
                     </desc>
 
                     <rect
-                      x="25"
+                      x="28"
                       y="25"
-                      width="350"
-                      height="225"
-                      fill="#f1eee6"
-                      stroke="#425c52"
+                      width="364"
+                      height="240"
+                      fill="#f2eee6"
+                      stroke="#3e5d53"
                       stroke-width="5"
                     />
 
                     <rect
-                      x="45"
+                      x="47"
                       y="45"
-                      width="95"
-                      height="175"
-                      fill="#c9b28b"
-                      stroke="#78694f"
+                      width="100"
+                      height="190"
+                      fill="#cbb18a"
+                      stroke="#796a51"
                       stroke-width="2"
                     />
 
                     <line
-                      x1="92"
+                      x1="97"
                       y1="45"
-                      x2="92"
-                      y2="220"
-                      stroke="#78694f"
+                      x2="97"
+                      y2="235"
+                      stroke="#796a51"
                     />
 
                     <rect
-                      x="250"
+                      x="262"
                       y="45"
-                      width="100"
-                      height="80"
-                      fill="#d8e1de"
+                      width="105"
+                      height="83"
+                      fill="#d7e2de"
                       stroke="#7e8d87"
                     />
 
                     <rect
-                      x="250"
-                      y="125"
-                      width="100"
-                      height="95"
-                      fill="#ccd5d2"
+                      x="262"
+                      y="128"
+                      width="105"
+                      height="107"
+                      fill="#cad5d1"
                       stroke="#7e8d87"
                     />
 
                     <path
-                      d="M250 125 L185 125"
-                      stroke="#9d4545"
+                      d="M262 128 L191 128"
+                      stroke="#a04a4a"
                       stroke-width="5"
                     />
 
                     <path
-                      d="M250 125 A65 65 0 0 1 250 190"
+                      d="M262 128 A71 71 0 0 1 262 199"
                       fill="none"
-                      stroke="#9d4545"
+                      stroke="#a04a4a"
                       stroke-width="3"
                       stroke-dasharray="6 5"
                     />
 
                     <path
-                      d="M140 120 L205 120"
-                      stroke="#9d4545"
+                      d="M147 124 L215 124"
+                      stroke="#a04a4a"
                       stroke-width="5"
                     />
 
                     <path
-                      d="M140 120 A65 65 0 0 0 140 185"
+                      d="M147 124 A68 68 0 0 0 147 192"
                       fill="none"
-                      stroke="#9d4545"
+                      stroke="#a04a4a"
                       stroke-width="3"
                       stroke-dasharray="6 5"
                     />
 
                     <circle
-                      cx="196"
-                      cy="154"
-                      r="32"
-                      fill="rgba(157,69,69,.21)"
-                      stroke="#9d4545"
+                      cx="207"
+                      cy="160"
+                      r="34"
+                      fill="rgba(160,74,74,.20)"
+                      stroke="#a04a4a"
                       stroke-width="3"
                     />
 
                     <text
-                      x="92"
-                      y="138"
+                      x="97"
+                      y="144"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       収納
                     </text>
 
                     <text
-                      x="300"
-                      y="88"
+                      x="315"
+                      y="90"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       洗面
                     </text>
 
                     <text
-                      x="300"
-                      y="178"
+                      x="315"
+                      y="184"
                       text-anchor="middle"
                       font-size="12"
-                      font-weight="700"
-                      fill="#26342f"
+                      font-weight="900"
+                      fill="#263630"
                     >
                       廊下
                     </text>
 
                     <text
-                      x="197"
-                      y="158"
+                      x="207"
+                      y="164"
                       text-anchor="middle"
                       font-size="10"
                       font-weight="900"
-                      fill="#9d4545"
+                      fill="#a04a4a"
                     >
                       干渉
                     </text>
 
+                    <path
+                      d="M80 278 C135 300 280 300 337 278"
+                      fill="none"
+                      stroke="#3f7868"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-dasharray="8 6"
+                    />
+
                     <text
-                      x="200"
-                      y="290"
+                      x="210"
+                      y="313"
                       text-anchor="middle"
                       font-size="11"
-                      font-weight="700"
-                      fill="#65736d"
+                      font-weight="800"
+                      fill="#66756f"
                     >
-                      扉が開く範囲と、人が立つ場所を確認
+                      扉の範囲と、人が立つ場所を重ねて確認
                     </text>
                   </svg>
 
-                  <figcaption class="diagram-caption">
-                    収納量だけでなく、建具と使用位置を重ねます。
+                  <figcaption>
+                    収納量だけでなく、使う場所と建具の動きを確認します。
                   </figcaption>
                 </figure>
               </div>
 
-              <div class="case-analysis">
-                <section class="case-column before">
-                  <span class="case-label">
+              <div class="case-process">
+                <section class="process-column before">
+                  <span class="process-label">
                     相談時の状態
                   </span>
 
                   <h4>
                     面積はあるのに、
-                    片づけに移動が必要
+                    片づけるための移動が多い
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      上着の収納が玄関から離れている
-                    </li>
-                    <li>
-                      洗濯物を各部屋へ運ぶ距離が長い
-                    </li>
-                    <li>
-                      開き戸と収納扉が重なる
-                    </li>
-                    <li>
-                      家具を置くと扉の前が狭くなる
-                    </li>
+                  <ul class="process-list">
+                    <li>上着の収納が玄関から離れている</li>
+                    <li>洗濯物を各部屋へ運ぶ距離が長い</li>
+                    <li>収納扉と室内扉が重なっている</li>
+                    <li>家具を置くと扉の前が狭くなる</li>
                   </ul>
                 </section>
 
-                <section class="case-column review">
-                  <span class="case-label">
+                <section class="process-column review">
+                  <span class="process-label">
                     建築士の確認
                   </span>
 
@@ -2459,24 +2716,16 @@
                     何をどこで使うか
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      収納物の種類・量・使用頻度
-                    </li>
-                    <li>
-                      帰宅・洗濯・着替えの動作
-                    </li>
-                    <li>
-                      扉を開ける人が立つ位置
-                    </li>
-                    <li>
-                      棚奥行きとコンセントの必要性
-                    </li>
+                  <ul class="process-list">
+                    <li>収納物の種類・量・使用頻度</li>
+                    <li>帰宅・洗濯・着替えの動作</li>
+                    <li>扉を開ける人が立つ位置</li>
+                    <li>棚奥行きとコンセントの必要性</li>
                   </ul>
                 </section>
 
-                <section class="case-column after">
-                  <span class="case-label">
+                <section class="process-column result">
+                  <span class="process-label">
                     整理する判断
                   </span>
 
@@ -2485,31 +2734,32 @@
                     置く場所と扉を見直す
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      帰宅用品を玄関動線上へ置く
-                    </li>
-                    <li>
-                      洗濯収納を水まわりへ近づける
-                    </li>
-                    <li>
-                      引き戸・折れ戸も比較する
-                    </li>
-                    <li>
-                      家具配置後の有効幅を確認する
-                    </li>
+                  <ul class="process-list">
+                    <li>帰宅用品を玄関動線上へ置く</li>
+                    <li>洗濯収納を水まわりへ近づける</li>
+                    <li>引き戸・折れ戸も比較する</li>
+                    <li>家具配置後の有効幅を確認する</li>
                   </ul>
                 </section>
               </div>
             </div>
 
-            <footer class="case-footer">
-              <strong>建築士の視点：</strong>
-              収納率だけで暮らしやすさは決まりません。
-              収納物・使う場所・人の動き・建具をセットで確認します。
+            <footer class="case-outcome">
+              <span class="outcome-icon">→</span>
+
+              <div>
+                <strong>相談後に目指す状態</strong>
+
+                <p>
+                  収納を増やすことだけを目的にせず、
+                  帰宅用品と洗濯物の置き場所を決めてから、
+                  必要な収納寸法を建築会社へ確認できる状態にします。
+                </p>
+              </div>
             </footer>
           </article>
 
+          <!-- CASE 03 -->
           <article class="case-card">
             <header class="case-header">
               <span class="case-number">03</span>
@@ -2520,219 +2770,214 @@
                 </span>
 
                 <h3>
-                  サンプルは全部好き。
+                  サンプルは全部好き。<br>
                   でも、組み合わせると落ち着かない。
                 </h3>
-
-                <p>
-                  色名だけでなく、
-                  面積・明度・自然光・照明を一緒に確認します。
-                </p>
               </div>
             </header>
 
-            <div class="case-content">
+            <div class="case-body">
               <div class="case-visual">
                 <figure class="diagram">
                   <svg
-                    class="plan-svg"
-                    viewBox="0 0 400 315"
+                    viewBox="0 0 420 330"
                     role="img"
-                    aria-labelledby="color-title color-desc"
+                    aria-labelledby="case03-title case03-desc"
                   >
-                    <title id="color-title">
-                      内装配色の確認例
+                    <title id="case03-title">
+                      内装配色と照明の確認図
                     </title>
 
-                    <desc id="color-desc">
-                      明るいグレージュを基調に、床、木部、濃色を面積比で示しています。
+                    <desc id="case03-desc">
+                      基調色、中間色、木部、アクセント色の面積比と、
+                      自然光や照明による見え方を示した架空図です。
                     </desc>
 
                     <rect
                       x="24"
-                      y="25"
-                      width="352"
-                      height="210"
+                      y="24"
+                      width="372"
+                      height="222"
                       rx="8"
-                      fill="#ffffff"
-                      stroke="#415b51"
+                      fill="#fff"
+                      stroke="#3e5d53"
                       stroke-width="3"
                     />
 
                     <rect
-                      x="40"
+                      x="41"
                       y="42"
-                      width="205"
-                      height="175"
-                      fill="#e7e3da"
+                      width="214"
+                      height="185"
+                      fill="#e7e2d9"
                     />
 
                     <rect
-                      x="245"
+                      x="255"
                       y="42"
-                      width="78"
-                      height="175"
-                      fill="#827d74"
+                      width="83"
+                      height="185"
+                      fill="#817c73"
                     />
 
                     <rect
-                      x="323"
+                      x="338"
                       y="42"
-                      width="36"
-                      height="140"
-                      fill="#8d6c4d"
+                      width="40"
+                      height="146"
+                      fill="#916e4f"
                     />
 
                     <rect
-                      x="323"
-                      y="182"
-                      width="36"
-                      height="35"
-                      fill="#405d55"
+                      x="338"
+                      y="188"
+                      width="40"
+                      height="39"
+                      fill="#3f5d54"
                     />
 
                     <text
-                      x="142"
-                      y="122"
+                      x="148"
+                      y="125"
                       text-anchor="middle"
-                      font-size="16"
+                      font-size="18"
                       font-weight="900"
-                      fill="#4a4b47"
+                      fill="#4b4d49"
                     >
                       70%
                     </text>
 
                     <text
-                      x="142"
-                      y="145"
+                      x="148"
+                      y="149"
                       text-anchor="middle"
                       font-size="11"
-                      font-weight="700"
-                      fill="#4a4b47"
+                      font-weight="800"
+                      fill="#4b4d49"
                     >
                       明るい基調色
                     </text>
 
                     <text
-                      x="284"
-                      y="122"
+                      x="297"
+                      y="125"
                       text-anchor="middle"
-                      font-size="15"
+                      font-size="16"
                       font-weight="900"
-                      fill="#ffffff"
+                      fill="#fff"
                     >
                       20%
                     </text>
 
                     <text
-                      x="284"
-                      y="145"
+                      x="297"
+                      y="148"
                       text-anchor="middle"
-                      font-size="10"
-                      font-weight="700"
-                      fill="#ffffff"
+                      font-size="9"
+                      font-weight="800"
+                      fill="#fff"
                     >
                       床・中間色
                     </text>
 
                     <text
-                      x="341"
-                      y="110"
+                      x="358"
+                      y="116"
                       text-anchor="middle"
                       font-size="12"
                       font-weight="900"
-                      fill="#ffffff"
+                      fill="#fff"
                     >
                       8%
                     </text>
 
                     <text
-                      x="341"
-                      y="204"
+                      x="358"
+                      y="211"
                       text-anchor="middle"
                       font-size="10"
                       font-weight="900"
-                      fill="#ffffff"
+                      fill="#fff"
                     >
                       2%
                     </text>
 
                     <line
-                      x1="55"
-                      y1="260"
-                      x2="345"
-                      y2="260"
-                      stroke="#d8e1dd"
+                      x1="56"
+                      y1="273"
+                      x2="364"
+                      y2="273"
+                      stroke="#d7e1dd"
                       stroke-width="2"
                     />
 
                     <circle
-                      cx="100"
-                      cy="260"
-                      r="15"
+                      cx="105"
+                      cy="273"
+                      r="17"
                       fill="#f3c67a"
-                      opacity="0.65"
+                      opacity="0.6"
                     />
 
                     <circle
-                      cx="200"
-                      cy="260"
-                      r="15"
-                      fill="#f2b45f"
+                      cx="210"
+                      cy="273"
+                      r="17"
+                      fill="#f0b45f"
                       opacity="0.72"
                     />
 
                     <circle
-                      cx="300"
-                      cy="260"
-                      r="15"
-                      fill="#e9a951"
-                      opacity="0.78"
+                      cx="315"
+                      cy="273"
+                      r="17"
+                      fill="#e7a64f"
+                      opacity="0.8"
                     />
 
                     <text
-                      x="100"
-                      y="291"
+                      x="105"
+                      y="309"
                       text-anchor="middle"
                       font-size="10"
-                      font-weight="700"
-                      fill="#65736d"
+                      font-weight="800"
+                      fill="#66756f"
                     >
                       自然光
                     </text>
 
                     <text
-                      x="200"
-                      y="291"
+                      x="210"
+                      y="309"
                       text-anchor="middle"
                       font-size="10"
-                      font-weight="700"
-                      fill="#65736d"
+                      font-weight="800"
+                      fill="#66756f"
                     >
                       温白色
                     </text>
 
                     <text
-                      x="300"
-                      y="291"
+                      x="315"
+                      y="309"
                       text-anchor="middle"
                       font-size="10"
-                      font-weight="700"
-                      fill="#65736d"
+                      font-weight="800"
+                      fill="#66756f"
                     >
                       電球色
                     </text>
                   </svg>
 
-                  <figcaption class="diagram-caption">
-                    色名ではなく、面積・明度・光源を同じ条件で比較します。
+                  <figcaption>
+                    色名ではなく、面積・明度・自然光・照明を比較します。
                   </figcaption>
                 </figure>
               </div>
 
-              <div class="case-analysis">
-                <section class="case-column before">
-                  <span class="case-label">
+              <div class="case-process">
+                <section class="process-column before">
+                  <span class="process-label">
                     相談時の状態
                   </span>
 
@@ -2741,24 +2986,16 @@
                     全体像が見えなくなっている
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      床・壁・天井に異なるグレーを使用
-                    </li>
-                    <li>
-                      建具とキッチンの色味が合わない
-                    </li>
-                    <li>
-                      梁だけ濃いクロスにするか迷う
-                    </li>
-                    <li>
-                      ダウンライトが均等に並んでいる
-                    </li>
+                  <ul class="process-list">
+                    <li>床・壁・天井に異なるグレーを使用</li>
+                    <li>建具とキッチンの色味が合わない</li>
+                    <li>梁だけ濃いクロスにするか迷う</li>
+                    <li>照明が部屋全体へ均等に並んでいる</li>
                   </ul>
                 </section>
 
-                <section class="case-column review">
-                  <span class="case-label">
+                <section class="process-column review">
+                  <span class="process-label">
                     建築士の確認
                   </span>
 
@@ -2767,24 +3004,16 @@
                     明度・面積・光で比較
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      方位と窓から入る自然光
-                    </li>
-                    <li>
-                      床・壁・天井の明度差
-                    </li>
-                    <li>
-                      木目・建具・キッチンの色味
-                    </li>
-                    <li>
-                      生活場面ごとに必要な光
-                    </li>
+                  <ul class="process-list">
+                    <li>方位と窓から入る自然光</li>
+                    <li>床・壁・天井の明度差</li>
+                    <li>木目・建具・キッチンの色味</li>
+                    <li>生活場面ごとに必要な明るさ</li>
                   </ul>
                 </section>
 
-                <section class="case-column after">
-                  <span class="case-label">
+                <section class="process-column result">
+                  <span class="process-label">
                     整理する判断
                   </span>
 
@@ -2793,29 +3022,28 @@
                     濃色を使う場所を限定
                   </h4>
 
-                  <ul class="point-list">
-                    <li>
-                      広い面は明るい色を基調にする
-                    </li>
-                    <li>
-                      濃いグレーは小面積へ限定する
-                    </li>
-                    <li>
-                      梁を強調する理由を確認する
-                    </li>
-                    <li>
-                      照明を生活場面ごとに分ける
-                    </li>
+                  <ul class="process-list">
+                    <li>広い面は明るい色を基調にする</li>
+                    <li>濃いグレーは小面積へ限定する</li>
+                    <li>梁を強調する目的を確認する</li>
+                    <li>照明を生活場面ごとに分ける</li>
                   </ul>
                 </section>
               </div>
             </div>
 
-            <footer class="case-footer">
-              <strong>建築士の視点：</strong>
-              クロス品番だけでは判断しません。
-              床・建具・キッチン・自然光・照明の色温度を、
-              同じ空間に現れる要素として確認します。
+            <footer class="case-outcome">
+              <span class="outcome-icon">→</span>
+
+              <div>
+                <strong>相談後に目指す状態</strong>
+
+                <p>
+                  好きな色を減らすのではなく、
+                  基調色・木部・アクセントの役割を決め、
+                  昼と夜の両方で比較して選べる状態にします。
+                </p>
+              </div>
             </footer>
           </article>
         </div>
@@ -2824,7 +3052,7 @@
 
     <section
       id="deliverable"
-      class="section section-white"
+      class="section section-warm"
     >
       <div class="container">
         <div class="heading">
@@ -2839,7 +3067,7 @@
 
           <p>
             次の打ち合わせで行動できるように、
-            確認場所・優先度・質問内容を判断整理シートへまとめます。
+            確認場所・優先度・質問内容を整理します。
           </p>
         </div>
 
@@ -2854,10 +3082,10 @@
                 判断整理シート・記載例
               </h3>
 
-              <div class="sheet-meta">
+              <div class="sheet-tags">
                 <span>変更を検討</span>
                 <span>現在案を活かす</span>
-                <span>HMへ確認</span>
+                <span>建築会社へ確認</span>
                 <span>家族で決定</span>
               </div>
             </header>
@@ -2875,16 +3103,15 @@
 
                 <tbody>
                   <tr>
-                    <td>
-                      洗面入口
-                    </td>
+                    <td>洗面入口</td>
 
                     <td>
                       開き戸と通行位置が重なりやすい
                     </td>
 
                     <td>
-                      引き戸へ変更可能か、壁内設備と合わせて建築会社へ確認
+                      引き戸への変更可否を、
+                      壁内設備と合わせて建築会社へ確認
                     </td>
 
                     <td>
@@ -2895,36 +3122,36 @@
                   </tr>
 
                   <tr>
+                    <td>玄関収納</td>
+
                     <td>
-                      玄関収納
+                      上着と鞄の収納場所が
+                      帰宅動線から離れている
                     </td>
 
                     <td>
-                      上着と鞄を置く場所が生活動線から離れている
+                      収納物を整理し、
+                      棚奥行きとパイプ位置を再確認
                     </td>
 
                     <td>
-                      収納物一覧を作り、棚奥行きとハンガーパイプ位置を再確認
-                    </td>
-
-                    <td>
-                      <span class="priority priority-middle">
+                      <span class="priority priority-mid">
                         中
                       </span>
                     </td>
                   </tr>
 
                   <tr>
+                    <td>LDKの窓</td>
+
                     <td>
-                      LDKの窓
+                      視線が抜け、
+                      明るさも確保できている
                     </td>
 
                     <td>
-                      視線が抜け、明るさも確保できている
-                    </td>
-
-                    <td>
-                      現在案を活かし、カーテン取付位置のみ確認
+                      現在案を活かし、
+                      カーテン取付位置のみ確認
                     </td>
 
                     <td>
@@ -2935,16 +3162,16 @@
                   </tr>
 
                   <tr>
+                    <td>照明位置</td>
+
                     <td>
-                      ダイニング照明
+                      テーブル未確定のまま
+                      配線位置が決まっている
                     </td>
 
                     <td>
-                      テーブル位置が未確定のまま配線位置が決まっている
-                    </td>
-
-                    <td>
-                      テーブル寸法を決め、配線変更期限までに中心位置を回答
+                      家具寸法を決め、
+                      配線変更期限までに中心位置を回答
                     </td>
 
                     <td>
@@ -2955,20 +3182,20 @@
                   </tr>
 
                   <tr>
+                    <td>LDKクロス</td>
+
                     <td>
-                      LDKクロス
+                      床より青みが強く、
+                      夜に冷たく見える可能性がある
                     </td>
 
                     <td>
-                      床より青みが強く、照明下で冷たく見える可能性がある
+                      大判サンプルを床・建具と並べ、
+                      昼夜の光で比較
                     </td>
 
                     <td>
-                      大判サンプルを床・建具と並べ、昼夜の光で比較
-                    </td>
-
-                    <td>
-                      <span class="priority priority-middle">
+                      <span class="priority priority-mid">
                         中
                       </span>
                     </td>
@@ -2977,8 +3204,8 @@
               </table>
             </div>
 
-            <footer class="sheet-note">
-              ※上記は成果物の形式を説明するための架空サンプルです。
+            <footer class="sheet-footer">
+              ※成果物の形式を説明するための架空サンプルです。
               実際の内容は、ご提出資料とヒアリング内容に応じて変わります。
             </footer>
           </article>
@@ -2994,13 +3221,14 @@
             </h3>
 
             <p>
-              相談の目的は、建築士から大量の修正案を受け取ることではありません。
-              ご家族が納得して、建築会社との打ち合わせを前へ進められる状態をつくることです。
+              相談の目的は、修正案を大量に受け取ることではありません。
+              ご家族が納得して、建築会社との打ち合わせを
+              前へ進められる状態をつくることです。
             </p>
 
             <ul class="result-list">
               <li>
-                <strong>1</strong>
+                <span class="result-number">1</span>
 
                 <span>
                   <b>変更を優先して検討する場所</b><br>
@@ -3009,7 +3237,7 @@
               </li>
 
               <li>
-                <strong>2</strong>
+                <span class="result-number">2</span>
 
                 <span>
                   <b>現在案をそのまま活かせる場所</b><br>
@@ -3018,201 +3246,31 @@
               </li>
 
               <li>
-                <strong>3</strong>
+                <span class="result-number">3</span>
 
                 <span>
                   <b>建築会社へ確認する寸法・仕様</b><br>
-                  感覚的な不安を、回答してもらえる具体的な質問にします。
+                  感覚的な不安を、回答してもらえる質問へ変えます。
                 </span>
               </li>
 
               <li>
-                <strong>4</strong>
+                <span class="result-number">4</span>
 
                 <span>
                   <b>ご家族で優先順位を決めること</b><br>
-                  建築士が決めることと、ご家族が選ぶことを分けます。
+                  専門家へ確認することと、ご家族が選ぶことを分けます。
                 </span>
               </li>
             </ul>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-warm">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            BEST TIMING
-          </span>
-
-          <h2>
-            相談するなら、<br>
-            変更できるうちに。
-          </h2>
-
-          <p>
-            家づくりは、工程が進むほど変更できる範囲が小さくなります。
-            不安が具体的になった時点が、相談のタイミングです。
-          </p>
-        </div>
-
-        <div class="timing-grid">
-          <article class="timing-card">
-            <span>01</span>
-
-            <h3>
-              HM・工務店を比較中
-            </h3>
-
-            <p>
-              会社名だけでなく、提案内容や標準仕様、進め方を比較したい段階。
-            </p>
-          </article>
-
-          <article class="timing-card">
-            <span>02</span>
-
-            <h3>
-              間取り確定前
-            </h3>
-
-            <p>
-              希望は入ったものの、契約・確認申請前に第三者の視点で確認したい段階。
-            </p>
-          </article>
-
-          <article class="timing-card">
-            <span>03</span>
-
-            <h3>
-              内装・建具を決定中
-            </h3>
-
-            <p>
-              床、建具、キッチン、クロスを家全体でどう合わせるか迷う段階。
-            </p>
-          </article>
-
-          <article class="timing-card">
-            <span>04</span>
-
-            <h3>
-              電気図の確定前
-            </h3>
-
-            <p>
-              家具、照明、スイッチ、コンセントの位置を暮らしに合わせて確認したい段階。
-            </p>
-          </article>
-        </div>
-
-        <div class="timing-alert">
-          次の打ち合わせや決定期限が近い場合は、
-          フォームに日付をご記入ください。
-          ただし、短納期での対応を保証するものではなく、
-          資料と受付状況を確認して対応可否をご案内します。
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-white">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            CONSULTATION SCOPE
-          </span>
-
-          <h2>
-            対応できることと、<br>
-            含まれないこと。
-          </h2>
-
-          <p>
-            申込み後の認識違いを防ぐために、
-            33,000円の個別相談の範囲を明確にしています。
-          </p>
-        </div>
-
-        <div class="scope-grid">
-          <article class="scope-box">
-            <h3>
-              33,000円個別相談に含まれること
-            </h3>
-
-            <ul class="check-list">
-              <li>
-                間取り図1案と関連資料の事前確認
-              </li>
-
-              <li>
-                オンライン面談75分
-              </li>
-
-              <li>
-                現在案の良い点と確認点の整理
-              </li>
-
-              <li>
-                変更を優先して検討する場所の整理
-              </li>
-
-              <li>
-                建築会社へ確認する質問の整理
-              </li>
-
-              <li>
-                判断整理シート
-              </li>
-            </ul>
-          </article>
-
-          <article class="scope-box">
-            <h3>
-              通常の個別相談に含まれないこと
-            </h3>
-
-            <ul class="exclude-list">
-              <li>
-                確認申請用・施工用図面の作成
-              </li>
-
-              <li>
-                構造計算や法令適合の最終判定
-              </li>
-
-              <li>
-                新規間取り図の完成設計
-              </li>
-
-              <li>
-                実施設計レベルの電気図作成
-              </li>
-
-              <li>
-                完成予想3Dパースの制作
-              </li>
-
-              <li>
-                建築会社との代理交渉
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="info-note" style="margin-top: 26px; margin-bottom: 0;">
-          <strong>クロス・照明・建具だけでも相談できます。</strong><br>
-          ただし、75分で整理できる一つの相談テーマが目安です。
-          間取り、収納、内装、照明、コンセントなど複数分野の決定が続く場合は、
-          12週間トータル伴走の方が適していることがあります。
         </div>
       </div>
     </section>
 
     <section
       id="services"
-      class="section section-dark"
+      class="section section-white"
     >
       <div class="container">
         <div class="heading">
@@ -3221,144 +3279,138 @@
           </span>
 
           <h2>
-            今回の判断を整理するか。<br>
-            家づくりの決定を一緒に進めるか。
+            一度の判断整理か。<br>
+            12週間の継続伴走か。
           </h2>
 
           <p>
-            高額なサービスを一律に勧めるのではなく、
-            現在の段階と残っている決定から選びます。
+            価格の違いではなく、
+            残っている決定の数と支援期間の違いです。
           </p>
         </div>
 
-        <div class="service-grid">
-          <article class="service-card">
-            <span class="service-badge">
-              一つのテーマを整理したい
-            </span>
+        <div class="decision-panel">
+          <header class="decision-question">
+            <small>
+              SUPPORT DECISION
+            </small>
 
             <h3>
-              家づくり個別相談
+              あなたの現在地に近い方を選んでください
             </h3>
+          </header>
 
-            <div class="price">
-              33,000円
-              <small>（税込）</small>
-            </div>
-
-            <p>
-              現在の図面や資料をもとに、
-              次の打ち合わせで判断する内容を整理します。
-            </p>
-
-            <h4 class="fit-title">
-              このような方に適しています
-            </h4>
-
-            <ul class="service-list">
-              <li>
-                間取り1案を第三者に確認してほしい
-              </li>
-
-              <li>
-                収納・建具など一つのテーマを整理したい
-              </li>
-
-              <li>
-                クロス・照明・色合わせを相談したい
-              </li>
-
-              <li>
-                次の打ち合わせで聞くことを明確にしたい
-              </li>
-
-              <li>
-                一度の面談で方向性を決めたい
-              </li>
-            </ul>
-
-            <a
-              class="button button-dark"
-              data-cta="single-form"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+          <div class="decision-grid">
+            <article
+              id="single-support"
+              class="service-card"
             >
-              個別相談の対応可否を確認
-            </a>
+              <span class="service-type">
+                一つのテーマを整理
+              </span>
 
-            <p class="button-note">
-              図面・相談内容を確認後にご案内します。
-            </p>
-          </article>
+              <h3>
+                家づくり個別相談
+              </h3>
 
-          <article class="service-card featured">
-            <span class="service-badge">
-              複数の決定をつなげたい
-            </span>
+              <div class="price">
+                33,000円
+                <small>（税込）</small>
+              </div>
 
-            <h3>
-              12週間トータル伴走
-            </h3>
+              <p class="service-description">
+                現在の図面や資料をもとに、
+                次の打ち合わせで何を確認し、
+                何を決めるか整理します。
+              </p>
 
-            <div class="price">
-              220,000円
-              <small>（税込）</small>
-            </div>
+              <h4>
+                このような方に適しています
+              </h4>
 
-            <p>
-              間取りから収納、家具、内装、照明、電気図まで、
-              家全体を一つの判断軸で整えます。
-            </p>
+              <ul class="service-list">
+                <li>間取り図1案を第三者に確認してほしい</li>
+                <li>収納・建具など一つの論点を整理したい</li>
+                <li>クロス・照明・色合わせを相談したい</li>
+                <li>次の打ち合わせで聞くことを明確にしたい</li>
+                <li>一度の面談で方向性を決めたい</li>
+              </ul>
 
-            <h4 class="fit-title">
-              このような方に適しています
-            </h4>
+              <a
+                class="button button-green"
+                data-cta="single-form"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+              >
+                個別相談の対応可否を確認
+              </a>
 
-            <ul class="service-list">
-              <li>
-                間取り確定後も多くの決定が残っている
-              </li>
+              <p class="button-note">
+                間取り図1案・オンライン75分・判断整理シート付き
+              </p>
+            </article>
 
-              <li>
-                床・建具・キッチン・クロスを統一したい
-              </li>
+            <article class="service-card featured">
+              <span class="service-type">
+                複数の決定を継続支援
+              </span>
 
-              <li>
-                照明・スイッチ・コンセントも確認したい
-              </li>
+              <h3>
+                12週間トータル伴走
+              </h3>
 
-              <li>
-                建築会社との打ち合わせが複数回残っている
-              </li>
+              <div class="price">
+                220,000円
+                <small>（税込）</small>
+              </div>
 
-              <li>
-                期間中に継続して質問・相談したい
-              </li>
-            </ul>
+              <p class="service-description">
+                間取りから収納、家具、内装、照明、電気図まで、
+                家全体を一つの判断軸で整えます。
+              </p>
 
-            <a
-              class="button button-primary"
-              data-cta="total-support"
-              href="https://emy-renovation.github.io/total-support/"
-            >
-              トータル伴走の内容を見る
-              <span aria-hidden="true">→</span>
-            </a>
+              <h4>
+                このような方に適しています
+              </h4>
 
-            <p class="button-note">
-              基本期間12週間・オンライン面談5回。
-            </p>
-          </article>
+              <ul class="service-list">
+                <li>今後2〜3か月、複数の決定が続く</li>
+                <li>修正された間取りを継続して確認したい</li>
+                <li>床・建具・キッチン・クロスも整えたい</li>
+                <li>照明・スイッチ・コンセントも確認したい</li>
+                <li>面談の間もテキストで相談したい</li>
+              </ul>
+
+              <a
+                class="button button-primary"
+                data-cta="service-total-support"
+                href="https://emy-renovation.github.io/total-support/"
+              >
+                トータル伴走の内容を見る
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <p class="button-note">
+                基本期間12週間・オンライン面談5回・テキスト相談付き
+              </p>
+            </article>
+          </div>
         </div>
 
-        <p class="service-note">
-          フォーム送信だけでは契約・決済になりません。
-          現在の進捗、資料、決定期限を確認し、
-          ご相談に適した方法をご案内します。
-        </p>
+        <div
+          class="disclosure"
+          style="margin-top: 26px; margin-bottom: 0;"
+        >
+          <strong>
+            クロス・照明・建具だけでも個別相談できます。
+          </strong>
+          ただし、75分で整理できる一つの相談テーマが目安です。
+          間取り、収納、内装、照明、コンセントなど、
+          複数分野の決定が続く場合は12週間トータル伴走が適しています。
+        </div>
       </div>
     </section>
 
-    <section class="section section-white">
+    <section class="section section-soft">
       <div class="container architect-grid">
         <div class="architect-panel">
           <div class="architect-mark">
@@ -3373,7 +3425,7 @@
           </div>
         </div>
 
-        <div class="architect-content">
+        <div class="architect-copy">
           <span class="eyebrow">
             ARCHITECT
           </span>
@@ -3392,20 +3444,19 @@
           </p>
 
           <p>
-            住宅設計業務を通じて、
-            新築・リノベーションを含む800棟以上の
-            計画・提案・図面確認に携わってきました。
+            住宅設計業務を通じて、新築・リノベーションを含む
+            800棟以上の計画・提案・図面確認に携わってきました。
             その経験をもとに、感覚的な不安を、
             建築会社から回答を得られる具体的な質問へ変えます。
           </p>
 
           <p>
-            なお、最終的な法令・構造・施工可否は、
-            敷地条件や採用工法を把握している
-            建築会社・設計者への確認が必要です。
+            最終的な法令・構造・施工可否は、
+            敷地条件や工法を把握している
+            建築会社・担当設計者への確認が必要です。
           </p>
 
-          <ul class="credential-list">
+          <ul class="credentials">
             <li>二級建築士</li>
             <li>住宅設計経験800棟以上</li>
             <li>新築・リノベーション</li>
@@ -3415,7 +3466,7 @@
       </div>
     </section>
 
-    <section class="section section-soft">
+    <section class="section section-white">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -3444,7 +3495,7 @@
                 ただし、候補案が多数ある場合や、
                 ゼロから間取りを設計するご依頼は、
                 33,000円の個別相談の範囲を超えることがあります。
-                現在の資料を確認したうえで、適した方法をご案内します。
+                現在の資料を確認したうえでご案内します。
               </p>
             </div>
           </details>
@@ -3456,11 +3507,10 @@
 
             <div class="faq-answer">
               <p>
-                相談できます。
-                75分で整理できる一つのテーマを目安に、
+                相談できます。75分で整理できる一つのテーマを目安に、
                 床・建具・キッチン・壁紙の色合わせや、
-                照明・スイッチ・コンセントの確認を行います。
-                家全体に複数の未決事項がある場合は、
+                照明・スイッチ・コンセントを確認します。
+                複数分野の未決事項がある場合は、
                 トータル伴走が適することがあります。
               </p>
             </div>
@@ -3468,14 +3518,15 @@
 
           <details>
             <summary>
-              ハウスメーカーへ相談したことが知られますか？
+              ハウスメーカーとの関係が悪くなりませんか？
             </summary>
 
             <div class="faq-answer">
               <p>
+                建築会社を否定することが目的ではありません。
+                現在案の良い部分も確認しながら、
+                依頼者ご自身が建築会社へ質問できる形に整理します。
                 BETTER HOME DESIGNから建築会社へ連絡することはありません。
-                相談内容をもとに、依頼者ご自身が確認できる質問へ整理します。
-                建築会社との代理交渉は通常サービスに含まれません。
               </p>
             </div>
           </details>
@@ -3488,8 +3539,8 @@
             <div class="faq-answer">
               <p>
                 個別相談は、現在案の論点と判断を整理するサービスです。
-                新規間取り図の完成設計や施工図の作成は含まれません。
-                必要な場合は、対応可能な範囲を資料確認後にご案内します。
+                新規間取り図の完成設計、確認申請図、
+                施工図の作成は通常サービスに含まれません。
               </p>
             </div>
           </details>
@@ -3511,7 +3562,7 @@
 
           <details>
             <summary>
-              フォームを送ると申込みになりますか？
+              フォームを送ると契約になりますか？
             </summary>
 
             <div class="faq-answer">
@@ -3527,7 +3578,7 @@
     </section>
 
     <section class="final-cta">
-      <div class="container final-cta-inner">
+      <div class="container final-inner">
         <span class="eyebrow">
           NEXT DECISION
         </span>
@@ -3546,18 +3597,18 @@
         <div class="final-actions">
           <a
             class="button button-primary"
-            data-cta="final-form"
+            data-cta="final-single-form"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
           >
-            個別相談の対応可否を確認する
+            個別相談の対応可否を確認
           </a>
 
           <a
-            class="button button-secondary"
+            class="button"
             data-cta="final-total-support"
             href="https://emy-renovation.github.io/total-support/"
           >
-            12週間の伴走サポートを見る
+            12週間トータル伴走を見る
           </a>
         </div>
 
@@ -3605,7 +3656,7 @@
 
   <div class="mobile-cta">
     <a
-      data-cta="mobile-form"
+      data-cta="mobile-single-form"
       href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
     >
       自分の相談が対応可能か確認する
@@ -3614,121 +3665,110 @@
 
   <script>
     (function () {
-      'use strict';
+      "use strict";
+
+      var trackedLinks =
+        document.querySelectorAll("[data-cta]");
 
       /*
-       * -----------------------------------------------
-       * CTAクリック計測
-       * -----------------------------------------------
-       *
-       * GA4を別途導入した場合、data-cta属性付きリンクの
-       * クリックをイベントとして送信します。
-       *
-       * GA4が未導入でもエラーにはなりません。
+       * GA4が導入されている場合に、
+       * CTAクリックをイベントとして送信します。
        */
+      trackedLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          var ctaName =
+            link.getAttribute("data-cta");
 
-      var ctaLinks =
-        document.querySelectorAll(
-          '[data-cta]'
-        );
-
-      ctaLinks.forEach(function (link) {
-        link.addEventListener(
-          'click',
-          function () {
-            var ctaName =
-              link.getAttribute(
-                'data-cta'
-              );
-
-            if (
-              typeof window.gtag ===
-              'function'
-            ) {
-              window.gtag(
-                'event',
-                'select_cta',
-                {
-                  cta_name: ctaName,
-                  link_url: link.href
-                }
-              );
-            }
+          if (typeof window.gtag === "function") {
+            window.gtag(
+              "event",
+              "select_cta",
+              {
+                cta_name: ctaName,
+                link_url: link.href,
+                page_path: window.location.pathname
+              }
+            );
           }
-        );
+        });
       });
 
       /*
-       * -----------------------------------------------
-       * 外部リンクへの流入元引き継ぎ
-       * -----------------------------------------------
-       *
-       * SNSやLINEからUTM付きで訪問した場合、
-       * Googleフォームおよびtotal-supportへのリンクへ
-       * utm_source等を引き継ぎます。
+       * Instagram・LINEなどから付与されたUTMを、
+       * フォームとトータル伴走ページへ引き継ぎます。
        */
-
       var currentParameters =
-        new URLSearchParams(
-          window.location.search
-        );
+        new URLSearchParams(window.location.search);
 
       var trackingKeys = [
-        'utm_source',
-        'utm_medium',
-        'utm_campaign',
-        'utm_content',
-        'utm_term'
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term"
       ];
 
       var trackingValues = {};
 
-      trackingKeys.forEach(
-        function (key) {
-          if (
-            currentParameters.has(key)
-          ) {
-            trackingValues[key] =
-              currentParameters.get(key);
-          }
+      trackingKeys.forEach(function (key) {
+        if (currentParameters.has(key)) {
+          trackingValues[key] =
+            currentParameters.get(key);
         }
-      );
+      });
 
-      if (
-        Object.keys(
-          trackingValues
-        ).length > 0
-      ) {
-        ctaLinks.forEach(
-          function (link) {
-            try {
-              var destination =
-                new URL(
-                  link.href,
-                  window.location.href
+      if (Object.keys(trackingValues).length > 0) {
+        trackedLinks.forEach(function (link) {
+          try {
+            var destination =
+              new URL(link.href, window.location.href);
+
+            Object.keys(trackingValues).forEach(
+              function (key) {
+                destination.searchParams.set(
+                  key,
+                  trackingValues[key]
                 );
+              }
+            );
 
-              Object.keys(
-                trackingValues
-              ).forEach(
-                function (key) {
-                  destination.searchParams.set(
-                    key,
-                    trackingValues[key]
-                  );
-                }
-              );
-
-              link.href =
-                destination.toString();
-            } catch (error) {
-              /*
-               * URLとして解釈できないリンクは変更しません。
-               */
-            }
+            link.href = destination.toString();
+          } catch (error) {
+            /*
+             * URLとして解釈できない場合は変更しません。
+             */
           }
-        );
+        });
       }
+
+      /*
+       * FAQを開いた操作もGA4へ送信します。
+       */
+      var faqItems =
+        document.querySelectorAll(".faq-list details");
+
+      faqItems.forEach(function (item) {
+        item.addEventListener("toggle", function () {
+          if (
+            item.open &&
+            typeof window.gtag === "function"
+          ) {
+            var summary =
+              item.querySelector("summary");
+
+            window.gtag(
+              "event",
+              "open_faq",
+              {
+                faq_title:
+                  summary
+                    ? summary.textContent.trim()
+                    : "unknown"
+              }
+            );
+          }
+        });
+      });
     }());
   </script>
 </body>
