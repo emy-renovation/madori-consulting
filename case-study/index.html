@@ -10,32 +10,49 @@
 
   <meta
     name="description"
-    content="間取り、水まわり、収納、減築型中庭、建具、クロス、照明を2D図面と同一データの3Dモデルで比較する架空の家づくり相談事例です。"
+    content="実際に寄せられた家づくり相談の傾向をもとに、間取り・収納・建具・クロス・照明を建築士がどのように整理するかを紹介します。"
   >
 
   <title>
-    間取り・収納・内装を一緒に見直す家づくり相談例｜BETTER HOME DESIGN
+    間取り・収納・内装の検討事例｜BETTER HOME DESIGN
   </title>
 
   <style>
     :root {
-      --green: #315f54;
-      --green-dark: #1e453c;
-      --green-light: #e9f2ef;
-      --orange: #b96837;
-      --orange-dark: #8c4722;
-      --red: #bd4747;
-      --red-light: #fff0f0;
-      --blue: #4b7f9b;
+      --green-950: #173b33;
+      --green-900: #204a40;
+      --green-800: #2e6154;
+      --green-700: #3d7566;
+      --green-100: #e6f0ec;
+      --green-50: #f2f7f5;
+
+      --orange-700: #a9552c;
+      --orange-600: #bd693b;
+      --orange-100: #f7e8dc;
+      --orange-50: #fff8f2;
+
+      --red-700: #a34848;
+      --red-100: #fae9e9;
+
+      --blue-700: #476f85;
+      --blue-100: #e7f0f4;
+
       --ink: #26342f;
       --muted: #64716c;
       --line: #d9e2de;
-      --paper: #fff;
+      --paper: #ffffff;
       --base: #f5f7f6;
-      --soft: #edf3f0;
-      --shadow: 0 18px 50px rgba(30, 69, 60, .11);
-      --radius: 22px;
-      --max: 1180px;
+      --warm: #f3efe8;
+
+      --shadow:
+        0 20px 55px rgba(23, 59, 51, 0.11);
+
+      --shadow-small:
+        0 10px 30px rgba(23, 59, 51, 0.07);
+
+      --radius-large: 28px;
+      --radius: 19px;
+      --max-width: 1160px;
     }
 
     * {
@@ -60,7 +77,6 @@
     }
 
     img,
-    canvas,
     svg {
       display: block;
       max-width: 100%;
@@ -70,12 +86,17 @@
       color: inherit;
     }
 
-    button {
+    button,
+    input,
+    textarea {
       font: inherit;
     }
 
     .container {
-      width: min(calc(100% - 40px), var(--max));
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
       margin-inline: auto;
     }
 
@@ -83,10 +104,10 @@
       position: fixed;
       top: 10px;
       left: 10px;
-      z-index: 999;
-      padding: 9px 14px;
+      z-index: 1000;
+      padding: 10px 15px;
       color: #fff;
-      background: var(--green-dark);
+      background: var(--green-950);
       border-radius: 8px;
       transform: translateY(-160%);
     }
@@ -99,7 +120,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, .94);
+      background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(12px);
     }
@@ -109,7 +130,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .brand {
@@ -118,11 +139,14 @@
 
     .brand strong {
       display: block;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      letter-spacing: .09em;
-      line-height: 1.3;
+      color: var(--green-950);
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+      font-size: 17px;
+      letter-spacing: 0.09em;
+      line-height: 1.35;
     }
 
     .brand small {
@@ -144,38 +168,44 @@
     }
 
     .nav a:hover {
-      color: var(--green);
+      color: var(--green-700);
     }
 
-    .nav .back-button {
-      padding: 9px 15px;
+    .nav-cta {
+      padding: 9px 16px;
       color: #fff;
-      background: var(--green);
+      background: var(--green-800);
       border-radius: 999px;
     }
 
     .hero {
-      padding: 90px 0 75px;
+      padding: 92px 0 76px;
       overflow: hidden;
       background:
         radial-gradient(
-          circle at 85% 12%,
-          rgba(49, 95, 84, .15),
-          transparent 34%
+          circle at 88% 15%,
+          rgba(61, 117, 102, 0.15),
+          transparent 31%
         ),
         radial-gradient(
-          circle at 10% 85%,
-          rgba(185, 104, 55, .09),
-          transparent 30%
+          circle at 9% 90%,
+          rgba(189, 105, 59, 0.09),
+          transparent 27%
         ),
-        linear-gradient(180deg, #fff, #f0f5f3);
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #edf4f1
+        );
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+      grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(320px, 0.88fr);
       align-items: center;
-      gap: 56px;
+      gap: 58px;
     }
 
     .eyebrow {
@@ -183,15 +213,15 @@
       align-items: center;
       gap: 9px;
       margin-bottom: 18px;
-      color: var(--green);
+      color: var(--green-700);
       font-size: 11px;
       font-weight: 900;
-      letter-spacing: .16em;
+      letter-spacing: 0.16em;
     }
 
     .eyebrow::before {
       content: "";
-      width: 28px;
+      width: 27px;
       height: 2px;
       background: currentColor;
     }
@@ -204,26 +234,25 @@
 
     h1 {
       margin: 0;
-      color: var(--green-dark);
+      color: var(--green-950);
       font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(38px, 5.8vw, 66px);
+      font-size: clamp(39px, 5.6vw, 67px);
       font-weight: 600;
-      line-height: 1.35;
+      line-height: 1.36;
     }
 
-    h1 em {
+    .hero-subtitle {
       display: block;
-      margin-top: 15px;
-      color: var(--orange-dark);
+      margin-top: 18px;
+      color: var(--orange-700);
       font-family:
         "Hiragino Kaku Gothic ProN",
         "Yu Gothic",
         sans-serif;
       font-size: clamp(17px, 2.2vw, 25px);
-      font-style: normal;
       font-weight: 800;
       line-height: 1.65;
     }
@@ -235,42 +264,81 @@
     }
 
     .hero-lead strong {
-      color: var(--green-dark);
+      color: var(--green-950);
     }
 
-    .hero-tags {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin: 27px 0 0;
-      padding: 0;
-      list-style: none;
+      gap: 12px;
+      margin-top: 29px;
     }
 
-    .hero-tags li {
-      padding: 7px 12px;
-      color: var(--green-dark);
-      background: #fff;
-      border: 1px solid var(--line);
+    .button {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 23px;
+      border: 1px solid transparent;
       border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--orange-600);
+      box-shadow:
+        0 13px 28px
+        rgba(169, 85, 44, 0.21);
+    }
+
+    .button-primary:hover {
+      background: var(--orange-700);
+    }
+
+    .button-secondary {
+      color: var(--green-950);
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    .button-dark {
+      color: #fff;
+      background: var(--green-800);
+    }
+
+    .hero-note {
+      margin: 13px 0 0;
+      color: var(--muted);
       font-size: 11px;
-      font-weight: 800;
     }
 
     .hero-card {
-      padding: 27px;
-      background: rgba(255, 255, 255, .94);
+      padding: 29px;
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid var(--line);
-      border-radius: 25px;
+      border-radius: var(--radius-large);
       box-shadow: var(--shadow);
     }
 
     .hero-card-label {
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       padding: 5px 10px;
-      color: var(--red);
-      background: var(--red-light);
+      color: var(--green-800);
+      background: var(--green-100);
       border-radius: 999px;
       font-size: 10px;
       font-weight: 900;
@@ -278,86 +346,91 @@
 
     .hero-card h2 {
       margin: 0;
-      color: var(--green-dark);
-      font-size: 23px;
+      color: var(--green-950);
+      font-size: 22px;
       line-height: 1.55;
     }
 
-    .hero-card ul {
-      margin: 19px 0 0;
+    .hero-card-list {
+      display: grid;
+      gap: 12px;
+      margin: 21px 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .hero-card li {
-      position: relative;
-      margin-bottom: 10px;
-      padding-left: 25px;
+    .hero-card-list li {
+      display: grid;
+      grid-template-columns: 27px 1fr;
+      gap: 11px;
+      align-items: start;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    .hero-card li::before {
-      content: "!";
-      position: absolute;
-      top: 3px;
-      left: 0;
+    .hero-card-list strong {
       display: grid;
-      width: 17px;
-      height: 17px;
-      place-items: center;
-      color: #fff;
-      background: var(--red);
-      border-radius: 50%;
-      font-size: 10px;
-      font-weight: 900;
-    }
-
-    .notice {
-      padding: 17px 0;
-      background: #fffaf5;
-      border-block: 1px solid #ecdcca;
-    }
-
-    .notice-inner {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .notice-icon {
-      display: grid;
-      flex: 0 0 auto;
       width: 27px;
       height: 27px;
       place-items: center;
       color: #fff;
-      background: var(--orange);
+      background: var(--green-700);
       border-radius: 50%;
-      font-weight: 900;
+      font-family: Georgia, serif;
+      font-size: 11px;
     }
 
-    .notice p {
+    .trust-bar {
+      padding: 19px 0;
+      color: #fff;
+      background: var(--green-950);
+    }
+
+    .trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px 34px;
       margin: 0;
-      color: #53605b;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trust-list li {
       font-size: 12px;
+      font-weight: 800;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      margin-right: 8px;
+      color: #b6d5ca;
     }
 
     .section {
-      padding: 88px 0;
+      padding: 90px 0;
     }
 
-    .section.white {
+    .section-white {
       background: #fff;
     }
 
-    .section.soft {
-      background: var(--soft);
+    .section-soft {
+      background: var(--green-50);
+    }
+
+    .section-warm {
+      background: var(--warm);
+    }
+
+    .section-dark {
+      color: #fff;
+      background: var(--green-950);
     }
 
     .heading {
-      max-width: 790px;
-      margin: 0 auto 45px;
+      max-width: 810px;
+      margin: 0 auto 46px;
       text-align: center;
     }
 
@@ -367,14 +440,18 @@
 
     .heading h2 {
       margin: 0;
-      color: var(--green-dark);
+      color: var(--green-950);
       font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(30px, 4.2vw, 47px);
+      font-size: clamp(30px, 4.3vw, 48px);
       font-weight: 600;
       line-height: 1.5;
+    }
+
+    .section-dark .heading h2 {
+      color: #fff;
     }
 
     .heading p {
@@ -383,477 +460,610 @@
       font-size: 14px;
     }
 
-    .request-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 19px;
+    .section-dark .heading p {
+      color: rgba(255, 255, 255, 0.75);
     }
 
-    .request-card {
+    .source-note {
+      max-width: 900px;
+      margin: 0 auto 32px;
+      padding: 19px 22px;
+      color: #4f5d57;
+      background: var(--orange-50);
+      border: 1px solid #ebd8c8;
+      border-left: 5px solid var(--orange-600);
+      border-radius: 13px;
+      font-size: 12px;
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .voice-card {
+      position: relative;
       padding: 25px;
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 9px 28px rgba(30, 69, 60, .06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
     }
 
-    .request-number {
-      display: block;
-      margin-bottom: 12px;
-      color: var(--orange);
+    .voice-card::before {
+      content: "“";
+      position: absolute;
+      top: 11px;
+      right: 19px;
+      color: var(--green-100);
       font-family: Georgia, serif;
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 58px;
+      line-height: 1;
     }
 
-    .request-card h3 {
-      margin: 0 0 9px;
-      color: var(--green-dark);
-      font-size: 17px;
+    .voice-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green-950);
+      font-size: 15px;
     }
 
-    .request-card p {
+    .voice-card p {
+      position: relative;
+      z-index: 1;
       margin: 0;
       color: var(--muted);
       font-size: 12px;
     }
 
-    .design-note {
-      max-width: 900px;
-      margin: 30px auto 0;
-      padding: 20px 23px;
-      color: #42514b;
-      background: var(--green-light);
-      border-left: 5px solid var(--green);
-      border-radius: 13px;
-      font-size: 13px;
-      font-weight: 700;
+    .problem-box {
+      max-width: 910px;
+      margin: 35px auto 0;
+      padding: 28px;
+      background: var(--green-950);
+      border-radius: var(--radius);
+      text-align: center;
     }
 
-    .viewer-note {
-      max-width: 900px;
-      margin: 0 auto 28px;
-      padding: 17px 20px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      color: var(--muted);
-      font-size: 12px;
+    .problem-box p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.83);
+      font-size: 14px;
     }
 
-    .viewer-note strong {
-      color: var(--green-dark);
+    .problem-box strong {
+      color: #fff;
+      font-size: 18px;
     }
 
-    .compare-grid {
+    .case-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
+      gap: 32px;
     }
 
-    .compare-card {
+    .case-card {
       overflow: hidden;
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-large);
       box-shadow: var(--shadow);
     }
 
-    .compare-card.before {
-      border-top: 6px solid var(--red);
+    .case-header {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 23px;
+      align-items: center;
+      padding: 30px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .compare-card.after {
-      border-top: 6px solid var(--green);
+    .case-number {
+      display: grid;
+      width: 78px;
+      height: 78px;
+      place-items: center;
+      color: #fff;
+      background: var(--green-800);
+      border-radius: 50%;
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 800;
     }
 
-    .compare-head {
-      padding: 23px 24px 18px;
-    }
-
-    .compare-tag {
-      display: inline-block;
-      margin-bottom: 8px;
-      padding: 5px 9px;
-      border-radius: 999px;
+    .case-category {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--orange-700);
       font-size: 10px;
       font-weight: 900;
-      letter-spacing: .08em;
+      letter-spacing: 0.13em;
     }
 
-    .before .compare-tag {
-      color: #933434;
-      background: var(--red-light);
-    }
-
-    .after .compare-tag {
-      color: var(--green-dark);
-      background: var(--green-light);
-    }
-
-    .compare-head h3 {
+    .case-header h3 {
       margin: 0;
-      font-size: 21px;
+      color: var(--green-950);
+      font-size: clamp(22px, 3vw, 31px);
+      line-height: 1.5;
     }
 
-    .compare-head p {
+    .case-header p {
       margin: 8px 0 0;
       color: var(--muted);
       font-size: 12px;
     }
 
-    .canvas-wrap {
-      position: relative;
-      background: #edf1ef;
-      border-block: 1px solid var(--line);
+    .case-body {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
     }
 
-    .canvas-wrap canvas {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 11;
+    .case-column {
+      min-height: 100%;
+      padding: 27px;
+      border-right: 1px solid var(--line);
     }
 
-    .canvas-label {
-      position: absolute;
-      top: 11px;
-      left: 11px;
-      padding: 5px 8px;
-      color: #fff;
-      background: rgba(30, 55, 47, .79);
-      border-radius: 6px;
-      font-size: 9px;
+    .case-column:last-child {
+      border-right: 0;
+    }
+
+    .case-column.before {
+      background: #fffafa;
+    }
+
+    .case-column.review {
+      background: #f6f9f8;
+    }
+
+    .case-column.after {
+      background: #f4faf7;
+    }
+
+    .case-label {
+      display: inline-flex;
+      margin-bottom: 15px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 10px;
       font-weight: 900;
-      pointer-events: none;
     }
 
-    .compare-list {
+    .before .case-label {
+      color: var(--red-700);
+      background: var(--red-100);
+    }
+
+    .review .case-label {
+      color: var(--blue-700);
+      background: var(--blue-100);
+    }
+
+    .after .case-label {
+      color: var(--green-800);
+      background: var(--green-100);
+    }
+
+    .case-column h4 {
+      margin: 0 0 10px;
+      color: var(--green-950);
+      font-size: 16px;
+    }
+
+    .case-column p {
       margin: 0;
-      padding: 21px 24px 25px;
-      list-style: none;
-    }
-
-    .compare-list li {
-      position: relative;
-      margin-bottom: 9px;
-      padding-left: 24px;
+      color: var(--muted);
       font-size: 12px;
     }
 
-    .before .compare-list li::before {
+    .point-list {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .point-list li {
+      position: relative;
+      padding-left: 22px;
+      color: #4f5d57;
+      font-size: 12px;
+    }
+
+    .before .point-list li::before {
       content: "!";
       position: absolute;
       top: 3px;
       left: 0;
       display: grid;
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       place-items: center;
       color: #fff;
-      background: var(--red);
+      background: var(--red-700);
       border-radius: 50%;
       font-size: 9px;
       font-weight: 900;
     }
 
-    .after .compare-list li::before {
-      content: "✓";
+    .review .point-list li::before {
+      content: "?";
       position: absolute;
+      top: 3px;
       left: 0;
-      color: var(--green);
+      display: grid;
+      width: 15px;
+      height: 15px;
+      place-items: center;
+      color: #fff;
+      background: var(--blue-700);
+      border-radius: 50%;
+      font-size: 9px;
       font-weight: 900;
     }
 
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 24px;
-      padding: 14px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
+    .after .point-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green-700);
+      font-weight: 900;
     }
 
-    .legend span {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .legend i {
-      width: 17px;
-      height: 11px;
-      border-radius: 2px;
-    }
-
-    .legend .problem {
-      background: rgba(189, 71, 71, .45);
-      border: 1px solid var(--red);
-    }
-
-    .legend .route {
-      background: var(--blue);
-    }
-
-    .legend .garden {
-      background: #91b78b;
-    }
-
-    .legend .storage {
-      background: #c9b28b;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .process-card {
-      padding: 24px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-    }
-
-    .process-card strong {
-      display: grid;
-      width: 33px;
-      height: 33px;
-      margin-bottom: 15px;
-      place-items: center;
-      color: #fff;
-      background: var(--green);
-      border-radius: 50%;
-      font-family: Georgia, serif;
-      font-size: 13px;
-    }
-
-    .process-card h3 {
-      margin: 0 0 8px;
-      color: var(--green-dark);
-      font-size: 15px;
-    }
-
-    .process-card p {
-      margin: 0;
-      color: var(--muted);
+    .case-footer {
+      padding: 20px 28px;
+      color: #4d5c56;
+      background: #f8faf9;
+      border-top: 1px solid var(--line);
       font-size: 12px;
     }
 
-    .interior-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 28px;
-      align-items: stretch;
+    .case-footer strong {
+      color: var(--green-950);
     }
 
-    .palette-card,
-    .lighting-card {
-      padding: 29px;
+    .flow-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .flow-card {
+      position: relative;
+      padding: 23px 18px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
     }
 
-    .palette-card h3,
-    .lighting-card h3 {
-      margin: 0 0 10px;
-      color: var(--green-dark);
-      font-size: 21px;
+    .flow-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -13px;
+      z-index: 2;
+      color: var(--green-700);
+      font-weight: 900;
+      transform: translateY(-50%);
     }
 
-    .palette-card > p,
-    .lighting-card > p {
+    .flow-card strong {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 13px;
+      place-items: center;
+      color: #fff;
+      background: var(--green-700);
+      border-radius: 50%;
+      font-family: Georgia, serif;
+      font-size: 12px;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 7px;
+      color: var(--green-950);
+      font-size: 14px;
+    }
+
+    .flow-card p {
       margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 29px;
+    }
+
+    .deliverable-box {
+      padding: 25px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .deliverable-box h3 {
+      margin: 0 0 15px;
+      color: var(--green-950);
+      font-size: 18px;
+    }
+
+    .check-list,
+    .exclude-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li,
+    .exclude-list li {
+      position: relative;
+      padding-left: 25px;
       color: var(--muted);
       font-size: 12px;
     }
 
-    .swatches {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr .6fr;
-      min-height: 105px;
-      margin-top: 22px;
-      overflow: hidden;
-      border-radius: 13px;
-      border: 1px solid var(--line);
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green-700);
+      font-weight: 900;
     }
 
-    .swatch {
+    .exclude-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--orange-700);
+      font-weight: 900;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 970px;
+      margin: 0 auto;
+    }
+
+    .service-card {
       display: flex;
-      align-items: flex-end;
-      padding: 10px;
+      flex-direction: column;
+      padding: 30px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-large);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card.featured {
+      border: 3px solid var(--orange-600);
+    }
+
+    .service-badge {
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      color: var(--green-800);
+      background: var(--green-100);
+      border-radius: 999px;
       font-size: 10px;
       font-weight: 900;
     }
 
-    .swatch.base {
-      color: #4b4b47;
-      background: #e7e3da;
+    .featured .service-badge {
+      color: var(--orange-700);
+      background: var(--orange-100);
     }
 
-    .swatch.floor {
-      color: #fff;
-      background: #827d74;
+    .service-card h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 23px;
     }
 
-    .swatch.wood {
-      color: #fff;
-      background: #8d6c4d;
-    }
-
-    .swatch.accent {
-      color: #fff;
-      background: #405d55;
-    }
-
-    .ratio {
-      margin-top: 13px;
-      color: var(--green-dark);
-      font-size: 12px;
+    .price {
+      margin: 10px 0 16px;
+      color: var(--green-950);
+      font-family: Georgia, serif;
+      font-size: 33px;
       font-weight: 800;
     }
 
-    .lighting-list {
-      display: grid;
-      gap: 13px;
-      margin-top: 20px;
-    }
-
-    .lighting-item {
-      display: grid;
-      grid-template-columns: 37px 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .lighting-icon {
-      display: grid;
-      width: 37px;
-      height: 37px;
-      place-items: center;
-      color: var(--orange-dark);
-      background: #fff3e9;
-      border-radius: 10px;
-      font-weight: 900;
-    }
-
-    .lighting-item h4 {
-      margin: 0 0 3px;
-      color: var(--ink);
-      font-size: 13px;
-    }
-
-    .lighting-item p {
-      margin: 0;
-      color: var(--muted);
+    .price small {
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
       font-size: 11px;
-    }
-
-    .result-wrap {
-      overflow-x: auto;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .result-table {
-      width: 100%;
-      min-width: 740px;
-      border-collapse: collapse;
-    }
-
-    .result-table th,
-    .result-table td {
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-      font-size: 12px;
-    }
-
-    .result-table thead th {
-      color: #fff;
-      background: var(--green-dark);
-    }
-
-    .result-table tbody th {
-      width: 22%;
-      color: var(--green-dark);
-      background: #f2f7f5;
-    }
-
-    .result-table tr:last-child th,
-    .result-table tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .before-text {
-      color: #913737;
-    }
-
-    .after-text {
-      color: var(--green-dark);
       font-weight: 700;
     }
 
-    .disclaimer {
-      margin-top: 23px;
-      padding: 17px 20px;
-      color: #56615d;
-      background: #fffaf5;
-      border: 1px solid #ecdcca;
-      border-radius: 12px;
-      font-size: 11px;
+    .service-card > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .cta {
-      padding: 92px 0;
+    .service-list {
+      display: grid;
+      gap: 9px;
+      margin: 20px 0 25px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      position: relative;
+      padding-left: 23px;
+      color: #4d5c56;
+      font-size: 12px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green-700);
+      font-weight: 900;
+    }
+
+    .service-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .service-note {
+      max-width: 880px;
+      margin: 25px auto 0;
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .architect-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(250px, 0.7fr)
+        minmax(0, 1.3fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .architect-panel {
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background:
+        linear-gradient(
+          145deg,
+          #e4ece8,
+          #f8faf9
+        );
+      border: 1px solid var(--line);
+      border-radius: var(--radius-large);
+    }
+
+    .architect-mark {
+      text-align: center;
+    }
+
+    .architect-mark strong {
+      display: block;
+      color: var(--green-950);
+      font-family: Georgia, serif;
+      font-size: 31px;
+      letter-spacing: 0.08em;
+    }
+
+    .architect-mark span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .architect-content .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    .architect-content h2 {
+      margin: 0;
+      color: var(--green-950);
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+      font-size: clamp(30px, 4vw, 45px);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .architect-content p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .credential-list {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .credential-list li {
+      padding: 13px 15px;
+      color: var(--green-950);
+      background: var(--green-50);
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .final-cta {
+      padding: 94px 0;
       color: #fff;
       background:
         radial-gradient(
-          circle at 83% 18%,
-          rgba(255,255,255,.1),
-          transparent 28%
+          circle at 85% 15%,
+          rgba(255, 255, 255, 0.1),
+          transparent 29%
         ),
-        linear-gradient(135deg, var(--green-dark), var(--green));
+        linear-gradient(
+          135deg,
+          var(--green-950),
+          var(--green-800)
+        );
     }
 
-    .cta-inner {
-      max-width: 830px;
+    .final-cta-inner {
+      max-width: 850px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .cta .eyebrow {
-      color: #c9e4db;
+    .final-cta .eyebrow {
+      color: #bad7ce;
     }
 
-    .cta h2 {
+    .final-cta h2 {
       margin: 0;
       font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(31px, 4.6vw, 49px);
+      font-size: clamp(31px, 4.7vw, 51px);
       font-weight: 600;
       line-height: 1.5;
     }
 
-    .cta p {
-      margin: 20px auto 0;
-      color: rgba(255,255,255,.85);
+    .final-cta p {
+      margin: 19px auto 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
     }
 
-    .cta-buttons {
+    .final-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -861,30 +1071,16 @@
       margin-top: 28px;
     }
 
-    .cta-button {
-      display: inline-flex;
-      min-height: 55px;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 25px;
-      color: #fff;
-      background: var(--orange);
-      border-radius: 999px;
-      font-weight: 900;
-      text-decoration: none;
-      box-shadow: 0 14px 32px rgba(15, 35, 29, .22);
-    }
-
-    .cta-button.secondary {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.5);
-      box-shadow: none;
+    .final-note {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
     }
 
     .footer {
-      padding: 35px 0;
-      color: #aac3ba;
-      background: #153b32;
+      padding: 38px 0;
+      color: #afc7be;
+      background: #102f28;
       text-align: center;
     }
 
@@ -892,36 +1088,81 @@
       display: block;
       color: #fff;
       font-family: Georgia, serif;
-      letter-spacing: .09em;
+      letter-spacing: 0.09em;
     }
 
     .footer p {
-      margin: 4px 0 0;
+      margin: 5px 0 0;
+      font-size: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .footer-links a {
       font-size: 10px;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .interior-grid {
+      .architect-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-card {
-        max-width: 660px;
+        max-width: 680px;
       }
 
-      .request-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .voice-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
       }
 
-      .process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .flow-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .flow-card:not(:last-child)::after {
+        display: none;
       }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 790px) {
+      .nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .case-body {
+        grid-template-columns: 1fr;
+      }
+
+      .case-column {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .case-column:last-child {
+        border-bottom: 0;
+      }
+
+      .service-grid,
+      .deliverables {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
       .container {
-        width: min(calc(100% - 24px), var(--max));
+        width: min(
+          calc(100% - 24px),
+          var(--max-width)
+        );
       }
 
       .header-inner {
@@ -932,42 +1173,65 @@
         font-size: 14px;
       }
 
-      .nav a:not(.back-button) {
-        display: none;
+      .brand small {
+        font-size: 9px;
       }
 
       .hero {
-        padding: 58px 0 50px;
+        padding: 58px 0 53px;
       }
 
       .section {
-        padding: 66px 0;
+        padding: 67px 0;
       }
 
-      .request-grid,
-      .compare-grid,
-      .process-grid {
+      .hero-actions,
+      .final-actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .voice-grid,
+      .flow-grid,
+      .credential-list {
         grid-template-columns: 1fr;
       }
 
-      .hero-card,
-      .palette-card,
-      .lighting-card {
-        padding: 22px;
+      .case-header {
+        grid-template-columns: 58px 1fr;
+        gap: 15px;
+        padding: 23px 19px;
       }
 
-      .compare-head {
-        padding-inline: 20px;
+      .case-number {
+        width: 54px;
+        height: 54px;
+        font-size: 15px;
       }
 
-      .swatches {
-        grid-template-columns: 1.6fr 1fr;
+      .case-column {
+        padding: 23px 20px;
+      }
+
+      .service-card {
+        padding: 24px 21px;
+      }
+
+      .architect-panel {
+        min-height: 270px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
       }
     }
   </style>
@@ -980,18 +1244,24 @@
 
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="../">
+      <a
+        class="brand"
+        href="https://emy-renovation.github.io/madori-consulting/"
+      >
         <strong>BETTER HOME DESIGN</strong>
         <small>二級建築士の間取りセカンドオピニオン</small>
       </a>
 
-      <nav class="nav" aria-label="ページ内メニュー">
-        <a href="#requests">相談内容</a>
-        <a href="#plan">2D比較</a>
-        <a href="#perspective">3D比較</a>
-        <a href="#interior">内装・照明</a>
-        <a class="back-button" href="../">
-          個別相談を見る
+      <nav class="nav" aria-label="メインメニュー">
+        <a href="#voices">相談内容</a>
+        <a href="#cases">検討事例</a>
+        <a href="#services">相談の選び方</a>
+
+        <a
+          class="nav-cta"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+        >
+          対応可否を確認
         </a>
       </nav>
     </div>
@@ -1002,639 +1272,845 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">
-            INTEGRATED HOME DESIGN CASE
+            ARCHITECT REVIEW CASES
           </span>
 
           <h1>
-            間取りだけ変えても、<br>
+            一つずつは好き。<br>
+            でも、家全体では<br>
             しっくりこない。
 
-            <em>
-              水まわり・収納・外遊び・内装・照明まで、
-              一つの暮らしとして見直した家づくり例
-            </em>
+            <span class="hero-subtitle">
+              間取り・収納・建具・クロス・照明を、
+              別々ではなく一つの暮らしとして整理します。
+            </span>
           </h1>
 
           <p class="hero-lead">
-            「子どもが遊べる場所がほしい」
-            「家は狭く見せたくない」
-            「グレーの内装にしたい」
-            「収納や照明も決められない」。
-            これらは別々の悩みに見えて、実際には
-            <strong>間取り・視線・動線・色・光のつながり</strong>
-            から生まれています。
+            家づくりでは、間取りが決まった後も、
+            収納、床、建具、壁紙、照明、コンセントなど、
+            たくさんの判断が続きます。
+            <strong>
+              問題は選択肢が少ないことではなく、
+              判断の基準が一つにつながっていないこと
+            </strong>
+            かもしれません。
           </p>
 
-          <ul class="hero-tags">
-            <li>減築型中庭</li>
-            <li>水まわり動線</li>
-            <li>収納計画</li>
-            <li>建具の干渉</li>
-            <li>グレージュ内装</li>
-            <li>照明計画</li>
-          </ul>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+            >
+              自分の図面も相談できるか確認する
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="#cases"
+            >
+              建築士の検討例を見る
+            </a>
+          </div>
+
+          <p class="hero-note">
+            フォーム送信だけでは料金は発生しません。
+            資料確認後に対応可否をご案内します。
+          </p>
         </div>
 
         <aside class="hero-card">
           <span class="hero-card-label">
-            見落としやすい組み合わせ
+            このページで分かること
           </span>
 
           <h2>
-            一つずつは成立していても、<br>
-            同時に使うと不便になる。
+            建築士は、図面のどこを見て、<br>
+            何を整理するのか。
           </h2>
 
-          <ul>
+          <ul class="hero-card-list">
             <li>
-              道路側の庭は、子どもの見守りとプライバシーが両立しにくい
+              <strong>1</strong>
+              <span>
+                「何となくしっくりこない」を、
+                確認できる論点に変える
+              </span>
             </li>
+
             <li>
-              洗面・浴室への動線が、来客中のリビングを横切る
+              <strong>2</strong>
+              <span>
+                変更する場所だけでなく、
+                現在案を活かせる場所も確認する
+              </span>
             </li>
+
             <li>
-              収納の面積はあるのに、使う場所から離れている
+              <strong>3</strong>
+              <span>
+                間取り・収納・内装・照明を、
+                同じ判断軸でつなげる
+              </span>
             </li>
+
             <li>
-              開き戸同士が近く、家族が同時に使いにくい
-            </li>
-            <li>
-              グレーを重ねすぎて、天井が低く暗く見えやすい
-            </li>
-            <li>
-              ダウンライトを均等配置し、必要な場所に光が届かない
+              <strong>4</strong>
+              <span>
+                単発相談で足りるか、
+                継続的な伴走が必要かを整理する
+              </span>
             </li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <aside class="notice">
-      <div class="container notice-inner">
-        <span class="notice-icon">i</span>
+    <section class="trust-bar" aria-label="担当者情報">
+      <div class="container">
+        <ul class="trust-list">
+          <li>二級建築士・漆間絵美が対応</li>
+          <li>住宅設計経験800棟以上</li>
+          <li>新築・リノベーション対応</li>
+          <li>全国オンライン相談</li>
+        </ul>
+      </div>
+    </section>
 
-        <p>
-          このページは、複数の一般的な相談傾向をもとに制作した
-          <strong>架空の検討事例</strong>です。
-          実在する住宅・施主・ハウスメーカーの事例ではありません。
-          図面と3Dは同じ座標データを使用していますが、
-          法令・構造・防火・施工可否は個別に確認する必要があります。
+    <section
+      id="voices"
+      class="section section-white"
+    >
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            REAL CONCERNS
+          </span>
+
+          <h2>
+            実際に寄せられるのは、<br>
+            一つでは終わらない悩みです。
+          </h2>
+
+          <p>
+            間取りだけ、クロスだけの問題に見えても、
+            別の決定とつながっていることがあります。
+          </p>
+        </div>
+
+        <div class="source-note">
+          以下は、実際に寄せられた複数の相談内容をもとに、
+          個人や住宅を特定できない形へ短く再構成したものです。
+          特定のお客様の発言や実邸事例として掲載しているものではありません。
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card">
+            <strong>間取りを決定できない</strong>
+            <p>
+              希望は入っているのに、
+              しっくりくる間取りなのか判断できない。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <strong>リビングと水まわり</strong>
+            <p>
+              家事のしやすさ、来客時の見え方、
+              子どもの居場所を一緒に考えたい。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <strong>収納と建具</strong>
+            <p>
+              収納量だけでなく、
+              扉の位置や出し入れのしやすさも気になる。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <strong>クロスと建具の色</strong>
+            <p>
+              サンプル単体では好きでも、
+              床やキッチンと合うか分からない。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <strong>グレーの使い方</strong>
+            <p>
+              床、壁、天井をグレー系にしたいが、
+              暗く狭く見えないか心配。
+            </p>
+          </article>
+
+          <article class="voice-card">
+            <strong>照明計画</strong>
+            <p>
+              ダウンライトの数や位置が、
+              実際の暮らしに合っているのか判断できない。
+            </p>
+          </article>
+        </div>
+
+        <div class="problem-box">
+          <p>
+            <strong>
+              悩みが多いのではありません。
+            </strong>
+            <br>
+            間取り・収納・内装・照明を、
+            別々の期限で決めなければならないため、
+            家全体の判断軸が見えにくくなっています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="cases"
+      class="section section-soft"
+    >
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            THREE REVIEW CASES
+          </span>
+
+          <h2>
+            建築士の役割は、<br>
+            正解を押しつけることではありません。
+          </h2>
+
+          <p>
+            「変更」「維持」「要確認」「家族で決めること」に分け、
+            次の打ち合わせで判断できる形に整えます。
+          </p>
+        </div>
+
+        <div class="source-note">
+          以下は、相談傾向を説明するための架空の検討モデルです。
+          実在する間取りやお客様のビフォーアフターではありません。
+          実際の提案は、敷地・構造・法規・予算・建築会社の仕様を確認して行います。
+        </div>
+
+        <div class="case-list">
+          <article class="case-card">
+            <header class="case-header">
+              <span class="case-number">01</span>
+
+              <div>
+                <span class="case-category">
+                  間取り・水まわり・子どもの居場所
+                </span>
+
+                <h3>
+                  部屋は足りている。
+                  でも、家族の動きがぶつかっている。
+                </h3>
+
+                <p>
+                  リビング、水まわり、外遊びを
+                  部屋名ではなく一日の動きで確認する事例。
+                </p>
+              </div>
+            </header>
+
+            <div class="case-body">
+              <section class="case-column before">
+                <span class="case-label">
+                  相談時の状態
+                </span>
+
+                <h4>
+                  希望は入っているが、
+                  同時使用が検討されていない
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    洗面・浴室へ行く人がリビングを横切る
+                  </li>
+                  <li>
+                    子どもの居場所がキッチンから見えにくい
+                  </li>
+                  <li>
+                    道路側の外遊び場所に視線と安全の不安がある
+                  </li>
+                  <li>
+                    吹き抜けを使わず開放感を出したい
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column review">
+                <span class="case-label">
+                  建築士が確認すること
+                </span>
+
+                <h4>
+                  面積よりも、視線と動線の関係を確認
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    料理中にどこまで見守りたいか
+                  </li>
+                  <li>
+                    来客と入浴・洗濯の時間が重なるか
+                  </li>
+                  <li>
+                    道路・隣家からの視線をどこで遮るか
+                  </li>
+                  <li>
+                    横方向の視線で広がりをつくれるか
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column after">
+                <span class="case-label">
+                  整理後の判断
+                </span>
+
+                <h4>
+                  「広くする」より、
+                  つながり方を整える
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    水まわりへの経路をLDKの中心から外す
+                  </li>
+                  <li>
+                    キッチンから見守れる居場所を決める
+                  </li>
+                  <li>
+                    外部空間は安全・視線・排水も含めて検討する
+                  </li>
+                  <li>
+                    吹き抜け以外の窓・建具・天井の連続性を確認する
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <footer class="case-footer">
+              <strong>大切な点：</strong>
+              中庭や減築が唯一の答えではありません。
+              敷地条件や工法、予算を確認したうえで、
+              変更可能な方向を建築会社へ質問できる形にします。
+            </footer>
+          </article>
+
+          <article class="case-card">
+            <header class="case-header">
+              <span class="case-number">02</span>
+
+              <div>
+                <span class="case-category">
+                  収納・建具・生活動線
+                </span>
+
+                <h3>
+                  収納は多い。
+                  でも、使う場所と合っていない。
+                </h3>
+
+                <p>
+                  収納率だけでは分からない、
+                  収納物・建具・通路の関係を確認する事例。
+                </p>
+              </div>
+            </header>
+
+            <div class="case-body">
+              <section class="case-column before">
+                <span class="case-label">
+                  相談時の状態
+                </span>
+
+                <h4>
+                  収納面積はあるが、
+                  片づけに移動が必要
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    上着や鞄の収納が玄関から離れている
+                  </li>
+                  <li>
+                    洗濯物を各部屋へ運ぶ距離が長い
+                  </li>
+                  <li>
+                    開き戸と収納扉の動きが重なる
+                  </li>
+                  <li>
+                    家具を置くと扉の前が狭くなる
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column review">
+                <span class="case-label">
+                  建築士が確認すること
+                </span>
+
+                <h4>
+                  「何畳あるか」ではなく、
+                  何をどこで使うか
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    収納する物の種類・量・使用頻度
+                  </li>
+                  <li>
+                    帰宅、洗濯、着替えの一連の動作
+                  </li>
+                  <li>
+                    扉を開けたときに人が立つ位置
+                  </li>
+                  <li>
+                    可動棚・奥行き・コンセントの必要性
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column after">
+                <span class="case-label">
+                  整理後の判断
+                </span>
+
+                <h4>
+                  収納を増やす前に、
+                  置く場所と扉を見直す
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    帰宅用品は玄関から生活空間までの途中へ置く
+                  </li>
+                  <li>
+                    洗濯関連収納を洗面・脱衣室の近くへまとめる
+                  </li>
+                  <li>
+                    狭い場所では引き戸や折れ戸も比較する
+                  </li>
+                  <li>
+                    家具配置後の有効通路寸法を確認する
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <footer class="case-footer">
+              <strong>大切な点：</strong>
+              収納は面積が多ければよいとは限りません。
+              収納物・使う場所・人の動き・建具をセットで確認します。
+            </footer>
+          </article>
+
+          <article class="case-card">
+            <header class="case-header">
+              <span class="case-number">03</span>
+
+              <div>
+                <span class="case-category">
+                  クロス・建具・照明・キッチン
+                </span>
+
+                <h3>
+                  サンプルは全部好き。
+                  でも、組み合わせると落ち着かない。
+                </h3>
+
+                <p>
+                  グレー・グレージュを中心に、
+                  床、壁、天井、建具、照明を統合する事例。
+                </p>
+              </div>
+            </header>
+
+            <div class="case-body">
+              <section class="case-column before">
+                <span class="case-label">
+                  相談時の状態
+                </span>
+
+                <h4>
+                  一つずつ選び、
+                  全体像が見えなくなっている
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    床・壁・天井に異なるグレーを使用
+                  </li>
+                  <li>
+                    建具とキッチンの色温度が合わない
+                  </li>
+                  <li>
+                    大梁だけ濃いクロスにするか迷う
+                  </li>
+                  <li>
+                    ダウンライトが均等に並んでいる
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column review">
+                <span class="case-label">
+                  建築士が確認すること
+                </span>
+
+                <h4>
+                  色名ではなく、
+                  明度・面積・自然光で比較
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    方位と窓から入る自然光の色
+                  </li>
+                  <li>
+                    床・壁・天井の明度差と面積比
+                  </li>
+                  <li>
+                    木目、建具、キッチンの色味
+                  </li>
+                  <li>
+                    食事・くつろぎ・家事に必要な光
+                  </li>
+                </ul>
+              </section>
+
+              <section class="case-column after">
+                <span class="case-label">
+                  整理後の判断
+                </span>
+
+                <h4>
+                  基調色を決め、
+                  濃色を使う場所を限定
+                </h4>
+
+                <ul class="point-list">
+                  <li>
+                    広い面は明るいグレージュを基調にする
+                  </li>
+                  <li>
+                    濃いグレーは建具や小面積へ限定する
+                  </li>
+                  <li>
+                    梁は強調する理由があるか確認する
+                  </li>
+                  <li>
+                    照明を生活場面ごとの回路に分ける
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <footer class="case-footer">
+              <strong>大切な点：</strong>
+              クロス品番だけでは判断できません。
+              実物サンプル、床、建具、キッチン、自然光、
+              照明の色温度を同じ条件で確認します。
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            HOW WE REVIEW
+          </span>
+
+          <h2>
+            あなたの図面では、<br>
+            この順番で整理します。
+          </h2>
+
+          <p>
+            図面を見て思いつきで修正案を出すのではなく、
+            ご家族の生活と決定期限を確認して進めます。
+          </p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <strong>01</strong>
+            <h3>資料を確認</h3>
+            <p>
+              間取り図、仕様書、内装資料、決定期限を確認します。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <strong>02</strong>
+            <h3>悩みを分解</h3>
+            <p>
+              「何となく不安」を、確認できる論点へ変えます。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <strong>03</strong>
+            <h3>優先順位を整理</h3>
+            <p>
+              完成後の直しにくさと暮らしへの影響から並べます。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <strong>04</strong>
+            <h3>質問へ変換</h3>
+            <p>
+              建築会社から回答を得られる具体的な質問にします。
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <strong>05</strong>
+            <h3>次の判断を明確化</h3>
+            <p>
+              変更、維持、要確認、家族で決めることに分けます。
+            </p>
+          </article>
+        </div>
+
+        <div class="deliverables">
+          <article class="deliverable-box">
+            <h3>
+              33,000円個別相談に含まれること
+            </h3>
+
+            <ul class="check-list">
+              <li>間取り図1案の事前確認</li>
+              <li>オンライン面談75分</li>
+              <li>現在案の良い点と確認点の整理</li>
+              <li>変更を優先して検討する場所</li>
+              <li>建築会社へ確認する質問</li>
+              <li>判断整理シート</li>
+            </ul>
+          </article>
+
+          <article class="deliverable-box">
+            <h3>
+              通常の個別相談に含まれないこと
+            </h3>
+
+            <ul class="exclude-list">
+              <li>確認申請用・施工用図面の作成</li>
+              <li>構造計算や法令適合の最終判定</li>
+              <li>新規間取り図の完成設計</li>
+              <li>実施設計レベルの電気図作成</li>
+              <li>完成予想3Dパースの制作</li>
+              <li>建築会社との代理交渉</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="source-note" style="margin-top: 25px;">
+          このページの検討事例や図解は、
+          建築士の確認視点を説明するためのものです。
+          33,000円の個別相談で、新規間取り図や3Dパースを
+          一式納品することを示すものではありません。
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="services"
+      class="section section-dark"
+    >
+      <div class="container">
+        <div class="heading">
+          <span class="eyebrow">
+            CHOOSE YOUR SUPPORT
+          </span>
+
+          <h2>
+            一度の判断整理で足りる人。<br>
+            決定が続く間、伴走が必要な人。
+          </h2>
+
+          <p>
+            高額なサポートを一律に勧めるのではなく、
+            現在の状況と残っている決定から選びます。
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-badge">
+              次の打ち合わせを整理したい
+            </span>
+
+            <h3>
+              間取り個別相談
+            </h3>
+
+            <div class="price">
+              33,000円
+              <small>（税込）</small>
+            </div>
+
+            <p>
+              現在の間取り1案について、
+              次の打ち合わせで判断する内容を整理します。
+            </p>
+
+            <ul class="service-list">
+              <li>図面1案</li>
+              <li>オンライン75分</li>
+              <li>判断整理シート</li>
+              <li>変更・維持・要確認を整理</li>
+            </ul>
+
+            <a
+              class="button button-dark"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+            >
+              対応できる相談か確認する
+            </a>
+          </article>
+
+          <article class="service-card featured">
+            <span class="service-badge">
+              家全体の決定が続いている
+            </span>
+
+            <h3>
+              12週間トータル伴走
+            </h3>
+
+            <div class="price">
+              220,000円
+              <small>（税込）</small>
+            </div>
+
+            <p>
+              間取りから収納、家具、内装、照明、電気図まで、
+              家全体を一つの方針で整えます。
+            </p>
+
+            <ul class="service-list">
+              <li>基本期間12週間</li>
+              <li>オンライン面談5回</li>
+              <li>期間中のテキスト相談</li>
+              <li>間取りから内装・電気図まで確認</li>
+            </ul>
+
+            <a
+              class="button button-primary"
+              href="https://emy-renovation.github.io/total-support/"
+            >
+              トータル伴走の内容を見る
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+
+        <p class="service-note">
+          フォーム送信だけでは契約・決済になりません。
+          現在の進捗、資料、決定期限を確認し、
+          サポートが適している場合のみご案内します。
         </p>
       </div>
-    </aside>
+    </section>
 
-    <section id="requests" class="section white">
-      <div class="container">
-        <div class="heading">
+    <section class="section section-white">
+      <div class="container architect-grid">
+        <div class="architect-panel">
+          <div class="architect-mark">
+            <strong>
+              BETTER<br>
+              HOME DESIGN
+            </strong>
+
+            <span>
+              二級建築士・漆間絵美
+            </span>
+          </div>
+        </div>
+
+        <div class="architect-content">
           <span class="eyebrow">
-            CLIENT REQUESTS
+            ARCHITECT
           </span>
 
           <h2>
-            希望を部屋ごとではなく、<br>
-            暮らしの場面に整理します。
+            建築会社を否定するためではなく、<br>
+            納得して話し合うために。
           </h2>
 
           <p>
-            「間取り」「クロス」「照明」を別々に決めるのではなく、
-            最後に同じ空間へ現れるものとして検討します。
+            間取りのセカンドオピニオンは、
+            建築会社の提案を一方的に採点するものではありません。
+            ご家族の暮らしに照らし、
+            現在案の良さ、確認が必要な場所、
+            優先して検討したい場所を整理するものです。
           </p>
-        </div>
-
-        <div class="request-grid">
-          <article class="request-card">
-            <span class="request-number">01</span>
-            <h3>子どもの外遊び</h3>
-            <p>
-              車通りから守りながら、リビングから見守れる場所がほしい。
-            </p>
-          </article>
-
-          <article class="request-card">
-            <span class="request-number">02</span>
-            <h3>吹き抜けなしの開放感</h3>
-            <p>
-              冷暖房や音の問題を増やさず、家を狭く見せたくない。
-            </p>
-          </article>
-
-          <article class="request-card">
-            <span class="request-number">03</span>
-            <h3>水まわりの位置</h3>
-            <p>
-              洗濯・入浴・来客の動線が重ならないようにしたい。
-            </p>
-          </article>
-
-          <article class="request-card">
-            <span class="request-number">04</span>
-            <h3>収納と建具</h3>
-            <p>
-              収納量だけでなく、出し入れする位置と扉の使いやすさを整えたい。
-            </p>
-          </article>
-
-          <article class="request-card">
-            <span class="request-number">05</span>
-            <h3>グレー系の内装</h3>
-            <p>
-              床・壁・天井・建具・キッチンの色を、暗くならないよう合わせたい。
-            </p>
-          </article>
-
-          <article class="request-card">
-            <span class="request-number">06</span>
-            <h3>照明とクロス</h3>
-            <p>
-              器具の数ではなく、食事・くつろぎ・家事に必要な光を分けたい。
-            </p>
-          </article>
-        </div>
-
-        <div class="design-note">
-          この事例では、床面積を増やすのではなく、
-          道路側の一部を減築して中庭へ変えます。
-          吹き抜けをつくらず、LDKから中庭・ダイニングへ視線が抜けることで、
-          横方向の広がりをつくる計画です。
-        </div>
-      </div>
-    </section>
-
-    <section id="plan" class="section soft">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            2D PLAN COMPARISON
-          </span>
-
-          <h2>
-            平面図に、道路・視線・家事・<br>
-            子どもの居場所を重ねます。
-          </h2>
-        </div>
-
-        <div class="viewer-note">
-          <strong>図面と3Dの整合性：</strong>
-          部屋、壁、キッチン、収納、中庭、家具、道路、問題範囲は、
-          JavaScript内の同じ寸法データから2Dと3Dへ描画しています。
-          3D側だけ空間を広げる処理はしていません。
-        </div>
-
-        <div class="compare-grid">
-          <article class="compare-card before">
-            <div class="compare-head">
-              <span class="compare-tag">BEFORE PLAN</span>
-              <h3>希望を足したままの計画</h3>
-              <p>
-                部屋は確保できていますが、暮らしの場面が重なっています。
-              </p>
-            </div>
-
-            <div class="canvas-wrap">
-              <canvas
-                id="plan-before"
-                width="1000"
-                height="690"
-                aria-label="見直し前の平面図"
-              ></canvas>
-
-              <span class="canvas-label">
-                SAME MODEL DATA / 2D
-              </span>
-            </div>
-
-            <ul class="compare-list">
-              <li>
-                道路側の外遊び場所は、車通りと外部からの視線に近い
-              </li>
-              <li>
-                洗面・浴室への移動が、LDKの来客スペースと交差する
-              </li>
-              <li>
-                収納が奥にあり、帰宅・洗濯・着替えの動線とつながらない
-              </li>
-              <li>
-                水まわりの開き戸が近く、同時使用時に干渉しやすい
-              </li>
-            </ul>
-          </article>
-
-          <article class="compare-card after">
-            <div class="compare-head">
-              <span class="compare-tag">AFTER PLAN</span>
-              <h3>減築型中庭を中心に再整理</h3>
-              <p>
-                床面積を一部減らし、暮らしに必要な余白へ変えています。
-              </p>
-            </div>
-
-            <div class="canvas-wrap">
-              <canvas
-                id="plan-after"
-                width="1000"
-                height="690"
-                aria-label="見直し後の平面図"
-              ></canvas>
-
-              <span class="canvas-label">
-                SAME MODEL DATA / 2D
-              </span>
-            </div>
-
-            <ul class="compare-list">
-              <li>
-                道路との間に目隠し壁を設け、リビングから見守れる中庭へ変更
-              </li>
-              <li>
-                中庭越しに視線を伸ばし、吹き抜けなしで横方向の広がりを確保
-              </li>
-              <li>
-                洗面・脱衣・浴室・ファミリー収納を近くにまとめる
-              </li>
-              <li>
-                水まわりは引き戸を中心にして、建具の干渉を軽減
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="legend">
-          <span><i class="problem"></i>問題が重なる範囲</span>
-          <span><i class="route"></i>主な生活動線</span>
-          <span><i class="garden"></i>子どもの外遊び場所</span>
-          <span><i class="storage"></i>収納・ファミリー収納</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="perspective" class="section white">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            FIXED-CAMERA 3D
-          </span>
-
-          <h2>
-            同じ配置を、同じカメラで<br>
-            立体的に確認します。
-          </h2>
 
           <p>
-            3Dは完成予想図ではなく、空間・視線・色の関係を確認する
-            カットアウェイ型の検討モデルです。
+            感覚的な不安を具体的な質問へ変えることで、
+            建築会社との次の打ち合わせを進めやすくします。
           </p>
-        </div>
 
-        <div class="compare-grid">
-          <article class="compare-card before">
-            <div class="compare-head">
-              <span class="compare-tag">BEFORE 3D</span>
-              <h3>暗色が分散し、外部とのつながりが弱い</h3>
-              <p>
-                道路側の遊び場所とLDKが、視覚的にも分断されています。
-              </p>
-            </div>
-
-            <div class="canvas-wrap">
-              <canvas
-                id="view-before"
-                width="1000"
-                height="690"
-                aria-label="見直し前の固定カメラ3D"
-              ></canvas>
-
-              <span class="canvas-label">
-                FIXED CAMERA / 3D
-              </span>
-            </div>
-
-            <ul class="compare-list">
-              <li>
-                グレーの床・天井・建具が同じ強さで、空間が重く見えやすい
-              </li>
-              <li>
-                外遊び場所が道路側へ開き、室内からの見守りが途切れる
-              </li>
-              <li>
-                LDKから水まわりへ向かう人が、くつろぎの場所を横切る
-              </li>
-            </ul>
-          </article>
-
-          <article class="compare-card after">
-            <div class="compare-head">
-              <span class="compare-tag">AFTER 3D</span>
-              <h3>中庭を室内の広がりとして取り込む</h3>
-              <p>
-                吹き抜けをつくらず、横方向の視線と光を整えています。
-              </p>
-            </div>
-
-            <div class="canvas-wrap">
-              <canvas
-                id="view-after"
-                width="1000"
-                height="690"
-                aria-label="見直し後の固定カメラ3D"
-              ></canvas>
-
-              <span class="canvas-label">
-                SAME CAMERA / 3D
-              </span>
-            </div>
-
-            <ul class="compare-list">
-              <li>
-                中庭の目隠し壁により、道路からの視線を抑えながら外遊びができる
-              </li>
-              <li>
-                明るいグレージュを基調にし、濃色は建具や家具へ限定
-              </li>
-              <li>
-                キッチン・ダイニング・中庭の視線をつなぎ、見守りやすくする
-              </li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="disclaimer">
-          見やすくするため、3Dでは手前側の外壁をカット表示しています。
-          壁位置そのものを移動したものではありません。
-          見直し前後のカメラ位置、カメラ高さ、注視点、焦点距離は同一です。
+          <ul class="credential-list">
+            <li>二級建築士</li>
+            <li>住宅設計経験800棟以上</li>
+            <li>新築・リノベーション</li>
+            <li>全国オンライン対応</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section soft">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            REVIEW PROCESS
-          </span>
-
-          <h2>
-            「何を置くか」より先に、<br>
-            「誰がいつ使うか」を整理します。
-          </h2>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card">
-            <strong>01</strong>
-            <h3>道路と視線を確認</h3>
-            <p>
-              外遊び場所を庭の面積だけで決めず、車通り、見守り、外部視線を確認します。
-            </p>
-          </article>
-
-          <article class="process-card">
-            <strong>02</strong>
-            <h3>家族の同時使用を確認</h3>
-            <p>
-              入浴、洗濯、帰宅、来客が重なったときの動線と建具を確認します。
-            </p>
-          </article>
-
-          <article class="process-card">
-            <strong>03</strong>
-            <h3>収納物と場所を対応</h3>
-            <p>
-              衣類、洗剤、外出用品などを、実際に使う場所の近くへ分けて配置します。
-            </p>
-          </article>
-
-          <article class="process-card">
-            <strong>04</strong>
-            <h3>色と光を最後に統合</h3>
-            <p>
-              床、壁、天井、建具、梁、キッチン、照明を一枚の空間として確認します。
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="interior" class="section white">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            INTERIOR & LIGHTING
-          </span>
-
-          <h2>
-            グレーを増やすのではなく、<br>
-            明度と役割を分けます。
-          </h2>
-        </div>
-
-        <div class="interior-grid">
-          <article class="palette-card">
-            <h3>内装色は「70・20・8・2」で整理</h3>
-
-            <p>
-              グレーやグレージュは色名だけでは判断せず、
-              面積、自然光、床や建具との明度差で確認します。
-            </p>
-
-            <div class="swatches" aria-label="内装配色例">
-              <span class="swatch base">
-                70% 明るいグレージュ
-              </span>
-
-              <span class="swatch floor">
-                20% 中明度の床
-              </span>
-
-              <span class="swatch wood">
-                8% 木・建具
-              </span>
-
-              <span class="swatch accent">
-                2% 深い緑灰
-              </span>
-            </div>
-
-            <p class="ratio">
-              天井まで濃いグレーにせず、壁より少し明るくして連続感を残します。
-            </p>
-          </article>
-
-          <article class="lighting-card">
-            <h3>照明は均等配置より、生活場面で分ける</h3>
-
-            <p>
-              すべてをダウンライトで明るくするのではなく、
-              必要な場所へ異なる光を組み合わせます。
-            </p>
-
-            <div class="lighting-list">
-              <div class="lighting-item">
-                <span class="lighting-icon">食</span>
-                <div>
-                  <h4>ダイニングは低い位置に光を集める</h4>
-                  <p>
-                    ペンダントまたは配光を絞った器具で、食卓面を中心に照らします。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lighting-item">
-                <span class="lighting-icon">寛</span>
-                <div>
-                  <h4>リビングは壁面の明るさを利用</h4>
-                  <p>
-                    テレビ周辺の反射やまぶしさを抑え、間接光やスタンドを組み合わせます。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lighting-item">
-                <span class="lighting-icon">家</span>
-                <div>
-                  <h4>キッチンと洗面は作業面を優先</h4>
-                  <p>
-                    人の背後に照明を置かず、手元へ影が落ちにくい位置を確認します。
-                  </p>
-                </div>
-              </div>
-
-              <div class="lighting-item">
-                <span class="lighting-icon">外</span>
-                <div>
-                  <h4>中庭は室内からの見え方を整える</h4>
-                  <p>
-                    夜は目隠し壁や植栽を照らし、窓の外を暗い鏡にしないようにします。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="container">
-        <div class="heading">
-          <span class="eyebrow">
-            BEFORE / AFTER
-          </span>
-
-          <h2>
-            変えたのは、部屋数ではなく<br>
-            希望同士のつながりです。
-          </h2>
-        </div>
-
-        <div class="result-wrap">
-          <table class="result-table">
-            <thead>
-              <tr>
-                <th>確認項目</th>
-                <th>見直し前</th>
-                <th>見直し後</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <th>子どもの外遊び</th>
-                <td class="before-text">
-                  道路に近く、外部からの視線が入りやすい
-                </td>
-                <td class="after-text">
-                  目隠し壁のある減築型中庭で、室内から見守りやすい
-                </td>
-              </tr>
-
-              <tr>
-                <th>室内の広がり</th>
-                <td class="before-text">
-                  部屋は広いが、外部への視線が止まる
-                </td>
-                <td class="after-text">
-                  吹き抜けを使わず、中庭へ視線を伸ばす
-                </td>
-              </tr>
-
-              <tr>
-                <th>水まわり</th>
-                <td class="before-text">
-                  来客動線と洗濯・入浴動線が交差
-                </td>
-                <td class="after-text">
-                  水まわりとファミリー収納を近接させる
-                </td>
-              </tr>
-
-              <tr>
-                <th>建具</th>
-                <td class="before-text">
-                  開き戸の軌跡と人の立つ場所が重なる
-                </td>
-                <td class="after-text">
-                  引き戸を中心にし、同時使用時の干渉を抑える
-                </td>
-              </tr>
-
-              <tr>
-                <th>内装色</th>
-                <td class="before-text">
-                  床・壁・天井・建具へ濃いグレーが分散
-                </td>
-                <td class="after-text">
-                  明るい基調色を増やし、濃色を限定する
-                </td>
-              </tr>
-
-              <tr>
-                <th>照明</th>
-                <td class="before-text">
-                  ダウンライトを均等に配置
-                </td>
-                <td class="after-text">
-                  食事・くつろぎ・家事・中庭で光を分ける
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="disclaimer">
-          このモデルの寸法や配置は説明用です。
-          実際の計画では、敷地、道路、方位、採光、通風、防犯、
-          建ぺい率、容積率、構造、耐力壁、設備配管、防火規制、
-          ハウスメーカーの仕様などを個別に確認します。
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container cta-inner">
+    <section class="final-cta">
+      <div class="container final-cta-inner">
         <span class="eyebrow">
-          FLOOR PLAN SECOND OPINION
+          NEXT DECISION
         </span>
 
         <h2>
-          間取り・収納・内装を、<br>
-          別々に決めていませんか？
+          「しっくりこない」を、<br>
+          そのまま契約・着工へ進めない。
         </h2>
 
         <p>
-          現在案を否定するのではなく、
-          活かせる場所、変更を検討する場所、
-          建築会社へ確認する内容、ご家族で決める内容に分けて整理します。
+          現在の間取りを全部変える必要はありません。
+          活かせる場所と、今確認しておきたい場所を分けて、
+          次の打ち合わせで判断できる形に整えます。
         </p>
 
-        <div class="cta-buttons">
-          <a class="cta-button" href="../">
-            個別相談の内容を見る
+        <div class="final-actions">
+          <a
+            class="button button-primary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfwHAEz814Wfhx7QtvR4c41MqkekJnHuchxvstEC2dI5xHuzw/viewform"
+          >
+            33,000円個別相談の対応可否を確認
           </a>
 
-          <a class="cta-button secondary" href="#top">
-            この事例を最初から見る
+          <a
+            class="button button-secondary"
+            href="https://emy-renovation.github.io/total-support/"
+          >
+            12週間の伴走サポートを見る
           </a>
         </div>
+
+        <p class="final-note">
+          フォーム送信だけでは料金は発生しません。
+          資料とご相談内容を確認後、対応可否をご案内します。
+        </p>
       </div>
     </section>
   </main>
@@ -1642,2731 +2118,33 @@
   <footer class="footer">
     <div class="container">
       <strong>BETTER HOME DESIGN</strong>
-      <p>二級建築士・漆間絵美</p>
-      <p>© BETTER HOME DESIGN</p>
+
+      <p>
+        二級建築士・漆間絵美
+      </p>
+
+      <div class="footer-links">
+        <a
+          href="https://emy-renovation.github.io/madori-consulting/"
+        >
+          間取り個別相談
+        </a>
+
+        <a
+          href="https://emy-renovation.github.io/total-support/"
+        >
+          トータル伴走サポート
+        </a>
+
+        <a href="#main">
+          ページ上部へ戻る
+        </a>
+      </div>
+
+      <p>
+        © BETTER HOME DESIGN
+      </p>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      'use strict';
-
-      /*
-       * =====================================================
-       * 共通設定
-       * =====================================================
-       *
-       * 2D平面図と3Dモデルは、下記の同じデータを使用します。
-       * 単位はメートルです。
-       */
-
-      var SITE = {
-        width: 10,
-        depth: 8.6
-      };
-
-      var COLORS = {
-        road: '#aeb4b2',
-        site: '#dce5d8',
-        floorBefore: '#aaa8a3',
-        floorAfter: '#d8d2c8',
-        wetFloor: '#c9d2d0',
-        entryFloor: '#c8c5bd',
-        courtyard: '#9abd92',
-        storage: '#c9b28b',
-        wall: '#e5e6e2',
-        wallSide: '#c5cbc7',
-        darkWall: '#777a79',
-        accent: '#405d55',
-        kitchenBefore: '#6f7474',
-        kitchenAfter: '#8e8a82',
-        furniture: '#946f50',
-        furnitureTop: '#bd916b',
-        problem: 'rgba(189,71,71,.34)',
-        problemSolid: '#bd4747',
-        route: '#4b7f9b',
-        safe: 'rgba(49,95,84,.25)',
-        ink: '#28352f',
-        white: '#fff'
-      };
-
-      /*
-       * 3D比較の固定カメラ。
-       * BEFOREとAFTERで完全に共通です。
-       */
-      var CAMERA = {
-        position: {
-          x: 13.2,
-          y: -11.4,
-          z: 8.6
-        },
-
-        target: {
-          x: 5,
-          y: 4.4,
-          z: .75
-        },
-
-        focalLength: 780
-      };
-
-      function rectRoom(
-        id,
-        label,
-        x,
-        y,
-        width,
-        depth,
-        color
-      ) {
-        return {
-          id: id,
-          label: label,
-          polygon: [
-            { x: x, y: y },
-            { x: x + width, y: y },
-            { x: x + width, y: y + depth },
-            { x: x, y: y + depth }
-          ],
-          color: color
-        };
-      }
-
-      function objectBox(
-        id,
-        label,
-        x,
-        y,
-        width,
-        depth,
-        height,
-        color,
-        topColor
-      ) {
-        return {
-          id: id,
-          label: label,
-          x: x,
-          y: y,
-          z: 0,
-          width: width,
-          depth: depth,
-          height: height,
-          color: color,
-          topColor: topColor || color
-        };
-      }
-
-      function wall(
-        x1,
-        y1,
-        x2,
-        y2,
-        height,
-        thickness,
-        color,
-        render3d
-      ) {
-        return {
-          x1: x1,
-          y1: y1,
-          x2: x2,
-          y2: y2,
-          height: height || 2.45,
-          thickness: thickness || .12,
-          color: color || COLORS.wall,
-          render3d: render3d !== false
-        };
-      }
-
-      /*
-       * =====================================================
-       * 見直し前モデル
-       * =====================================================
-       */
-
-      var BEFORE = {
-        name: '見直し前',
-
-        rooms: [
-          rectRoom(
-            'ldk',
-            'LDK',
-            .45,
-            1.45,
-            6.35,
-            4.75,
-            COLORS.floorBefore
-          ),
-
-          rectRoom(
-            'hall',
-            '玄関・廊下',
-            6.8,
-            1.45,
-            2.75,
-            2.1,
-            COLORS.entryFloor
-          ),
-
-          rectRoom(
-            'wash',
-            '洗面脱衣',
-            6.8,
-            3.55,
-            2.75,
-            1.45,
-            COLORS.wetFloor
-          ),
-
-          rectRoom(
-            'laundry',
-            'ランドリー',
-            6.8,
-            5,
-            1.35,
-            1.45,
-            COLORS.wetFloor
-          ),
-
-          rectRoom(
-            'bath',
-            '浴室',
-            8.15,
-            5,
-            1.4,
-            1.45,
-            '#bdc9c8'
-          ),
-
-          rectRoom(
-            'storage',
-            '収納',
-            7.8,
-            6.45,
-            1.75,
-            1.45,
-            COLORS.storage
-          ),
-
-          rectRoom(
-            'room',
-            '個室',
-            .45,
-            6.2,
-            7.35,
-            1.7,
-            '#d7d5ce'
-          ),
-
-          rectRoom(
-            'outside-play',
-            '外遊び希望',
-            5.6,
-            .15,
-            2.8,
-            1.05,
-            '#acd0a5'
-          )
-        ],
-
-        walls: [
-          wall(.4, 1.4, .4, 7.95, 2.5, .13),
-          wall(.4, 7.95, 9.6, 7.95, 2.5, .13),
-          wall(9.6, 1.4, 9.6, 7.95, 2.5, .13),
-          wall(.4, 1.4, 9.6, 1.4, 2.5, .13, COLORS.wall, false),
-
-          wall(.4, 6.2, 7.8, 6.2, 2.45, .11),
-          wall(6.8, 1.4, 6.8, 6.2, 2.45, .11),
-          wall(6.8, 3.55, 9.6, 3.55, 2.45, .11),
-          wall(6.8, 5, 9.6, 5, 2.45, .11),
-          wall(8.15, 5, 8.15, 6.45, 2.45, .11),
-          wall(7.8, 6.2, 7.8, 7.95, 2.45, .11),
-
-          wall(.6, 5.95, 5.9, 5.95, 2.2, .06, COLORS.darkWall)
-        ],
-
-        objects: [
-          objectBox(
-            'kitchen',
-            'キッチン',
-            .75,
-            5.2,
-            3.3,
-            .68,
-            .9,
-            COLORS.kitchenBefore,
-            '#8b8f8f'
-          ),
-
-          objectBox(
-            'island',
-            '配膳カウンター',
-            1.25,
-            4.05,
-            2.4,
-            .62,
-            .9,
-            COLORS.kitchenBefore,
-            '#8b8f8f'
-          ),
-
-          objectBox(
-            'table',
-            'ダイニング',
-            4.4,
-            4.1,
-            1.75,
-            .9,
-            .74,
-            COLORS.furniture,
-            COLORS.furnitureTop
-          ),
-
-          objectBox(
-            'sofa',
-            'ソファ',
-            1,
-            2,
-            2.55,
-            .88,
-            .72,
-            '#777c7b',
-            '#929796'
-          ),
-
-          objectBox(
-            'tv',
-            'TV',
-            4.8,
-            1.65,
-            1.65,
-            .35,
-            .52,
-            '#55595a',
-            '#696d6e'
-          ),
-
-          objectBox(
-            'storage-box',
-            '収納',
-            8,
-            6.6,
-            1.35,
-            1.1,
-            2,
-            '#a78d68',
-            '#c0a77f'
-          )
-        ],
-
-        zones: [
-          {
-            x: 5.55,
-            y: .1,
-            width: 2.9,
-            depth: 1.3,
-            color: COLORS.problem,
-            stroke: COLORS.problemSolid,
-            label: '道路に近い外遊び'
-          },
-
-          {
-            x: 5.65,
-            y: 2.25,
-            width: 1.35,
-            depth: 3.25,
-            color: COLORS.problem,
-            stroke: COLORS.problemSolid,
-            label: '動線の交差'
-          },
-
-          {
-            x: 6.75,
-            y: 3.45,
-            width: 2.85,
-            depth: 1.7,
-            color: COLORS.problem,
-            stroke: COLORS.problemSolid,
-            label: '建具の集中'
-          }
-        ],
-
-        routes: [
-          [
-            { x: 8.7, y: 1.65 },
-            { x: 7.25, y: 2.25 },
-            { x: 6.3, y: 3.2 },
-            { x: 7.3, y: 4.2 },
-            { x: 8.6, y: 5.65 }
-          ],
-
-          [
-            { x: 2, y: 2.35 },
-            { x: 4.7, y: 2.65 },
-            { x: 6.15, y: 3.1 },
-            { x: 7.5
-, y: 4.25 },
-            { x: 8.65, y: 5.7 }
-          ]
-        ],
-
-        doors: [
-          {
-            type: 'swing',
-            x: 6.8,
-            y: 3.72,
-            length: .78,
-            angle: Math.PI,
-            closedAngle: Math.PI / 2,
-            color: COLORS.problemSolid
-          },
-
-          {
-            type: 'swing',
-            x: 8.15,
-            y: 5.15,
-            length: .78,
-            angle: Math.PI,
-            closedAngle: Math.PI / 2,
-            color: COLORS.problemSolid
-          },
-
-          {
-            type: 'swing',
-            x: 7.8,
-            y: 6.35,
-            length: .78,
-            angle: -Math.PI / 2,
-            closedAngle: 0,
-            color: COLORS.problemSolid
-          }
-        ],
-
-        palette: {
-          wall: '#8b8d8c',
-          ceiling: '#777a79',
-          floor: '#969590',
-          accent: '#5e6261'
-        }
-      };
-
-      /*
-       * =====================================================
-       * 見直し後モデル
-       * =====================================================
-       */
-
-      var AFTER = {
-        name: '見直し後',
-
-        rooms: [
-          {
-            id: 'ldk',
-            label: 'LDK',
-            polygon: [
-              { x: .45, y: 1.45 },
-              { x: 4.55, y: 1.45 },
-              { x: 4.55, y: 3.6 },
-              { x: 7.2, y: 3.6 },
-              { x: 7.2, y: 6.2 },
-              { x: .45, y: 6.2 }
-            ],
-            color: COLORS.floorAfter
-          },
-
-          rectRoom(
-            'courtyard',
-            '減築型中庭',
-            4.55,
-            1.45,
-            2.65,
-            2.15,
-            COLORS.courtyard
-          ),
-
-          rectRoom(
-            'entry',
-            '玄関',
-            7.2,
-            1.45,
-            2.35,
-            1.35,
-            COLORS.entryFloor
-          ),
-
-          rectRoom(
-            'hall',
-            '家族動線',
-            7.2,
-            2.8,
-            2.35,
-            .8,
-            '#d5d5cd'
-          ),
-
-          rectRoom(
-            'wash',
-            '洗面',
-            7.2,
-            3.6,
-            1.15,
-            1.3,
-            COLORS.wetFloor
-          ),
-
-          rectRoom(
-            'dressing',
-            '脱衣・洗濯',
-            8.35,
-            3.6,
-            1.2,
-            1.3,
-            COLORS.wetFloor
-          ),
-
-          rectRoom(
-            'family-closet',
-            'ファミリー収納',
-            7.2,
-            4.9,
-            1.15,
-            1.3,
-            COLORS.storage
-          ),
-
-          rectRoom(
-            'bath',
-            '浴室',
-            8.35,
-            4.9,
-            1.2,
-            1.3,
-            '#bdc9c8'
-          ),
-
-          rectRoom(
-            'private-room',
-            '個室',
-            .45,
-            6.2,
-            9.1,
-            1.7,
-            '#ddd9d0'
-          )
-        ],
-
-        walls: [
-          wall(.4, 1.4, .4, 7.95, 2.5, .13),
-          wall(.4, 7.95, 9.6, 7.95, 2.5, .13),
-          wall(9.6, 1.4, 9.6, 7.95, 2.5, .13),
-
-          /*
-           * 手前側は3Dで室内を見せるため、
-           * 平面図には描くものの3Dではカットします。
-           */
-          wall(
-            .4,
-            1.4,
-            4.55,
-            1.4,
-            2.5,
-            .13,
-            COLORS.wall,
-            false
-          ),
-
-          wall(
-            7.2,
-            1.4,
-            9.6,
-            1.4,
-            2.5,
-            .13,
-            COLORS.wall,
-            false
-          ),
-
-          /*
-           * 中庭の道路側に設ける目隠し壁。
-           */
-          wall(
-            4.55,
-            1.4,
-            7.2,
-            1.4,
-            1.75,
-            .15,
-            '#8b9890',
-            true
-          ),
-
-          wall(
-            7.2,
-            1.4,
-            7.2,
-            3.6,
-            2.45,
-            .11
-          ),
-
-          wall(
-            4.55,
-            1.4,
-            4.55,
-            3.6,
-            2.45,
-            .08,
-            '#b9c8c1'
-          ),
-
-          /*
-           * 中庭とLDKの間は大きな窓を想定。
-           * 低い見切り線のみ表示します。
-           */
-          wall(
-            4.55,
-            3.6,
-            7.2,
-            3.6,
-            .18,
-            .08,
-            '#789087'
-          ),
-
-          wall(
-            .4,
-            6.2,
-            9.6,
-            6.2,
-            2.45,
-            .11
-          ),
-
-          wall(
-            7.2,
-            3.6,
-            9.6,
-            3.6,
-            2.45,
-            .11
-          ),
-
-          wall(
-            7.2,
-            4.9,
-            9.6,
-            4.9,
-            2.45,
-            .11
-          ),
-
-          wall(
-            8.35,
-            3.6,
-            8.35,
-            6.2,
-            2.45,
-            .11
-          )
-        ],
-
-        objects: [
-          objectBox(
-            'kitchen',
-            'キッチン',
-            .75,
-            5.2,
-            3.3,
-            .68,
-            .9,
-            COLORS.kitchenAfter,
-            '#aaa69e'
-          ),
-
-          objectBox(
-            'island',
-            '配膳カウンター',
-            1.2,
-            4.1,
-            2.5,
-            .62,
-            .9,
-            COLORS.kitchenAfter,
-            '#aaa69e'
-          ),
-
-          objectBox(
-            'table',
-            'ダイニング',
-            4.65,
-            4.25,
-            1.8,
-            .9,
-            .74,
-            COLORS.furniture,
-            COLORS.furnitureTop
-          ),
-
-          objectBox(
-            'sofa',
-            'ソファ',
-            .95,
-            2.05,
-            2.55,
-            .88,
-            .72,
-            '#9b968e',
-            '#bbb4aa'
-          ),
-
-          objectBox(
-            'tv',
-            'TV',
-            3.75,
-            1.7,
-            .35,
-            1.35,
-            .52,
-            COLORS.accent,
-            '#58736b'
-          ),
-
-          objectBox(
-            'family-storage',
-            '家族収納',
-            7.32,
-            5.02,
-            .9,
-            1.05,
-            2,
-            '#a58c68',
-            '#bea77e'
-          ),
-
-          /*
-           * 中庭のベンチ。
-           */
-          objectBox(
-            'garden-bench',
-            'ベンチ',
-            4.85,
-            1.78,
-            1.3,
-            .42,
-            .4,
-            '#987453',
-            '#bc936d'
-          ),
-
-          /*
-           * 中庭の植栽を簡易立方体として表現。
-           */
-          objectBox(
-            'plant',
-            '植栽',
-            6.35,
-            2.55,
-            .45,
-            .45,
-            1.05,
-            '#60845f',
-            '#7da179'
-          )
-        ],
-
-        zones: [
-          {
-            x: 4.55,
-            y: 1.45,
-            width: 2.65,
-            depth: 2.15,
-            color: 'rgba(83,132,79,.25)',
-            stroke: '#53844f',
-            label: '見守れる中庭'
-          },
-
-          {
-            x: 7.1,
-            y: 2.7,
-            width: 2.45,
-            depth: 3.5,
-            color: COLORS.safe,
-            stroke: '#315f54',
-            label: '水まわり動線'
-          }
-        ],
-
-        routes: [
-          [
-            { x: 8.7, y: 1.65 },
-            { x: 8.2, y: 2.35 },
-            { x: 7.8, y: 3.15 },
-            { x: 7.75, y: 4.2 },
-            { x: 7.75, y: 5.55 }
-          ],
-
-          [
-            { x: 1.8, y: 2.45 },
-            { x: 3.8, y: 2.8 },
-            { x: 4.8, y: 3.2 },
-            { x: 5.65, y: 2.75 }
-          ]
-        ],
-
-        doors: [
-          {
-            type: 'slide',
-            x: 7.2,
-            y: 3.82,
-            length: .85,
-            axis: 'y',
-            color: '#526c63'
-          },
-
-          {
-            type: 'slide',
-            x: 8.35,
-            y: 3.82,
-            length: .85,
-            axis: 'y',
-            color: '#526c63'
-          },
-
-          {
-            type: 'slide',
-            x: 7.2,
-            y: 5.1,
-            length: .85,
-            axis: 'y',
-            color: '#526c63'
-          }
-        ],
-
-        palette: {
-          wall: '#e7e3da',
-          ceiling: '#f0ede7',
-          floor: '#827d74',
-          accent: '#405d55'
-        }
-      };
-
-      /*
-       * =====================================================
-       * 2D平面図
-       * =====================================================
-       */
-
-      function drawPlan(canvas, model) {
-        if (!canvas) {
-          return;
-        }
-
-        var context = canvas.getContext('2d');
-        var width = canvas.width;
-        var height = canvas.height;
-
-        context.clearRect(0, 0, width, height);
-        context.fillStyle = '#f4f6f5';
-        context.fillRect(0, 0, width, height);
-
-        var padding = {
-          top: 52,
-          right: 52,
-          bottom: 55,
-          left: 58
-        };
-
-        var usableWidth =
-          width - padding.left - padding.right;
-
-        var usableHeight =
-          height - padding.top - padding.bottom;
-
-        var scale = Math.min(
-          usableWidth / SITE.width,
-          usableHeight / SITE.depth
-        );
-
-        var drawingWidth = SITE.width * scale;
-        var drawingHeight = SITE.depth * scale;
-
-        var offsetX =
-          padding.left +
-          (usableWidth - drawingWidth) / 2;
-
-        var offsetY =
-          padding.top +
-          (usableHeight - drawingHeight) / 2;
-
-        function point(x, y) {
-          return {
-            x: offsetX + x * scale,
-            y:
-              offsetY +
-              (SITE.depth - y) * scale
-          };
-        }
-
-        /*
-         * 道路
-         */
-        var roadTopLeft = point(0, .85);
-
-        context.fillStyle = COLORS.road;
-
-        context.fillRect(
-          roadTopLeft.x,
-          roadTopLeft.y,
-          SITE.width * scale,
-          .85 * scale
-        );
-
-        context.fillStyle = '#fff';
-        context.font = '800 12px sans-serif';
-        context.textAlign = 'center';
-
-        context.fillText(
-          '前面道路・車の通行',
-          offsetX + drawingWidth / 2,
-          point(0, .42).y + 4
-        );
-
-        /*
-         * 敷地
-         */
-        var siteTopLeft = point(0, SITE.depth);
-
-        context.fillStyle = '#eef2ec';
-
-        context.fillRect(
-          siteTopLeft.x,
-          siteTopLeft.y,
-          drawingWidth,
-          (SITE.depth - .85) * scale
-        );
-
-        context.strokeStyle = '#87958e';
-        context.lineWidth = 2;
-        context.setLineDash([8, 5]);
-
-        context.strokeRect(
-          siteTopLeft.x,
-          siteTopLeft.y,
-          drawingWidth,
-          (SITE.depth - .85) * scale
-        );
-
-        context.setLineDash([]);
-
-        /*
-         * 1mグリッド
-         */
-        context.save();
-        context.strokeStyle = 'rgba(91,108,100,.13)';
-        context.lineWidth = 1;
-        context.setLineDash([3, 5]);
-
-        var gridX;
-
-        for (
-          gridX = 1;
-          gridX < SITE.width;
-          gridX += 1
-        ) {
-          var gx1 = point(gridX, .85);
-          var gx2 = point(gridX, SITE.depth);
-
-          context.beginPath();
-          context.moveTo(gx1.x, gx1.y);
-          context.lineTo(gx2.x, gx2.y);
-          context.stroke();
-        }
-
-        var gridY;
-
-        for (
-          gridY = 1;
-          gridY < SITE.depth;
-          gridY += 1
-        ) {
-          var gy1 = point(0, gridY);
-          var gy2 = point(SITE.width, gridY);
-
-          context.beginPath();
-          context.moveTo(gy1.x, gy1.y);
-          context.lineTo(gy2.x, gy2.y);
-          context.stroke();
-        }
-
-        context.restore();
-
-        /*
-         * 部屋
-         */
-        model.rooms.forEach(function (room) {
-          drawPlanPolygon(
-            context,
-            room.polygon,
-            point,
-            room.color,
-            '#7f8b85',
-            1.4
-          );
-
-          var center = polygonCenter(room.polygon);
-          var labelPoint = point(center.x, center.y);
-
-          context.save();
-          context.fillStyle = COLORS.ink;
-          context.font = '800 11px sans-serif';
-          context.textAlign = 'center';
-          context.textBaseline = 'middle';
-
-          context.fillText(
-            room.label,
-            labelPoint.x,
-            labelPoint.y
-          );
-
-          context.restore();
-        });
-
-        /*
-         * 問題・改善範囲
-         */
-        model.zones.forEach(function (zone) {
-          var zoneTopLeft = point(
-            zone.x,
-            zone.y + zone.depth
-          );
-
-          context.save();
-          context.fillStyle = zone.color;
-          context.strokeStyle = zone.stroke;
-          context.lineWidth = 2;
-          context.setLineDash([7, 5]);
-
-          context.fillRect(
-            zoneTopLeft.x,
-            zoneTopLeft.y,
-            zone.width * scale,
-            zone.depth * scale
-          );
-
-          context.strokeRect(
-            zoneTopLeft.x,
-            zoneTopLeft.y,
-            zone.width * scale,
-            zone.depth * scale
-          );
-
-          context.restore();
-        });
-
-        /*
-         * 生活動線
-         */
-        model.routes.forEach(function (route) {
-          drawPlanRoute(
-            context,
-            route,
-            point
-          );
-        });
-
-        /*
-         * 壁
-         */
-        model.walls.forEach(function (wallItem) {
-          var start = point(
-            wallItem.x1,
-            wallItem.y1
-          );
-
-          var end = point(
-            wallItem.x2,
-            wallItem.y2
-          );
-
-          context.save();
-          context.strokeStyle =
-            wallItem.color === COLORS.darkWall
-              ? '#676b69'
-              : '#4f625a';
-
-          context.lineWidth = Math.max(
-            3,
-            wallItem.thickness * scale
-          );
-
-          context.lineCap = 'square';
-          context.beginPath();
-          context.moveTo(start.x, start.y);
-          context.lineTo(end.x, end.y);
-          context.stroke();
-          context.restore();
-        });
-
-        /*
-         * 設備・家具
-         */
-        model.objects.forEach(function (item) {
-          drawPlanObject(
-            context,
-            item,
-            point,
-            scale
-          );
-        });
-
-        /*
-         * 建具
-         */
-        model.doors.forEach(function (door) {
-          drawPlanDoor(
-            context,
-            door,
-            point,
-            scale
-          );
-        });
-
-        /*
-         * 道路の車
-         */
-        drawCarSymbol(
-          context,
-          point(1.25, .43),
-          scale
-        );
-
-        drawCarSymbol(
-          context,
-          point(8.6, .43),
-          scale
-        );
-
-        /*
-         * 方位
-         */
-        drawNorthSymbol(
-          context,
-          width - 40,
-          43
-        );
-
-        /*
-         * 縮尺説明
-         */
-        context.save();
-        context.fillStyle = '#53615b';
-        context.font = '700 10px sans-serif';
-        context.textAlign = 'left';
-
-        context.fillText(
-          'グリッド：1m',
-          offsetX,
-          height - 17
-        );
-
-        context.restore();
-      }
-
-      function drawPlanPolygon(
-        context,
-        polygon,
-        point,
-        fill,
-        stroke,
-        lineWidth
-      ) {
-        context.save();
-        context.fillStyle = fill;
-        context.strokeStyle = stroke;
-        context.lineWidth = lineWidth;
-
-        context.beginPath();
-
-        polygon.forEach(function (vertex, index) {
-          var projected = point(
-            vertex.x,
-            vertex.y
-          );
-
-          if (index === 0) {
-            context.moveTo(
-              projected.x,
-              projected.y
-            );
-          } else {
-            context.lineTo(
-              projected.x,
-              projected.y
-            );
-          }
-        });
-
-        context.closePath();
-        context.fill();
-        context.stroke();
-        context.restore();
-      }
-
-      function polygonCenter(polygon) {
-        var total = polygon.reduce(
-          function (result, vertex) {
-            result.x += vertex.x;
-            result.y += vertex.y;
-            return result;
-          },
-          {
-            x: 0,
-            y: 0
-          }
-        );
-
-        return {
-          x: total.x / polygon.length,
-          y: total.y / polygon.length
-        };
-      }
-
-      function drawPlanRoute(
-        context,
-        route,
-        point
-      ) {
-        context.save();
-        context.strokeStyle = COLORS.route;
-        context.lineWidth = 8;
-        context.lineCap = 'round';
-        context.lineJoin = 'round';
-        context.globalAlpha = .72;
-
-        context.beginPath();
-
-        route.forEach(function (routePoint, index) {
-          var projected = point(
-            routePoint.x,
-            routePoint.y
-          );
-
-          if (index === 0) {
-            context.moveTo(
-              projected.x,
-              projected.y
-            );
-          } else {
-            context.lineTo(
-              projected.x,
-              projected.y
-            );
-          }
-        });
-
-        context.stroke();
-
-        var previous =
-          point(
-            route[route.length - 2].x,
-            route[route.length - 2].y
-          );
-
-        var end =
-          point(
-            route[route.length - 1].x,
-            route[route.length - 1].y
-          );
-
-        drawArrowHead(
-          context,
-          previous,
-          end,
-          COLORS.route
-        );
-
-        context.restore();
-      }
-
-      function drawArrowHead(
-        context,
-        start,
-        end,
-        color
-      ) {
-        var angle = Math.atan2(
-          end.y - start.y,
-          end.x - start.x
-        );
-
-        var size = 13;
-
-        context.save();
-        context.fillStyle = color;
-        context.beginPath();
-        context.moveTo(end.x, end.y);
-
-        context.lineTo(
-          end.x -
-          size *
-          Math.cos(angle - Math.PI / 6),
-          end.y -
-          size *
-          Math.sin(angle - Math.PI / 6)
-        );
-
-        context.lineTo(
-          end.x -
-          size *
-          Math.cos(angle + Math.PI / 6),
-          end.y -
-          size *
-          Math.sin(angle + Math.PI / 6)
-        );
-
-        context.closePath();
-        context.fill();
-        context.restore();
-      }
-
-      function drawPlanObject(
-        context,
-        item,
-        point,
-        scale
-      ) {
-        var topLeft = point(
-          item.x,
-          item.y + item.depth
-        );
-
-        context.save();
-        context.fillStyle = item.color;
-        context.strokeStyle = '#5e6d66';
-        context.lineWidth = 1.4;
-
-        context.fillRect(
-          topLeft.x,
-          topLeft.y,
-          item.width * scale,
-          item.depth * scale
-        );
-
-        context.strokeRect(
-          topLeft.x,
-          topLeft.y,
-          item.width * scale,
-          item.depth * scale
-        );
-
-        if (
-          item.width * scale > 55 &&
-          item.depth * scale > 25
-        ) {
-          context.fillStyle = COLORS.ink;
-          context.font = '800 9px sans-serif';
-          context.textAlign = 'center';
-          context.textBaseline = 'middle';
-
-          context.fillText(
-            item.label,
-            topLeft.x +
-            item.width * scale / 2,
-            topLeft.y +
-            item.depth * scale / 2
-          );
-        }
-
-        context.restore();
-      }
-
-      function drawPlanDoor(
-        context,
-        door,
-        point,
-        scale
-      ) {
-        context.save();
-        context.strokeStyle = door.color;
-        context.lineWidth = 2;
-
-        var hinge = point(
-          door.x,
-          door.y
-        );
-
-        if (door.type === 'swing') {
-          var endWorld = {
-            x:
-              door.x +
-              Math.cos(door.angle) *
-              door.length,
-
-            y:
-              door.y +
-              Math.sin(door.angle) *
-              door.length
-          };
-
-          var end = point(
-            endWorld.x,
-            endWorld.y
-          );
-
-          context.beginPath();
-          context.moveTo(hinge.x, hinge.y);
-          context.lineTo(end.x, end.y);
-          context.stroke();
-
-          context.setLineDash([4, 4]);
-
-          var steps = 18;
-          context.beginPath();
-
-          for (
-            var step = 0;
-            step <= steps;
-            step += 1
-          ) {
-            var ratio = step / steps;
-
-            var angle =
-              door.closedAngle +
-              (
-                door.angle -
-                door.closedAngle
-              ) *
-              ratio;
-
-            var arcPoint = point(
-              door.x +
-              Math.cos(angle) *
-              door.length,
-              door.y +
-              Math.sin(angle) *
-              door.length
-            );
-
-            if (step === 0) {
-              context.moveTo(
-                arcPoint.x,
-                arcPoint.y
-              );
-            } else {
-              context.lineTo(
-                arcPoint.x,
-                arcPoint.y
-              );
-            }
-          }
-
-          context.stroke();
-        } else {
-          context.lineWidth = 5;
-
-          context.beginPath();
-          context.moveTo(
-            hinge.x,
-            hinge.y
-          );
-
-          if (door.axis === 'y') {
-            var slideEndY = point(
-              door.x,
-              door.y + door.length
-            );
-
-            context.lineTo(
-              slideEndY.x,
-              slideEndY.y
-            );
-          } else {
-            var slideEndX = point(
-              door.x + door.length,
-              door.y
-            );
-
-            context.lineTo(
-              slideEndX.x,
-              slideEndX.y
-            );
-          }
-
-          context.stroke();
-        }
-
-        context.restore();
-      }
-
-      function drawCarSymbol(
-        context,
-        center,
-        scale
-      ) {
-        var carWidth = .82 * scale;
-        var carHeight = .34 * scale;
-
-        context.save();
-        context.fillStyle = '#737b78';
-        context.strokeStyle = '#4f5754';
-        context.lineWidth = 1;
-
-        context.fillRect(
-          center.x - carWidth / 2,
-          center.y - carHeight / 2,
-          carWidth,
-          carHeight
-        );
-
-        context.strokeRect(
-          center.x - carWidth / 2,
-          center.y - carHeight / 2,
-          carWidth,
-          carHeight
-        );
-
-        context.fillStyle = '#cbd3d0';
-
-        context.fillRect(
-          center.x - carWidth * .18,
-          center.y - carHeight * .37,
-          carWidth * .36,
-          carHeight * .74
-        );
-
-        context.restore();
-      }
-
-      function drawNorthSymbol(
-        context,
-        x,
-        y
-      ) {
-        context.save();
-        context.fillStyle = COLORS.ink;
-        context.textAlign = 'center';
-        context.font = '900 11px sans-serif';
-
-        context.fillText(
-          'N',
-          x,
-          y - 15
-        );
-
-        context.beginPath();
-        context.moveTo(x, y - 9);
-        context.lineTo(x - 7, y + 10);
-        context.lineTo(x, y + 5);
-        context.lineTo(x + 7, y + 10);
-        context.closePath();
-        context.fill();
-        context.restore();
-      }
-
-      /*
-       * =====================================================
-       * 3D透視投影
-       * =====================================================
-       */
-
-      function draw3D(canvas, model) {
-        if (!canvas) {
-          return;
-        }
-
-        var context = canvas.getContext('2d');
-        var width = canvas.width;
-        var height = canvas.height;
-
-        context.clearRect(0, 0, width, height);
-
-        var background =
-          context.createLinearGradient(
-            0,
-            0,
-            0,
-            height
-          );
-
-        background.addColorStop(
-          0,
-          '#e9f1ed'
-        );
-
-        background.addColorStop(
-          .54,
-          '#f8faf9'
-        );
-
-        background.addColorStop(
-          1,
-          '#dfe4e1'
-        );
-
-        context.fillStyle = background;
-        context.fillRect(0, 0, width, height);
-
-        var project = createProjector(
-          width,
-          height
-        );
-
-        /*
-         * 敷地と道路
-         */
-        drawWorldPolygon(
-          context,
-          project,
-          [
-            { x: 0, y: 0, z: 0 },
-            { x: SITE.width, y: 0, z: 0 },
-            {
-              x: SITE.width,
-              y: SITE.depth,
-              z: 0
-            },
-            { x: 0, y: SITE.depth, z: 0 }
-          ],
-          '#e8ede5',
-          '#9ba69f',
-          1
-        );
-
-        drawWorldPolygon(
-          context,
-          project,
-          [
-            { x: 0, y: 0, z: .006 },
-            {
-              x: SITE.width,
-              y: 0,
-              z: .006
-            },
-            {
-              x: SITE.width,
-              y: .85,
-              z: .006
-            },
-            { x: 0, y: .85, z: .006 }
-          ],
-          COLORS.road,
-          '#777e7b',
-          1
-        );
-
-        /*
-         * 部屋の床。
-         * 2Dと同じpolygonをそのまま使用します。
-         */
-        model.rooms.forEach(function (room) {
-          drawWorldPolygon(
-            context,
-            project,
-            room.polygon.map(
-              function (vertex) {
-                return {
-                  x: vertex.x,
-                  y: vertex.y,
-                  z: .012
-                };
-              }
-            ),
-            room.color,
-            'rgba(80,94,87,.42)',
-            1
-          );
-        });
-
-        /*
-         * 問題・改善範囲。
-         */
-        model.zones.forEach(function (zone) {
-          drawWorldPolygon(
-            context,
-            project,
-            [
-              {
-                x: zone.x,
-                y: zone.y,
-                z: .026
-              },
-              {
-                x: zone.x + zone.width,
-                y: zone.y,
-                z: .026
-              },
-              {
-                x: zone.x + zone.width,
-                y: zone.y + zone.depth,
-                z: .026
-              },
-              {
-                x: zone.x,
-                y: zone.y + zone.depth,
-                z: .026
-              }
-            ],
-            zone.color,
-            zone.stroke,
-            2
-          );
-        });
-
-        /*
-         * 動線。
-         */
-        model.routes.forEach(function (route) {
-          draw3DRoute(
-            context,
-            route,
-            project
-          );
-        });
-
-        /*
-         * 立体化する壁・家具・建具を共通の面リストへ変換。
-         */
-        var boxes = [];
-
-        model.walls.forEach(function (wallItem) {
-          if (!wallItem.render3d) {
-            return;
-          }
-
-          boxes.push(
-            wallToBox(wallItem)
-          );
-        });
-
-        model.objects.forEach(function (item) {
-          boxes.push(item);
-        });
-
-        var faces = [];
-
-        boxes.forEach(function (box) {
-          faces = faces.concat(
-            createBoxFaces(
-              box,
-              project
-            )
-          );
-        });
-
-        /*
-         * 建具の3D面。
-         */
-        model.doors.forEach(function (door) {
-          faces = faces.concat(
-            createDoorFaces(
-              door,
-              project
-            )
-          );
-        });
-
-        /*
-         * 遠い面から描画。
-         */
-        faces.sort(function (faceA, faceB) {
-          return (
-            faceB.distance -
-            faceA.distance
-          );
-        });
-
-        faces.forEach(function (face) {
-          drawFace(
-            context,
-            face
-          );
-        });
-
-        /*
-         * 中庭ガラス面を見直し後だけ表示。
-         */
-        if (model === AFTER) {
-          drawGlassWall(
-            context,
-            project
-          );
-        }
-
-        /*
-         * 空間のポイント表示。
-         */
-        if (model === BEFORE) {
-          draw3DMarker(
-            context,
-            project,
-            {
-              x: 6.15,
-              y: 3.05,
-              z: .05
-            },
-            '来客と家事動線が交差',
-            COLORS.problemSolid
-          );
-
-          draw3DMarker(
-            context,
-            project,
-            {
-              x: 6.75,
-              y: 1,
-              z: .05
-            },
-            '道路側の遊び場所',
-            COLORS.problemSolid
-          );
-        } else {
-          draw3DMarker(
-            context,
-            project,
-            {
-              x: 5.7,
-              y: 2.45,
-              z: .05
-            },
-            '室内から見守れる中庭',
-            '#315f54'
-          );
-
-          draw3DMarker(
-            context,
-            project,
-            {
-              x: 7.75,
-              y: 4.25,
-              z: .05
-            },
-            '水まわりを集約',
-            '#315f54'
-          );
-        }
-
-        draw3DInformation(
-          context,
-          width,
-          height,
-          model
-        );
-      }
-
-      function createProjector(
-        canvasWidth,
-        canvasHeight
-      ) {
-        var position = CAMERA.position;
-        var target = CAMERA.target;
-
-        var forward = normalize({
-          x: target.x - position.x,
-          y: target.y - position.y,
-          z: target.z - position.z
-        });
-
-        var worldUp = {
-          x: 0,
-          y: 0,
-          z: 1
-        };
-
-        var right = normalize(
-          cross(forward, worldUp)
-        );
-
-        var up = normalize(
-          cross(right, forward)
-        );
-
-        return function (worldPoint) {
-          var relative = {
-            x: worldPoint.x - position.x,
-            y: worldPoint.y - position.y,
-            z: worldPoint.z - position.z
-          };
-
-          var cameraX = dot(
-            relative,
-            right
-          );
-
-          var cameraY = dot(
-            relative,
-            up
-          );
-
-          var cameraDepth = dot(
-            relative,
-            forward
-          );
-
-          var safeDepth = Math.max(
-            .2,
-            cameraDepth
-          );
-
-          return {
-            x:
-              canvasWidth * .5 +
-              CAMERA.focalLength *
-              cameraX /
-              safeDepth,
-
-            y:
-              canvasHeight * .54 -
-              CAMERA.focalLength *
-              cameraY /
-              safeDepth,
-
-            depth: cameraDepth,
-            distance: vectorLength(relative)
-          };
-        };
-      }
-
-      function wallToBox(wallItem) {
-        var horizontal =
-          Math.abs(
-            wallItem.y2 - wallItem.y1
-          ) <
-          Math.abs(
-            wallItem.x2 - wallItem.x1
-          );
-
-        if (horizontal) {
-          return {
-            x: Math.min(
-              wallItem.x1,
-              wallItem.x2
-            ),
-
-            y:
-              wallItem.y1 -
-              wallItem.thickness / 2,
-
-            z: 0,
-
-            width: Math.abs(
-              wallItem.x2 -
-              wallItem.x1
-            ),
-
-            depth: wallItem.thickness,
-            height: wallItem.height,
-            color: wallItem.color,
-            topColor: lighten(
-              wallItem.color,
-              12
-            )
-          };
-        }
-
-        return {
-          x:
-            wallItem.x1 -
-            wallItem.thickness / 2,
-
-          y: Math.min(
-            wallItem.y1,
-            wallItem.y2
-          ),
-
-          z: 0,
-
-          width: wallItem.thickness,
-
-          depth: Math.abs(
-            wallItem.y2 -
-            wallItem.y1
-          ),
-
-          height: wallItem.height,
-          color: wallItem.color,
-          topColor: lighten(
-            wallItem.color,
-            12
-          )
-        };
-      }
-
-      function createBoxFaces(
-        box,
-        project
-      ) {
-        var x1 = box.x;
-        var x2 = box.x + box.width;
-        var y1 = box.y;
-        var y2 = box.y + box.depth;
-        var z1 = box.z || 0;
-        var z2 = z1 + box.height;
-
-        var points = {
-          a: { x: x1, y: y1, z: z1 },
-          b: { x: x2, y: y1, z: z1 },
-          c: { x: x2, y: y2, z: z1 },
-          d: { x: x1, y: y2, z: z1 },
-          e: { x: x1, y: y1, z: z2 },
-          f: { x: x2, y: y1, z: z2 },
-          g: { x: x2, y: y2, z: z2 },
-          h: { x: x1, y: y2, z: z2 }
-        };
-
-        return [
-          makeFace(
-            [
-              points.e,
-              points.f,
-              points.g,
-              points.h
-            ],
-            box.topColor ||
-            lighten(box.color, 15),
-            project
-          ),
-
-          makeFace(
-            [
-              points.a,
-              points.b,
-              points.f,
-              points.e
-            ],
-            box.color,
-            project
-          ),
-
-          makeFace(
-            [
-              points.b,
-              points.c,
-              points.g,
-              points.f
-            ],
-            darken(box.color, 12),
-            project
-          ),
-
-          makeFace(
-            [
-              points.c,
-              points.d,
-              points.h,
-              points.g
-            ],
-            darken(box.color, 20),
-            project
-          ),
-
-          makeFace(
-            [
-              points.d,
-              points.a,
-              points.e,
-              points.h
-            ],
-            darken(box.color, 7),
-            project
-          )
-        ];
-      }
-
-      function createDoorFaces(
-        door,
-        project
-      ) {
-        var height = 2.05;
-        var thickness = .035;
-        var doorColor =
-          door.type === 'swing'
-            ? '#9b7770'
-            : '#9ea9a4';
-
-        var box;
-
-        if (door.type === 'swing') {
-          var endX =
-            door.x +
-            Math.cos(door.angle) *
-            door.length;
-
-          var endY =
-            door.y +
-            Math.sin(door.angle) *
-            door.length;
-
-          var minimumX = Math.min(
-            door.x,
-            endX
-          );
-
-          var minimumY = Math.min(
-            door.y,
-            endY
-          );
-
-          box = {
-            x:
-              minimumX -
-              thickness / 2,
-
-            y:
-              minimumY -
-              thickness / 2,
-
-            z: 0,
-
-            width:
-              Math.max(
-                Math.abs(endX - door.x),
-                thickness
-              ) +
-              thickness,
-
-            depth:
-              Math.max(
-                Math.abs(endY - door.y),
-                thickness
-              ) +
-              thickness,
-
-            height: height,
-            color: doorColor,
-            topColor: lighten(
-              doorColor,
-              12
-            )
-          };
-        } else if (door.axis === 'y') {
-          box = {
-            x:
-              door.x -
-              thickness / 2,
-
-            y: door.y,
-
-            z: 0,
-
-            width: thickness,
-            depth: door.length,
-            height: height,
-            color: doorColor,
-            topColor: lighten(
-              doorColor,
-              12
-            )
-          };
-        } else {
-          box = {
-            x: door.x,
-
-            y:
-              door.y -
-              thickness / 2,
-
-            z: 0,
-
-            width: door.length,
-            depth: thickness,
-            height: height,
-            color: doorColor,
-            topColor: lighten(
-              doorColor,
-              12
-            )
-          };
-        }
-
-        return createBoxFaces(
-          box,
-          project
-        );
-      }
-
-      function makeFace(
-        worldPoints,
-        fill,
-        project
-      ) {
-        var projected =
-          worldPoints.map(function (point) {
-            return project(point);
-          });
-
-        var averageDistance =
-          projected.reduce(
-            function (sum, point) {
-              return sum + point.distance;
-            },
-            0
-          ) /
-          projected.length;
-
-        return {
-          points: projected,
-          fill: fill,
-          stroke: 'rgba(52,65,59,.43)',
-          distance: averageDistance
-        };
-      }
-
-      function drawFace(
-        context,
-        face
-      ) {
-        context.save();
-        context.fillStyle = face.fill;
-        context.strokeStyle = face.stroke;
-        context.lineWidth = 1;
-
-        context.beginPath();
-
-        face.points.forEach(
-          function (point, index) {
-            if (index === 0) {
-              context.moveTo(
-                point.x,
-                point.y
-              );
-            } else {
-              context.lineTo(
-                point.x,
-                point.y
-              );
-            }
-          }
-        );
-
-        context.closePath();
-        context.fill();
-        context.stroke();
-        context.restore();
-      }
-
-      function drawWorldPolygon(
-        context,
-        project,
-        worldPoints,
-        fill,
-        stroke,
-        lineWidth
-      ) {
-        var points =
-          worldPoints.map(function (point) {
-            return project(point);
-          });
-
-        context.save();
-        context.fillStyle = fill;
-        context.strokeStyle = stroke;
-        context.lineWidth = lineWidth;
-
-        context.beginPath();
-
-        points.forEach(function (point, index) {
-          if (index === 0) {
-            context.moveTo(
-              point.x,
-              point.y
-            );
-          } else {
-            context.lineTo(
-              point.x,
-              point.y
-            );
-          }
-        });
-
-        context.closePath();
-        context.fill();
-        context.stroke();
-        context.restore();
-      }
-
-      function draw3DRoute(
-        context,
-        route,
-        project
-      ) {
-        var points =
-          route.map(function (routePoint) {
-            return project({
-              x: routePoint.x,
-              y: routePoint.y,
-              z: .045
-            });
-          });
-
-        context.save();
-        context.strokeStyle = COLORS.route;
-        context.lineWidth = 7;
-        context.lineCap = 'round';
-        context.lineJoin = 'round';
-        context.globalAlpha = .7;
-        context.setLineDash([15, 9]);
-
-        context.beginPath();
-
-        points.forEach(function (point, index) {
-          if (index === 0) {
-            context.moveTo(
-              point.x,
-              point.y
-            );
-          } else {
-            context.lineTo(
-              point.x,
-              point.y
-            );
-          }
-        });
-
-        context.stroke();
-        context.restore();
-      }
-
-      function drawGlassWall(
-        context,
-        project
-      ) {
-        drawWorldPolygon(
-          context,
-          project,
-          [
-            { x: 4.55, y: 3.6, z: .18 },
-            { x: 7.2, y: 3.6, z: .18 },
-            { x: 7.2, y: 3.6, z: 2.28 },
-            { x: 4.55, y: 3.6, z: 2.28 }
-          ],
-          'rgba(176,213,207,.16)',
-          'rgba(73,112,102,.65)',
-          2
-        );
-
-        var centerBottom = project({
-          x: 5.875,
-          y: 3.6,
-          z: .18
-        });
-
-        var centerTop = project({
-          x: 5.875,
-          y: 3.6,
-          z: 2.28
-        });
-
-        context.save();
-        context.strokeStyle =
-          'rgba(73,112,102,.55)';
-
-        context.lineWidth = 1.5;
-        context.beginPath();
-
-        context.moveTo(
-          centerBottom.x,
-          centerBottom.y
-        );
-
-        context.lineTo(
-          centerTop.x,
-          centerTop.y
-        );
-
-        context.stroke();
-        context.restore();
-      }
-
-      function draw3DMarker(
-        context,
-        project,
-        worldPoint,
-        label,
-        color
-      ) {
-        var floorPoint = project(worldPoint);
-
-        var labelPoint = project({
-          x: worldPoint.x,
-          y: worldPoint.y,
-          z: 1.45
-        });
-
-        context.save();
-        context.strokeStyle = color;
-        context.lineWidth = 2;
-
-        context.beginPath();
-        context.moveTo(
-          floorPoint.x,
-          floorPoint.y
-        );
-
-        context.lineTo(
-          labelPoint.x,
-          labelPoint.y
-        );
-
-        context.stroke();
-
-        context.fillStyle = color;
-        context.beginPath();
-
-        context.arc(
-          floorPoint.x,
-          floorPoint.y,
-          5,
-          0,
-          Math.PI * 2
-        );
-
-        context.fill();
-
-        context.font = '800 12px sans-serif';
-
-        var textWidth =
-          context.measureText(label).width;
-
-        var boxWidth = textWidth + 22;
-        var boxHeight = 29;
-        var boxX =
-          labelPoint.x - boxWidth / 2;
-
-        var boxY =
-          labelPoint.y - boxHeight - 5;
-
-        roundedRectangle(
-          context,
-          boxX,
-          boxY,
-          boxWidth,
-          boxHeight,
-          8
-        );
-
-        context.fillStyle = color;
-        context.fill();
-
-        context.fillStyle = COLORS.white;
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-
-        context.fillText(
-          label,
-          labelPoint.x,
-          boxY + boxHeight / 2
-        );
-
-        context.restore();
-      }
-
-      function draw3DInformation(
-        context,
-        width,
-        height,
-        model
-      ) {
-        context.save();
-
-        roundedRectangle(
-          context,
-          18,
-          height - 51,
-          365,
-          32,
-          8
-        );
-
-        context.fillStyle =
-          'rgba(26,50,42,.80)';
-
-        context.fill();
-
-        context.fillStyle = '#fff';
-        context.font = '700 10px sans-serif';
-        context.textAlign = 'left';
-        context.textBaseline = 'middle';
-
-        context.fillText(
-          model.name +
-          '｜カメラ位置・高さ・注視点・焦点距離は共通',
-          31,
-          height - 35
-        );
-
-        context.restore();
-      }
-
-      function roundedRectangle(
-        context,
-        x,
-        y,
-        width,
-        height,
-        radius
-      ) {
-        var r = Math.min(
-          radius,
-          width / 2,
-          height / 2
-        );
-
-        context.beginPath();
-        context.moveTo(x + r, y);
-        context.lineTo(x + width - r, y);
-
-        context.quadraticCurveTo(
-          x + width,
-          y,
-          x + width,
-          y + r
-        );
-
-        context.lineTo(
-          x + width,
-          y + height - r
-        );
-
-        context.quadraticCurveTo(
-          x + width,
-          y + height,
-          x + width - r,
-          y + height
-        );
-
-        context.lineTo(
-          x + r,
-          y + height
-        );
-
-        context.quadraticCurveTo(
-          x,
-          y + height,
-          x,
-          y + height - r
-        );
-
-        context.lineTo(x, y + r);
-
-        context.quadraticCurveTo(
-          x,
-          y,
-          x + r,
-          y
-        );
-
-        context.closePath();
-      }
-
-      /*
-       * =====================================================
-       * ベクトル計算
-       * =====================================================
-       */
-
-      function dot(a, b) {
-        return (
-          a.x * b.x +
-          a.y * b.y +
-          a.z * b.z
-        );
-      }
-
-      function cross(a, b) {
-        return {
-          x:
-            a.y * b.z -
-            a.z * b.y,
-
-          y:
-            a.z * b.x -
-            a.x * b.z,
-
-          z:
-            a.x * b.y -
-            a.y * b.x
-        };
-      }
-
-      function vectorLength(vector) {
-        return Math.sqrt(
-          vector.x * vector.x +
-          vector.y * vector.y +
-          vector.z * vector.z
-        );
-      }
-
-      function normalize(vector) {
-        var length =
-          vectorLength(vector);
-
-        if (!length) {
-          return {
-            x: 0,
-            y: 0,
-            z: 0
-          };
-        }
-
-        return {
-          x: vector.x / length,
-          y: vector.y / length,
-          z: vector.z / length
-        };
-      }
-
-      /*
-       * =====================================================
-       * 色調整
-       * =====================================================
-       */
-
-      function lighten(color, amount) {
-        return adjustColor(
-          color,
-          Math.abs(amount)
-        );
-      }
-
-      function darken(color, amount) {
-        return adjustColor(
-          color,
-          -Math.abs(amount)
-        );
-      }
-
-      function adjustColor(color, amount) {
-        if (
-          typeof color !== 'string' ||
-          color.charAt(0) !== '#' ||
-          color.length !== 7
-        ) {
-          return color;
-        }
-
-        var red = parseInt(
-          color.slice(1, 3),
-          16
-        );
-
-        var green = parseInt(
-          color.slice(3, 5),
-          16
-        );
-
-        var blue = parseInt(
-          color.slice(5, 7),
-          16
-        );
-
-        red = clampColor(red + amount);
-        green = clampColor(green + amount);
-        blue = clampColor(blue + amount);
-
-        return (
-          '#' +
-          toHex(red) +
-          toHex(green) +
-          toHex(blue)
-        );
-      }
-
-      function clampColor(value) {
-        return Math.max(
-          0,
-          Math.min(
-            255,
-            Math.round(value)
-          )
-        );
-      }
-
-      function toHex(value) {
-        return value
-          .toString(16)
-          .padStart(2, '0');
-      }
-
-      /*
-       * =====================================================
-       * 初期化
-       * =====================================================
-       */
-
-      function renderAll() {
-        drawPlan(
-          document.getElementById(
-            'plan-before'
-          ),
-          BEFORE
-        );
-
-        drawPlan(
-          document.getElementById(
-            'plan-after'
-          ),
-          AFTER
-        );
-
-        draw3D(
-          document.getElementById(
-            'view-before'
-          ),
-          BEFORE
-        );
-
-        draw3D(
-          document.getElementById(
-            'view-after'
-          ),
-          AFTER
-        );
-      }
-
-      /*
-       * CTAの「最初から見る」が機能するように、
-       * ヒーローへtop IDを追加します。
-       */
-      var hero =
-        document.querySelector('.hero');
-
-      if (hero && !hero.id) {
-        hero.id = 'top';
-      }
-
-      if (
-        document.readyState ===
-        'loading'
-      ) {
-        document.addEventListener(
-          'DOMContentLoaded',
-          renderAll
-        );
-      } else {
-        renderAll();
-      }
-
-      var resizeTimer = null;
-
-      window.addEventListener(
-        'resize',
-        function () {
-          window.clearTimeout(
-            resizeTimer
-          );
-
-          resizeTimer =
-            window.setTimeout(
-              renderAll,
-              120
-            );
-        },
-        {
-          passive: true
-        }
-      );
-    }());
-  </script>
 </body>
 </html>
