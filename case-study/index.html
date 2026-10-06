@@ -10,73 +10,32 @@
 
   <meta
     name="description"
-    content="平面図では気づきにくいダイニングの通路、椅子、収納扉の干渉を、2D図面と同一データから生成した3Dパースで解説する間取り改善例です。"
-  >
-
-  <meta
-    name="robots"
-    content="index,follow"
+    content="間取り、水まわり、収納、減築型中庭、建具、クロス、照明を2D図面と同一データの3Dモデルで比較する架空の家づくり相談事例です。"
   >
 
   <title>
-    家具を置いたら通れない？3Dで確認する間取り改善例｜二級建築士・漆間絵美
+    間取り・収納・内装を一緒に見直す家づくり相談例｜BETTER HOME DESIGN
   </title>
-
-  <meta
-    property="og:title"
-    content="家具を置いたら通れない？3Dで確認する間取り改善例"
-  >
-
-  <meta
-    property="og:description"
-    content="平面図では見落としやすい、椅子・収納扉・家族動線の重なりを2Dと3Dで比較します。"
-  >
-
-  <meta
-    property="og:type"
-    content="article"
-  >
-
-  <meta
-    property="og:locale"
-    content="ja_JP"
-  >
 
   <style>
     :root {
-      --green: #2f6f5e;
-      --green-dark: #1f5145;
-      --green-light: #e8f2ee;
-      --green-pale: #f3f8f6;
-
-      --orange: #c45a22;
-      --orange-dark: #963b12;
-      --orange-light: #fff2e8;
-
-      --red: #c83f3f;
-      --red-dark: #982c2c;
+      --green: #315f54;
+      --green-dark: #1e453c;
+      --green-light: #e9f2ef;
+      --orange: #b96837;
+      --orange-dark: #8c4722;
+      --red: #bd4747;
       --red-light: #fff0f0;
-
-      --blue: #3d6f8e;
-      --blue-light: #edf6fb;
-
-      --ink: #25322e;
+      --blue: #4b7f9b;
+      --ink: #26342f;
       --muted: #64716c;
-      --line: #d9e3df;
-      --paper: #ffffff;
-      --background: #f6f8f7;
-
-      --shadow:
-        0 20px 55px rgba(31, 81, 69, 0.10);
-
-      --shadow-small:
-        0 10px 28px rgba(31, 81, 69, 0.08);
-
-      --radius-large: 24px;
-      --radius: 16px;
-      --radius-small: 10px;
-
-      --content-width: 1180px;
+      --line: #d9e2de;
+      --paper: #fff;
+      --base: #f5f7f6;
+      --soft: #edf3f0;
+      --shadow: 0 18px 50px rgba(30, 69, 60, .11);
+      --radius: 22px;
+      --max: 1180px;
     }
 
     * {
@@ -90,7 +49,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--background);
+      background: var(--base);
       font-family:
         "Hiragino Kaku Gothic ProN",
         "Hiragino Sans",
@@ -98,14 +57,6 @@
         Meiryo,
         sans-serif;
       line-height: 1.85;
-    }
-
-    body,
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
     }
 
     img,
@@ -120,15 +71,11 @@
     }
 
     button {
-      border: 0;
+      font: inherit;
     }
 
     .container {
-      width:
-        min(
-          calc(100% - 40px),
-          var(--content-width)
-        );
+      width: min(calc(100% - 40px), var(--max));
       margin-inline: auto;
     }
 
@@ -137,11 +84,11 @@
       top: 10px;
       left: 10px;
       z-index: 999;
-      padding: 10px 14px;
-      color: #ffffff;
+      padding: 9px 14px;
+      color: #fff;
       background: var(--green-dark);
       border-radius: 8px;
-      transform: translateY(-180%);
+      transform: translateY(-160%);
     }
 
     .skip-link:focus {
@@ -152,17 +99,17 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.93);
-      border-bottom: 1px solid rgba(217, 227, 223, 0.9);
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid var(--line);
       backdrop-filter: blur(12px);
     }
 
     .header-inner {
-      min-height: 76px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 25px;
     }
 
     .brand {
@@ -172,33 +119,27 @@
     .brand strong {
       display: block;
       color: var(--green-dark);
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: 19px;
-      letter-spacing: 0.09em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      letter-spacing: .09em;
       line-height: 1.3;
     }
 
     .brand small {
       display: block;
-      margin-top: 3px;
       color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.03em;
+      font-size: 10px;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
 
     .nav a {
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
       text-decoration: none;
     }
 
@@ -206,58 +147,46 @@
       color: var(--green);
     }
 
-    .nav .nav-cta {
-      padding: 10px 17px;
-      color: #ffffff;
-      background: var(--orange);
+    .nav .back-button {
+      padding: 9px 15px;
+      color: #fff;
+      background: var(--green);
       border-radius: 999px;
     }
 
-    .nav .nav-cta:hover {
-      color: #ffffff;
-      background: var(--orange-dark);
-    }
-
     .hero {
-      position: relative;
+      padding: 90px 0 75px;
       overflow: hidden;
-      padding: 92px 0 74px;
       background:
         radial-gradient(
-          circle at 85% 8%,
-          rgba(47, 111, 94, 0.15),
+          circle at 85% 12%,
+          rgba(49, 95, 84, .15),
           transparent 34%
         ),
         radial-gradient(
-          circle at 10% 80%,
-          rgba(196, 90, 34, 0.08),
-          transparent 28%
+          circle at 10% 85%,
+          rgba(185, 104, 55, .09),
+          transparent 30%
         ),
-        linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #f4f8f6 100%
-        );
+        linear-gradient(180deg, #fff, #f0f5f3);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(320px, 0.85fr);
+      grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
       align-items: center;
-      gap: 60px;
+      gap: 56px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: var(--green);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: 0.15em;
+      letter-spacing: .16em;
     }
 
     .eyebrow::before {
@@ -280,10 +209,9 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(38px, 6vw, 68px);
+      font-size: clamp(38px, 5.8vw, 66px);
       font-weight: 600;
-      letter-spacing: 0.02em;
-      line-height: 1.32;
+      line-height: 1.35;
     }
 
     h1 em {
@@ -292,190 +220,144 @@
       color: var(--orange-dark);
       font-family:
         "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
+        "Yu Gothic",
         sans-serif;
-      font-size: clamp(18px, 2.4vw, 26px);
+      font-size: clamp(17px, 2.2vw, 25px);
       font-style: normal;
       font-weight: 800;
       line-height: 1.65;
     }
 
     .hero-lead {
-      max-width: 700px;
-      margin: 26px 0 0;
-      font-size: 17px;
-      line-height: 2;
+      max-width: 720px;
+      margin: 25px 0 0;
+      font-size: 16px;
     }
 
     .hero-lead strong {
       color: var(--green-dark);
     }
 
-    .hero-meta {
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 28px 0 0;
+      gap: 9px;
+      margin: 27px 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .hero-meta li {
-      padding: 8px 13px;
+    .hero-tags li {
+      padding: 7px 12px;
       color: var(--green-dark);
-      background: #ffffff;
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
     }
 
     .hero-card {
-      padding: 28px;
-      background: rgba(255, 255, 255, 0.92);
+      padding: 27px;
+      background: rgba(255, 255, 255, .94);
       border: 1px solid var(--line);
-      border-radius: var(--radius-large);
+      border-radius: 25px;
       box-shadow: var(--shadow);
     }
 
     .hero-card-label {
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       padding: 5px 10px;
-      color: var(--red-dark);
+      color: var(--red);
       background: var(--red-light);
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 900;
     }
 
-    .mini-plan {
+    .hero-card h2 {
+      margin: 0;
+      color: var(--green-dark);
+      font-size: 23px;
+      line-height: 1.55;
+    }
+
+    .hero-card ul {
+      margin: 19px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-card li {
       position: relative;
-      aspect-ratio: 1.35;
-      overflow: hidden;
-      background: #f7f5ee;
-      border: 2px solid #809089;
-      border-radius: 12px;
-    }
-
-    .mini-kitchen {
-      position: absolute;
-      top: 7%;
-      left: 8%;
-      width: 62%;
-      height: 17%;
-      background: #d8dfdc;
-      border: 1px solid #73857e;
-    }
-
-    .mini-pantry {
-      position: absolute;
-      top: 31%;
-      right: 5%;
-      width: 15%;
-      height: 34%;
-      background: #d8dfdc;
-      border: 1px solid #73857e;
-    }
-
-    .mini-table {
-      position: absolute;
-      top: 45%;
-      right: 18%;
-      width: 43%;
-      height: 18%;
-      background: #b98558;
-      border: 2px solid #765033;
-      border-radius: 4px;
-    }
-
-    .mini-chair {
-      position: absolute;
-      width: 8%;
-      height: 13%;
-      background: #8e6849;
-      border-radius: 3px;
-    }
-
-    .mini-chair.one {
-      top: 48%;
-      right: 8%;
-    }
-
-    .mini-chair.two {
-      top: 30%;
-      right: 30%;
-    }
-
-    .mini-chair.three {
-      top: 66%;
-      right: 30%;
-    }
-
-    .mini-danger {
-      position: absolute;
-      top: 31%;
-      right: 2%;
-      width: 29%;
-      height: 45%;
-      background: rgba(200, 63, 63, 0.20);
-      border: 2px dashed var(--red);
-      border-radius: 50%;
-    }
-
-    .hero-card p {
-      margin: 18px 0 0;
+      margin-bottom: 10px;
+      padding-left: 25px;
       color: var(--muted);
       font-size: 13px;
     }
 
+    .hero-card li::before {
+      content: "!";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      display: grid;
+      width: 17px;
+      height: 17px;
+      place-items: center;
+      color: #fff;
+      background: var(--red);
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
     .notice {
-      padding: 18px 0;
-      color: #46534e;
+      padding: 17px 0;
       background: #fffaf5;
-      border-top: 1px solid #f1ddcc;
-      border-bottom: 1px solid #f1ddcc;
+      border-block: 1px solid #ecdcca;
     }
 
     .notice-inner {
       display: flex;
       align-items: flex-start;
-      gap: 13px;
+      gap: 12px;
     }
 
-    .notice-mark {
+    .notice-icon {
       display: grid;
       flex: 0 0 auto;
-      width: 28px;
-      height: 28px;
+      width: 27px;
+      height: 27px;
       place-items: center;
-      color: #ffffff;
+      color: #fff;
       background: var(--orange);
       border-radius: 50%;
-      font-size: 14px;
       font-weight: 900;
     }
 
     .notice p {
       margin: 0;
-      font-size: 13px;
+      color: #53605b;
+      font-size: 12px;
     }
 
-    .section-block {
-      padding: 92px 0;
+    .section {
+      padding: 88px 0;
     }
 
-    .section-block.white {
-      background: #ffffff;
+    .section.white {
+      background: #fff;
     }
 
-    .section-block.soft {
-      background: var(--green-pale);
+    .section.soft {
+      background: var(--soft);
     }
 
     .heading {
-      max-width: 780px;
-      margin: 0 auto 48px;
+      max-width: 790px;
+      margin: 0 auto 45px;
       text-align: center;
     }
 
@@ -490,200 +372,140 @@
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(30px, 4.5vw, 48px);
+      font-size: clamp(30px, 4.2vw, 47px);
       font-weight: 600;
       line-height: 1.5;
     }
 
     .heading p {
-      margin: 20px auto 0;
+      margin: 18px 0 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .case-overview {
+    .request-grid {
       display: grid;
-      grid-template-columns:
-        minmax(0, 0.85fr)
-        minmax(0, 1.15fr);
-      gap: 34px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 19px;
     }
 
-    .case-profile,
-    .story-card {
-      padding: 32px;
-      background: #ffffff;
+    .request-card {
+      padding: 25px;
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow-small);
+      border-radius: 18px;
+      box-shadow: 0 9px 28px rgba(30, 69, 60, .06);
     }
 
-    .case-profile h3,
-    .story-card h3 {
-      margin: 0 0 18px;
-      color: var(--green-dark);
-      font-size: 21px;
-    }
-
-    .case-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .case-table th,
-    .case-table td {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
+    .request-number {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--orange);
+      font-family: Georgia, serif;
       font-size: 13px;
-      text-align: left;
-      vertical-align: top;
+      font-weight: 800;
     }
 
-    .case-table th {
-      width: 35%;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .case-table td {
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .story-card {
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #f5faf8
-        );
-    }
-
-    .story-card p {
-      margin: 0 0 15px;
-    }
-
-    .story-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-highlight {
-      padding: 18px 20px;
+    .request-card h3 {
+      margin: 0 0 9px;
       color: var(--green-dark);
+      font-size: 17px;
+    }
+
+    .request-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .design-note {
+      max-width: 900px;
+      margin: 30px auto 0;
+      padding: 20px 23px;
+      color: #42514b;
       background: var(--green-light);
       border-left: 5px solid var(--green);
-      border-radius: 10px;
-      font-weight: 800;
-    }
-
-    .viewer-intro {
-      max-width: 880px;
-      margin: 0 auto 34px;
-      padding: 18px 21px;
-      color: #44524d;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 13px;
       font-size: 13px;
+      font-weight: 700;
     }
 
-    .viewer-intro strong {
+    .viewer-note {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      padding: 17px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .viewer-note strong {
       color: var(--green-dark);
     }
 
-    .viewer-toolbar {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .viewer-button {
-      padding: 11px 18px;
-      color: var(--green-dark);
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .viewer-button.active {
-      color: #ffffff;
-      background: var(--green);
-      border-color: var(--green);
-    }
-
-    .comparison-grid {
+    .compare-grid {
       display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
     }
 
-    .comparison-card {
+    .compare-card {
       overflow: hidden;
-      background: #ffffff;
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow-small);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .comparison-card.before {
+    .compare-card.before {
       border-top: 6px solid var(--red);
     }
 
-    .comparison-card.after {
+    .compare-card.after {
       border-top: 6px solid var(--green);
     }
 
-    .comparison-header {
-      padding: 24px 26px 20px;
+    .compare-head {
+      padding: 23px 24px 18px;
     }
 
-    .comparison-tag {
+    .compare-tag {
       display: inline-block;
-      margin-bottom: 9px;
-      padding: 5px 10px;
+      margin-bottom: 8px;
+      padding: 5px 9px;
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
     }
 
-    .before .comparison-tag {
-      color: var(--red-dark);
+    .before .compare-tag {
+      color: #933434;
       background: var(--red-light);
     }
 
-    .after .comparison-tag {
+    .after .compare-tag {
       color: var(--green-dark);
       background: var(--green-light);
     }
 
-    .comparison-header h3 {
+    .compare-head h3 {
       margin: 0;
-      color: var(--ink);
-      font-size: 22px;
+      font-size: 21px;
     }
 
-    .comparison-header p {
+    .compare-head p {
       margin: 8px 0 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .canvas-wrap {
       position: relative;
-      background:
-        linear-gradient(
-          180deg,
-          #f8faf9,
-          #eef3f1
-        );
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background: #edf1ef;
+      border-block: 1px solid var(--line);
     }
 
     .canvas-wrap canvas {
@@ -694,61 +516,49 @@
 
     .canvas-label {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      padding: 5px 9px;
-      color: #ffffff;
-      background: rgba(31, 51, 44, 0.78);
-      border-radius: 7px;
-      font-size: 10px;
-      font-weight: 800;
+      top: 11px;
+      left: 11px;
+      padding: 5px 8px;
+      color: #fff;
+      background: rgba(30, 55, 47, .79);
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 900;
       pointer-events: none;
     }
 
-    .canvas-note {
-      padding: 13px 20px;
-      color: var(--muted);
-      background: #fbfcfb;
-      font-size: 11px;
-    }
-
-    .comparison-points {
+    .compare-list {
       margin: 0;
-      padding: 22px 26px 28px;
+      padding: 21px 24px 25px;
       list-style: none;
     }
 
-    .comparison-points li {
+    .compare-list li {
       position: relative;
-      margin-bottom: 10px;
-      padding-left: 25px;
-      font-size: 13px;
+      margin-bottom: 9px;
+      padding-left: 24px;
+      font-size: 12px;
     }
 
-    .comparison-points li:last-child {
-      margin-bottom: 0;
-    }
-
-    .before .comparison-points li::before {
+    .before .compare-list li::before {
       content: "!";
       position: absolute;
-      top: 2px;
+      top: 3px;
       left: 0;
       display: grid;
-      width: 17px;
-      height: 17px;
+      width: 16px;
+      height: 16px;
       place-items: center;
-      color: #ffffff;
+      color: #fff;
       background: var(--red);
       border-radius: 50%;
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 900;
     }
 
-    .after .comparison-points li::before {
+    .after .compare-list li::before {
       content: "✓";
       position: absolute;
-      top: 1px;
       left: 0;
       color: var(--green);
       font-weight: 900;
@@ -758,394 +568,400 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 18px;
-      margin-top: 26px;
-      padding: 17px 20px;
-      background: #ffffff;
+      gap: 15px;
+      margin-top: 24px;
+      padding: 14px;
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: 13px;
+      border-radius: 12px;
     }
 
-    .legend-item {
+    .legend span {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
     }
 
-    .legend-color {
-      width: 18px;
-      height: 12px;
-      border-radius: 3px;
+    .legend i {
+      width: 17px;
+      height: 11px;
+      border-radius: 2px;
     }
 
-    .legend-color.furniture {
-      background: #b98558;
-    }
-
-    .legend-color.fixed {
-      background: #b9c7c1;
-    }
-
-    .legend-color.danger {
-      background: rgba(200, 63, 63, 0.55);
+    .legend .problem {
+      background: rgba(189, 71, 71, .45);
       border: 1px solid var(--red);
     }
 
-    .legend-color.route {
-      background: #6ca1c2;
+    .legend .route {
+      background: var(--blue);
     }
 
-    .logic-grid {
+    .legend .garden {
+      background: #91b78b;
+    }
+
+    .legend .storage {
+      background: #c9b28b;
+    }
+
+    .process-grid {
       display: grid;
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
     }
 
-    .logic-card {
-      padding: 25px;
-      background: #ffffff;
+    .process-card {
+      padding: 24px;
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-small);
+      border-radius: 17px;
     }
 
-    .logic-number {
+    .process-card strong {
       display: grid;
-      width: 34px;
-      height: 34px;
-      margin-bottom: 17px;
+      width: 33px;
+      height: 33px;
+      margin-bottom: 15px;
       place-items: center;
-      color: #ffffff;
+      color: #fff;
       background: var(--green);
       border-radius: 50%;
       font-family: Georgia, serif;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .logic-card h3 {
-      margin: 0 0 10px;
-      color: var(--green-dark);
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    .logic-card p {
-      margin: 0;
-      color: var(--muted);
       font-size: 13px;
     }
 
-    .detail-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .detail-card {
-      padding: 28px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-    }
-
-    .detail-icon {
-      display: grid;
-      width: 46px;
-      height: 46px;
-      margin-bottom: 19px;
-      place-items: center;
+    .process-card h3 {
+      margin: 0 0 8px;
       color: var(--green-dark);
-      background: var(--green-light);
-      border-radius: 13px;
+      font-size: 15px;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .interior-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .palette-card,
+    .lighting-card {
+      padding: 29px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .palette-card h3,
+    .lighting-card h3 {
+      margin: 0 0 10px;
+      color: var(--green-dark);
       font-size: 21px;
+    }
+
+    .palette-card > p,
+    .lighting-card > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr .6fr;
+      min-height: 105px;
+      margin-top: 22px;
+      overflow: hidden;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+    }
+
+    .swatch {
+      display: flex;
+      align-items: flex-end;
+      padding: 10px;
+      font-size: 10px;
       font-weight: 900;
     }
 
-    .detail-card h3 {
-      margin: 0 0 12px;
-      color: var(--green-dark);
-      font-size: 18px;
+    .swatch.base {
+      color: #4b4b47;
+      background: #e7e3da;
     }
 
-    .detail-card p {
-      margin: 0;
-      color: var(--muted);
+    .swatch.floor {
+      color: #fff;
+      background: #827d74;
+    }
+
+    .swatch.wood {
+      color: #fff;
+      background: #8d6c4d;
+    }
+
+    .swatch.accent {
+      color: #fff;
+      background: #405d55;
+    }
+
+    .ratio {
+      margin-top: 13px;
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .lighting-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .lighting-item {
+      display: grid;
+      grid-template-columns: 37px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .lighting-icon {
+      display: grid;
+      width: 37px;
+      height: 37px;
+      place-items: center;
+      color: var(--orange-dark);
+      background: #fff3e9;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    .lighting-item h4 {
+      margin: 0 0 3px;
+      color: var(--ink);
       font-size: 13px;
     }
 
-    .detail-card strong {
-      color: var(--ink);
+    .lighting-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
     }
 
-    .result-table-wrap {
+    .result-wrap {
       overflow-x: auto;
-      background: #ffffff;
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow-small);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .result-table {
       width: 100%;
-      min-width: 700px;
+      min-width: 740px;
       border-collapse: collapse;
     }
 
     .result-table th,
     .result-table td {
-      padding: 19px 21px;
+      padding: 18px 20px;
       border-bottom: 1px solid var(--line);
-      font-size: 13px;
       text-align: left;
       vertical-align: top;
-    }
-
-    .result-table thead th {
-      color: #ffffff;
-      background: var(--green-dark);
       font-size: 12px;
     }
 
-    .result-table tbody th {
-      width: 23%;
-      color: var(--green-dark);
-      background: #f5faf8;
+    .result-table thead th {
+      color: #fff;
+      background: var(--green-dark);
     }
 
-    .result-table tbody tr:last-child th,
-    .result-table tbody tr:last-child td {
+    .result-table tbody th {
+      width: 22%;
+      color: var(--green-dark);
+      background: #f2f7f5;
+    }
+
+    .result-table tr:last-child th,
+    .result-table tr:last-child td {
       border-bottom: 0;
     }
 
-    .result-before {
-      color: var(--red-dark);
+    .before-text {
+      color: #913737;
     }
 
-    .result-after {
+    .after-text {
       color: var(--green-dark);
       font-weight: 700;
     }
 
-    .important-note {
-      margin-top: 24px;
-      padding: 18px 21px;
-      color: #4f5b57;
+    .disclaimer {
+      margin-top: 23px;
+      padding: 17px 20px;
+      color: #56615d;
       background: #fffaf5;
-      border: 1px solid #f1ddcc;
-      border-radius: 13px;
-      font-size: 12px;
+      border: 1px solid #ecdcca;
+      border-radius: 12px;
+      font-size: 11px;
     }
 
-    .cta-section {
-      padding: 95px 0;
-      color: #ffffff;
+    .cta {
+      padding: 92px 0;
+      color: #fff;
       background:
         radial-gradient(
-          circle at 85% 20%,
-          rgba(255, 255, 255, 0.10),
-          transparent 30%
+          circle at 83% 18%,
+          rgba(255,255,255,.1),
+          transparent 28%
         ),
-        linear-gradient(
-          135deg,
-          var(--green-dark),
-          var(--green)
-        );
+        linear-gradient(135deg, var(--green-dark), var(--green));
     }
 
-    .cta-box {
-      max-width: 850px;
+    .cta-inner {
+      max-width: 830px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .cta-box .eyebrow {
-      color: #bfe1d4;
+    .cta .eyebrow {
+      color: #c9e4db;
     }
 
-    .cta-box h2 {
+    .cta h2 {
       margin: 0;
       font-family:
         "Yu Mincho",
         "Hiragino Mincho ProN",
         serif;
-      font-size: clamp(31px, 5vw, 50px);
+      font-size: clamp(31px, 4.6vw, 49px);
       font-weight: 600;
       line-height: 1.5;
     }
 
-    .cta-box p {
-      max-width: 690px;
-      margin: 22px auto 0;
-      color: rgba(255, 255, 255, 0.85);
+    .cta p {
+      margin: 20px auto 0;
+      color: rgba(255,255,255,.85);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .cta-button {
       display: inline-flex;
-      min-height: 58px;
+      min-height: 55px;
       align-items: center;
       justify-content: center;
-      margin-top: 30px;
-      padding: 14px 30px;
-      color: #ffffff;
+      padding: 12px 25px;
+      color: #fff;
       background: var(--orange);
       border-radius: 999px;
-      box-shadow:
-        0 15px 35px rgba(20, 39, 33, 0.25);
       font-weight: 900;
       text-decoration: none;
-      transition:
-        transform 0.2s ease,
-        background-color 0.2s ease;
+      box-shadow: 0 14px 32px rgba(15, 35, 29, .22);
     }
 
-    .cta-button:hover {
-      background: #db6628;
-      transform: translateY(-2px);
-    }
-
-    .cta-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 24px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .cta-meta li {
-      padding: 7px 12px;
-      color: #dcece6;
-      border: 1px solid rgba(255, 255, 255, 0.26);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
+    .cta-button.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.5);
+      box-shadow: none;
     }
 
     .footer {
-      padding: 38px 0;
-      color: #a9c4ba;
-      background: #153c33;
+      padding: 35px 0;
+      color: #aac3ba;
+      background: #153b32;
       text-align: center;
     }
 
     .footer strong {
       display: block;
-      color: #ffffff;
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      letter-spacing: 0.09em;
+      color: #fff;
+      font-family: Georgia, serif;
+      letter-spacing: .09em;
     }
 
     .footer p {
-      margin: 5px 0 0;
-      font-size: 11px;
-    }
-
-    .show-plan .perspective-view {
-      display: none;
-    }
-
-    .show-perspective .plan-view {
-      display: none;
+      margin: 4px 0 0;
+      font-size: 10px;
     }
 
     @media (max-width: 980px) {
-      .hero-grid {
+      .hero-grid,
+      .interior-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
       }
 
       .hero-card {
-        max-width: 650px;
+        max-width: 660px;
       }
 
-      .case-overview {
-        grid-template-columns: 1fr;
+      .request-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .logic-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
-      }
-
-      .detail-grid {
-        grid-template-columns: 1fr;
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 760px) {
       .container {
-        width:
-          min(
-            calc(100% - 24px),
-            var(--content-width)
-          );
+        width: min(calc(100% - 24px), var(--max));
       }
 
       .header-inner {
-        min-height: 68px;
+        min-height: 66px;
       }
 
       .brand strong {
-        font-size: 15px;
+        font-size: 14px;
       }
 
-      .nav a:not(.nav-cta) {
+      .nav a:not(.back-button) {
         display: none;
       }
 
-      .nav .nav-cta {
-        padding: 8px 12px;
-        font-size: 11px;
-      }
-
       .hero {
-        padding: 60px 0 50px;
+        padding: 58px 0 50px;
       }
 
-      .section-block {
-        padding: 68px 0;
+      .section {
+        padding: 66px 0;
       }
 
-      .comparison-grid {
+      .request-grid,
+      .compare-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .logic-grid {
-        grid-template-columns: 1fr;
+      .hero-card,
+      .palette-card,
+      .lighting-card {
+        padding: 22px;
       }
 
-      .heading {
-        margin-bottom: 35px;
+      .compare-head {
+        padding-inline: 20px;
       }
 
-      .viewer-toolbar {
-        position: sticky;
-        top: 78px;
-        z-index: 20;
-        padding: 8px;
-        background: rgba(246, 248, 247, 0.94);
-        border-radius: 999px;
-        backdrop-filter: blur(8px);
-      }
-
-      .viewer-button {
-        flex: 1;
-        padding-inline: 10px;
-      }
-
-      .case-profile,
-      .story-card {
-        padding: 24px 21px;
+      .swatches {
+        grid-template-columns: 1.6fr 1fr;
       }
     }
 
@@ -1153,229 +969,198 @@
       html {
         scroll-behavior: auto;
       }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
     }
   </style>
 </head>
 
-<body class="show-all">
-  <a
-    class="skip-link"
-    href="#main"
-  >
+<body>
+  <a class="skip-link" href="#main">
     本文へ移動
   </a>
 
   <header class="header">
     <div class="container header-inner">
-      <a
-        class="brand"
-        href="#top"
-        aria-label="ページ上部へ戻る"
-      >
+      <a class="brand" href="../">
         <strong>BETTER HOME DESIGN</strong>
-        <small>二級建築士・漆間絵美</small>
+        <small>二級建築士の間取りセカンドオピニオン</small>
       </a>
 
-      <nav
-        class="nav"
-        aria-label="メインナビゲーション"
-      >
-        <a href="#plan-comparison">
-          2D比較
-        </a>
-
-        <a href="#perspective-comparison">
-          3D比較
-        </a>
-
-        <a href="#reason">
-          改善理由
-        </a>
-
-        <a
-          class="nav-cta"
-          href="#diagnosis"
-        >
-          無料診断を見る
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a href="#requests">相談内容</a>
+        <a href="#plan">2D比較</a>
+        <a href="#perspective">3D比較</a>
+        <a href="#interior">内装・照明</a>
+        <a class="back-button" href="../">
+          個別相談を見る
         </a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section
-      id="top"
-      class="hero"
-    >
+    <section class="hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">
-            FLOOR PLAN CASE STUDY
+            INTEGRATED HOME DESIGN CASE
           </span>
 
           <h1>
-            家具を置いたら、<br>
-            通れない？
+            間取りだけ変えても、<br>
+            しっくりこない。
 
             <em>
-              平面図を3Dで確認して見直した、LDKの間取り改善例
+              水まわり・収納・外遊び・内装・照明まで、
+              一つの暮らしとして見直した家づくり例
             </em>
           </h1>
 
           <p class="hero-lead">
-            図面上ではダイニングテーブルを置けても、
-            <strong>
-              椅子を引く・収納を開ける・家族が通る
-            </strong>
-            という動作を重ねると、使いにくさが見えてくることがあります。
+            「子どもが遊べる場所がほしい」
+            「家は狭く見せたくない」
+            「グレーの内装にしたい」
+            「収納や照明も決められない」。
+            これらは別々の悩みに見えて、実際には
+            <strong>間取り・視線・動線・色・光のつながり</strong>
+            から生まれています。
           </p>
 
-          <ul class="hero-meta">
-            <li>2D・3D共通寸法データ</li>
-            <li>同一カメラで比較</li>
-            <li>架空の検討事例</li>
-            <li>家具使用時まで確認</li>
+          <ul class="hero-tags">
+            <li>減築型中庭</li>
+            <li>水まわり動線</li>
+            <li>収納計画</li>
+            <li>建具の干渉</li>
+            <li>グレージュ内装</li>
+            <li>照明計画</li>
           </ul>
         </div>
 
-        <aside
-          class="hero-card"
-          aria-label="見直し前の間取りイメージ"
-        >
+        <aside class="hero-card">
           <span class="hero-card-label">
-            平面図では見落としやすいポイント
+            見落としやすい組み合わせ
           </span>
 
-          <div
-            class="mini-plan"
-            aria-hidden="true"
-          >
-            <span class="mini-kitchen"></span>
-            <span class="mini-pantry"></span>
-            <span class="mini-table"></span>
-            <span class="mini-chair one"></span>
-            <span class="mini-chair two"></span>
-            <span class="mini-chair three"></span>
-            <span class="mini-danger"></span>
-          </div>
+          <h2>
+            一つずつは成立していても、<br>
+            同時に使うと不便になる。
+          </h2>
 
-          <p>
-            テーブル本体ではなく、椅子を引いた状態と
-            パントリー扉の開閉範囲を重ねることが大切です。
-          </p>
+          <ul>
+            <li>
+              道路側の庭は、子どもの見守りとプライバシーが両立しにくい
+            </li>
+            <li>
+              洗面・浴室への動線が、来客中のリビングを横切る
+            </li>
+            <li>
+              収納の面積はあるのに、使う場所から離れている
+            </li>
+            <li>
+              開き戸同士が近く、家族が同時に使いにくい
+            </li>
+            <li>
+              グレーを重ねすぎて、天井が低く暗く見えやすい
+            </li>
+            <li>
+              ダウンライトを均等配置し、必要な場所に光が届かない
+            </li>
+          </ul>
         </aside>
       </div>
     </section>
 
     <aside class="notice">
       <div class="container notice-inner">
-        <span class="notice-mark">
-          i
-        </span>
+        <span class="notice-icon">i</span>
 
         <p>
-          このページは、一般的な相談内容をもとに制作した
-          <strong>架空の間取り検討例</strong>です。
-          実在する住宅や施主の事例ではありません。
-          掲載寸法は説明用であり、法令・構造・施工可否を示すものではありません。
+          このページは、複数の一般的な相談傾向をもとに制作した
+          <strong>架空の検討事例</strong>です。
+          実在する住宅・施主・ハウスメーカーの事例ではありません。
+          図面と3Dは同じ座標データを使用していますが、
+          法令・構造・防火・施工可否は個別に確認する必要があります。
         </p>
       </div>
     </aside>
 
-    <section class="section-block white">
+    <section id="requests" class="section white">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
-            CASE OVERVIEW
+            CLIENT REQUESTS
           </span>
 
           <h2>
-            面積は足りているのに、<br>
-            なぜか使いにくい。
+            希望を部屋ごとではなく、<br>
+            暮らしの場面に整理します。
           </h2>
 
           <p>
-            原因は部屋の広さではなく、家具を使用しているときの
-            「人のための余白」が残っていないことでした。
+            「間取り」「クロス」「照明」を別々に決めるのではなく、
+            最後に同じ空間へ現れるものとして検討します。
           </p>
         </div>
 
-        <div class="case-overview">
-          <section class="case-profile">
-            <h3>
-              検討モデルの条件
-            </h3>
-
-            <table class="case-table">
-              <tbody>
-                <tr>
-                  <th>住宅タイプ</th>
-                  <td>2階建て注文住宅を想定</td>
-                </tr>
-
-                <tr>
-                  <th>家族構成</th>
-                  <td>大人2人・子ども2人</td>
-                </tr>
-
-                <tr>
-                  <th>対象範囲</th>
-                  <td>約9m × 6mのLDK</td>
-                </tr>
-
-                <tr>
-                  <th>主な家具</th>
-                  <td>6人掛けダイニング</td>
-                </tr>
-
-                <tr>
-                  <th>確認箇所</th>
-                  <td>ダイニング・パントリー・主動線</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-
-          <section class="story-card">
-            <h3>
-              見直し前に気になったこと
-            </h3>
-
+        <div class="request-grid">
+          <article class="request-card">
+            <span class="request-number">01</span>
+            <h3>子どもの外遊び</h3>
             <p>
-              平面図にはダイニングテーブルが収まり、
-              キッチンとパントリーにも近いため、
-              一見すると使いやすい配置に見えます。
+              車通りから守りながら、リビングから見守れる場所がほしい。
             </p>
+          </article>
 
+          <article class="request-card">
+            <span class="request-number">02</span>
+            <h3>吹き抜けなしの開放感</h3>
             <p>
-              しかし、右端の椅子を引いた状態では、
-              玄関側からキッチンへ向かう動線と重なります。
-              さらにパントリー扉を開くと、
-              同じ場所へ複数の動作が集中します。
+              冷暖房や音の問題を増やさず、家を狭く見せたくない。
             </p>
+          </article>
 
-            <p class="story-highlight">
-              「家具が置けるか」ではなく、
-              「家具を使っているときも通れるか」を確認します。
+          <article class="request-card">
+            <span class="request-number">03</span>
+            <h3>水まわりの位置</h3>
+            <p>
+              洗濯・入浴・来客の動線が重ならないようにしたい。
             </p>
-          </section>
+          </article>
+
+          <article class="request-card">
+            <span class="request-number">04</span>
+            <h3>収納と建具</h3>
+            <p>
+              収納量だけでなく、出し入れする位置と扉の使いやすさを整えたい。
+            </p>
+          </article>
+
+          <article class="request-card">
+            <span class="request-number">05</span>
+            <h3>グレー系の内装</h3>
+            <p>
+              床・壁・天井・建具・キッチンの色を、暗くならないよう合わせたい。
+            </p>
+          </article>
+
+          <article class="request-card">
+            <span class="request-number">06</span>
+            <h3>照明とクロス</h3>
+            <p>
+              器具の数ではなく、食事・くつろぎ・家事に必要な光を分けたい。
+            </p>
+          </article>
+        </div>
+
+        <div class="design-note">
+          この事例では、床面積を増やすのではなく、
+          道路側の一部を減築して中庭へ変えます。
+          吹き抜けをつくらず、LDKから中庭・ダイニングへ視線が抜けることで、
+          横方向の広がりをつくる計画です。
         </div>
       </div>
     </section>
 
-    <section
-      id="plan-comparison"
-      class="section-block soft viewer-section"
-    >
+    <section id="plan" class="section soft">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -1383,286 +1168,204 @@
           </span>
 
           <h2>
-            まず、平面図に<br>
-            暮らしの動きを重ねます。
+            平面図に、道路・視線・家事・<br>
+            子どもの居場所を重ねます。
           </h2>
-
-          <p>
-            収納・キッチン・ソファは同じ位置です。
-            ダイニング家具の方向と位置だけを見直しています。
-          </p>
         </div>
 
-        <div class="viewer-intro">
-          <strong>図面の整合性について：</strong>
-          以下の2D図面と3Dパースは、同じ座標・寸法・家具データから生成しています。
-          3Dだけ家具を小さくしたり、改善後だけ広角にしたりしていません。
+        <div class="viewer-note">
+          <strong>図面と3Dの整合性：</strong>
+          部屋、壁、キッチン、収納、中庭、家具、道路、問題範囲は、
+          JavaScript内の同じ寸法データから2Dと3Dへ描画しています。
+          3D側だけ空間を広げる処理はしていません。
         </div>
 
-        <div
-          class="comparison-grid plan-view"
-          aria-label="2D平面図の比較"
-        >
-          <article class="comparison-card before">
-            <div class="comparison-header">
-              <span class="comparison-tag">
-                BEFORE
-              </span>
-
-              <h3>
-                見直し前
-              </h3>
-
+        <div class="compare-grid">
+          <article class="compare-card before">
+            <div class="compare-head">
+              <span class="compare-tag">BEFORE PLAN</span>
+              <h3>希望を足したままの計画</h3>
               <p>
-                椅子・収納扉・通行動線が右側へ集中しています。
+                部屋は確保できていますが、暮らしの場面が重なっています。
               </p>
             </div>
 
             <div class="canvas-wrap">
               <canvas
                 id="plan-before"
-                width="900"
-                height="620"
-                aria-label="見直し前の2D平面図"
-              >
-                見直し前の平面図です。
-              </canvas>
+                width="1000"
+                height="690"
+                aria-label="見直し前の平面図"
+              ></canvas>
 
               <span class="canvas-label">
-                TOP VIEW / 2D
+                SAME MODEL DATA / 2D
               </span>
             </div>
 
-            <p class="canvas-note">
-              赤色：動作が重なる範囲　
-              青色：玄関側からキッチンへの主動線
-            </p>
-
-            <ul class="comparison-points">
+            <ul class="compare-list">
               <li>
-                右端の椅子を引くと、主動線の有効幅が小さくなる
+                道路側の外遊び場所は、車通りと外部からの視線に近い
               </li>
-
               <li>
-                パントリー扉の開閉範囲と椅子の使用範囲が近い
+                洗面・浴室への移動が、LDKの来客スペースと交差する
               </li>
-
               <li>
-                配膳・着席・収納利用が同じ場所へ集中する
+                収納が奥にあり、帰宅・洗濯・着替えの動線とつながらない
+              </li>
+              <li>
+                水まわりの開き戸が近く、同時使用時に干渉しやすい
               </li>
             </ul>
           </article>
 
-          <article class="comparison-card after">
-            <div class="comparison-header">
-              <span class="comparison-tag">
-                AFTER
-              </span>
-
-              <h3>
-                見直し後
-              </h3>
-
+          <article class="compare-card after">
+            <div class="compare-head">
+              <span class="compare-tag">AFTER PLAN</span>
+              <h3>減築型中庭を中心に再整理</h3>
               <p>
-                テーブルを回転・移動し、主動線から家具を離しました。
+                床面積を一部減らし、暮らしに必要な余白へ変えています。
               </p>
             </div>
 
             <div class="canvas-wrap">
               <canvas
                 id="plan-after"
-                width="900"
-                height="620"
-                aria-label="見直し後の2D平面図"
-              >
-                見直し後の平面図です。
-              </canvas>
+                width="1000"
+                height="690"
+                aria-label="見直し後の平面図"
+              ></canvas>
 
               <span class="canvas-label">
-                TOP VIEW / 2D
+                SAME MODEL DATA / 2D
               </span>
             </div>
 
-            <p class="canvas-note">
-              緑色：確保しやすくなった通行・収納利用範囲
-            </p>
-
-            <ul class="comparison-points">
+            <ul class="compare-list">
               <li>
-                椅子を使用していても、右側に連続した通路を残せる
+                道路との間に目隠し壁を設け、リビングから見守れる中庭へ変更
               </li>
-
               <li>
-                パントリー前で扉を開け、物を出し入れしやすい
+                中庭越しに視線を伸ばし、吹き抜けなしで横方向の広がりを確保
               </li>
-
               <li>
-                ダイニング利用とキッチンへの移動を分けやすい
+                洗面・脱衣・浴室・ファミリー収納を近くにまとめる
+              </li>
+              <li>
+                水まわりは引き戸を中心にして、建具の干渉を軽減
               </li>
             </ul>
           </article>
         </div>
 
         <div class="legend">
-          <span class="legend-item">
-            <span class="legend-color furniture"></span>
-            ダイニング家具
-          </span>
-
-          <span class="legend-item">
-            <span class="legend-color fixed"></span>
-            キッチン・収納
-          </span>
-
-          <span class="legend-item">
-            <span class="legend-color danger"></span>
-            動作の重なり
-          </span>
-
-          <span class="legend-item">
-            <span class="legend-color route"></span>
-            主な通行動線
-          </span>
+          <span><i class="problem"></i>問題が重なる範囲</span>
+          <span><i class="route"></i>主な生活動線</span>
+          <span><i class="garden"></i>子どもの外遊び場所</span>
+          <span><i class="storage"></i>収納・ファミリー収納</span>
         </div>
       </div>
     </section>
 
-    <section
-      id="perspective-comparison"
-      class="section-block white viewer-section"
-    >
+    <section id="perspective" class="section white">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
-            3D PERSPECTIVE
+            FIXED-CAMERA 3D
           </span>
 
           <h2>
-            同じ間取りを、<br>
-            同じ視点から立体化。
+            同じ配置を、同じカメラで<br>
+            立体的に確認します。
           </h2>
 
           <p>
-            カメラ位置・高さ・画角・部屋寸法を固定し、
-            家具配置だけの違いを比較します。
+            3Dは完成予想図ではなく、空間・視線・色の関係を確認する
+            カットアウェイ型の検討モデルです。
           </p>
         </div>
 
-        <div
-          class="comparison-grid perspective-view"
-          aria-label="3Dパースの比較"
-        >
-          <article class="comparison-card before">
-            <div class="comparison-header">
-              <span class="comparison-tag">
-                BEFORE 3D
-              </span>
-
-              <h3>
-                通る場所と使う場所が重なる
-              </h3>
-
+        <div class="compare-grid">
+          <article class="compare-card before">
+            <div class="compare-head">
+              <span class="compare-tag">BEFORE 3D</span>
+              <h3>暗色が分散し、外部とのつながりが弱い</h3>
               <p>
-                平面図の赤い範囲を、同じ寸法のまま立体化しています。
+                道路側の遊び場所とLDKが、視覚的にも分断されています。
               </p>
             </div>
 
             <div class="canvas-wrap">
               <canvas
-                id="perspective-before"
-                width="960"
-                height="660"
-                aria-label="見直し前の3Dパース"
-              >
-                見直し前の3Dパースです。
-              </canvas>
+                id="view-before"
+                width="1000"
+                height="690"
+                aria-label="見直し前の固定カメラ3D"
+              ></canvas>
 
               <span class="canvas-label">
                 FIXED CAMERA / 3D
               </span>
             </div>
 
-            <p class="canvas-note">
-              赤い半透明の床面は、椅子・収納・通行が重なる範囲です。
-            </p>
-
-            <ul class="comparison-points">
+            <ul class="compare-list">
               <li>
-                着席中の人の後ろを家族が通る状態になりやすい
+                グレーの床・天井・建具が同じ強さで、空間が重く見えやすい
               </li>
-
               <li>
-                収納利用時に、椅子の位置を意識する必要がある
+                外遊び場所が道路側へ開き、室内からの見守りが途切れる
               </li>
-
               <li>
-                キッチン手前で人の動きが滞留しやすい
+                LDKから水まわりへ向かう人が、くつろぎの場所を横切る
               </li>
             </ul>
           </article>
 
-          <article class="comparison-card after">
-            <div class="comparison-header">
-              <span class="comparison-tag">
-                AFTER 3D
-              </span>
-
-              <h3>
-                家具の横に連続した通路が残る
-              </h3>
-
+          <article class="compare-card after">
+            <div class="compare-head">
+              <span class="compare-tag">AFTER 3D</span>
+              <h3>中庭を室内の広がりとして取り込む</h3>
               <p>
-                収納・キッチン・部屋の大きさは変更していません。
+                吹き抜けをつくらず、横方向の視線と光を整えています。
               </p>
             </div>
 
             <div class="canvas-wrap">
               <canvas
-                id="perspective-after"
-                width="960"
-                height="660"
-                aria-label="見直し後の3Dパース"
-              >
-                見直し後の3Dパースです。
-              </canvas>
+                id="view-after"
+                width="1000"
+                height="690"
+                aria-label="見直し後の固定カメラ3D"
+              ></canvas>
 
               <span class="canvas-label">
                 SAME CAMERA / 3D
               </span>
             </div>
 
-            <p class="canvas-note">
-              緑の床面は、家具利用中も通路として残しやすい範囲です。
-            </p>
-
-            <ul class="comparison-points">
+            <ul class="compare-list">
               <li>
-                食事中もキッチンと入口の間を移動しやすい
+                中庭の目隠し壁により、道路からの視線を抑えながら外遊びができる
               </li>
-
               <li>
-                パントリー前で立ち止まる余白を確保しやすい
+                明るいグレージュを基調にし、濃色は建具や家具へ限定
               </li>
-
               <li>
-                家族が同時に動く場面を想像しやすくなる
+                キッチン・ダイニング・中庭の視線をつなぎ、見守りやすくする
               </li>
             </ul>
           </article>
         </div>
 
-        <div class="important-note">
-          3Dは空間構成を説明するための簡易モデルです。
-          仕上げ材、照明、窓位置、天井形状などは省略しています。
-          その代わり、比較に関係する部屋寸法・家具寸法・家具位置・カメラ条件を統一しています。
+        <div class="disclaimer">
+          見やすくするため、3Dでは手前側の外壁をカット表示しています。
+          壁位置そのものを移動したものではありません。
+          見直し前後のカメラ位置、カメラ高さ、注視点、焦点距離は同一です。
         </div>
       </div>
     </section>
 
-    <section
-      id="reason"
-      class="section-block soft"
-    >
+    <section class="section soft">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -1670,150 +1373,147 @@
           </span>
 
           <h2>
-            見直しは、家具を動かす前に<br>
-            暮らしを分解することから。
+            「何を置くか」より先に、<br>
+            「誰がいつ使うか」を整理します。
           </h2>
         </div>
 
-        <div class="logic-grid">
-          <article class="logic-card">
-            <span class="logic-number">
-              01
-            </span>
-
-            <h3>
-              図面から確認できる事実
-            </h3>
-
+        <div class="process-grid">
+          <article class="process-card">
+            <strong>01</strong>
+            <h3>道路と視線を確認</h3>
             <p>
-              ダイニングとパントリーの間が、
-              玄関側からキッチンへ向かう主な通行経路になっています。
+              外遊び場所を庭の面積だけで決めず、車通り、見守り、外部視線を確認します。
             </p>
           </article>
 
-          <article class="logic-card">
-            <span class="logic-number">
-              02
-            </span>
-
-            <h3>
-              使用時に加わる動作
-            </h3>
-
+          <article class="process-card">
+            <strong>02</strong>
+            <h3>家族の同時使用を確認</h3>
             <p>
-              椅子を引く、着席する、収納扉を開ける、
-              物を持って通るという動作が加わります。
+              入浴、洗濯、帰宅、来客が重なったときの動線と建具を確認します。
             </p>
           </article>
 
-          <article class="logic-card">
-            <span class="logic-number">
-              03
-            </span>
-
-            <h3>
-              見直した内容
-            </h3>
-
+          <article class="process-card">
+            <strong>03</strong>
+            <h3>収納物と場所を対応</h3>
             <p>
-              テーブルの長辺方向を変え、
-              パントリー側から離すことで、右側へ連続した通路を残しました。
+              衣類、洗剤、外出用品などを、実際に使う場所の近くへ分けて配置します。
             </p>
           </article>
 
-          <article class="logic-card">
-            <span class="logic-number">
-              04
-            </span>
-
-            <h3>
-              期待できる変化
-            </h3>
-
+          <article class="process-card">
+            <strong>04</strong>
+            <h3>色と光を最後に統合</h3>
             <p>
-              食事・配膳・収納利用・通行を分けやすくなり、
-              家族が同時に動く場面へ対応しやすくなります。
+              床、壁、天井、建具、梁、キッチン、照明を一枚の空間として確認します。
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-block white">
+    <section id="interior" class="section white">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
-            THREE KEY POINTS
+            INTERIOR & LIGHTING
           </span>
 
           <h2>
-            広さを増やさなくても、<br>
-            使い方は変えられます。
+            グレーを増やすのではなく、<br>
+            明度と役割を分けます。
           </h2>
         </div>
 
-        <div class="detail-grid">
-          <article class="detail-card">
-            <span
-              class="detail-icon"
-              aria-hidden="true"
-            >
-              ↔
-            </span>
-
-            <h3>
-              椅子を引いた状態で確認
-            </h3>
+        <div class="interior-grid">
+          <article class="palette-card">
+            <h3>内装色は「70・20・8・2」で整理</h3>
 
             <p>
-              テーブル寸法だけではなく、
-              <strong>着席・離席に必要な範囲</strong>
-              を含めて家具配置を確認します。
+              グレーやグレージュは色名だけでは判断せず、
+              面積、自然光、床や建具との明度差で確認します。
+            </p>
+
+            <div class="swatches" aria-label="内装配色例">
+              <span class="swatch base">
+                70% 明るいグレージュ
+              </span>
+
+              <span class="swatch floor">
+                20% 中明度の床
+              </span>
+
+              <span class="swatch wood">
+                8% 木・建具
+              </span>
+
+              <span class="swatch accent">
+                2% 深い緑灰
+              </span>
+            </div>
+
+            <p class="ratio">
+              天井まで濃いグレーにせず、壁より少し明るくして連続感を残します。
             </p>
           </article>
 
-          <article class="detail-card">
-            <span
-              class="detail-icon"
-              aria-hidden="true"
-            >
-              ◯
-            </span>
-
-            <h3>
-              扉の前に作業空間を残す
-            </h3>
+          <article class="lighting-card">
+            <h3>照明は均等配置より、生活場面で分ける</h3>
 
             <p>
-              扉が開くだけでなく、
-              <strong>人が立って物を出し入れできるか</strong>
-              まで検討します。
+              すべてをダウンライトで明るくするのではなく、
+              必要な場所へ異なる光を組み合わせます。
             </p>
-          </article>
 
-          <article class="detail-card">
-            <span
-              class="detail-icon"
-              aria-hidden="true"
-            >
-              →
-            </span>
+            <div class="lighting-list">
+              <div class="lighting-item">
+                <span class="lighting-icon">食</span>
+                <div>
+                  <h4>ダイニングは低い位置に光を集める</h4>
+                  <p>
+                    ペンダントまたは配光を絞った器具で、食卓面を中心に照らします。
+                  </p>
+                </div>
+              </div>
 
-            <h3>
-              動線を家具から離す
-            </h3>
+              <div class="lighting-item">
+                <span class="lighting-icon">寛</span>
+                <div>
+                  <h4>リビングは壁面の明るさを利用</h4>
+                  <p>
+                    テレビ周辺の反射やまぶしさを抑え、間接光やスタンドを組み合わせます。
+                  </p>
+                </div>
+              </div>
 
-            <p>
-              家族が頻繁に通る経路と、
-              <strong>座る・立つ・配膳する場所</strong>
-              をできるだけ重ねないよう整理します。
-            </p>
+              <div class="lighting-item">
+                <span class="lighting-icon">家</span>
+                <div>
+                  <h4>キッチンと洗面は作業面を優先</h4>
+                  <p>
+                    人の背後に照明を置かず、手元へ影が落ちにくい位置を確認します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="lighting-item">
+                <span class="lighting-icon">外</span>
+                <div>
+                  <h4>中庭は室内からの見え方を整える</h4>
+                  <p>
+                    夜は目隠し壁や植栽を照らし、窓の外を暗い鏡にしないようにします。
+                  </p>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-block soft">
+    <section class="section soft">
       <div class="container">
         <div class="heading">
           <span class="eyebrow">
@@ -1821,12 +1521,12 @@
           </span>
 
           <h2>
-            変わったのは、<br>
-            面積ではなく暮らしの余白。
+            変えたのは、部屋数ではなく<br>
+            希望同士のつながりです。
           </h2>
         </div>
 
-        <div class="result-table-wrap">
+        <div class="result-wrap">
           <table class="result-table">
             <thead>
               <tr>
@@ -1838,121 +1538,112 @@
 
             <tbody>
               <tr>
-                <th>ダイニング利用中</th>
-                <td class="result-before">
-                  右端の椅子と主動線が重なりやすい
+                <th>子どもの外遊び</th>
+                <td class="before-text">
+                  道路に近く、外部からの視線が入りやすい
                 </td>
-                <td class="result-after">
-                  椅子の横へ連続した通路を残しやすい
-                </td>
-              </tr>
-
-              <tr>
-                <th>パントリー利用</th>
-                <td class="result-before">
-                  扉・椅子・通行が近い位置へ集中
-                </td>
-                <td class="result-after">
-                  扉前で立ち止まる範囲を確保しやすい
+                <td class="after-text">
+                  目隠し壁のある減築型中庭で、室内から見守りやすい
                 </td>
               </tr>
 
               <tr>
-                <th>キッチンへの移動</th>
-                <td class="result-before">
-                  食事中の人の後ろを通る可能性がある
+                <th>室内の広がり</th>
+                <td class="before-text">
+                  部屋は広いが、外部への視線が止まる
                 </td>
-                <td class="result-after">
-                  ダイニング家具から離れて移動しやすい
-                </td>
-              </tr>
-
-              <tr>
-                <th>部屋の面積</th>
-                <td>
-                  約9m × 6m
-                </td>
-                <td class="result-after">
-                  変更なし
+                <td class="after-text">
+                  吹き抜けを使わず、中庭へ視線を伸ばす
                 </td>
               </tr>
 
               <tr>
-                <th>キッチン・収納</th>
-                <td>
-                  既存位置
+                <th>水まわり</th>
+                <td class="before-text">
+                  来客動線と洗濯・入浴動線が交差
                 </td>
-                <td class="result-after">
-                  位置変更なし
+                <td class="after-text">
+                  水まわりとファミリー収納を近接させる
+                </td>
+              </tr>
+
+              <tr>
+                <th>建具</th>
+                <td class="before-text">
+                  開き戸の軌跡と人の立つ場所が重なる
+                </td>
+                <td class="after-text">
+                  引き戸を中心にし、同時使用時の干渉を抑える
+                </td>
+              </tr>
+
+              <tr>
+                <th>内装色</th>
+                <td class="before-text">
+                  床・壁・天井・建具へ濃いグレーが分散
+                </td>
+                <td class="after-text">
+                  明るい基調色を増やし、濃色を限定する
+                </td>
+              </tr>
+
+              <tr>
+                <th>照明</th>
+                <td class="before-text">
+                  ダウンライトを均等に配置
+                </td>
+                <td class="after-text">
+                  食事・くつろぎ・家事・中庭で光を分ける
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="important-note">
-          実際に必要な通路幅や家具周辺の余白は、
-          家族構成、身体状況、家具寸法、扉形式、建物条件などによって異なります。
-          掲載モデルの数値だけを基準にせず、使用予定の家具と暮らし方で個別に確認する必要があります。
+        <div class="disclaimer">
+          このモデルの寸法や配置は説明用です。
+          実際の計画では、敷地、道路、方位、採光、通風、防犯、
+          建ぺい率、容積率、構造、耐力壁、設備配管、防火規制、
+          ハウスメーカーの仕様などを個別に確認します。
         </div>
       </div>
     </section>
 
-    <section
-      id="diagnosis"
-      class="cta-section"
-    >
-      <div class="container cta-box">
+    <section class="cta">
+      <div class="container cta-inner">
         <span class="eyebrow">
-          FREE FLOOR PLAN CHECK
+          FLOOR PLAN SECOND OPINION
         </span>
 
         <h2>
-          あなたの間取りにも、<br>
-          暮らしを重ねてみませんか？
+          間取り・収納・内装を、<br>
+          別々に決めていませんか？
         </h2>
 
         <p>
           現在案を否定するのではなく、
-          活かせる点と優先して確認したい点を二級建築士が整理します。
-          平面図だけでは見つけにくい、動線・収納・家具配置を確認します。
+          活かせる場所、変更を検討する場所、
+          建築会社へ確認する内容、ご家族で決める内容に分けて整理します。
         </p>
 
-        <!--
-          次のhrefを、公開済みApps Script Webアプリの
-          /exec URLへ置き換えてください。
-        -->
-        <a
-          class="cta-button"
-          href="https://script.google.com/macros/s/ここをデプロイIDへ変更/exec"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          無料間取り整理診断を申し込む
-        </a>
+        <div class="cta-buttons">
+          <a class="cta-button" href="../">
+            個別相談の内容を見る
+          </a>
 
-        <ul class="cta-meta">
-          <li>Googleログイン不要</li>
-          <li>フォーム送信だけでは契約になりません</li>
-          <li>生成AIを使用しない方法も選択可能</li>
-        </ul>
+          <a class="cta-button secondary" href="#top">
+            この事例を最初から見る
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <strong>
-        BETTER HOME DESIGN
-      </strong>
-
-      <p>
-        二級建築士・漆間絵美
-      </p>
-
-      <p>
-        © BETTER HOME DESIGN
-      </p>
+      <strong>BETTER HOME DESIGN</strong>
+      <p>二級建築士・漆間絵美</p>
+      <p>© BETTER HOME DESIGN</p>
     </div>
   </footer>
 
@@ -1961,860 +1652,934 @@
       'use strict';
 
       /*
-       * ======================================================
-       * 共通モデルデータ
-       * ======================================================
+       * =====================================================
+       * 共通設定
+       * =====================================================
        *
+       * 2D平面図と3Dモデルは、下記の同じデータを使用します。
        * 単位はメートルです。
-       * 2D平面図と3Dパースは、ここにある同じ座標を使用します。
        */
 
-      var ROOM = {
-        width: 9,
-        depth: 6,
-        height: 2.65
+      var SITE = {
+        width: 10,
+        depth: 8.6
       };
 
       var COLORS = {
-        floor:
-          '#ede9df',
-
-        floorGrid:
-          '#d7d2c7',
-
-        wall:
-          '#e3e8e5',
-
-        wallSide:
-          '#cbd5d0',
-
-        wallDark:
-          '#aebdb6',
-
-        kitchen:
-          '#b9c7c1',
-
-        kitchenTop:
-          '#dbe3df',
-
-        pantry:
-          '#aebdb6',
-
-        wood:
-          '#b98558',
-
-        woodTop:
-          '#d1a273',
-
-        woodDark:
-          '#765033',
-
-        sofa:
-          '#9aa9a3',
-
-        sofaTop:
-          '#bec9c5',
-
-        danger:
-          'rgba(200, 63, 63, 0.34)',
-
-        dangerSolid:
-          '#c83f3f',
-
-        safe:
-          'rgba(47, 111, 94, 0.28)',
-
-        safeSolid:
-          '#2f6f5e',
-
-        route:
-          '#5f98bb',
-
-        ink:
-          '#26332f',
-
-        muted:
-          '#66736e',
-
-        white:
-          '#ffffff'
+        road: '#aeb4b2',
+        site: '#dce5d8',
+        floorBefore: '#aaa8a3',
+        floorAfter: '#d8d2c8',
+        wetFloor: '#c9d2d0',
+        entryFloor: '#c8c5bd',
+        courtyard: '#9abd92',
+        storage: '#c9b28b',
+        wall: '#e5e6e2',
+        wallSide: '#c5cbc7',
+        darkWall: '#777a79',
+        accent: '#405d55',
+        kitchenBefore: '#6f7474',
+        kitchenAfter: '#8e8a82',
+        furniture: '#946f50',
+        furnitureTop: '#bd916b',
+        problem: 'rgba(189,71,71,.34)',
+        problemSolid: '#bd4747',
+        route: '#4b7f9b',
+        safe: 'rgba(49,95,84,.25)',
+        ink: '#28352f',
+        white: '#fff'
       };
 
       /*
-       * 固定家具。
-       * 見直し前後で位置を変えません。
+       * 3D比較の固定カメラ。
+       * BEFOREとAFTERで完全に共通です。
        */
-      var FIXED_ITEMS = [
-        {
-          id:
-            'kitchen',
-
-          label:
-            'キッチン',
-
-          type:
-            'box',
-
-          x:
-            0.65,
-
-          y:
-            5.05,
-
-          z:
-            0,
-
-          width:
-            5.65,
-
-          depth:
-            0.72,
-
-          height:
-            0.90,
-
-          color:
-            COLORS.kitchen,
-
-          topColor:
-            COLORS.kitchenTop
+      var CAMERA = {
+        position: {
+          x: 13.2,
+          y: -11.4,
+          z: 8.6
         },
 
-        {
-          id:
-            'island',
-
-          label:
-            '作業台',
-
-          type:
-            'box',
-
-          x:
-            1.05,
-
-          y:
-            4.00,
-
-          z:
-            0,
-
-          width:
-            3.00,
-
-          depth:
-            0.70,
-
-          height:
-            0.90,
-
-          color:
-            COLORS.kitchen,
-
-          topColor:
-            COLORS.kitchenTop
+        target: {
+          x: 5,
+          y: 4.4,
+          z: .75
         },
 
-        {
-          id:
-            'pantry',
-
-          label:
-            'パントリー',
-
-          type:
-            'box',
-
-          x:
-            8.12,
-
-          y:
-            3.35,
-
-          z:
-            0,
-
-          width:
-            0.66,
-
-          depth:
-            1.75,
-
-          height:
-            2.25,
-
-          color:
-            COLORS.pantry,
-
-          topColor:
-            '#c8d3ce'
-        },
-
-        {
-          id:
-            'sofa',
-
-          label:
-            'ソファ',
-
-          type:
-            'box',
-
-          x:
-            0.85,
-
-          y:
-            1.00,
-
-          z:
-            0,
-
-          width:
-            2.75,
-
-          depth:
-            0.90,
-
-          height:
-            0.72,
-
-          color:
-            COLORS.sofa,
-
-          topColor:
-            COLORS.sofaTop
-        },
-
-        {
-          id:
-            'low-table',
-
-          label:
-            'リビングテーブル',
-
-          type:
-            'box',
-
-          x:
-            1.45,
-
-          y:
-            2.25,
-
-          z:
-            0,
-
-          width:
-            1.45,
-
-          depth:
-            0.65,
-
-          height:
-            0.35,
-
-          color:
-            '#aa805c',
-
-          topColor:
-            '#c79a70'
-        }
-      ];
-
-      /*
-       * 見直し前のダイニング。
-       * テーブル長辺が横方向。
-       */
-      var BEFORE_DINING = {
-        table: {
-          id:
-            'table-before',
-
-          label:
-            'ダイニングテーブル',
-
-          type:
-            'box',
-
-          x:
-            5.00,
-
-          y:
-            2.65,
-
-          z:
-            0,
-
-          width:
-            2.40,
-
-          depth:
-            0.90,
-
-          height:
-            0.74,
-
-          color:
-            COLORS.wood,
-
-          topColor:
-            COLORS.woodTop
-        },
-
-        orientation:
-          'horizontal',
-
-        chairs:
-          createHorizontalChairs_(
-            5.00,
-            2.65,
-            2.40,
-            0.90
-          )
+        focalLength: 780
       };
 
-      /*
-       * 見直し後のダイニング。
-       * 同じテーブルを90度回転し、左側へ移動。
-       */
-      var AFTER_DINING = {
-        table: {
-          id:
-            'table-after',
-
-          label:
-            'ダイニングテーブル',
-
-          type:
-            'box',
-
-          x:
-            4.48,
-
-          y:
-            2.05,
-
-          z:
-            0,
-
-          width:
-            0.90,
-
-          depth:
-            2.40,
-
-          height:
-            0.74,
-
-          color:
-            COLORS.wood,
-
-          topColor:
-            COLORS.woodTop
-        },
-
-        orientation:
-          'vertical',
-
-        chairs:
-          createVerticalChairs_(
-            4.48,
-            2.05,
-            0.90,
-            2.40
-          )
-      };
-
-      /*
-       * 通行ルート。
-       * 2Dと3Dの両方で共通使用します。
-       */
-      var MAIN_ROUTE = [
-        {
-          x:
-            8.00,
-
-          y:
-            0.25
-        },
-        {
-          x:
-            7.90,
-
-          y:
-            1.65
-        },
-        {
-          x:
-            7.80,
-
-          y:
-            3.15
-        },
-        {
-          x:
-            7.35,
-
-          y:
-            4.45
-        },
-        {
-          x:
-            6.20,
-
-          y:
-            5.15
-        }
-      ];
-
-      /*
-       * 見直し前の重複範囲。
-       */
-      var BEFORE_ZONE = {
-        x:
-          7.18,
-
-        y:
-          2.20,
-
-        width:
-          1.10,
-
-        depth:
-          2.45
-      };
-
-      /*
-       * 見直し後に通路として残しやすい範囲。
-       */
-      var AFTER_ZONE = {
-        x:
-          6.35,
-
-        y:
-          1.15,
-
-        width:
-          1.70,
-
-        depth:
-          3.95
-      };
-
-      /*
-       * ======================================================
-       * 初期描画
-       * ======================================================
-       */
-
-      function renderAll_() {
-        drawPlan_(
-          document.getElementById(
-            'plan-before'
-          ),
-          'before'
-        );
-
-        drawPlan_(
-          document.getElementById(
-            'plan-after'
-          ),
-          'after'
-        );
-
-        drawPerspective_(
-          document.getElementById(
-            'perspective-before'
-          ),
-          'before'
-        );
-
-        drawPerspective_(
-          document.getElementById(
-            'perspective-after'
-          ),
-          'after'
-        );
-      }
-
-      /*
-       * ======================================================
-       * 椅子データ生成
-       * ======================================================
-       */
-
-      function createHorizontalChairs_(
-        tableX,
-        tableY,
-        tableWidth,
-        tableDepth
-      ) {
-        var chairWidth =
-          0.52;
-
-        var chairDepth =
-          0.52;
-
-        var gap =
-          0.13;
-
-        var chairs = [];
-
-        var centers = [
-          tableX + 0.48,
-          tableX + tableWidth / 2,
-          tableX + tableWidth - 0.48
-        ];
-
-        centers.forEach(
-          function (centerX, index) {
-            chairs.push(
-              makeChair_(
-                'before-top-' + index,
-                centerX - chairWidth / 2,
-                tableY + tableDepth + gap,
-                chairWidth,
-                chairDepth,
-                0
-              )
-            );
-
-            chairs.push(
-              makeChair_(
-                'before-bottom-' + index,
-                centerX - chairWidth / 2,
-                tableY - chairDepth - gap,
-                chairWidth,
-                chairDepth,
-                0
-              )
-            );
-          }
-        );
-
-        chairs.push(
-          makeChair_(
-            'before-right',
-            tableX + tableWidth + gap,
-            tableY + tableDepth / 2 - chairWidth / 2,
-            chairDepth,
-            chairWidth,
-            0
-          )
-        );
-
-        return chairs;
-      }
-
-      function createVerticalChairs_(
-        tableX,
-        tableY,
-        tableWidth,
-        tableDepth
-      ) {
-        var chairWidth =
-          0.52;
-
-        var chairDepth =
-          0.52;
-
-        var gap =
-          0.13;
-
-        var chairs = [];
-
-        var centers = [
-          tableY + 0.48,
-          tableY + tableDepth / 2,
-          tableY + tableDepth - 0.48
-        ];
-
-        centers.forEach(
-          function (centerY, index) {
-            chairs.push(
-              makeChair_(
-                'after-left-' + index,
-                tableX - chairDepth - gap,
-                centerY - chairWidth / 2,
-                chairDepth,
-                chairWidth,
-                0
-              )
-            );
-
-            chairs.push(
-              makeChair_(
-                'after-right-' + index,
-                tableX + tableWidth + gap,
-                centerY - chairWidth / 2,
-                chairDepth,
-                chairWidth,
-                0
-              )
-            );
-          }
-        );
-
-        chairs.push(
-          makeChair_(
-            'after-bottom',
-            tableX + tableWidth / 2 - chairWidth / 2,
-            tableY - chairDepth - gap,
-            chairWidth,
-            chairDepth,
-            0
-          )
-        );
-
-        return chairs;
-      }
-
-      function makeChair_(
+      function rectRoom(
         id,
+        label,
         x,
         y,
         width,
         depth,
-        rotation
+        color
       ) {
         return {
-          id:
-            id,
+          id: id,
+          label: label,
+          polygon: [
+            { x: x, y: y },
+            { x: x + width, y: y },
+            { x: x + width, y: y + depth },
+            { x: x, y: y + depth }
+          ],
+          color: color
+        };
+      }
 
-          label:
-            '椅子',
+      function objectBox(
+        id,
+        label,
+        x,
+        y,
+        width,
+        depth,
+        height,
+        color,
+        topColor
+      ) {
+        return {
+          id: id,
+          label: label,
+          x: x,
+          y: y,
+          z: 0,
+          width: width,
+          depth: depth,
+          height: height,
+          color: color,
+          topColor: topColor || color
+        };
+      }
 
-          type:
-            'chair',
-
-          x:
-            x,
-
-          y:
-            y,
-
-          z:
-            0,
-
-          width:
-            width,
-
-          depth:
-            depth,
-
-          height:
-            0.46,
-
-          rotation:
-            rotation,
-
-          color:
-            '#8b694c',
-
-          topColor:
-            '#b78a63'
+      function wall(
+        x1,
+        y1,
+        x2,
+        y2,
+        height,
+        thickness,
+        color,
+        render3d
+      ) {
+        return {
+          x1: x1,
+          y1: y1,
+          x2: x2,
+          y2: y2,
+          height: height || 2.45,
+          thickness: thickness || .12,
+          color: color || COLORS.wall,
+          render3d: render3d !== false
         };
       }
 
       /*
-       * ======================================================
-       * 2D平面図
-       * ======================================================
+       * =====================================================
+       * 見直し前モデル
+       * =====================================================
        */
 
-      function drawPlan_(
-        canvas,
-        mode
-      ) {
+      var BEFORE = {
+        name: '見直し前',
+
+        rooms: [
+          rectRoom(
+            'ldk',
+            'LDK',
+            .45,
+            1.45,
+            6.35,
+            4.75,
+            COLORS.floorBefore
+          ),
+
+          rectRoom(
+            'hall',
+            '玄関・廊下',
+            6.8,
+            1.45,
+            2.75,
+            2.1,
+            COLORS.entryFloor
+          ),
+
+          rectRoom(
+            'wash',
+            '洗面脱衣',
+            6.8,
+            3.55,
+            2.75,
+            1.45,
+            COLORS.wetFloor
+          ),
+
+          rectRoom(
+            'laundry',
+            'ランドリー',
+            6.8,
+            5,
+            1.35,
+            1.45,
+            COLORS.wetFloor
+          ),
+
+          rectRoom(
+            'bath',
+            '浴室',
+            8.15,
+            5,
+            1.4,
+            1.45,
+            '#bdc9c8'
+          ),
+
+          rectRoom(
+            'storage',
+            '収納',
+            7.8,
+            6.45,
+            1.75,
+            1.45,
+            COLORS.storage
+          ),
+
+          rectRoom(
+            'room',
+            '個室',
+            .45,
+            6.2,
+            7.35,
+            1.7,
+            '#d7d5ce'
+          ),
+
+          rectRoom(
+            'outside-play',
+            '外遊び希望',
+            5.6,
+            .15,
+            2.8,
+            1.05,
+            '#acd0a5'
+          )
+        ],
+
+        walls: [
+          wall(.4, 1.4, .4, 7.95, 2.5, .13),
+          wall(.4, 7.95, 9.6, 7.95, 2.5, .13),
+          wall(9.6, 1.4, 9.6, 7.95, 2.5, .13),
+          wall(.4, 1.4, 9.6, 1.4, 2.5, .13, COLORS.wall, false),
+
+          wall(.4, 6.2, 7.8, 6.2, 2.45, .11),
+          wall(6.8, 1.4, 6.8, 6.2, 2.45, .11),
+          wall(6.8, 3.55, 9.6, 3.55, 2.45, .11),
+          wall(6.8, 5, 9.6, 5, 2.45, .11),
+          wall(8.15, 5, 8.15, 6.45, 2.45, .11),
+          wall(7.8, 6.2, 7.8, 7.95, 2.45, .11),
+
+          wall(.6, 5.95, 5.9, 5.95, 2.2, .06, COLORS.darkWall)
+        ],
+
+        objects: [
+          objectBox(
+            'kitchen',
+            'キッチン',
+            .75,
+            5.2,
+            3.3,
+            .68,
+            .9,
+            COLORS.kitchenBefore,
+            '#8b8f8f'
+          ),
+
+          objectBox(
+            'island',
+            '配膳カウンター',
+            1.25,
+            4.05,
+            2.4,
+            .62,
+            .9,
+            COLORS.kitchenBefore,
+            '#8b8f8f'
+          ),
+
+          objectBox(
+            'table',
+            'ダイニング',
+            4.4,
+            4.1,
+            1.75,
+            .9,
+            .74,
+            COLORS.furniture,
+            COLORS.furnitureTop
+          ),
+
+          objectBox(
+            'sofa',
+            'ソファ',
+            1,
+            2,
+            2.55,
+            .88,
+            .72,
+            '#777c7b',
+            '#929796'
+          ),
+
+          objectBox(
+            'tv',
+            'TV',
+            4.8,
+            1.65,
+            1.65,
+            .35,
+            .52,
+            '#55595a',
+            '#696d6e'
+          ),
+
+          objectBox(
+            'storage-box',
+            '収納',
+            8,
+            6.6,
+            1.35,
+            1.1,
+            2,
+            '#a78d68',
+            '#c0a77f'
+          )
+        ],
+
+        zones: [
+          {
+            x: 5.55,
+            y: .1,
+            width: 2.9,
+            depth: 1.3,
+            color: COLORS.problem,
+            stroke: COLORS.problemSolid,
+            label: '道路に近い外遊び'
+          },
+
+          {
+            x: 5.65,
+            y: 2.25,
+            width: 1.35,
+            depth: 3.25,
+            color: COLORS.problem,
+            stroke: COLORS.problemSolid,
+            label: '動線の交差'
+          },
+
+          {
+            x: 6.75,
+            y: 3.45,
+            width: 2.85,
+            depth: 1.7,
+            color: COLORS.problem,
+            stroke: COLORS.problemSolid,
+            label: '建具の集中'
+          }
+        ],
+
+        routes: [
+          [
+            { x: 8.7, y: 1.65 },
+            { x: 7.25, y: 2.25 },
+            { x: 6.3, y: 3.2 },
+            { x: 7.3, y: 4.2 },
+            { x: 8.6, y: 5.65 }
+          ],
+
+          [
+            { x: 2, y: 2.35 },
+            { x: 4.7, y: 2.65 },
+            { x: 6.15, y: 3.1 },
+            { x: 7.5
+, y: 4.25 },
+            { x: 8.65, y: 5.7 }
+          ]
+        ],
+
+        doors: [
+          {
+            type: 'swing',
+            x: 6.8,
+            y: 3.72,
+            length: .78,
+            angle: Math.PI,
+            closedAngle: Math.PI / 2,
+            color: COLORS.problemSolid
+          },
+
+          {
+            type: 'swing',
+            x: 8.15,
+            y: 5.15,
+            length: .78,
+            angle: Math.PI,
+            closedAngle: Math.PI / 2,
+            color: COLORS.problemSolid
+          },
+
+          {
+            type: 'swing',
+            x: 7.8,
+            y: 6.35,
+            length: .78,
+            angle: -Math.PI / 2,
+            closedAngle: 0,
+            color: COLORS.problemSolid
+          }
+        ],
+
+        palette: {
+          wall: '#8b8d8c',
+          ceiling: '#777a79',
+          floor: '#969590',
+          accent: '#5e6261'
+        }
+      };
+
+      /*
+       * =====================================================
+       * 見直し後モデル
+       * =====================================================
+       */
+
+      var AFTER = {
+        name: '見直し後',
+
+        rooms: [
+          {
+            id: 'ldk',
+            label: 'LDK',
+            polygon: [
+              { x: .45, y: 1.45 },
+              { x: 4.55, y: 1.45 },
+              { x: 4.55, y: 3.6 },
+              { x: 7.2, y: 3.6 },
+              { x: 7.2, y: 6.2 },
+              { x: .45, y: 6.2 }
+            ],
+            color: COLORS.floorAfter
+          },
+
+          rectRoom(
+            'courtyard',
+            '減築型中庭',
+            4.55,
+            1.45,
+            2.65,
+            2.15,
+            COLORS.courtyard
+          ),
+
+          rectRoom(
+            'entry',
+            '玄関',
+            7.2,
+            1.45,
+            2.35,
+            1.35,
+            COLORS.entryFloor
+          ),
+
+          rectRoom(
+            'hall',
+            '家族動線',
+            7.2,
+            2.8,
+            2.35,
+            .8,
+            '#d5d5cd'
+          ),
+
+          rectRoom(
+            'wash',
+            '洗面',
+            7.2,
+            3.6,
+            1.15,
+            1.3,
+            COLORS.wetFloor
+          ),
+
+          rectRoom(
+            'dressing',
+            '脱衣・洗濯',
+            8.35,
+            3.6,
+            1.2,
+            1.3,
+            COLORS.wetFloor
+          ),
+
+          rectRoom(
+            'family-closet',
+            'ファミリー収納',
+            7.2,
+            4.9,
+            1.15,
+            1.3,
+            COLORS.storage
+          ),
+
+          rectRoom(
+            'bath',
+            '浴室',
+            8.35,
+            4.9,
+            1.2,
+            1.3,
+            '#bdc9c8'
+          ),
+
+          rectRoom(
+            'private-room',
+            '個室',
+            .45,
+            6.2,
+            9.1,
+            1.7,
+            '#ddd9d0'
+          )
+        ],
+
+        walls: [
+          wall(.4, 1.4, .4, 7.95, 2.5, .13),
+          wall(.4, 7.95, 9.6, 7.95, 2.5, .13),
+          wall(9.6, 1.4, 9.6, 7.95, 2.5, .13),
+
+          /*
+           * 手前側は3Dで室内を見せるため、
+           * 平面図には描くものの3Dではカットします。
+           */
+          wall(
+            .4,
+            1.4,
+            4.55,
+            1.4,
+            2.5,
+            .13,
+            COLORS.wall,
+            false
+          ),
+
+          wall(
+            7.2,
+            1.4,
+            9.6,
+            1.4,
+            2.5,
+            .13,
+            COLORS.wall,
+            false
+          ),
+
+          /*
+           * 中庭の道路側に設ける目隠し壁。
+           */
+          wall(
+            4.55,
+            1.4,
+            7.2,
+            1.4,
+            1.75,
+            .15,
+            '#8b9890',
+            true
+          ),
+
+          wall(
+            7.2,
+            1.4,
+            7.2,
+            3.6,
+            2.45,
+            .11
+          ),
+
+          wall(
+            4.55,
+            1.4,
+            4.55,
+            3.6,
+            2.45,
+            .08,
+            '#b9c8c1'
+          ),
+
+          /*
+           * 中庭とLDKの間は大きな窓を想定。
+           * 低い見切り線のみ表示します。
+           */
+          wall(
+            4.55,
+            3.6,
+            7.2,
+            3.6,
+            .18,
+            .08,
+            '#789087'
+          ),
+
+          wall(
+            .4,
+            6.2,
+            9.6,
+            6.2,
+            2.45,
+            .11
+          ),
+
+          wall(
+            7.2,
+            3.6,
+            9.6,
+            3.6,
+            2.45,
+            .11
+          ),
+
+          wall(
+            7.2,
+            4.9,
+            9.6,
+            4.9,
+            2.45,
+            .11
+          ),
+
+          wall(
+            8.35,
+            3.6,
+            8.35,
+            6.2,
+            2.45,
+            .11
+          )
+        ],
+
+        objects: [
+          objectBox(
+            'kitchen',
+            'キッチン',
+            .75,
+            5.2,
+            3.3,
+            .68,
+            .9,
+            COLORS.kitchenAfter,
+            '#aaa69e'
+          ),
+
+          objectBox(
+            'island',
+            '配膳カウンター',
+            1.2,
+            4.1,
+            2.5,
+            .62,
+            .9,
+            COLORS.kitchenAfter,
+            '#aaa69e'
+          ),
+
+          objectBox(
+            'table',
+            'ダイニング',
+            4.65,
+            4.25,
+            1.8,
+            .9,
+            .74,
+            COLORS.furniture,
+            COLORS.furnitureTop
+          ),
+
+          objectBox(
+            'sofa',
+            'ソファ',
+            .95,
+            2.05,
+            2.55,
+            .88,
+            .72,
+            '#9b968e',
+            '#bbb4aa'
+          ),
+
+          objectBox(
+            'tv',
+            'TV',
+            3.75,
+            1.7,
+            .35,
+            1.35,
+            .52,
+            COLORS.accent,
+            '#58736b'
+          ),
+
+          objectBox(
+            'family-storage',
+            '家族収納',
+            7.32,
+            5.02,
+            .9,
+            1.05,
+            2,
+            '#a58c68',
+            '#bea77e'
+          ),
+
+          /*
+           * 中庭のベンチ。
+           */
+          objectBox(
+            'garden-bench',
+            'ベンチ',
+            4.85,
+            1.78,
+            1.3,
+            .42,
+            .4,
+            '#987453',
+            '#bc936d'
+          ),
+
+          /*
+           * 中庭の植栽を簡易立方体として表現。
+           */
+          objectBox(
+            'plant',
+            '植栽',
+            6.35,
+            2.55,
+            .45,
+            .45,
+            1.05,
+            '#60845f',
+            '#7da179'
+          )
+        ],
+
+        zones: [
+          {
+            x: 4.55,
+            y: 1.45,
+            width: 2.65,
+            depth: 2.15,
+            color: 'rgba(83,132,79,.25)',
+            stroke: '#53844f',
+            label: '見守れる中庭'
+          },
+
+          {
+            x: 7.1,
+            y: 2.7,
+            width: 2.45,
+            depth: 3.5,
+            color: COLORS.safe,
+            stroke: '#315f54',
+            label: '水まわり動線'
+          }
+        ],
+
+        routes: [
+          [
+            { x: 8.7, y: 1.65 },
+            { x: 8.2, y: 2.35 },
+            { x: 7.8, y: 3.15 },
+            { x: 7.75, y: 4.2 },
+            { x: 7.75, y: 5.55 }
+          ],
+
+          [
+            { x: 1.8, y: 2.45 },
+            { x: 3.8, y: 2.8 },
+            { x: 4.8, y: 3.2 },
+            { x: 5.65, y: 2.75 }
+          ]
+        ],
+
+        doors: [
+          {
+            type: 'slide',
+            x: 7.2,
+            y: 3.82,
+            length: .85,
+            axis: 'y',
+            color: '#526c63'
+          },
+
+          {
+            type: 'slide',
+            x: 8.35,
+            y: 3.82,
+            length: .85,
+            axis: 'y',
+            color: '#526c63'
+          },
+
+          {
+            type: 'slide',
+            x: 7.2,
+            y: 5.1,
+            length: .85,
+            axis: 'y',
+            color: '#526c63'
+          }
+        ],
+
+        palette: {
+          wall: '#e7e3da',
+          ceiling: '#f0ede7',
+          floor: '#827d74',
+          accent: '#405d55'
+        }
+      };
+
+      /*
+       * =====================================================
+       * 2D平面図
+       * =====================================================
+       */
+
+      function drawPlan(canvas, model) {
         if (!canvas) {
           return;
         }
 
-        var context =
-          canvas.getContext('2d');
+        var context = canvas.getContext('2d');
+        var width = canvas.width;
+        var height = canvas.height;
 
-        var canvasWidth =
-          canvas.width;
-
-        var canvasHeight =
-          canvas.height;
+        context.clearRect(0, 0, width, height);
+        context.fillStyle = '#f4f6f5';
+        context.fillRect(0, 0, width, height);
 
         var padding = {
-          top:
-            54,
-
-          right:
-            54,
-
-          bottom:
-            62,
-
-          left:
-            62
+          top: 52,
+          right: 52,
+          bottom: 55,
+          left: 58
         };
 
-        var drawingWidth =
-          canvasWidth -
-          padding.left -
-          padding.right;
+        var usableWidth =
+          width - padding.left - padding.right;
 
-        var drawingHeight =
-          canvasHeight -
-          padding.top -
-          padding.bottom;
+        var usableHeight =
+          height - padding.top - padding.bottom;
 
-        var scale =
-          Math.min(
-            drawingWidth / ROOM.width,
-            drawingHeight / ROOM.depth
-          );
+        var scale = Math.min(
+          usableWidth / SITE.width,
+          usableHeight / SITE.depth
+        );
 
-        var planWidth =
-          ROOM.width * scale;
-
-        var planHeight =
-          ROOM.depth * scale;
+        var drawingWidth = SITE.width * scale;
+        var drawingHeight = SITE.depth * scale;
 
         var offsetX =
           padding.left +
-          (
-            drawingWidth -
-            planWidth
-          ) / 2;
+          (usableWidth - drawingWidth) / 2;
 
         var offsetY =
           padding.top +
-          (
-            drawingHeight -
-            planHeight
-          ) / 2;
+          (usableHeight - drawingHeight) / 2;
 
-        context.clearRect(
-          0,
-          0,
-          canvasWidth,
-          canvasHeight
-        );
-
-        context.fillStyle =
-          '#f3f6f4';
-
-        context.fillRect(
-          0,
-          0,
-          canvasWidth,
-          canvasHeight
-        );
-
-        function pointToCanvas_(
-          x,
-          y
-        ) {
+        function point(x, y) {
           return {
-            x:
-              offsetX +
-              x * scale,
-
+            x: offsetX + x * scale,
             y:
               offsetY +
-              (
-                ROOM.depth -
-                y
-              ) * scale
-          };
-        }
-
-        function rectangleToCanvas_(
-          item
-        ) {
-          var topLeft =
-            pointToCanvas_(
-              item.x,
-              item.y +
-              item.depth
-            );
-
-          return {
-            x:
-              topLeft.x,
-
-            y:
-              topLeft.y,
-
-            width:
-              item.width * scale,
-
-            height:
-              item.depth * scale
+              (SITE.depth - y) * scale
           };
         }
 
         /*
-         * 床
+         * 道路
          */
-        var roomTopLeft =
-          pointToCanvas_(
-            0,
-            ROOM.depth
-          );
+        var roadTopLeft = point(0, .85);
 
-        context.fillStyle =
-          COLORS.floor;
+        context.fillStyle = COLORS.road;
 
         context.fillRect(
-          roomTopLeft.x,
-          roomTopLeft.y,
-          planWidth,
-          planHeight
+          roadTopLeft.x,
+          roadTopLeft.y,
+          SITE.width * scale,
+          .85 * scale
         );
+
+        context.fillStyle = '#fff';
+        context.font = '800 12px sans-serif';
+        context.textAlign = 'center';
+
+        context.fillText(
+          '前面道路・車の通行',
+          offsetX + drawingWidth / 2,
+          point(0, .42).y + 4
+        );
+
+        /*
+         * 敷地
+         */
+        var siteTopLeft = point(0, SITE.depth);
+
+        context.fillStyle = '#eef2ec';
+
+        context.fillRect(
+          siteTopLeft.x,
+          siteTopLeft.y,
+          drawingWidth,
+          (SITE.depth - .85) * scale
+        );
+
+        context.strokeStyle = '#87958e';
+        context.lineWidth = 2;
+        context.setLineDash([8, 5]);
+
+        context.strokeRect(
+          siteTopLeft.x,
+          siteTopLeft.y,
+          drawingWidth,
+          (SITE.depth - .85) * scale
+        );
+
+        context.setLineDash([]);
 
         /*
          * 1mグリッド
          */
         context.save();
-
-        context.strokeStyle =
-          COLORS.floorGrid;
-
-        context.lineWidth =
-          1;
-
-        context.setLineDash([
-          3,
-          5
-        ]);
+        context.strokeStyle = 'rgba(91,108,100,.13)';
+        context.lineWidth = 1;
+        context.setLineDash([3, 5]);
 
         var gridX;
 
         for (
           gridX = 1;
-          gridX < ROOM.width;
+          gridX < SITE.width;
           gridX += 1
         ) {
-          var gridXStart =
-            pointToCanvas_(
-              gridX,
-              0
-            );
-
-          var gridXEnd =
-            pointToCanvas_(
-              gridX,
-              ROOM.depth
-            );
+          var gx1 = point(gridX, .85);
+          var gx2 = point(gridX, SITE.depth);
 
           context.beginPath();
-
-          context.moveTo(
-            gridXStart.x,
-            gridXStart.y
-          );
-
-          context.lineTo(
-            gridXEnd.x,
-            gridXEnd.y
-          );
-
+          context.moveTo(gx1.x, gx1.y);
+          context.lineTo(gx2.x, gx2.y);
           context.stroke();
         }
 
@@ -2822,472 +2587,342 @@
 
         for (
           gridY = 1;
-          gridY < ROOM.depth;
+          gridY < SITE.depth;
           gridY += 1
         ) {
-          var gridYStart =
-            pointToCanvas_(
-              0,
-              gridY
-            );
-
-          var gridYEnd =
-            pointToCanvas_(
-              ROOM.width,
-              gridY
-            );
+          var gy1 = point(0, gridY);
+          var gy2 = point(SITE.width, gridY);
 
           context.beginPath();
-
-          context.moveTo(
-            gridYStart.x,
-            gridYStart.y
-          );
-
-          context.lineTo(
-            gridYEnd.x,
-            gridYEnd.y
-          );
-
+          context.moveTo(gy1.x, gy1.y);
+          context.lineTo(gy2.x, gy2.y);
           context.stroke();
         }
 
         context.restore();
 
         /*
-         * 動作重複範囲または確保した通路
+         * 部屋
          */
-        var activeZone =
-          mode === 'before'
-            ? BEFORE_ZONE
-            : AFTER_ZONE;
-
-        var zoneRectangle =
-          rectangleToCanvas_(
-            activeZone
+        model.rooms.forEach(function (room) {
+          drawPlanPolygon(
+            context,
+            room.polygon,
+            point,
+            room.color,
+            '#7f8b85',
+            1.4
           );
 
-        context.save();
+          var center = polygonCenter(room.polygon);
+          var labelPoint = point(center.x, center.y);
 
-        context.fillStyle =
-          mode === 'before'
-            ? COLORS.danger
-            : COLORS.safe;
+          context.save();
+          context.fillStyle = COLORS.ink;
+          context.font = '800 11px sans-serif';
+          context.textAlign = 'center';
+          context.textBaseline = 'middle';
 
-        context.strokeStyle =
-          mode === 'before'
-            ? COLORS.dangerSolid
-            : COLORS.safeSolid;
+          context.fillText(
+            room.label,
+            labelPoint.x,
+            labelPoint.y
+          );
 
-        context.lineWidth =
-          2;
+          context.restore();
+        });
 
-        context.setLineDash([
-          8,
-          6
-        ]);
+        /*
+         * 問題・改善範囲
+         */
+        model.zones.forEach(function (zone) {
+          var zoneTopLeft = point(
+            zone.x,
+            zone.y + zone.depth
+          );
 
-        context.fillRect(
-          zoneRectangle.x,
-          zoneRectangle.y,
-          zoneRectangle.width,
-          zoneRectangle.height
+          context.save();
+          context.fillStyle = zone.color;
+          context.strokeStyle = zone.stroke;
+          context.lineWidth = 2;
+          context.setLineDash([7, 5]);
+
+          context.fillRect(
+            zoneTopLeft.x,
+            zoneTopLeft.y,
+            zone.width * scale,
+            zone.depth * scale
+          );
+
+          context.strokeRect(
+            zoneTopLeft.x,
+            zoneTopLeft.y,
+            zone.width * scale,
+            zone.depth * scale
+          );
+
+          context.restore();
+        });
+
+        /*
+         * 生活動線
+         */
+        model.routes.forEach(function (route) {
+          drawPlanRoute(
+            context,
+            route,
+            point
+          );
+        });
+
+        /*
+         * 壁
+         */
+        model.walls.forEach(function (wallItem) {
+          var start = point(
+            wallItem.x1,
+            wallItem.y1
+          );
+
+          var end = point(
+            wallItem.x2,
+            wallItem.y2
+          );
+
+          context.save();
+          context.strokeStyle =
+            wallItem.color === COLORS.darkWall
+              ? '#676b69'
+              : '#4f625a';
+
+          context.lineWidth = Math.max(
+            3,
+            wallItem.thickness * scale
+          );
+
+          context.lineCap = 'square';
+          context.beginPath();
+          context.moveTo(start.x, start.y);
+          context.lineTo(end.x, end.y);
+          context.stroke();
+          context.restore();
+        });
+
+        /*
+         * 設備・家具
+         */
+        model.objects.forEach(function (item) {
+          drawPlanObject(
+            context,
+            item,
+            point,
+            scale
+          );
+        });
+
+        /*
+         * 建具
+         */
+        model.doors.forEach(function (door) {
+          drawPlanDoor(
+            context,
+            door,
+            point,
+            scale
+          );
+        });
+
+        /*
+         * 道路の車
+         */
+        drawCarSymbol(
+          context,
+          point(1.25, .43),
+          scale
         );
 
-        context.strokeRect(
-          zoneRectangle.x,
-          zoneRectangle.y,
-          zoneRectangle.width,
-          zoneRectangle.height
+        drawCarSymbol(
+          context,
+          point(8.6, .43),
+          scale
+        );
+
+        /*
+         * 方位
+         */
+        drawNorthSymbol(
+          context,
+          width - 40,
+          43
+        );
+
+        /*
+         * 縮尺説明
+         */
+        context.save();
+        context.fillStyle = '#53615b';
+        context.font = '700 10px sans-serif';
+        context.textAlign = 'left';
+
+        context.fillText(
+          'グリッド：1m',
+          offsetX,
+          height - 17
         );
 
         context.restore();
+      }
 
-        /*
-         * 主動線
-         */
+      function drawPlanPolygon(
+        context,
+        polygon,
+        point,
+        fill,
+        stroke,
+        lineWidth
+      ) {
         context.save();
-
-        context.strokeStyle =
-          COLORS.route;
-
-        context.lineWidth =
-          Math.max(
-            9,
-            scale * 0.13
-          );
-
-        context.lineCap =
-          'round';
-
-        context.lineJoin =
-          'round';
-
-        context.globalAlpha =
-          0.78;
+        context.fillStyle = fill;
+        context.strokeStyle = stroke;
+        context.lineWidth = lineWidth;
 
         context.beginPath();
 
-        MAIN_ROUTE.forEach(
-          function (
-            routePoint,
-            routeIndex
-          ) {
-            var canvasPoint =
-              pointToCanvas_(
-                routePoint.x,
-                routePoint.y
-              );
+        polygon.forEach(function (vertex, index) {
+          var projected = point(
+            vertex.x,
+            vertex.y
+          );
 
-            if (
-              routeIndex === 0
-            ) {
-              context.moveTo(
-                canvasPoint.x,
-                canvasPoint.y
-              );
-            } else {
-              context.lineTo(
-                canvasPoint.x,
-                canvasPoint.y
-              );
-            }
+          if (index === 0) {
+            context.moveTo(
+              projected.x,
+              projected.y
+            );
+          } else {
+            context.lineTo(
+              projected.x,
+              projected.y
+            );
+          }
+        });
+
+        context.closePath();
+        context.fill();
+        context.stroke();
+        context.restore();
+      }
+
+      function polygonCenter(polygon) {
+        var total = polygon.reduce(
+          function (result, vertex) {
+            result.x += vertex.x;
+            result.y += vertex.y;
+            return result;
+          },
+          {
+            x: 0,
+            y: 0
           }
         );
+
+        return {
+          x: total.x / polygon.length,
+          y: total.y / polygon.length
+        };
+      }
+
+      function drawPlanRoute(
+        context,
+        route,
+        point
+      ) {
+        context.save();
+        context.strokeStyle = COLORS.route;
+        context.lineWidth = 8;
+        context.lineCap = 'round';
+        context.lineJoin = 'round';
+        context.globalAlpha = .72;
+
+        context.beginPath();
+
+        route.forEach(function (routePoint, index) {
+          var projected = point(
+            routePoint.x,
+            routePoint.y
+          );
+
+          if (index === 0) {
+            context.moveTo(
+              projected.x,
+              projected.y
+            );
+          } else {
+            context.lineTo(
+              projected.x,
+              projected.y
+            );
+          }
+        });
 
         context.stroke();
 
-        context.restore();
-
-        drawPlanArrow_(
-          context,
-          pointToCanvas_,
-          MAIN_ROUTE[
-            MAIN_ROUTE.length - 2
-          ],
-          MAIN_ROUTE[
-            MAIN_ROUTE.length - 1
-          ]
-        );
-
-        /*
-         * 固定家具
-         */
-        FIXED_ITEMS.forEach(
-          function (item) {
-            drawPlanItem_(
-              context,
-              rectangleToCanvas_,
-              item,
-              scale
-            );
-          }
-        );
-
-        /*
-         * ダイニング家具
-         */
-        var dining =
-          mode === 'before'
-            ? BEFORE_DINING
-            : AFTER_DINING;
-
-        drawPlanItem_(
-          context,
-          rectangleToCanvas_,
-          dining.table,
-          scale
-        );
-
-        dining.chairs.forEach(
-          function (chair) {
-            drawPlanItem_(
-              context,
-              rectangleToCanvas_,
-              chair,
-              scale
-            );
-          }
-        );
-
-        /*
-         * パントリー扉
-         */
-        drawPantryDoorPlan_(
-          context,
-          pointToCanvas_,
-          scale,
-          mode
-        );
-
-        /*
-         * 外周壁
-         */
-        context.save();
-
-        context.strokeStyle =
-          '#52645d';
-
-        context.lineWidth =
-          5;
-
-        context.strokeRect(
-          roomTopLeft.x,
-          roomTopLeft.y,
-          planWidth,
-          planHeight
-        );
-
-        context.restore();
-
-        /*
-         * 寸法線
-         */
-        drawPlanDimensions_(
-          context,
-          pointToCanvas_,
-          scale
-        );
-
-        /*
-         * 確認ポイント
-         */
-        if (
-          mode === 'before'
-        ) {
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.62,
-              2.72
-            ),
-            '1',
-            COLORS.dangerSolid
-          );
-
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.80,
-              3.76
-            ),
-            '2',
-            COLORS.dangerSolid
-          );
-
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.53,
-              4.52
-            ),
-            '3',
-            COLORS.dangerSolid
-          );
-        } else {
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.20,
-              2.10
-            ),
-            '1',
-            COLORS.safeSolid
-          );
-
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.28,
-              3.42
-            ),
-            '2',
-            COLORS.safeSolid
-          );
-
-          drawPlanMarker_(
-            context,
-            pointToCanvas_(
-              7.36,
-              4.58
-            ),
-            '3',
-            COLORS.safeSolid
-          );
-        }
-
-        /*
-         * 方位表示
-         */
-        drawNorthMark_(
-          context,
-          canvasWidth - 37,
-          42
-        );
-      }
-
-      function drawPlanItem_(
-        context,
-        rectangleToCanvas,
-        item,
-        scale
-      ) {
-        var rectangle =
-          rectangleToCanvas(
-            item
-          );
-
-        context.save();
-
-        context.fillStyle =
-          item.color;
-
-        context.strokeStyle =
-          item.type === 'chair'
-            ? '#684d38'
-            : '#71827b';
-
-        context.lineWidth =
-          item.type === 'chair'
-            ? 1.3
-            : 1.6;
-
-        context.fillRect(
-          rectangle.x,
-          rectangle.y,
-          rectangle.width,
-          rectangle.height
-        );
-
-        context.strokeRect(
-          rectangle.x,
-          rectangle.y,
-          rectangle.width,
-          rectangle.height
-        );
-
-        if (
-          item.type === 'chair'
-        ) {
-          context.fillStyle =
-            'rgba(255,255,255,0.24)';
-
-          context.fillRect(
-            rectangle.x +
-            rectangle.width * 0.16,
-            rectangle.y +
-            rectangle.height * 0.16,
-            rectangle.width * 0.68,
-            rectangle.height * 0.68
-          );
-        }
-
-        var minimumDimension =
-          Math.min(
-            rectangle.width,
-            rectangle.height
-          );
-
-        if (
-          item.type !== 'chair' &&
-          minimumDimension >
-          28
-        ) {
-          context.fillStyle =
-            COLORS.ink;
-
-          context.font =
-            '700 ' +
-            Math.max(
-              10,
-              Math.min(
-                14,
-                scale * 0.16
-              )
-            ) +
-            'px sans-serif';
-
-          context.textAlign =
-            'center';
-
-          context.textBaseline =
-            'middle';
-
-          context.fillText(
-            item.label,
-            rectangle.x +
-            rectangle.width / 2,
-            rectangle.y +
-            rectangle.height / 2
-          );
-        }
-
-        context.restore();
-      }
-
-      function drawPlanArrow_(
-        context,
-        pointToCanvas,
-        previousPoint,
-        finalPoint
-      ) {
-        var start =
-          pointToCanvas(
-            previousPoint.x,
-            previousPoint.y
+        var previous =
+          point(
+            route[route.length - 2].x,
+            route[route.length - 2].y
           );
 
         var end =
-          pointToCanvas(
-            finalPoint.x,
-            finalPoint.y
+          point(
+            route[route.length - 1].x,
+            route[route.length - 1].y
           );
 
-        var angle =
-          Math.atan2(
-            end.y - start.y,
-            end.x - start.x
-          );
+        drawArrowHead(
+          context,
+          previous,
+          end,
+          COLORS.route
+        );
 
-        var arrowSize =
-          14;
+        context.restore();
+      }
+
+      function drawArrowHead(
+        context,
+        start,
+        end,
+        color
+      ) {
+        var angle = Math.atan2(
+          end.y - start.y,
+          end.x - start.x
+        );
+
+        var size = 13;
 
         context.save();
-
-        context.fillStyle =
-          COLORS.route;
-
+        context.fillStyle = color;
         context.beginPath();
+        context.moveTo(end.x, end.y);
 
-        context.moveTo(
-          end.x,
-          end.y
+        context.lineTo(
+          end.x -
+          size *
+          Math.cos(angle - Math.PI / 6),
+          end.y -
+          size *
+          Math.sin(angle - Math.PI / 6)
         );
 
         context.lineTo(
           end.x -
-          arrowSize *
-          Math.cos(
-            angle - Math.PI / 6
-          ),
+          size *
+          Math.cos(angle + Math.PI / 6),
           end.y -
-          arrowSize *
-          Math.sin(
-            angle - Math.PI / 6
-          )
-        );
-
-        context.lineTo(
-          end.x -
-          arrowSize *
-          Math.cos(
-            angle + Math.PI / 6
-          ),
-          end.y -
-          arrowSize *
-          Math.sin(
-            angle + Math.PI / 6
-          )
+          size *
+          Math.sin(angle + Math.PI / 6)
         );
 
         context.closePath();
@@ -3295,1727 +2930,902 @@
         context.restore();
       }
 
-      function drawPantryDoorPlan_(
+      function drawPlanObject(
         context,
-        pointToCanvas,
-        scale,
-        mode
-      ) {
-        var hinge =
-          pointToCanvas(
-            8.12,
-            3.35
-          );
-
-        var doorLength =
-          0.82 * scale;
-
-        context.save();
-
-        context.strokeStyle =
-          mode === 'before'
-            ? COLORS.dangerSolid
-            : '#60736b';
-
-        context.lineWidth =
-          2;
-
-        /*
-         * 90度開いた扉の位置
-         */
-        context.beginPath();
-
-        context.moveTo(
-          hinge.x,
-          hinge.y
-        );
-
-        context.lineTo(
-          hinge.x -
-          doorLength,
-          hinge.y
-        );
-
-        context.stroke();
-
-        /*
-         * 開閉軌跡
-         */
-        context.setLineDash([
-          5,
-          4
-        ]);
-
-        context.beginPath();
-
-        context.arc(
-          hinge.x,
-          hinge.y,
-          doorLength,
-          Math.PI,
-          Math.PI * 1.5,
-          false
-        );
-
-        context.stroke();
-
-        context.restore();
-      }
-
-      function drawPlanDimensions_(
-        context,
-        pointToCanvas,
+        item,
+        point,
         scale
       ) {
-        var bottomLeft =
-          pointToCanvas(
-            0,
-            0
-          );
-
-        var bottomRight =
-          pointToCanvas(
-            ROOM.width,
-            0
-          );
-
-        var topLeft =
-          pointToCanvas(
-            0,
-            ROOM.depth
-          );
+        var topLeft = point(
+          item.x,
+          item.y + item.depth
+        );
 
         context.save();
+        context.fillStyle = item.color;
+        context.strokeStyle = '#5e6d66';
+        context.lineWidth = 1.4;
 
-        context.strokeStyle =
-          '#7a8883';
-
-        context.fillStyle =
-          '#52615c';
-
-        context.lineWidth =
-          1;
-
-        context.font =
-          '700 12px sans-serif';
-
-        context.textAlign =
-          'center';
-
-        /*
-         * 横方向寸法
-         */
-        var horizontalY =
-          bottomLeft.y + 26;
-
-        context.beginPath();
-
-        context.moveTo(
-          bottomLeft.x,
-          horizontalY
+        context.fillRect(
+          topLeft.x,
+          topLeft.y,
+          item.width * scale,
+          item.depth * scale
         );
 
-        context.lineTo(
-          bottomRight.x,
-          horizontalY
+        context.strokeRect(
+          topLeft.x,
+          topLeft.y,
+          item.width * scale,
+          item.depth * scale
         );
 
-        context.stroke();
+        if (
+          item.width * scale > 55 &&
+          item.depth * scale > 25
+        ) {
+          context.fillStyle = COLORS.ink;
+          context.font = '800 9px sans-serif';
+          context.textAlign = 'center';
+          context.textBaseline = 'middle';
 
-        context.beginPath();
-
-        context.moveTo(
-          bottomLeft.x,
-          horizontalY - 6
-        );
-
-        context.lineTo(
-          bottomLeft.x,
-          horizontalY + 6
-        );
-
-        context.moveTo(
-          bottomRight.x,
-          horizontalY - 6
-        );
-
-        context.lineTo(
-          bottomRight.x,
-          horizontalY + 6
-        );
-
-        context.stroke();
-
-        context.fillText(
-          '9,000 mm',
-          (
-            bottomLeft.x +
-            bottomRight.x
-          ) / 2,
-          horizontalY + 20
-        );
-
-        /*
-         * 縦方向寸法
-         */
-        var verticalX =
-          topLeft.x - 27;
-
-        context.beginPath();
-
-        context.moveTo(
-          verticalX,
-          topLeft.y
-        );
-
-        context.lineTo(
-          verticalX,
-          bottomLeft.y
-        );
-
-        context.stroke();
-
-        context.beginPath();
-
-        context.moveTo(
-          verticalX - 6,
-          topLeft.y
-        );
-
-        context.lineTo(
-          verticalX + 6,
-          topLeft.y
-        );
-
-        context.moveTo(
-          verticalX - 6,
-          bottomLeft.y
-        );
-
-        context.lineTo(
-          verticalX + 6,
-          bottomLeft.y
-        );
-
-        context.stroke();
-
-        context.save();
-
-        context.translate(
-          verticalX - 14,
-          (
+          context.fillText(
+            item.label,
+            topLeft.x +
+            item.width * scale / 2,
             topLeft.y +
-            bottomLeft.y
-          ) / 2
-        );
+            item.depth * scale / 2
+          );
+        }
 
-        context.rotate(
-          -Math.PI / 2
-        );
-
-        context.fillText(
-          '6,000 mm',
-          0,
-          0
-        );
-
-        context.restore();
         context.restore();
       }
 
-      function drawPlanMarker_(
+      function drawPlanDoor(
         context,
+        door,
         point,
-        label,
-        color
+        scale
       ) {
         context.save();
+        context.strokeStyle = door.color;
+        context.lineWidth = 2;
 
-        context.fillStyle =
-          color;
-
-        context.strokeStyle =
-          COLORS.white;
-
-        context.lineWidth =
-          3;
-
-        context.beginPath();
-
-        context.arc(
-          point.x,
-          point.y,
-          14,
-          0,
-          Math.PI * 2
+        var hinge = point(
+          door.x,
+          door.y
         );
 
-        context.fill();
-        context.stroke();
+        if (door.type === 'swing') {
+          var endWorld = {
+            x:
+              door.x +
+              Math.cos(door.angle) *
+              door.length,
 
-        context.fillStyle =
-          COLORS.white;
+            y:
+              door.y +
+              Math.sin(door.angle) *
+              door.length
+          };
 
-        context.font =
-          '900 13px sans-serif';
+          var end = point(
+            endWorld.x,
+            endWorld.y
+          );
 
-        context.textAlign =
-          'center';
+          context.beginPath();
+          context.moveTo(hinge.x, hinge.y);
+          context.lineTo(end.x, end.y);
+          context.stroke();
 
-        context.textBaseline =
-          'middle';
+          context.setLineDash([4, 4]);
 
-        context.fillText(
-          label,
-          point.x,
-          point.y + 0.5
+          var steps = 18;
+          context.beginPath();
+
+          for (
+            var step = 0;
+            step <= steps;
+            step += 1
+          ) {
+            var ratio = step / steps;
+
+            var angle =
+              door.closedAngle +
+              (
+                door.angle -
+                door.closedAngle
+              ) *
+              ratio;
+
+            var arcPoint = point(
+              door.x +
+              Math.cos(angle) *
+              door.length,
+              door.y +
+              Math.sin(angle) *
+              door.length
+            );
+
+            if (step === 0) {
+              context.moveTo(
+                arcPoint.x,
+                arcPoint.y
+              );
+            } else {
+              context.lineTo(
+                arcPoint.x,
+                arcPoint.y
+              );
+            }
+          }
+
+          context.stroke();
+        } else {
+          context.lineWidth = 5;
+
+          context.beginPath();
+          context.moveTo(
+            hinge.x,
+            hinge.y
+          );
+
+          if (door.axis === 'y') {
+            var slideEndY = point(
+              door.x,
+              door.y + door.length
+            );
+
+            context.lineTo(
+              slideEndY.x,
+              slideEndY.y
+            );
+          } else {
+            var slideEndX = point(
+              door.x + door.length,
+              door.y
+            );
+
+            context.lineTo(
+              slideEndX.x,
+              slideEndX.y
+            );
+          }
+
+          context.stroke();
+        }
+
+        context.restore();
+      }
+
+      function drawCarSymbol(
+        context,
+        center,
+        scale
+      ) {
+        var carWidth = .82 * scale;
+        var carHeight = .34 * scale;
+
+        context.save();
+        context.fillStyle = '#737b78';
+        context.strokeStyle = '#4f5754';
+        context.lineWidth = 1;
+
+        context.fillRect(
+          center.x - carWidth / 2,
+          center.y - carHeight / 2,
+          carWidth,
+          carHeight
+        );
+
+        context.strokeRect(
+          center.x - carWidth / 2,
+          center.y - carHeight / 2,
+          carWidth,
+          carHeight
+        );
+
+        context.fillStyle = '#cbd3d0';
+
+        context.fillRect(
+          center.x - carWidth * .18,
+          center.y - carHeight * .37,
+          carWidth * .36,
+          carHeight * .74
         );
 
         context.restore();
       }
 
-      function drawNorthMark_(
+      function drawNorthSymbol(
         context,
         x,
         y
       ) {
         context.save();
-
-        context.fillStyle =
-          COLORS.ink;
-
-        context.strokeStyle =
-          COLORS.ink;
-
-        context.lineWidth =
-          2;
-
-        context.font =
-          '900 12px sans-serif';
-
-        context.textAlign =
-          'center';
+        context.fillStyle = COLORS.ink;
+        context.textAlign = 'center';
+        context.font = '900 11px sans-serif';
 
         context.fillText(
           'N',
           x,
-          y - 16
+          y - 15
         );
 
         context.beginPath();
-
-        context.moveTo(
-          x,
-          y - 10
-        );
-
-        context.lineTo(
-          x - 7,
-          y + 9
-        );
-
-        context.lineTo(
-          x,
-          y + 5
-        );
-
-        context.lineTo(
-          x + 7,
-          y + 9
-        );
-
+        context.moveTo(x, y - 9);
+        context.lineTo(x - 7, y + 10);
+        context.lineTo(x, y + 5);
+        context.lineTo(x + 7, y + 10);
         context.closePath();
         context.fill();
-
         context.restore();
       }
 
       /*
-       * ======================================================
+       * =====================================================
        * 3D透視投影
-       * ======================================================
-       *
-       * Canvas上に、固定カメラによる透視投影を行います。
-       * BEFOREとAFTERでカメラ位置・注視点・焦点距離は同一です。
+       * =====================================================
        */
 
-      var CAMERA = {
-        position: {
-          x:
-            11.7,
-
-          y:
-            -10.8,
-
-          z:
-            7.8
-        },
-
-        target: {
-          x:
-            4.55,
-
-          y:
-            3.12,
-
-          z:
-            0.72
-        },
-
-        focalLength:
-          780
-      };
-
-      function drawPerspective_(
-        canvas,
-        mode
-      ) {
+      function draw3D(canvas, model) {
         if (!canvas) {
           return;
         }
 
-        var context =
-          canvas.getContext('2d');
+        var context = canvas.getContext('2d');
+        var width = canvas.width;
+        var height = canvas.height;
 
-        var canvasWidth =
-          canvas.width;
+        context.clearRect(0, 0, width, height);
 
-        var canvasHeight =
-          canvas.height;
-
-        context.clearRect(
-          0,
-          0,
-          canvasWidth,
-          canvasHeight
-        );
-
-        var backgroundGradient =
+        var background =
           context.createLinearGradient(
             0,
             0,
             0,
-            canvasHeight
+            height
           );
 
-        backgroundGradient.addColorStop(
+        background.addColorStop(
           0,
-          '#eef5f2'
+          '#e9f1ed'
         );
 
-        backgroundGradient.addColorStop(
-          0.54,
-          '#f9fbfa'
+        background.addColorStop(
+          .54,
+          '#f8faf9'
         );
 
-        backgroundGradient.addColorStop(
+        background.addColorStop(
           1,
-          '#e5e9e6'
+          '#dfe4e1'
         );
 
-        context.fillStyle =
-          backgroundGradient;
+        context.fillStyle = background;
+        context.fillRect(0, 0, width, height);
 
-        context.fillRect(
-          0,
-          0,
-          canvasWidth,
-          canvasHeight
+        var project = createProjector(
+          width,
+          height
         );
 
-        var projector =
-          createProjector_(
-            canvasWidth,
-            canvasHeight
+        /*
+         * 敷地と道路
+         */
+        drawWorldPolygon(
+          context,
+          project,
+          [
+            { x: 0, y: 0, z: 0 },
+            { x: SITE.width, y: 0, z: 0 },
+            {
+              x: SITE.width,
+              y: SITE.depth,
+              z: 0
+            },
+            { x: 0, y: SITE.depth, z: 0 }
+          ],
+          '#e8ede5',
+          '#9ba69f',
+          1
+        );
+
+        drawWorldPolygon(
+          context,
+          project,
+          [
+            { x: 0, y: 0, z: .006 },
+            {
+              x: SITE.width,
+              y: 0,
+              z: .006
+            },
+            {
+              x: SITE.width,
+              y: .85,
+              z: .006
+            },
+            { x: 0, y: .85, z: .006 }
+          ],
+          COLORS.road,
+          '#777e7b',
+          1
+        );
+
+        /*
+         * 部屋の床。
+         * 2Dと同じpolygonをそのまま使用します。
+         */
+        model.rooms.forEach(function (room) {
+          drawWorldPolygon(
+            context,
+            project,
+            room.polygon.map(
+              function (vertex) {
+                return {
+                  x: vertex.x,
+                  y: vertex.y,
+                  z: .012
+                };
+              }
+            ),
+            room.color,
+            'rgba(80,94,87,.42)',
+            1
           );
+        });
 
         /*
-         * 背面壁・側面壁・床
+         * 問題・改善範囲。
          */
-        drawRoomShell_(
-          context,
-          projector
-        );
+        model.zones.forEach(function (zone) {
+          drawWorldPolygon(
+            context,
+            project,
+            [
+              {
+                x: zone.x,
+                y: zone.y,
+                z: .026
+              },
+              {
+                x: zone.x + zone.width,
+                y: zone.y,
+                z: .026
+              },
+              {
+                x: zone.x + zone.width,
+                y: zone.y + zone.depth,
+                z: .026
+              },
+              {
+                x: zone.x,
+                y: zone.y + zone.depth,
+                z: .026
+              }
+            ],
+            zone.color,
+            zone.stroke,
+            2
+          );
+        });
 
         /*
-         * 床グリッド
+         * 動線。
          */
-        drawPerspectiveGrid_(
-          context,
-          projector
-        );
+        model.routes.forEach(function (route) {
+          draw3DRoute(
+            context,
+            route,
+            project
+          );
+        });
 
         /*
-         * 問題範囲または改善後の通路
+         * 立体化する壁・家具・建具を共通の面リストへ変換。
          */
-        drawPerspectiveZone_(
-          context,
-          projector,
-          mode
-        );
+        var boxes = [];
 
-        /*
-         * 通行ルート
-         */
-        drawPerspectiveRoute_(
-          context,
-          projector
-        );
+        model.walls.forEach(function (wallItem) {
+          if (!wallItem.render3d) {
+            return;
+          }
 
-        /*
-         * 家具を立体面へ変換
-         */
-        var dining =
-          mode === 'before'
-            ? BEFORE_DINING
-            : AFTER_DINING;
+          boxes.push(
+            wallToBox(wallItem)
+          );
+        });
 
-        var sceneItems =
-          FIXED_ITEMS
-            .concat([
-              dining.table
-            ])
-            .concat(
-              dining.chairs
-            );
+        model.objects.forEach(function (item) {
+          boxes.push(item);
+        });
 
         var faces = [];
 
-        sceneItems.forEach(
-          function (item) {
-            var itemParts =
-              createRenderableParts_(
-                item
-              );
-
-            itemParts.forEach(
-              function (part) {
-                faces =
-                  faces.concat(
-                    createBoxFaces_(
-                      part,
-                      projector
-                    )
-                  );
-              }
-            );
-          }
-        );
+        boxes.forEach(function (box) {
+          faces = faces.concat(
+            createBoxFaces(
+              box,
+              project
+            )
+          );
+        });
 
         /*
-         * 遠い面から手前の面へ描画
+         * 建具の3D面。
          */
-        faces.sort(
-          function (
-            faceA,
-            faceB
-          ) {
-            return (
-              faceB.distance -
-              faceA.distance
-            );
-          }
-        );
-
-        faces.forEach(
-          function (face) {
-            drawProjectedFace_(
-              context,
-              face
-            );
-          }
-        );
+        model.doors.forEach(function (door) {
+          faces = faces.concat(
+            createDoorFaces(
+              door,
+              project
+            )
+          );
+        });
 
         /*
-         * パントリー扉
+         * 遠い面から描画。
          */
-        drawPantryDoorPerspective_(
-          context,
-          projector,
-          mode
-        );
+        faces.sort(function (faceA, faceB) {
+          return (
+            faceB.distance -
+            faceA.distance
+          );
+        });
+
+        faces.forEach(function (face) {
+          drawFace(
+            context,
+            face
+          );
+        });
 
         /*
-         * 重要箇所のマーカー
+         * 中庭ガラス面を見直し後だけ表示。
          */
-        if (
-          mode === 'before'
-        ) {
-          drawPerspectiveMarker_(
+        if (model === AFTER) {
+          drawGlassWall(
             context,
-            projector,
-            {
-              x:
-                7.60,
-
-              y:
-                2.70,
-
-              z:
-                0.06
-            },
-            '椅子と通路',
-            COLORS.dangerSolid
-          );
-
-          drawPerspectiveMarker_(
-            context,
-            projector,
-            {
-              x:
-                7.76,
-
-              y:
-                3.76,
-
-              z:
-                0.08
-            },
-            '扉の開閉',
-            COLORS.dangerSolid
-          );
-        } else {
-          drawPerspectiveMarker_(
-            context,
-            projector,
-            {
-              x:
-                7.20,
-
-              y:
-                2.08,
-
-              z:
-                0.06
-            },
-            '連続した通路',
-            COLORS.safeSolid
-          );
-
-          drawPerspectiveMarker_(
-            context,
-            projector,
-            {
-              x:
-                7.31,
-
-              y:
-                3.92,
-
-              z:
-                0.08
-            },
-            '収納前の余白',
-            COLORS.safeSolid
+            project
           );
         }
 
-        drawCameraInformation_(
+        /*
+         * 空間のポイント表示。
+         */
+        if (model === BEFORE) {
+          draw3DMarker(
+            context,
+            project,
+            {
+              x: 6.15,
+              y: 3.05,
+              z: .05
+            },
+            '来客と家事動線が交差',
+            COLORS.problemSolid
+          );
+
+          draw3DMarker(
+            context,
+            project,
+            {
+              x: 6.75,
+              y: 1,
+              z: .05
+            },
+            '道路側の遊び場所',
+            COLORS.problemSolid
+          );
+        } else {
+          draw3DMarker(
+            context,
+            project,
+            {
+              x: 5.7,
+              y: 2.45,
+              z: .05
+            },
+            '室内から見守れる中庭',
+            '#315f54'
+          );
+
+          draw3DMarker(
+            context,
+            project,
+            {
+              x: 7.75,
+              y: 4.25,
+              z: .05
+            },
+            '水まわりを集約',
+            '#315f54'
+          );
+        }
+
+        draw3DInformation(
           context,
-          canvasWidth,
-          canvasHeight
+          width,
+          height,
+          model
         );
       }
 
-      function createProjector_(
+      function createProjector(
         canvasWidth,
         canvasHeight
       ) {
-        var cameraPosition =
-          CAMERA.position;
+        var position = CAMERA.position;
+        var target = CAMERA.target;
 
-        var cameraTarget =
-          CAMERA.target;
-
-        var forward =
-          normalizeVector_({
-            x:
-              cameraTarget.x -
-              cameraPosition.x,
-
-            y:
-              cameraTarget.y -
-              cameraPosition.y,
-
-            z:
-              cameraTarget.z -
-              cameraPosition.z
-          });
+        var forward = normalize({
+          x: target.x - position.x,
+          y: target.y - position.y,
+          z: target.z - position.z
+        });
 
         var worldUp = {
-          x:
-            0,
-
-          y:
-            0,
-
-          z:
-            1
+          x: 0,
+          y: 0,
+          z: 1
         };
 
-        var right =
-          normalizeVector_(
-            crossProduct_(
-              forward,
-              worldUp
-            )
-          );
+        var right = normalize(
+          cross(forward, worldUp)
+        );
 
-        var up =
-          normalizeVector_(
-            crossProduct_(
-              right,
-              forward
-            )
-          );
+        var up = normalize(
+          cross(right, forward)
+        );
 
-        return function (
-          point
-        ) {
+        return function (worldPoint) {
           var relative = {
-            x:
-              point.x -
-              cameraPosition.x,
-
-            y:
-              point.y -
-              cameraPosition.y,
-
-            z:
-              point.z -
-              cameraPosition.z
+            x: worldPoint.x - position.x,
+            y: worldPoint.y - position.y,
+            z: worldPoint.z - position.z
           };
 
-          var cameraX =
-            dotProduct_(
-              relative,
-              right
-            );
+          var cameraX = dot(
+            relative,
+            right
+          );
 
-          var cameraY =
-            dotProduct_(
-              relative,
-              up
-            );
+          var cameraY = dot(
+            relative,
+            up
+          );
 
-          var cameraDepth =
-            dotProduct_(
-              relative,
-              forward
-            );
+          var cameraDepth = dot(
+            relative,
+            forward
+          );
 
-          var safeDepth =
-            Math.max(
-              0.2,
-              cameraDepth
-            );
+          var safeDepth = Math.max(
+            .2,
+            cameraDepth
+          );
 
           return {
             x:
-              canvasWidth * 0.50 +
+              canvasWidth * .5 +
               CAMERA.focalLength *
               cameraX /
               safeDepth,
 
             y:
-              canvasHeight * 0.53 -
+              canvasHeight * .54 -
               CAMERA.focalLength *
               cameraY /
               safeDepth,
 
-            depth:
-              cameraDepth,
-
-            distance:
-              vectorLength_(
-                relative
-              )
+            depth: cameraDepth,
+            distance: vectorLength(relative)
           };
         };
       }
 
-      function drawRoomShell_(
-        context,
-        projector
-      ) {
-        /*
-         * 奥壁
-         */
-        drawWorldPolygon_(
-          context,
-          projector,
-          [
-            {
-              x:
-                0,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0
-            },
-            {
-              x:
-                ROOM.width,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0
-            },
-            {
-              x:
-                ROOM.width,
-
-              y:
-                ROOM.depth,
-
-              z:
-                ROOM.height
-            },
-            {
-              x:
-                0,
-
-              y:
-                ROOM.depth,
-
-              z:
-                ROOM.height
-            }
-          ],
-          '#e4ebe7',
-          '#b7c3bd',
-          1
-        );
-
-        /*
-         * 左壁
-         */
-        drawWorldPolygon_(
-          context,
-          projector,
-          [
-            {
-              x:
-                0,
-
-              y:
-                0,
-
-              z:
-                0
-            },
-            {
-              x:
-                0,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0
-            },
-            {
-              x:
-                0,
-
-              y:
-                ROOM.depth,
-
-              z:
-                ROOM.height
-            },
-            {
-              x:
-                0,
-
-              y:
-                0,
-
-              z:
-                ROOM.height
-            }
-          ],
-          '#d7e0dc',
-          '#acbbb4',
-          1
-        );
-
-        /*
-         * 床
-         */
-        drawWorldPolygon_(
-          context,
-          projector,
-          [
-            {
-              x:
-                0,
-
-              y:
-                0,
-
-              z:
-                0
-            },
-            {
-              x:
-                ROOM.width,
-
-              y:
-                0,
-
-              z:
-                0
-            },
-            {
-              x:
-                ROOM.width,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0
-            },
-            {
-              x:
-                0,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0
-            }
-          ],
-          COLORS.floor,
-          '#b9b5aa',
-          1.2
-        );
-      }
-
-      function drawPerspectiveGrid_(
-        context,
-        projector
-      ) {
-        context.save();
-
-        context.strokeStyle =
-          'rgba(124, 127, 119, 0.23)';
-
-        context.lineWidth =
-          1;
-
-        var gridX;
-
-        for (
-          gridX = 1;
-          gridX < ROOM.width;
-          gridX += 1
-        ) {
-          drawProjectedLine_(
-            context,
-            projector({
-              x:
-                gridX,
-
-              y:
-                0,
-
-              z:
-                0.008
-            }),
-            projector({
-              x:
-                gridX,
-
-              y:
-                ROOM.depth,
-
-              z:
-                0.008
-            })
-          );
-        }
-
-        var gridY;
-
-        for (
-          gridY = 1;
-          gridY < ROOM.depth;
-          gridY += 1
-        ) {
-          drawProjectedLine_(
-            context,
-            projector({
-              x:
-                0,
-
-              y:
-                gridY,
-
-              z:
-                0.008
-            }),
-            projector({
-              x:
-                ROOM.width,
-
-              y:
-                gridY,
-
-              z:
-                0.008
-            })
-          );
-        }
-
-        context.restore();
-      }
-
-      function drawPerspectiveZone_(
-        context,
-        projector,
-        mode
-      ) {
-        var zone =
-          mode === 'before'
-            ? BEFORE_ZONE
-            : AFTER_ZONE;
-
-        var fillColor =
-          mode === 'before'
-            ? COLORS.danger
-            : COLORS.safe;
-
-        var strokeColor =
-          mode === 'before'
-            ? COLORS.dangerSolid
-            : COLORS.safeSolid;
-
-        drawWorldPolygon_(
-          context,
-          projector,
-          [
-            {
-              x:
-                zone.x,
-
-              y:
-                zone.y,
-
-              z:
-                0.018
-            },
-            {
-              x:
-                zone.x +
-                zone.width,
-
-              y:
-                zone.y,
-
-              z:
-                0.018
-            },
-            {
-              x:
-                zone.x +
-                zone.width,
-
-              y:
-                zone.y +
-                zone.depth,
-
-              z:
-                0.018
-            },
-            {
-              x:
-                zone.x,
-
-              y:
-                zone.y +
-                zone.depth,
-
-              z:
-                0.018
-            }
-          ],
-          fillColor,
-          strokeColor,
-          2
-        );
-      }
-
-      function drawPerspectiveRoute_(
-        context,
-        projector
-      ) {
-        var projectedPoints =
-          MAIN_ROUTE.map(
-            function (routePoint) {
-              return projector({
-                x:
-                  routePoint.x,
-
-                y:
-                  routePoint.y,
-
-                z:
-                  0.035
-              });
-            }
+      function wallToBox(wallItem) {
+        var horizontal =
+          Math.abs(
+            wallItem.y2 - wallItem.y1
+          ) <
+          Math.abs(
+            wallItem.x2 - wallItem.x1
           );
 
-        context.save();
+        if (horizontal) {
+          return {
+            x: Math.min(
+              wallItem.x1,
+              wallItem.x2
+            ),
 
-        context.strokeStyle =
-          COLORS.route;
+            y:
+              wallItem.y1 -
+              wallItem.thickness / 2,
 
-        context.lineWidth =
-          8;
+            z: 0,
 
-        context.lineCap =
-          'round';
+            width: Math.abs(
+              wallItem.x2 -
+              wallItem.x1
+            ),
 
-        context.lineJoin =
-          'round';
-
-        context.globalAlpha =
-          0.72;
-
-        context.setLineDash([
-          16,
-          10
-        ]);
-
-        context.beginPath();
-
-        projectedPoints.forEach(
-          function (
-            projectedPoint,
-            index
-          ) {
-            if (
-              index === 0
-            ) {
-              context.moveTo(
-                projectedPoint.x,
-                projectedPoint.y
-              );
-            } else {
-              context.lineTo(
-                projectedPoint.x,
-                projectedPoint.y
-              );
-            }
-          }
-        );
-
-        context.stroke();
-        context.restore();
-      }
-
-      /*
-       * テーブルは天板と脚に分けて表示します。
-       * 2Dで使用する外形寸法は変更しません。
-       */
-      function createRenderableParts_(
-        item
-      ) {
-        if (
-          item.id.indexOf(
-            'table-'
-          ) === 0
-        ) {
-          var slabHeight =
-            0.08;
-
-          var legSize =
-            0.09;
-
-          var legInset =
-            0.12;
-
-          return [
-            {
-              x:
-                item.x,
-
-              y:
-                item.y,
-
-              z:
-                item.height -
-                slabHeight,
-
-              width:
-                item.width,
-
-              depth:
-                item.depth,
-
-              height:
-                slabHeight,
-
-              color:
-                item.color,
-
-              topColor:
-                item.topColor
-            },
-            {
-              x:
-                item.x +
-                legInset,
-
-              y:
-                item.y +
-                legInset,
-
-              z:
-                0,
-
-              width:
-                legSize,
-
-              depth:
-                legSize,
-
-              height:
-                item.height -
-                slabHeight,
-
-              color:
-                COLORS.woodDark,
-
-              topColor:
-                COLORS.woodDark
-            },
-            {
-              x:
-                item.x +
-                item.width -
-                legInset -
-                legSize,
-
-              y:
-                item.y +
-                legInset,
-
-              z:
-                0,
-
-              width:
-                legSize,
-
-              depth:
-                legSize,
-
-              height:
-                item.height -
-                slabHeight,
-
-              color:
-                COLORS.woodDark,
-
-              topColor:
-                COLORS.woodDark
-            },
-            {
-              x:
-                item.x +
-                legInset,
-
-              y:
-                item.y +
-                item.depth -
-                legInset -
-                legSize,
-
-              z:
-                0,
-
-              width:
-                legSize,
-
-              depth:
-                legSize,
-
-              height:
-                item.height -
-                slabHeight,
-
-              color:
-                COLORS.woodDark,
-
-              topColor:
-                COLORS.woodDark
-            },
-            {
-              x:
-                item.x +
-                item.width -
-                legInset -
-                legSize,
-
-              y:
-                item.y +
-                item.depth -
-                legInset -
-                legSize,
-
-              z:
-                0,
-
-              width:
-                legSize,
-
-              depth:
-                legSize,
-
-              height:
-                item.height -
-                slabHeight,
-
-              color:
-                COLORS.woodDark,
-
-              topColor:
-                COLORS.woodDark
-            }
-          ];
+            depth: wallItem.thickness,
+            height: wallItem.height,
+            color: wallItem.color,
+            topColor: lighten(
+              wallItem.color,
+              12
+            )
+          };
         }
 
-        if (
-          item.type === 'chair'
-        ) {
-          return createChairParts_(
-            item
-          );
-        }
-
-        return [
-          item
-        ];
-      }
-
-      function createChairParts_(
-        chair
-      ) {
-        var seatHeight =
-          0.08;
-
-        var seatLevel =
-          0.40;
-
-        var legSize =
-          0.055;
-
-        var inset =
-          0.055;
-
-        var parts = [
-          {
-            x:
-              chair.x,
-
-            y:
-              chair.y,
-
-            z:
-              seatLevel,
-
-            width:
-              chair.width,
-
-            depth:
-              chair.depth,
-
-            height:
-              seatHeight,
-
-            color:
-              chair.color,
-
-            topColor:
-              chair.topColor
-          }
-        ];
-
-        var legPoints = [
-          {
-            x:
-              chair.x +
-              inset,
-
-            y:
-              chair.y +
-              inset
-          },
-          {
-            x:
-              chair.x +
-              chair.width -
-              inset -
-              legSize,
-
-            y:
-              chair.y +
-              inset
-          },
-          {
-            x:
-              chair.x +
-              inset,
-
-            y:
-              chair.y +
-              chair.depth -
-              inset -
-              legSize
-          },
-          {
-            x:
-              chair.x +
-              chair.width -
-              inset -
-              legSize,
-
-            y:
-              chair.y +
-              chair.depth -
-              inset -
-              legSize
-          }
-        ];
-
-        legPoints.forEach(
-          function (legPoint) {
-            parts.push({
-              x:
-                legPoint.x,
-
-              y:
-                legPoint.y,
-
-              z:
-                0,
-
-              width:
-                legSize,
-
-              depth:
-                legSize,
-
-              height:
-                seatLevel,
-
-              color:
-                '#6f513b',
-
-              topColor:
-                '#6f513b'
-            });
-          }
-        );
-
-        /*
-         * 簡易背もたれ。
-         * 座面外形の内側に配置します。
-         */
-        parts.push({
+        return {
           x:
-            chair.x,
+            wallItem.x1 -
+            wallItem.thickness / 2,
 
-          y:
-            chair.y +
-            chair.depth -
-            0.07,
+          y: Math.min(
+            wallItem.y1,
+            wallItem.y2
+          ),
 
-          z:
-            seatLevel +
-            seatHeight,
+          z: 0,
 
-          width:
-            chair.width,
+          width: wallItem.thickness,
 
-          depth:
-            0.07,
+          depth: Math.abs(
+            wallItem.y2 -
+            wallItem.y1
+          ),
 
-          height:
-            0.38,
-
-          color:
-            chair.color,
-
-          topColor:
-            chair.topColor
-        });
-
-        return parts;
+          height: wallItem.height,
+          color: wallItem.color,
+          topColor: lighten(
+            wallItem.color,
+            12
+          )
+        };
       }
 
-      function createBoxFaces_(
+      function createBoxFaces(
         box,
-        projector
+        project
       ) {
-        var x1 =
-          box.x;
-
-        var x2 =
-          box.x +
-          box.width;
-
-        var y1 =
-          box.y;
-
-        var y2 =
-          box.y +
-          box.depth;
-
-        var z1 =
-          box.z || 0;
-
-        var z2 =
-          z1 +
-          box.height;
+        var x1 = box.x;
+        var x2 = box.x + box.width;
+        var y1 = box.y;
+        var y2 = box.y + box.depth;
+        var z1 = box.z || 0;
+        var z2 = z1 + box.height;
 
         var points = {
-          p000: {
-            x:
-              x1,
-
-            y:
-              y1,
-
-            z:
-              z1
-          },
-
-          p100: {
-            x:
-              x2,
-
-            y:
-              y1,
-
-            z:
-              z1
-          },
-
-          p110: {
-            x:
-              x2,
-
-            y:
-              y2,
-
-            z:
-              z1
-          },
-
-          p010: {
-            x:
-              x1,
-
-            y:
-              y2,
-
-            z:
-              z1
-          },
-
-          p001: {
-            x:
-              x1,
-
-            y:
-              y1,
-
-            z:
-              z2
-          },
-
-          p101: {
-            x:
-              x2,
-
-            y:
-              y1,
-
-            z:
-              z2
-          },
-
-          p111: {
-            x:
-              x2,
-
-            y:
-              y2,
-
-            z:
-              z2
-          },
-
-          p011: {
-            x:
-              x1,
-
-            y:
-              y2,
-
-            z:
-              z2
-          }
+          a: { x: x1, y: y1, z: z1 },
+          b: { x: x2, y: y1, z: z1 },
+          c: { x: x2, y: y2, z: z1 },
+          d: { x: x1, y: y2, z: z1 },
+          e: { x: x1, y: y1, z: z2 },
+          f: { x: x2, y: y1, z: z2 },
+          g: { x: x2, y: y2, z: z2 },
+          h: { x: x1, y: y2, z: z2 }
         };
 
         return [
-          createFace_(
+          makeFace(
             [
-              points.p001,
-              points.p101,
-              points.p111,
-              points.p011
+              points.e,
+              points.f,
+              points.g,
+              points.h
             ],
             box.topColor ||
-            lightenColor_(
-              box.color,
-              18
-            ),
-            projector
+            lighten(box.color, 15),
+            project
           ),
 
-          createFace_(
+          makeFace(
             [
-              points.p000,
-              points.p100,
-              points.p101,
-              points.p001
+              points.a,
+              points.b,
+              points.f,
+              points.e
             ],
             box.color,
-            projector
+            project
           ),
 
-          createFace_(
+          makeFace(
             [
-              points.p100,
-              points.p110,
-              points.p111,
-              points.p101
+              points.b,
+              points.c,
+              points.g,
+              points.f
             ],
-            darkenColor_(
-              box.color,
-              12
-            ),
-            projector
+            darken(box.color, 12),
+            project
           ),
 
-          createFace_(
+          makeFace(
             [
-              points.p110,
-              points.p010,
-              points.p011,
-              points.p111
+              points.c,
+              points.d,
+              points.h,
+              points.g
             ],
-            darkenColor_(
-              box.color,
-              19
-            ),
-            projector
+            darken(box.color, 20),
+            project
           ),
 
-          createFace_(
+          makeFace(
             [
-              points.p010,
-              points.p000,
-              points.p001,
-              points.p011
+              points.d,
+              points.a,
+              points.e,
+              points.h
             ],
-            darkenColor_(
-              box.color,
-              7
-            ),
-            projector
+            darken(box.color, 7),
+            project
           )
         ];
       }
 
-      function createFace_(
-        worldPoints,
-        fillColor,
-        projector
+      function createDoorFaces(
+        door,
+        project
       ) {
-        var projectedPoints =
-          worldPoints.map(
-            function (worldPoint) {
-              return projector(
-                worldPoint
-              );
-            }
+        var height = 2.05;
+        var thickness = .035;
+        var doorColor =
+          door.type === 'swing'
+            ? '#9b7770'
+            : '#9ea9a4';
+
+        var box;
+
+        if (door.type === 'swing') {
+          var endX =
+            door.x +
+            Math.cos(door.angle) *
+            door.length;
+
+          var endY =
+            door.y +
+            Math.sin(door.angle) *
+            door.length;
+
+          var minimumX = Math.min(
+            door.x,
+            endX
           );
 
-        var totalDistance =
-          projectedPoints.reduce(
-            function (
-              sum,
-              point
-            ) {
-              return (
-                sum +
-                point.distance
-              );
+          var minimumY = Math.min(
+            door.y,
+            endY
+          );
+
+          box = {
+            x:
+              minimumX -
+              thickness / 2,
+
+            y:
+              minimumY -
+              thickness / 2,
+
+            z: 0,
+
+            width:
+              Math.max(
+                Math.abs(endX - door.x),
+                thickness
+              ) +
+              thickness,
+
+            depth:
+              Math.max(
+                Math.abs(endY - door.y),
+                thickness
+              ) +
+              thickness,
+
+            height: height,
+            color: doorColor,
+            topColor: lighten(
+              doorColor,
+              12
+            )
+          };
+        } else if (door.axis === 'y') {
+          box = {
+            x:
+              door.x -
+              thickness / 2,
+
+            y: door.y,
+
+            z: 0,
+
+            width: thickness,
+            depth: door.length,
+            height: height,
+            color: doorColor,
+            topColor: lighten(
+              doorColor,
+              12
+            )
+          };
+        } else {
+          box = {
+            x: door.x,
+
+            y:
+              door.y -
+              thickness / 2,
+
+            z: 0,
+
+            width: door.length,
+            depth: thickness,
+            height: height,
+            color: doorColor,
+            topColor: lighten(
+              doorColor,
+              12
+            )
+          };
+        }
+
+        return createBoxFaces(
+          box,
+          project
+        );
+      }
+
+      function makeFace(
+        worldPoints,
+        fill,
+        project
+      ) {
+        var projected =
+          worldPoints.map(function (point) {
+            return project(point);
+          });
+
+        var averageDistance =
+          projected.reduce(
+            function (sum, point) {
+              return sum + point.distance;
             },
             0
-          );
+          ) /
+          projected.length;
 
         return {
-          points:
-            projectedPoints,
-
-          fillColor:
-            fillColor,
-
-          strokeColor:
-            'rgba(64, 77, 71, 0.45)',
-
-          distance:
-            totalDistance /
-            projectedPoints.length
+          points: projected,
+          fill: fill,
+          stroke: 'rgba(52,65,59,.43)',
+          distance: averageDistance
         };
       }
 
-      function drawProjectedFace_(
+      function drawFace(
         context,
         face
       ) {
         context.save();
-
-        context.fillStyle =
-          face.fillColor;
-
-        context.strokeStyle =
-          face.strokeColor;
-
-        context.lineWidth =
-          1;
+        context.fillStyle = face.fill;
+        context.strokeStyle = face.stroke;
+        context.lineWidth = 1;
 
         context.beginPath();
 
         face.points.forEach(
-          function (
-            point,
-            index
-          ) {
-            if (
-              index === 0
-            ) {
+          function (point, index) {
+            if (index === 0) {
               context.moveTo(
                 point.x,
                 point.y
@@ -5035,155 +3845,159 @@
         context.restore();
       }
 
-      function drawPantryDoorPerspective_(
+      function drawWorldPolygon(
         context,
-        projector,
-        mode
+        project,
+        worldPoints,
+        fill,
+        stroke,
+        lineWidth
       ) {
-        var hingeX =
-          8.12;
-
-        var hingeY =
-          3.35;
-
-        var doorLength =
-          0.82;
-
-        var doorHeight =
-          2.08;
-
-        /*
-         * 90度開いた扉を立体面として表示。
-         */
-        var doorPoints = [
-          {
-            x:
-              hingeX,
-
-            y:
-              hingeY,
-
-            z:
-              0
-          },
-          {
-            x:
-              hingeX -
-              doorLength,
-
-            y:
-              hingeY,
-
-            z:
-              0
-          },
-          {
-            x:
-              hingeX -
-              doorLength,
-
-            y:
-              hingeY,
-
-            z:
-              doorHeight
-          },
-          {
-            x:
-              hingeX,
-
-            y:
-              hingeY,
-
-            z:
-              doorHeight
-          }
-        ];
-
-        drawWorldPolygon_(
-          context,
-          projector,
-          doorPoints,
-          mode === 'before'
-            ? 'rgba(200, 63, 63, 0.22)'
-            : 'rgba(208, 218, 213, 0.88)',
-          mode === 'before'
-            ? COLORS.dangerSolid
-            : '#768a81',
-          2
-        );
-
-        /*
-         * 取っ手
-         */
-        var handle =
-          projector({
-            x:
-              hingeX -
-              doorLength +
-              0.10,
-
-            y:
-              hingeY -
-              0.012,
-
-            z:
-              1.00
+        var points =
+          worldPoints.map(function (point) {
+            return project(point);
           });
 
         context.save();
-
-        context.fillStyle =
-          '#5b665f';
+        context.fillStyle = fill;
+        context.strokeStyle = stroke;
+        context.lineWidth = lineWidth;
 
         context.beginPath();
 
-        context.arc(
-          handle.x,
-          handle.y,
-          3.5,
-          0,
-          Math.PI * 2
-        );
+        points.forEach(function (point, index) {
+          if (index === 0) {
+            context.moveTo(
+              point.x,
+              point.y
+            );
+          } else {
+            context.lineTo(
+              point.x,
+              point.y
+            );
+          }
+        });
 
+        context.closePath();
         context.fill();
+        context.stroke();
         context.restore();
       }
 
-      function drawPerspectiveMarker_(
+      function draw3DRoute(
         context,
-        projector,
-        point,
-        label,
-        color
+        route,
+        project
       ) {
-        var floorPoint =
-          projector(
-            point
-          );
-
-        var labelPoint =
-          projector({
-            x:
-              point.x,
-
-            y:
-              point.y,
-
-            z:
-              1.34
+        var points =
+          route.map(function (routePoint) {
+            return project({
+              x: routePoint.x,
+              y: routePoint.y,
+              z: .045
+            });
           });
 
         context.save();
-
-        context.strokeStyle =
-          color;
-
-        context.lineWidth =
-          2;
+        context.strokeStyle = COLORS.route;
+        context.lineWidth = 7;
+        context.lineCap = 'round';
+        context.lineJoin = 'round';
+        context.globalAlpha = .7;
+        context.setLineDash([15, 9]);
 
         context.beginPath();
 
+        points.forEach(function (point, index) {
+          if (index === 0) {
+            context.moveTo(
+              point.x,
+              point.y
+            );
+          } else {
+            context.lineTo(
+              point.x,
+              point.y
+            );
+          }
+        });
+
+        context.stroke();
+        context.restore();
+      }
+
+      function drawGlassWall(
+        context,
+        project
+      ) {
+        drawWorldPolygon(
+          context,
+          project,
+          [
+            { x: 4.55, y: 3.6, z: .18 },
+            { x: 7.2, y: 3.6, z: .18 },
+            { x: 7.2, y: 3.6, z: 2.28 },
+            { x: 4.55, y: 3.6, z: 2.28 }
+          ],
+          'rgba(176,213,207,.16)',
+          'rgba(73,112,102,.65)',
+          2
+        );
+
+        var centerBottom = project({
+          x: 5.875,
+          y: 3.6,
+          z: .18
+        });
+
+        var centerTop = project({
+          x: 5.875,
+          y: 3.6,
+          z: 2.28
+        });
+
+        context.save();
+        context.strokeStyle =
+          'rgba(73,112,102,.55)';
+
+        context.lineWidth = 1.5;
+        context.beginPath();
+
+        context.moveTo(
+          centerBottom.x,
+          centerBottom.y
+        );
+
+        context.lineTo(
+          centerTop.x,
+          centerTop.y
+        );
+
+        context.stroke();
+        context.restore();
+      }
+
+      function draw3DMarker(
+        context,
+        project,
+        worldPoint,
+        label,
+        color
+      ) {
+        var floorPoint = project(worldPoint);
+
+        var labelPoint = project({
+          x: worldPoint.x,
+          y: worldPoint.y,
+          z: 1.45
+        });
+
+        context.save();
+        context.strokeStyle = color;
+        context.lineWidth = 2;
+
+        context.beginPath();
         context.moveTo(
           floorPoint.x,
           floorPoint.y
@@ -5196,9 +4010,7 @@
 
         context.stroke();
 
-        context.fillStyle =
-          color;
-
+        context.fillStyle = color;
         context.beginPath();
 
         context.arc(
@@ -5211,30 +4023,20 @@
 
         context.fill();
 
-        context.font =
-          '800 13px sans-serif';
+        context.font = '800 12px sans-serif';
 
         var textWidth =
-          context.measureText(
-            label
-          ).width;
+          context.measureText(label).width;
 
-        var boxWidth =
-          textWidth + 22;
-
-        var boxHeight =
-          30;
-
+        var boxWidth = textWidth + 22;
+        var boxHeight = 29;
         var boxX =
-          labelPoint.x -
-          boxWidth / 2;
+          labelPoint.x - boxWidth / 2;
 
         var boxY =
-          labelPoint.y -
-          boxHeight -
-          5;
+          labelPoint.y - boxHeight - 5;
 
-        drawRoundedRectangle_(
+        roundedRectangle(
           context,
           boxX,
           boxY,
@@ -5243,156 +4045,60 @@
           8
         );
 
-        context.fillStyle =
-          color;
-
+        context.fillStyle = color;
         context.fill();
 
-        context.fillStyle =
-          COLORS.white;
-
-        context.textAlign =
-          'center';
-
-        context.textBaseline =
-          'middle';
+        context.fillStyle = COLORS.white;
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
 
         context.fillText(
           label,
           labelPoint.x,
-          boxY +
-          boxHeight / 2
+          boxY + boxHeight / 2
         );
 
         context.restore();
       }
 
-      function drawCameraInformation_(
+      function draw3DInformation(
         context,
-        canvasWidth,
-        canvasHeight
+        width,
+        height,
+        model
       ) {
         context.save();
 
-        context.fillStyle =
-          'rgba(25, 47, 39, 0.78)';
-
-        drawRoundedRectangle_(
+        roundedRectangle(
           context,
           18,
-          canvasHeight - 49,
-          286,
-          30,
+          height - 51,
+          365,
+          32,
           8
         );
 
+        context.fillStyle =
+          'rgba(26,50,42,.80)';
+
         context.fill();
 
-        context.fillStyle =
-          '#ffffff';
-
-        context.font =
-          '700 11px sans-serif';
-
-        context.textAlign =
-          'left';
-
-        context.textBaseline =
-          'middle';
+        context.fillStyle = '#fff';
+        context.font = '700 10px sans-serif';
+        context.textAlign = 'left';
+        context.textBaseline = 'middle';
 
         context.fillText(
-          '固定カメラ｜位置・高さ・画角は比較間で共通',
+          model.name +
+          '｜カメラ位置・高さ・注視点・焦点距離は共通',
           31,
-          canvasHeight - 34
+          height - 35
         );
 
         context.restore();
       }
 
-      /*
-       * ======================================================
-       * 描画補助
-       * ======================================================
-       */
-
-      function drawWorldPolygon_(
-        context,
-        projector,
-        worldPoints,
-        fillColor,
-        strokeColor,
-        lineWidth
-      ) {
-        var projectedPoints =
-          worldPoints.map(
-            function (point) {
-              return projector(
-                point
-              );
-            }
-          );
-
-        context.save();
-
-        context.fillStyle =
-          fillColor;
-
-        context.strokeStyle =
-          strokeColor;
-
-        context.lineWidth =
-          lineWidth;
-
-        context.beginPath();
-
-        projectedPoints.forEach(
-          function (
-            point,
-            index
-          ) {
-            if (
-              index === 0
-            ) {
-              context.moveTo(
-                point.x,
-                point.y
-              );
-            } else {
-              context.lineTo(
-                point.x,
-                point.y
-              );
-            }
-          }
-        );
-
-        context.closePath();
-        context.fill();
-        context.stroke();
-        context.restore();
-      }
-
-      function drawProjectedLine_(
-        context,
-        start,
-        end
-      ) {
-        context.beginPath();
-
-        context.moveTo(
-          start.x,
-          start.y
-        );
-
-        context.lineTo(
-          end.x,
-          end.y
-        );
-
-        context.stroke();
-      }
-
-      function drawRoundedRectangle_(
+      function roundedRectangle(
         context,
         x,
         y,
@@ -5400,52 +4106,37 @@
         height,
         radius
       ) {
-        var adjustedRadius =
-          Math.min(
-            radius,
-            width / 2,
-            height / 2
-          );
+        var r = Math.min(
+          radius,
+          width / 2,
+          height / 2
+        );
 
         context.beginPath();
-
-        context.moveTo(
-          x + adjustedRadius,
-          y
-        );
-
-        context.lineTo(
-          x +
-          width -
-          adjustedRadius,
-          y
-        );
+        context.moveTo(x + r, y);
+        context.lineTo(x + width - r, y);
 
         context.quadraticCurveTo(
           x + width,
           y,
           x + width,
-          y + adjustedRadius
+          y + r
         );
 
         context.lineTo(
           x + width,
-          y +
-          height -
-          adjustedRadius
+          y + height - r
         );
 
         context.quadraticCurveTo(
           x + width,
           y + height,
-          x +
-          width -
-          adjustedRadius,
+          x + width - r,
           y + height
         );
 
         context.lineTo(
-          x + adjustedRadius,
+          x + r,
           y + height
         );
 
@@ -5453,369 +4144,195 @@
           x,
           y + height,
           x,
-          y +
-          height -
-          adjustedRadius
+          y + height - r
         );
 
-        context.lineTo(
-          x,
-          y + adjustedRadius
-        );
+        context.lineTo(x, y + r);
 
         context.quadraticCurveTo(
           x,
           y,
-          x + adjustedRadius,
+          x + r,
           y
         );
 
         context.closePath();
       }
 
-      function dotProduct_(
-        vectorA,
-        vectorB
-      ) {
+      /*
+       * =====================================================
+       * ベクトル計算
+       * =====================================================
+       */
+
+      function dot(a, b) {
         return (
-          vectorA.x *
-          vectorB.x +
-          vectorA.y *
-          vectorB.y +
-          vectorA.z *
-          vectorB.z
+          a.x * b.x +
+          a.y * b.y +
+          a.z * b.z
         );
       }
 
-      function crossProduct_(
-        vectorA,
-        vectorB
-      ) {
+      function cross(a, b) {
         return {
           x:
-            vectorA.y *
-            vectorB.z -
-            vectorA.z *
-            vectorB.y,
+            a.y * b.z -
+            a.z * b.y,
 
           y:
-            vectorA.z *
-            vectorB.x -
-            vectorA.x *
-            vectorB.z,
+            a.z * b.x -
+            a.x * b.z,
 
           z:
-            vectorA.x *
-            vectorB.y -
-            vectorA.y *
-            vectorB.x
+            a.x * b.y -
+            a.y * b.x
         };
       }
 
-      function vectorLength_(
-        vector
-      ) {
+      function vectorLength(vector) {
         return Math.sqrt(
-          vector.x *
-          vector.x +
-          vector.y *
-          vector.y +
-          vector.z *
-          vector.z
+          vector.x * vector.x +
+          vector.y * vector.y +
+          vector.z * vector.z
         );
       }
 
-      function normalizeVector_(
-        vector
-      ) {
+      function normalize(vector) {
         var length =
-          vectorLength_(
-            vector
-          );
+          vectorLength(vector);
 
-        if (
-          length === 0
-        ) {
+        if (!length) {
           return {
-            x:
-              0,
-
-            y:
-              0,
-
-            z:
-              0
+            x: 0,
+            y: 0,
+            z: 0
           };
         }
 
         return {
-          x:
-            vector.x / length,
-
-          y:
-            vector.y / length,
-
-          z:
-            vector.z / length
+          x: vector.x / length,
+          y: vector.y / length,
+          z: vector.z / length
         };
       }
 
       /*
-       * HEXカラーの明暗調整。
-       * rgbaなどが渡された場合は元の色を返します。
+       * =====================================================
+       * 色調整
+       * =====================================================
        */
-      function lightenColor_(
-        color,
-        amount
-      ) {
-        return adjustHexColor_(
+
+      function lighten(color, amount) {
+        return adjustColor(
           color,
-          Math.abs(
-            amount
-          )
+          Math.abs(amount)
         );
       }
 
-      function darkenColor_(
-        color,
-        amount
-      ) {
-        return adjustHexColor_(
+      function darken(color, amount) {
+        return adjustColor(
           color,
-          -Math.abs(
-            amount
-          )
+          -Math.abs(amount)
         );
       }
 
-      function adjustHexColor_(
-        color,
-        amount
-      ) {
+      function adjustColor(color, amount) {
         if (
           typeof color !== 'string' ||
           color.charAt(0) !== '#' ||
-          (
-            color.length !== 7 &&
-            color.length !== 4
-          )
+          color.length !== 7
         ) {
           return color;
         }
 
-        var normalizedColor =
-          color;
+        var red = parseInt(
+          color.slice(1, 3),
+          16
+        );
 
-        if (
-          color.length === 4
-        ) {
-          normalizedColor =
-            '#' +
-            color.charAt(1) +
-            color.charAt(1) +
-            color.charAt(2) +
-            color.charAt(2) +
-            color.charAt(3) +
-            color.charAt(3);
-        }
+        var green = parseInt(
+          color.slice(3, 5),
+          16
+        );
 
-        var red =
-          parseInt(
-            normalizedColor.slice(
-              1,
-              3
-            ),
-            16
-          );
+        var blue = parseInt(
+          color.slice(5, 7),
+          16
+        );
 
-        var green =
-          parseInt(
-            normalizedColor.slice(
-              3,
-              5
-            ),
-            16
-          );
-
-        var blue =
-          parseInt(
-            normalizedColor.slice(
-              5,
-              7
-            ),
-            16
-          );
-
-        red =
-          clampColor_(
-            red + amount
-          );
-
-        green =
-          clampColor_(
-            green + amount
-          );
-
-        blue =
-          clampColor_(
-            blue + amount
-          );
+        red = clampColor(red + amount);
+        green = clampColor(green + amount);
+        blue = clampColor(blue + amount);
 
         return (
           '#' +
-          toHex_(
-            red
-          ) +
-          toHex_(
-            green
-          ) +
-          toHex_(
-            blue
-          )
+          toHex(red) +
+          toHex(green) +
+          toHex(blue)
         );
       }
 
-      function clampColor_(
-        value
-      ) {
+      function clampColor(value) {
         return Math.max(
           0,
           Math.min(
             255,
-            Math.round(
-              value
-            )
+            Math.round(value)
           )
         );
       }
 
-      function toHex_(
-        value
-      ) {
+      function toHex(value) {
         return value
           .toString(16)
-          .padStart(
-            2,
-            '0'
-          );
+          .padStart(2, '0');
       }
 
       /*
-       * ======================================================
-       * Canvasの高解像度表示
-       * ======================================================
-       *
-       * HTMLで指定した論理サイズを維持しながら、
-       * Retina端末では内部解像度を上げます。
+       * =====================================================
+       * 初期化
+       * =====================================================
        */
 
-      function prepareHighResolutionCanvases_() {
-        var canvases =
-          document.querySelectorAll(
-            'canvas'
-          );
+      function renderAll() {
+        drawPlan(
+          document.getElementById(
+            'plan-before'
+          ),
+          BEFORE
+        );
 
-        var pixelRatio =
-          Math.min(
-            window.devicePixelRatio || 1,
-            2
-          );
+        drawPlan(
+          document.getElementById(
+            'plan-after'
+          ),
+          AFTER
+        );
 
-        canvases.forEach(
-          function (canvas) {
-            var logicalWidth =
-              Number(
-                canvas.getAttribute(
-                  'width'
-                )
-              );
+        draw3D(
+          document.getElementById(
+            'view-before'
+          ),
+          BEFORE
+        );
 
-            var logicalHeight =
-              Number(
-                canvas.getAttribute(
-                  'height'
-                )
-              );
-
-            if (
-              !logicalWidth ||
-              !logicalHeight
-            ) {
-              return;
-            }
-
-            if (
-              pixelRatio <= 1
-            ) {
-              return;
-            }
-
-            canvas.width =
-              logicalWidth *
-              pixelRatio;
-
-            canvas.height =
-              logicalHeight *
-              pixelRatio;
-
-            var context =
-              canvas.getContext('2d');
-
-            context.setTransform(
-              pixelRatio,
-              0,
-              0,
-              pixelRatio,
-              0,
-              0
-            );
-
-            canvas.dataset.logicalWidth =
-              String(
-                logicalWidth
-              );
-
-            canvas.dataset.logicalHeight =
-              String(
-                logicalHeight
-              );
-
-            /*
-             * 描画関数から見える幅・高さを論理値に合わせるため、
-             * 高解像度化後は個別描画を行わず、次で通常サイズへ戻します。
-             *
-             * この事例では元のCanvas解像度が十分に高いため、
-             * ブラウザ間の安定性を優先して論理サイズを使用します。
-             */
-            canvas.width =
-              logicalWidth;
-
-            canvas.height =
-              logicalHeight;
-          }
+        draw3D(
+          document.getElementById(
+            'view-after'
+          ),
+          AFTER
         );
       }
 
       /*
-       * ======================================================
-       * 読み込み・再描画
-       * ======================================================
+       * CTAの「最初から見る」が機能するように、
+       * ヒーローへtop IDを追加します。
        */
+      var hero =
+        document.querySelector('.hero');
 
-      var resizeTimer = null;
-
-      function scheduleRender_() {
-        window.clearTimeout(
-          resizeTimer
-        );
-
-        resizeTimer =
-          window.setTimeout(
-            function () {
-              renderAll_();
-            },
-            120
-          );
+      if (hero && !hero.id) {
+        hero.id = 'top';
       }
 
       if (
@@ -5824,26 +4341,32 @@
       ) {
         document.addEventListener(
           'DOMContentLoaded',
-          function () {
-            prepareHighResolutionCanvases_();
-            renderAll_();
-          }
+          renderAll
         );
       } else {
-        prepareHighResolutionCanvases_();
-        renderAll_();
+        renderAll();
       }
+
+      var resizeTimer = null;
 
       window.addEventListener(
         'resize',
-        scheduleRender_,
+        function () {
+          window.clearTimeout(
+            resizeTimer
+          );
+
+          resizeTimer =
+            window.setTimeout(
+              renderAll,
+              120
+            );
+        },
         {
-          passive:
-            true
+          passive: true
         }
       );
     }());
   </script>
 </body>
 </html>
-           
